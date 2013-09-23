@@ -1,10 +1,12 @@
 /*
-Template Name: 易张脸v2
-Template URI: http://www.yizhanglian.com/
-Description: 易张脸V2版.
-Version: 2
-Author: boxcore
+Template Name: ECSHOP Default
+Template URI: http://www.ecshop.com/
+Description: 默认升级版.
+Version: 2.7.2
+Author: ECSHOP Team
+Author URI: http://www.ecshop.com/
 Logo filename: logo.gif
+Template Type: type_0
 */
 
 
@@ -181,11 +183,11 @@ visibility:hidden;
    /*销售排行*/
    .top10Tit{background:url(images/bg.gif) no-repeat 0px -85px; height:30px;}
    .top10List{border:1px solid #d7ecfd; background-color:#fff; margin:0px 4px 4px 4px;}
-     .top10List ul{border-bottom:1px solid #e2f3fd; position:relative;}
-     .top10List .iteration{position:absolute; top:6px; left:6px;}
-     .top10List .iteration1{padding-left:3px;}
-     .top10List li.topimg{width:35px; height:35px;}
-     .top10List .samllimg{width:35px; height:35px; margin-bottom:4px;}
+	 .top10List ul{border-bottom:1px solid #e2f3fd; position:relative;}
+	 .top10List .iteration{position:absolute; top:6px; left:6px;}
+	 .top10List .iteration1{padding-left:3px;}
+	 .top10List li.topimg{width:35px; height:35px;}
+	 .top10List .samllimg{width:35px; height:35px; margin-bottom:4px;}
    .top10List li{padding:3px 3px 3px 23px; float:left;}
    /*linkCOLOR*/
    .top10List li a,#mallNews .NewsList li a,.boxCenterList li a{color:#3f3f3f; text-decoration:none;}
@@ -282,7 +284,7 @@ visibility:hidden;
    margin:6px 5px 0 0; border:none;
    }
      #history li{width:100%;}
-         #clear_history a{background:none; padding:0px; color:#3f3f3f; text-decoration:none;float:right;cursor:pointer;}
+		 #clear_history a{background:none; padding:0px; color:#3f3f3f; text-decoration:none;float:right;cursor:pointer;}
    .colle a{background:none; padding:0px; color:#3f3f3f; text-decoration:none;}
    .colle a:hover{background:none; padding:0px; color:#ff6600; text-decoration:none;}
    /* ====================
@@ -364,10 +366,10 @@ visibility:hidden;
      商品分类页面
 ==================== */
     /*属性组合搜索*/
-        .screeBox{padding:10px;}
-        .screeBox a{color:#404040;}
-        .screeBox span{background:#91d3f7; padding:3px 5px; margin:0 3px;}
-        
+		.screeBox{padding:10px;}
+		.screeBox a{color:#404040;}
+		.screeBox span{background:#91d3f7; padding:3px 5px; margin:0 3px;}
+		
     .sort a{ position:relative; bottom:5px;}
     .sort input{position:relative; top:3px;}
     /*商品列表显示方式*/
@@ -392,18 +394,18 @@ visibility:hidden;
 ==================== */
     .flowBox{border:1px solid #c8e6fe; border-top:2px solid #9fd2ff;}
     .flowBox table{ margin:5px auto;}
-        /*2.62在购物车里面显示相关配件*/
-        .flowGoodsFittings{padding:10px;}
-        .flowGoodsFittings ul{height:1%; margin:5px 4px; float:left;}
+		/*2.62在购物车里面显示相关配件*/
+		.flowGoodsFittings{padding:10px;}
+		.flowGoodsFittings ul{height:1%; margin:5px 4px; float:left;}
     .flowGoodsFittings li{float:left; width:120px;}
     .flowGoodsFittings li.goodsimg{width:48px; margin-right:10px;}
     .flowGoodsFittings li.goodsimg img{width:48px; height:48px; display:block;}
-        
+		
 /* ====================
      文章列表页-2009.6.8
 ==================== */
     .article_search{margin:8px 0;}
-        .article_search .inputBg{width:300px;}
+		.article_search .inputBg{width:300px;}
 /* ====================
     打印报价单
 ==================== */
