@@ -768,6 +768,19 @@ function make_semiangle($str)
 }
 
 /**
+ * 过滤用户输入的基本数据，防止script攻击
+ *
+ * @access      public
+ * @return      string
+ */
+function compile_str($str)
+{
+    $arr = array('<' => '＜', '>' => '＞');
+
+    return strtr($str, $arr);
+}
+
+/**
  * 检查文件类型
  *
  * @access      public

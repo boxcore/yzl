@@ -9,8 +9,8 @@
  * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
- * $Author: yehuaixiao $
- * $Id: flow.php 17218 2011-01-24 04:10:41Z yehuaixiao $
+ * $Author: douqinghua $
+ * $Id: flow.php 17218 2011-01-24 04:10:41Z douqinghua $
  */
 
 define('IN_ECS', true);
@@ -371,19 +371,19 @@ elseif ($_REQUEST['step'] == 'consignee')
          * 保存收货人信息
          */
         $consignee = array(
-            'address_id'    => empty($_POST['address_id']) ? 0  : intval($_POST['address_id']),
-            'consignee'     => empty($_POST['consignee'])  ? '' : trim($_POST['consignee']),
-            'country'       => empty($_POST['country'])    ? '' : $_POST['country'],
-            'province'      => empty($_POST['province'])   ? '' : $_POST['province'],
-            'city'          => empty($_POST['city'])       ? '' : $_POST['city'],
-            'district'      => empty($_POST['district'])   ? '' : $_POST['district'],
-            'email'         => empty($_POST['email'])      ? '' : $_POST['email'],
-            'address'       => empty($_POST['address'])    ? '' : $_POST['address'],
-            'zipcode'       => empty($_POST['zipcode'])    ? '' : make_semiangle(trim($_POST['zipcode'])),
-            'tel'           => empty($_POST['tel'])        ? '' : make_semiangle(trim($_POST['tel'])),
-            'mobile'        => empty($_POST['mobile'])     ? '' : make_semiangle(trim($_POST['mobile'])),
-            'sign_building' => empty($_POST['sign_building']) ? '' : $_POST['sign_building'],
-            'best_time'     => empty($_POST['best_time'])  ? '' : $_POST['best_time'],
+            'address_id'    => empty($_POST['address_id']) ? 0  :   intval($_POST['address_id']),
+            'consignee'     => empty($_POST['consignee'])  ? '' :   compile_str(trim($_POST['consignee'])),
+            'country'       => empty($_POST['country'])    ? '' :   intval($_POST['country']),
+            'province'      => empty($_POST['province'])   ? '' :   intval($_POST['province']),
+            'city'          => empty($_POST['city'])       ? '' :   intval($_POST['city']),
+            'district'      => empty($_POST['district'])   ? '' :   intval($_POST['district']),
+            'email'         => empty($_POST['email'])      ? '' :   compile_str($_POST['email']),
+            'address'       => empty($_POST['address'])    ? '' :   compile_str($_POST['address']),
+            'zipcode'       => empty($_POST['zipcode'])    ? '' :   compile_str(make_semiangle(trim($_POST['zipcode']))),
+            'tel'           => empty($_POST['tel'])        ? '' :   compile_str(make_semiangle(trim($_POST['tel']))),
+            'mobile'        => empty($_POST['mobile'])     ? '' :   compile_str(make_semiangle(trim($_POST['mobile']))),
+            'sign_building' => empty($_POST['sign_building']) ? '' :compile_str($_POST['sign_building']),
+            'best_time'     => empty($_POST['best_time'])  ? '' :   compile_str($_POST['best_time']),
         );
 
         if ($_SESSION['user_id'] > 0)
@@ -1364,11 +1364,11 @@ elseif ($_REQUEST['step'] == 'done')
     }
 
     $_POST['how_oos'] = isset($_POST['how_oos']) ? intval($_POST['how_oos']) : 0;
-    $_POST['card_message'] = isset($_POST['card_message']) ? htmlspecialchars($_POST['card_message']) : '';
-    $_POST['inv_type'] = !empty($_POST['inv_type']) ? htmlspecialchars($_POST['inv_type']) : '';
-    $_POST['inv_payee'] = isset($_POST['inv_payee']) ? htmlspecialchars($_POST['inv_payee']) : '';
-    $_POST['inv_content'] = isset($_POST['inv_content']) ? htmlspecialchars($_POST['inv_content']) : '';
-    $_POST['postscript'] = isset($_POST['postscript']) ? htmlspecialchars($_POST['postscript']) : '';
+    $_POST['card_message'] = isset($_POST['card_message']) ? compile_str($_POST['card_message']) : '';
+    $_POST['inv_type'] = !empty($_POST['inv_type']) ? compile_str($_POST['inv_type']) : '';
+    $_POST['inv_payee'] = isset($_POST['inv_payee']) ? compile_str($_POST['inv_payee']) : '';
+    $_POST['inv_content'] = isset($_POST['inv_content']) ? compile_str($_POST['inv_content']) : '';
+    $_POST['postscript'] = isset($_POST['postscript']) ? compile_str($_POST['postscript']) : '';
 
     $order = array(
         'shipping_id'     => intval($_POST['shipping']),
