@@ -16,6 +16,7 @@
 define('IN_ECS', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
+require_once(ROOT_PATH . "includes/fckeditor/fckeditor.php");
 $exc = new exchange($ecs->table("article_cat"), $db, 'cat_id', 'cat_name');
 /* act操作项的初始化 */
 $_REQUEST['act'] = trim($_REQUEST['act']);
@@ -66,6 +67,10 @@ elseif ($_REQUEST['act'] == 'add')
     /* 权限判断 */
     admin_priv('article_cat');
 
+    /* 创建 html editor */
+    create_html_editor('cat_detail');
+
+
     $smarty->assign('cat_select',  article_cat_list(0));
     $smarty->assign('ur_here',     $_LANG['articlecat_add']);
     $smarty->assign('action_link', array('text' => $_LANG['02_articlecat_list'], 'href' => 'articlecat.php?act=list'));
@@ -103,8 +108,8 @@ elseif ($_REQUEST['act'] == 'insert')
     }
 
 
-    $sql = "INSERT INTO ".$ecs->table('article_cat')."(cat_name, cat_type, cat_desc,keywords, parent_id, sort_order, show_in_nav)
-           VALUES ('$_POST[cat_name]', '$cat_type',  '$_POST[cat_desc]','$_POST[keywords]', '$_POST[parent_id]', '$_POST[sort_order]', '$_POST[show_in_nav]')";
+    $sql = "INSERT INTO ".$ecs->table('article_cat')."(cat_name, cat_type, cat_desc, cat_detail, keywords, parent_id, sort_order, show_in_nav)
+           VALUES ('$_POST[cat_name]', '$cat_type', '$_POST[cat_desc]', '$_POST[cat_detail]', '$_POST[keywords]', '$_POST[parent_id]', '$_POST[sort_order]', '$_POST[show_in_nav]')";
     $db->query($sql);
 
     if($_POST['show_in_nav'] == 1)
@@ -135,7 +140,7 @@ elseif ($_REQUEST['act'] == 'edit')
     /* 权限判断 */
     admin_priv('article_cat');
 
-    $sql = "SELECT cat_id, cat_name, cat_type, cat_desc, show_in_nav, keywords, parent_id,sort_order FROM ".
+    $sql = "SELECT cat_id, cat_name, cat_type, cat_desc, cat_detail, show_in_nav, keywords, parent_id,sort_order FROM ".
            $ecs->table('article_cat'). " WHERE cat_id='$_REQUEST[id]'";
     $cat = $db->GetRow($sql);
 
@@ -146,6 +151,10 @@ elseif ($_REQUEST['act'] == 'edit')
     $options    =   article_cat_list(0, $cat['parent_id'], false);
     $select     =   '';
     $selected   =   $cat['parent_id'];
+
+    /* 创建 html editor */
+    create_html_editor('cat_detail', $cat['cat_detail']);
+
     foreach ($options as $var)
     {
         if ($var['cat_id'] == $_REQUEST['id'])
@@ -236,7 +245,7 @@ elseif ($_REQUEST['act'] == 'update')
     }
 
     $dat = $db->getOne("SELECT cat_name, show_in_nav FROM ". $ecs->table('article_cat') . " WHERE cat_id = '" . $_POST['id'] . "'");
-    if ($exc->edit("cat_name = '$_POST[cat_name]', cat_desc ='$_POST[cat_desc]', keywords='$_POST[keywords]',parent_id = '$_POST[parent_id]', cat_type='$cat_type', sort_order='$_POST[sort_order]', show_in_nav = '$_POST[show_in_nav]'",  $_POST['id']))
+    if ($exc->edit("cat_name = '$_POST[cat_name]', cat_desc ='$_POST[cat_desc]', cat_detail ='$_POST[cat_detail]', keywords='$_POST[keywords]',parent_id = '$_POST[parent_id]', cat_type='$cat_type', sort_order='$_POST[sort_order]', show_in_nav = '$_POST[show_in_nav]'",  $_POST['id']))
     {
         if($_POST['cat_name'] != $dat['cat_name'])
         {

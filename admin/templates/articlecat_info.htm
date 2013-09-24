@@ -40,6 +40,15 @@
     <td class="label">{$lang.cat_desc}</td>
     <td><textarea  name="cat_desc" cols="60" rows="4">{$cat.cat_desc|escape}</textarea></td>
   </tr>
+
+  <tr>
+    <td class="label">分类内容</td>
+    <style>
+      #FCKeditor1___Frame {width: 300px; height: 50px; border: 1px solid #ccc;}
+    </style>
+    <td>{$FCKeditor}</td>
+  </tr>
+
   <tr>
     <td colspan="2" align="center"><br />
       <input type="submit" class="button" value="{$lang.button_submit}" />
