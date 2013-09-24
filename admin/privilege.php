@@ -58,7 +58,6 @@ if ($_REQUEST['act'] == 'login')
         $smarty->assign('gd_version', gd_version());
         $smarty->assign('random',     mt_rand());
     }
-    print_r($_SESSION);exit;
     $smarty->display('login.htm');
 }
 
@@ -144,13 +143,9 @@ elseif ($_REQUEST['act'] == 'signin')
         clear_cart();
 
         ecs_header("Location: ./index.php\n");
-
-        print_r($_SESSION);
-        exit;
     }
     else
     {
-        print_r($_SESSION);
         sys_msg($_LANG['login_faild'], 1);
     }
 }

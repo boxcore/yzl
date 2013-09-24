@@ -150,7 +150,8 @@ class ECS
      */
     function http()
     {
-        return (isset($_SERVER['HTTPS']) && (strtolower($_SERVER['HTTPS']) != 'off')) ? 'https://' : 'http://';
+        // return (isset($_SERVER['HTTPS']) && (strtolower($_SERVER['HTTPS']) != 'off')) ? 'https://' : 'http://';  // 解决在nginx 下 ecshop 后台登陆不上 问题
+        return (isset($_SERVER['HTTPS']) && (strtolower($_SERVER['HTTPS']) == 'on')) ? 'https://' : 'http://';
     }
 
     /**
