@@ -1,5 +1,5 @@
 <?php
-#Vars - written at 2013-09-23
+#Vars - written at 2013-09-24
 $dbhost="localhost";
 $dbname="ohmyface";
 $dbuser="ohmyface";
@@ -7,9 +7,9 @@ $dbpass="ohmyface";
 $dbport=3306;
 $dbsocket="";
 $compression=1;
-$backup_path="D:/AppServ/www/work/noface/data/msd/work/backup/";
-$logdatei="D:/AppServ/www/work/noface/data/msd/work/log/mysqldump_perl.log.gz";
-$completelogdatei="D:/AppServ/www/work/noface/data/msd/work/log/mysqldump_perl.complete.log.gz";
+$backup_path="/home/huangchunzhe/web/noface/data/msd/work/backup/";
+$logdatei="/home/huangchunzhe/web/noface/data/msd/work/log/mysqldump_perl.log.gz";
+$completelogdatei="/home/huangchunzhe/web/noface/data/msd/work/log/mysqldump_perl.complete.log.gz";
 $sendmail_call="/usr/lib/sendmail -t -oi -oem";
 $nl="\n";
 $cron_dbindex=-3;
