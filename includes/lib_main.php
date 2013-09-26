@@ -1809,6 +1809,11 @@ function article_categories_tree($cat_id = 0)
                 'FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
                 'LEFT JOIN ' . $GLOBALS['ecs']->table('article_cat') . ' AS b ON b.parent_id = a.cat_id ' .
                 "WHERE a.parent_id = '$parent_id' AND a.cat_type=1 ORDER BY parent_order ASC, a.cat_id ASC, child_order ASC";
+
+        // $sql = 'SELECT a.cat_id, a.cat_name, b.cat_id AS child_id, b.cat_name AS child_name, b.sort_order ' .
+        //         'FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
+        //         'LEFT JOIN ' . $GLOBALS['ecs']->table('article_cat') . ' AS b ON b.parent_id = a.cat_id ' .
+        //         "WHERE b.parent_id = '$parent_id' AND b.cat_type = 1 ORDER BY sort_order ASC";
     }
     else
     {
@@ -1820,6 +1825,76 @@ function article_categories_tree($cat_id = 0)
     }
     $res = $GLOBALS['db']->getAll($sql);
 
+    $cat_arr = array();
+    foreach ($res AS $row)
+    {
+        $cat_arr[$row['cat_id']]['id']   = $row['cat_id'];
+        $cat_arr[$row['cat_id']]['name'] = $row['cat_name'];
+        $cat_arr[$row['cat_id']]['url']  = build_uri('article_cat', array('acid' => $row['cat_id']), $row['cat_name']);
+
+        if ($row['child_id'] != NULL)
+        {
+            $cat_arr[$row['cat_id']]['children'][$row['child_id']]['id']   = $row['child_id'];
+            $cat_arr[$row['cat_id']]['children'][$row['child_id']]['name'] = $row['child_name'];
+            $cat_arr[$row['cat_id']]['children'][$row['child_id']]['url']  = build_uri('article_cat', array('acid' => $row['child_id']), $row['child_name']);
+        }
+    }
+
+    return $cat_arr;
+}
+
+/**
+ * 获得指定分类同级的所有分类以及该分类下的子分类
+ *
+ * @access  public
+ * @param   integer     $cat_id     分类编号
+ * @return  array
+ */
+function article_categories_tree1($cat_id = 0)
+{
+    if ($cat_id > 0)
+    {
+        $sql = 'SELECT parent_id FROM ' . $GLOBALS['ecs']->table('article_cat') . " WHERE cat_id = '$cat_id'";
+        $parent_id = $GLOBALS['db']->getOne($sql);
+    }
+    else
+    {
+        $parent_id = 0;
+    }
+
+    /*
+     判断当前分类中全是是否是底级分类，
+     如果是取出底级分类上级分类，
+     如果不是取当前分类及其下的子分类
+    */
+    $sql = 'SELECT count(*) FROM ' . $GLOBALS['ecs']->table('article_cat') . " WHERE parent_id = '$parent_id'";
+    if ($GLOBALS['db']->getOne($sql))
+    {
+        
+        if($parent_id == 0){
+            /* 获取当前分类及其子分类 */
+            $sql = 'SELECT a.cat_id, a.cat_name, a.sort_order AS parent_order, a.cat_id, ' .
+                        'b.cat_id AS child_id, b.cat_name AS child_name, b.sort_order AS child_order ' .
+                    'FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
+                    'LEFT JOIN ' . $GLOBALS['ecs']->table('article_cat') . ' AS b ON b.parent_id = a.cat_id ' .
+                    "WHERE a.cat_id = '$cat_id' AND a.cat_type=1 ORDER BY parent_order ASC, a.cat_id ASC, child_order ASC";
+        } else {
+            /* 获取当前分类及其父分类 */
+            $sql = 'SELECT a.cat_id, a.cat_name, b.cat_id AS child_id, b.cat_name AS child_name, b.sort_order ' .
+                'FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
+                'LEFT JOIN ' . $GLOBALS['ecs']->table('article_cat') . ' AS b ON b.parent_id = a.cat_id ' .
+                "WHERE b.parent_id = '$parent_id' AND b.cat_type = 1 ORDER BY sort_order ASC";
+        }
+    }
+    else
+    {
+        /* 获取当前分类及其父分类 */
+        $sql = 'SELECT a.cat_id, a.cat_name, b.cat_id AS child_id, b.cat_name AS child_name, b.sort_order ' .
+                'FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
+                'LEFT JOIN ' . $GLOBALS['ecs']->table('article_cat') . ' AS b ON b.parent_id = a.cat_id ' .
+                "WHERE b.parent_id = '$parent_id' AND b.cat_type = 1 ORDER BY sort_order ASC";
+    }
+    $res = $GLOBALS['db']->getAll($sql);
     $cat_arr = array();
     foreach ($res AS $row)
     {

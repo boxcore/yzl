@@ -31,6 +31,18 @@ $smarty->assign('affiliate', $affiliate);
 
 $goods_id = isset($_REQUEST['id'])  ? intval($_REQUEST['id']) : 0;
 
+/* 代码增加_start By thunje#URLdf */
+if ($goods_id==0)
+{
+    if (!empty($_REQUEST['defurl']))
+    {
+        $define_url=trim($_REQUEST['defurl']);
+        $goods_id=$db->getOne("select goods_id from ". $ecs->table("goods")." where define_url='$define_url' " );
+        $goods_id=$goods_id ? $goods_id : intval($_REQUEST['defurl']);
+    }
+}
+/* 代码增加_end By thunje#URLdf */
+
 /*------------------------------------------------------ */
 //-- 改变属性、数量时重新计算商品价格
 /*------------------------------------------------------ */

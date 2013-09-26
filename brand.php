@@ -31,6 +31,16 @@ if (!empty($_REQUEST['id']))
 {
     $brand_id = intval($_REQUEST['id']);
 }
+
+/* 代码增加_start  By thunje#URLdf */
+elseif(!empty($_REQUEST['defurl']))
+{
+	$define_url=trim($_REQUEST['defurl']);
+	$brand_id=$db->getOne("select brand_id from ". $ecs->table('brand') ." where define_url='$define_url' limit 0,1");
+	$brand_id=$brand_id ? $brand_id : 0;
+}
+/* 代码增加_end  By thunje#URLdf */
+
 if (!empty($_REQUEST['brand']))
 {
     $brand_id = intval($_REQUEST['brand']);

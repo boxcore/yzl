@@ -92,6 +92,15 @@ elseif ($_REQUEST['act'] == 'insert')
         sys_msg(sprintf($_LANG['catname_exist'], stripslashes($_POST['cat_name'])), 1);
     }
 
+
+	 /* 代码增加_start By thunje#URLdf */
+    $is_only_url = $exc->is_only('define_url', $_POST['define_url']);
+    if (!$is_only_url)
+    {
+        sys_msg(sprintf('您输入的自定义URL已经存在', stripslashes($_POST['define_url'])), 1);
+    }
+	/* 代码增加_end By thunje#URLdf */
+
     $cat_type = 1;
     if ($_POST['parent_id'] > 0)
     {
@@ -107,6 +116,10 @@ elseif ($_REQUEST['act'] == 'insert')
         }
     }
 
+	/* 代码修改_start By thunje#URLdf */
+    $sql = "INSERT INTO ".$ecs->table('article_cat')."(cat_name, cat_type, cat_desc,keywords, parent_id, sort_order, show_in_nav, define_url)
+           VALUES ('$_POST[cat_name]', '$cat_type',  '$_POST[cat_desc]','$_POST[keywords]', '$_POST[parent_id]', '$_POST[sort_order]', '$_POST[show_in_nav]', '$_POST[define_url]')";
+	/* 代码修改_end By thunje#URLdf */
 
     $sql = "INSERT INTO ".$ecs->table('article_cat')."(cat_name, cat_type, cat_desc, cat_detail, keywords, parent_id, sort_order, show_in_nav)
            VALUES ('$_POST[cat_name]', '$cat_type', '$_POST[cat_desc]', '$_POST[cat_detail]', '$_POST[keywords]', '$_POST[parent_id]', '$_POST[sort_order]', '$_POST[show_in_nav]')";
@@ -140,8 +153,11 @@ elseif ($_REQUEST['act'] == 'edit')
     /* 权限判断 */
     admin_priv('article_cat');
 
-    $sql = "SELECT cat_id, cat_name, cat_type, cat_desc, cat_detail, show_in_nav, keywords, parent_id,sort_order FROM ".
+	/* 代码修改_start By thunje#URLdf */
+    $sql = "SELECT cat_id, cat_name, cat_type, cat_desc, cat_detail, show_in_nav, keywords, parent_id,sort_order, define_url FROM ".
            $ecs->table('article_cat'). " WHERE cat_id='$_REQUEST[id]'";
+	/* 代码修改_end By thunje#URLdf */
+
     $cat = $db->GetRow($sql);
 
     if ($cat['cat_type'] == 2 || $cat['cat_type'] == 3 || $cat['cat_type'] ==4)
@@ -197,6 +213,18 @@ elseif ($_REQUEST['act'] == 'update')
         }
     }
 
+	/* 代码增加_start  By thunje#URLdf */
+    if ($_POST['define_url'] != $_POST['old_define_url'])
+    {
+        $is_only_url = $exc->is_only('define_url', $_POST['define_url'], $_POST['id']);
+
+        if (!$is_only_url)
+        {
+            sys_msg(sprintf('您输入的自定义URL已经存在，请换一个', stripslashes($_POST['define_url'])), 1);
+        }
+    }
+	/* 代码增加_end  By thunje#URLdf */
+
     if(!isset($_POST['parent_id']))
     {
         $_POST['parent_id'] = 0;
@@ -245,7 +273,9 @@ elseif ($_REQUEST['act'] == 'update')
     }
 
     $dat = $db->getOne("SELECT cat_name, show_in_nav FROM ". $ecs->table('article_cat') . " WHERE cat_id = '" . $_POST['id'] . "'");
-    if ($exc->edit("cat_name = '$_POST[cat_name]', cat_desc ='$_POST[cat_desc]', cat_detail ='$_POST[cat_detail]', keywords='$_POST[keywords]',parent_id = '$_POST[parent_id]', cat_type='$cat_type', sort_order='$_POST[sort_order]', show_in_nav = '$_POST[show_in_nav]'",  $_POST['id']))
+
+	/* 下面这行代码有修改 By thunje#URLdf */
+    if ($exc->edit("cat_name = '$_POST[cat_name]', cat_desc ='$_POST[cat_desc]',cat_detail ='$_POST[cat_detail]', keywords='$_POST[keywords]',parent_id = '$_POST[parent_id]', cat_type='$cat_type', sort_order='$_POST[sort_order]', show_in_nav = '$_POST[show_in_nav]', define_url='$_POST[define_url]' ",  $_POST['id']))
     {
         if($_POST['cat_name'] != $dat['cat_name'])
         {

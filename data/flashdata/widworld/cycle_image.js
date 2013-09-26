@@ -1,6 +1,6 @@
 /*
-Flash Name: Pink Focus
-Description: 粉红聚焦Flash图片轮播
+Flash Name: Wid World
+Description: 宽屏广告
 */
 document.write('<div id="flash_cycle_image"></div>');
 $importjs = (function()
@@ -56,7 +56,7 @@ function show_flash()
     var focus_height = swf_height - text_height;
     var total_height = focus_height + text_height;
 
-    document.getElementById('flash_cycle_image').innerHTML = '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ focus_width +'" height="'+ total_height +'">'+'<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="data/flashdata/pinkfocus/pinkfocus.swf"><param name="quality" value="high"><param name="bgcolor" value="#F0F0F0">'+'<param name="menu" value="false"><param name=wmode value="opaque">'+'<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'">'+'<embed src="data/flashdata/pinkfocus/pinkfocus.swf" FlashVars="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'" quality="high" width="'+ focus_width +'" height="'+ total_height +'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="transparent"/>'+'</object>';
+    document.getElementById('flash_cycle_image').innerHTML = '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ focus_width +'" height="'+ total_height +'">'+'<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="data/flashdata/redfocus/redfocus.swf"><param name="quality" value="high"><param name="bgcolor" value="#F0F0F0">'+'<param name="menu" value="false"><param name=wmode value="opaque">'+'<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'">'+'<embed src="data/flashdata/redfocus/redfocus.swf" FlashVars="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'" quality="high" width="'+ focus_width +'" height="'+ total_height +'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="transparent"/>'+'</object>';
 }
 
-$importjs('data/flashdata/pinkfocus/data.js', show_flash);
+$importjs('data/flashdata/redfocus/data.js', show_flash);

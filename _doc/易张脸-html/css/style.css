@@ -318,6 +318,8 @@ a:link,a:visited{ text-decoration:none;}
 .inner_bottom{margin-bottom:710px;}
 .inner_bottomone{margin-bottom:864px;}
 .inner_bottomtwo{margin-bottom:764px;}
+.inner_bottomthree{margin-bottom:980px;}
+.inner_bottomfour{margin-bottom:1340px; _margin-bottom:1380px;}
 .experience_box{width:975px; background:url(../images/innner_banner_bg.png) no-repeat; height:644px; margin:0 auto; top:282px; position:absolute; left:242px;}
 .experience_box .experience_text{width:880px; overflow:hidden; position:absolute; left:60px; top:190px;}
 .experience_box h2{font-size:16px; color:#c0a371; font-weight:normal;  font-family:"方正正纤黑简体" "微软雅黑"; height:25px; line-height:25px;}
@@ -526,7 +528,77 @@ c .progress li{float:left; width:170px;}
 /*皮肤检测第四步*/
 .skin_detection .four_steps{color:#eb392e; font-size:16px; width:690px; height:60px; background:url(../images/red_heart.jpg) no-repeat 0px 6px; padding-left:20px;}
 .skin_detection .three_steps{font-size:18px; color:#916553; font-weight:normal; background:url(../images/heart.jpg) no-repeat left center; padding-left:20px;}
-.skin_detection .three_steps_box{width:764px; height:286px; border-radius:5px; background:#eee0cb; margin-top:20px;}
+.skin_detection .three_steps_box{width:712px; height:286px; border-radius:5px; background:#eee0cb; margin-top:20px; color:#916553; padding:0px 26px;}
+.skin_detection .three_steps_box h3{font-size:16px; font-weight:normal; height:50px; line-height:50px;}
+.skin_detection .three_steps_box p{font-size:14px; line-height:20px; margin-bottom:16px;}
+.skin_detection .keep_point{width:740px; height:33px; background:#916553; border-radius:5px; margin:22px 0; padding-left:24px; color:#eee0cb; line-height:33px;}
+.skin_detection .three_steps_godds{ border:1px solid #eee0cb; border-collapse:collapse;}
+.skin_detection .three_steps_godds td{border:1px solid #eee0cb;  text-align:center; width:190px;}
+.skin_detection .three_steps_godds td p{padding-bottom:20px; width:167px; height:42px; text-align:left; padding-left:16px;}
+.skin_detection .three_steps_godds td p a{color:#666; font-size:14px;}
+.skin_detection .three_steps_godds td p span a{color:#999999; font-size:12px;}
+\.skin_detection .three_steps_godds th{ text-align:left; font-weight:normal; font-size:16px; color:#916553; padding-left:24px; height:35px;}
+/*皮肤急救中心*/
+.skin_center{width:970px; background:url(../images/innner_banner_bg2.png) no-repeat; height:644px; margin:0 auto; top:282px; position:absolute; left:242px; padding:40px 0 0 50px;}
+.skin_center .skin_tittle{width:866px; height:100px; border-bottom:1px dashed #eb392e; background:url(../images/skincenter_tittle.jpg) no-repeat;}
+.skin_center .skin_tittle h1{font-size:48px; font-family:"方正正纤黑简体","微软雅黑"; padding-left:120px; padding-top:12px; color:#eb392e; font-weight:normal;}
+.skin_center .skin_tittle p{font-size:14px; font-family:"方正正纤黑简体","微软雅黑"; color:#eb392e; padding-left:120px; margin-top:3px;}
+.first_aid_onestep{width:820px; overflow:hidden; padding-top:50px; *padding-top:100px;}
+.first_aid_onestep .onestep_inner .top{width:713px; height:10px; background:url(../images/aid_bg1.jpg) no-repeat;}
+.first_aid_onestep .onestep_inner .center{width:713px; overflow:hidden; background:url(../images/aid_bg2.jpg) repeat-y;}
+.first_aid_onestep .onestep_inner .bottom{width:713px; height:14px; background:url(../images/aid_bg2-03.jpg) no-repeat;}
+.first_aid_onestep .onestep_inner{ margin:70px 0 0 110px; position:relative;}
+.first_aid_onestep .onestep_inner span{float:left;}
+.first_aid_onestep .onestep_inner .arrows{margin:80px 0 0 25px;}
+.first_aid_onestep .onestep_inner .pic{ position:absolute; left:-92px; top:-84px;}
+.first_aid_onestep .onestep_inner .middle{width:496px; height:122px; background:url(../images/skin_aid_a.jpg) no-repeat -1px 54px; float:left; padding:32px 0 32px 48px; margin-left:65px; _margin-left:30px;}
+.first_aid_onestep .onestep_inner .middle_twostep{background:url(../images/skin_aid_b.jpg) no-repeat 8px 54px;}
+.first_aid_onestep .onestep_inner .middle_threestep{background:url(../images/skin_aid_c.jpg) no-repeat 5px 54px;}
+.first_aid_onestep .onestep_inner .middle_fourstep{background:url(../images/skin_aid_d.jpg) no-repeat 8px 54px;}
+.first_aid_onestep .onestep_inner .middle_fivestep{background:url(../images/skin_aid_e.jpg) no-repeat 8px 54px;}
+.first_aid_onestep .onestep_inner .middle .innerbox{width:460px; height:120px; border:1px dashed #fa6c67; padding-left:32px;}
+.first_aid_onestep .onestep_inner .middle .innerbox h2{font-size:24px; color:#fa6c67; height:48px; line-height:48px; font-weight:normal; margin:5px 0 6px;}
+.first_aid_onestep .onestep_inner .middle .innerbox p{font-size:14px; color:#fa6c67; line-height:20px;}
+/*皮肤急救中心隐藏*/
+.first_aid_onestep .onestep_inner .innerbox_hidden{width:575PX; overflow:hidden;padding-left:63px; display:none;}
+.first_aid_onestep .onestep_inner .innerbox_hidden h1{width:560px; height:23px; background:#f1e3cf; border-radius:5px; font-size:16px; color:#fa6c67; font-weight:normal; padding-left:15px; }
+.first_aid_onestep .onestep_inner .innerbox_hidden h1 span{background:url(../images/aid_tittle_icon.jpg) no-repeat left center; padding-left:10px;}
+.first_aid_onestep .onestep_inner .innerbox_hidden .product{margin-top:24px; width:575px; overflow:hidden; border-left:1px solid #eee0cb; margin-bottom:52px;}
+.first_aid_onestep .onestep_inner .innerbox_hidden .product li{ border-right:1px solid #eee0cb;border-top:1px solid #eee0cb;border-bottom:1px solid #eee0cb; background:#fff; width:190px; color:#666; font-size:16px; overflow:hidden; text-align:center; padding-top:22px; float:left;}
+.innerbox_hidden .product li p{ font-size:16px; text-align:left; padding-left:22px; margin:22px 0; height:40px;}
+.innerbox_hidden .product li p a{color:#666;}
+.innerbox_hidden .product li p span a{font-size:12px; color:#999;}
+/*花本养肤堂*/
+.inner_content .companynew_list .the_flower{width:293px; height:24px; background:url(../images/the_flower.jpg) no-repeat;}
+.inner_content .companynew_list .the_flower_box{width:698px; overflow:hidden;border-left:1px solid #eb392e;border-top:1px solid #eb392e; margin-bottom:20px;}
+.inner_content .companynew_list .the_flower_box li{ position:relative; border-right:1px solid #eb392e;border-bottom:1px solid #eb392e; padding:3px; float:left;}
+.inner_content .companynew_list .the_flower_box .one{width:7px; height:7px;background:url(../images/circle_one.jpg) no-repeat left top; display:block; position:absolute; left:0px; top:0px; z-index:-1;}
+.inner_content .companynew_list .the_flower_box .two{width:7px; height:7px; background:url(../images/circle_two.jpg) no-repeat left top; display:block; position:absolute; right:0px; top:0px; z-index:-1;}
+.inner_content .companynew_list .the_flower_box .three{width:7px; height:7px; background:url(../images/circle_three.jpg) no-repeat left top; display:block; position:absolute; left:0px; bottom:0px; z-index:-1;}
+.inner_content .companynew_list .the_flower_box .four{width:7px; height:7px; background:url(../images/circle_four.jpg) no-repeat left top; display:block; position:absolute; right:0px; bottom:0px; z-index:-1;}
+.inner_content .companynew_list .the_flower_box img{display:block;}
+/**/
+.inner_content .companynew_list .the_flower_inner{width:683px; overflow:hidden;border:1px solid #c8b28b; position:relative; margin-top:36px; padding:3px 3px 40px 3px;}
+.inner_content .flower_inner_one{width:7px; height:7px;background:url(../images/circle_yellow_one.jpg) no-repeat left top; display:block; position:absolute; left:0px; top:0px; z-index:-1;}
+.inner_content .flower_inner_two{width:7px; height:7px;background:url(../images/circle_yellow_two.jpg) no-repeat; display:block; position:absolute; right:0px; top:0px; z-index:-1;}
+.inner_content .product_recommend{width:690px; overflow:hidden; border:1px solid #c9b18b; border-collapse:collapse; margin-top:36px; position:relative; margin-bottom:30px;}
+.inner_content .product_recommend td{border:1px solid #c9b18b;text-align:center; width:230px; height:274px;}
+.inner_content .product_recommend th{border:1px solid #c9b18b; font-size:15px; color:#b68e76; font-weight:normal; height:23px; line-height:23px;}
+.inner_content .product_recommend td p{padding-bottom:20px; width:167px; height:42px; text-align:left; padding-left:16px;}
+.inner_content .product_recommend td p a{color:#666; font-size:14px;}
+.inner_content .product_recommend td p span a{color:#999999; font-size:12px;}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

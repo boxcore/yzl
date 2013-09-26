@@ -1509,8 +1509,11 @@ function build_uri($app, $params, $append = '', $page = 0, $keywords = '', $size
             {
                 if ($rewrite)
                 {
-                    $uri = 'category-' . $cid;
-                    if (isset($bid))
+					/* 代码修改_start  By thunje#URLdf */
+					$define_url=$GLOBALS['db']->getOne("select define_url from ". $GLOBALS['ecs']->table("category") ." where cat_id='$cid' limit 0,1");
+                    $uri = $define_url ? trim($define_url) : 'category-' . $cid;
+                    if (isset($bid) && !empty($bid))
+					/* 代码修改_end  By thunje#URLdf */
                     {
                         $uri .= '-b' . $bid;
                     }
@@ -1582,7 +1585,13 @@ function build_uri($app, $params, $append = '', $page = 0, $keywords = '', $size
             }
             else
             {
-                $uri = $rewrite ? 'goods-' . $gid : 'goods.php?id=' . $gid;
+				/* 代码修改_start By thunje#URLdf */
+				$sql="select  c.cat_id, c.define_url , g.define_url AS goods_url from ". $GLOBALS['ecs']->table('goods') ."	AS g left join " . $GLOBALS['ecs']->table('category') . " AS c on g.cat_id=c.cat_id where g.goods_id='$gid' limit 0,1";
+				$cat_array = $GLOBALS['db']->getRow($sql);
+				$define_url_cat = $cat_array['define_url'] ? $cat_array['define_url'].'/' : 'category-'.$cat_array['cat_id'].'/';
+				$define_url_goods = $cat_array['goods_url'] ? $cat_array['goods_url'] : $gid ;
+                $uri = $rewrite ?  ($define_url_cat . $define_url_goods) : ('goods.php?id=' . $gid);
+				/* 代码修改_end By thunje#URLdf */
             }
 
             break;
@@ -1595,8 +1604,11 @@ function build_uri($app, $params, $append = '', $page = 0, $keywords = '', $size
             {
                 if ($rewrite)
                 {
-                    $uri = 'brand-' . $bid;
-                    if (isset($cid))
+					/* 代码修改_start  By thunje#URLdf */
+					$define_url_brand=$GLOBALS['db']->getOne("select define_url from ". $GLOBALS['ecs']->table("brand") ." where brand_id='$bid' limit 0,1");
+                    $uri = $define_url_brand ? 'brand-'. trim($define_url_brand) : 'brand-' . $bid;
+                    if (isset($cid) && !empty($cid))
+					/* 代码修改_end  By thunje#URLdf */
                     {
                         $uri .= '-c' . $cid;
                     }
@@ -1645,7 +1657,11 @@ function build_uri($app, $params, $append = '', $page = 0, $keywords = '', $size
             {
                 if ($rewrite)
                 {
-                    $uri = 'article_cat-' . $acid;
+					/* 代码修改_start  By thunje#URLdf */
+					$define_url_article_cat=$GLOBALS['db']->getOne("select define_url from ". $GLOBALS['ecs']->table("article_cat") ." where cat_id='$acid' limit 0,1");
+                    $uri = $define_url_article_cat ? 'article-'. trim($define_url_article_cat) : 'article-' . $acid;
+					/* 代码修改_end  By thunje#URLdf */
+
                     if (!empty($page))
                     {
                         $uri .= '-' . $page;
@@ -1693,7 +1709,13 @@ function build_uri($app, $params, $append = '', $page = 0, $keywords = '', $size
             }
             else
             {
-                $uri = $rewrite ? 'article-' . $aid : 'article.php?id=' . $aid;
+
+				/* 代码修改_start By thunje#URLdf */
+				$sql="select ac.cat_id, ac.define_url from ". $GLOBALS['ecs']->table('article') ."	AS a left join " . $GLOBALS['ecs']->table('article_cat') . " AS ac on a.cat_id=ac.cat_id where a.article_id='$aid' limit 0,1";
+				$cat_array = $GLOBALS['db']->getRow($sql);
+				$define_url_artcat = $cat_array['define_url'] ? 'article-'.$cat_array['define_url'].'/' : 'article-'.$cat_array['cat_id'].'/';
+                $uri = $rewrite ?  $define_url_artcat .  $aid : 'article.php?id=' . $aid;
+				/* 代码修改_end By thunje#URLdf */
             }
 
             break;
@@ -1807,7 +1829,17 @@ function build_uri($app, $params, $append = '', $page = 0, $keywords = '', $size
             $uri .= '-' . urlencode(preg_replace('/[\.|\/|\?|&|\+|\\\|\'|"|,]+/', '', $append));
         }
 
-        $uri .= '.html';
+		/* 代码修改_start By thunje#URLdf */
+        if($app == 'category' or $app == 'brand' or $app == 'article_cat')
+		{
+			$uri .= '/';
+		}
+		else
+		{
+			$uri .= '.html';
+		}
+		/* 代码修改_end By thunje#URLdf */
+
     }
     if (($rewrite == 2) && (strpos(strtolower(EC_CHARSET), 'utf') !== 0))
     {

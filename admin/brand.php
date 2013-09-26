@@ -71,6 +71,14 @@ elseif ($_REQUEST['act'] == 'insert')
         sys_msg(sprintf($_LANG['brandname_exist'], stripslashes($_POST['brand_name'])), 1);
     }
 
+	/* 代码增加_start By thunje#URLdf */
+	$is_only_url = $exc->is_only('define_url', $_POST['define_url']);
+    if (!$is_only_url)
+    {
+        sys_msg(sprintf('您输入的自定义URL已经存在，请换一个重新输入', stripslashes($_POST['define_url'])), 1);
+    }
+	/* 代码增加_end By thunje#URLdf */
+
     /*对描述处理*/
     if (!empty($_POST['brand_desc']))
     {
@@ -85,8 +93,11 @@ elseif ($_REQUEST['act'] == 'insert')
 
     /*插入数据*/
 
-    $sql = "INSERT INTO ".$ecs->table('brand')."(brand_name, site_url, brand_desc, brand_logo, is_show, sort_order) ".
-           "VALUES ('$_POST[brand_name]', '$site_url', '$_POST[brand_desc]', '$img_name', '$is_show', '$_POST[sort_order]')";
+	/* 代码修改_start By thunje#URLdf */
+    $sql = "INSERT INTO ".$ecs->table('brand')."(brand_name, site_url, brand_desc, brand_logo, is_show, sort_order, define_url) ".
+           "VALUES ('$_POST[brand_name]', '$site_url', '$_POST[brand_desc]', '$img_name', '$is_show', '$_POST[sort_order]', '$_POST[define_url]')";
+	/* 代码修改_end By thunje#URLdf */
+
     $db->query($sql);
 
     admin_log($_POST['brand_name'],'add','brand');
@@ -110,8 +121,10 @@ elseif ($_REQUEST['act'] == 'edit')
 {
     /* 权限判断 */
     admin_priv('brand_manage');
-    $sql = "SELECT brand_id, brand_name, site_url, brand_logo, brand_desc, brand_logo, is_show, sort_order ".
+	/* 代码修改_start By thunje#URLdf */
+    $sql = "SELECT brand_id, brand_name, site_url, brand_logo, brand_desc, brand_logo, is_show, sort_order , define_url ".
             "FROM " .$ecs->table('brand'). " WHERE brand_id='$_REQUEST[id]'";
+	/* 代码修改_end By thunje#URLdf */
     $brand = $db->GetRow($sql);
 
     $smarty->assign('ur_here',     $_LANG['brand_edit']);
@@ -122,6 +135,7 @@ elseif ($_REQUEST['act'] == 'edit')
     assign_query_info();
     $smarty->display('brand_info.htm');
 }
+
 elseif ($_REQUEST['act'] == 'updata')
 {
     admin_priv('brand_manage');
@@ -136,6 +150,18 @@ elseif ($_REQUEST['act'] == 'updata')
         }
     }
 
+	/* 代码增加_start By thunje#URLdf */
+	 if ($_POST['define_url'] != $_POST['old_define_url'])
+    {
+        /*检查自定义URL是否相同*/
+        $is_only_url = $exc->is_only('define_url', $_POST['define_url'], $_POST['id']);
+        if (!$is_only_url)
+        {
+            sys_msg(sprintf('您输入的自定义URL已经存在，请换一个', stripslashes($_POST['define_url'])), 1);
+        }
+    }
+	/* 代码增加_end By thunje#URLdf */
+
     /*对描述处理*/
     if (!empty($_POST['brand_desc']))
     {
@@ -148,7 +174,11 @@ elseif ($_REQUEST['act'] == 'updata')
 
     /* 处理图片 */
     $img_name = basename($image->upload_image($_FILES['brand_logo'],'brandlogo'));
-    $param = "brand_name = '$_POST[brand_name]',  site_url='$site_url', brand_desc='$_POST[brand_desc]', is_show='$is_show', sort_order='$_POST[sort_order]' ";
+
+	/* 代码修改_start By thunje#URLdf */
+    $param = "brand_name = '$_POST[brand_name]',  site_url='$site_url', brand_desc='$_POST[brand_desc]', is_show='$is_show', sort_order='$_POST[sort_order]', define_url='$_POST[define_url]' ";
+	/* 代码修改_end By thunje#URLdf */
+
     if (!empty($img_name))
     {
         //有图片上传

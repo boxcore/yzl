@@ -35,6 +35,14 @@ elseif (isset($_REQUEST['category']))
 {
     $cat_id = intval($_REQUEST['category']);
 }
+/* 代码增加_start  By thunje#URLdf */
+elseif(isset($_REQUEST['defurl']))
+{
+	$define_url=trim($_REQUEST['defurl']);
+	$cat_id=$db->getOne("select cat_id from ". $ecs->table('category') ." where define_url='$define_url' limit 0,1");
+	$cat_id=$cat_id ? $cat_id : 0;
+}
+/* 代码增加_end  By thunje#URLdf */
 else
 {
     /* 如果分类ID为0，则返回首页 */

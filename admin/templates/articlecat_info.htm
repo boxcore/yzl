@@ -29,6 +29,18 @@
       <input type="radio" name="show_in_nav" value="0" {if $cat.show_in_nav eq 0} checked="true"{/if} /> {$lang.no}
     </td>
   </tr>
+
+   <!--代码增加 start By thunje#URLdf-->
+		  <tr>
+            <td class="label"><font color=#ff3300>自定义URL：</font></td>
+            <td>
+			<input type="text" name="define_url" value="{$cat.define_url}" size="30"  /><br><span class="notice-span" >只能输入数字、字母以及 _ ,除此之外不能输入其他字符
+			</span>
+			<input type="hidden" name="old_define_url" value="{$cat.define_url}" />
+			</td>
+          </tr>
+	<!--代码增加 end By thunje#URLdf-->
+
   <tr>
     <td class="label"><a href="javascript:showNotice('notice_keywords');" title="{$lang.form_notice}">
         <img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}"></a>{$lang.cat_keywords}</td>

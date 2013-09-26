@@ -120,12 +120,13 @@ if ($_REQUEST['act'] == 'insert')
     admin_priv('article_manage');
 
     /*检查是否重复*/
-    $is_only = $exc->is_only('title', $_POST['title'],0, " cat_id ='$_POST[article_cat]'");
+    // $is_only = $exc->is_only('title', $_POST['title'],0, " cat_id ='$_POST[article_cat]'");
+    // $is_only = '';
 
-    if (!$is_only)
-    {
-        sys_msg(sprintf($_LANG['title_exist'], stripslashes($_POST['title'])), 1);
-    }
+    // if (!$is_only)
+    // {
+    //     sys_msg(sprintf($_LANG['title_exist'], stripslashes($_POST['title'])), 1);
+    // }
 
     /* 取得文件地址 */
     $file_url = '';
@@ -230,12 +231,13 @@ if ($_REQUEST['act'] =='update')
     admin_priv('article_manage');
 
     /*检查文章名是否相同*/
-    $is_only = $exc->is_only('title', $_POST['title'], $_POST['id'], "cat_id = '$_POST[article_cat]'");
+    // $is_only = $exc->is_only('title', $_POST['title'], $_POST['id'], "cat_id = '$_POST[article_cat]'");
+    // $is_only = '';
 
-    if (!$is_only)
-    {
-        sys_msg(sprintf($_LANG['title_exist'], stripslashes($_POST['title'])), 1);
-    }
+    // if (!$is_only)
+    // {
+    //     sys_msg(sprintf($_LANG['title_exist'], stripslashes($_POST['title'])), 1);
+    // }
 
 
     if (empty($_POST['cat_id']))
@@ -315,7 +317,17 @@ elseif ($_REQUEST['act'] == 'edit_title')
     /* 检查文章标题是否重复 */
     if ($exc->num("title", $title, $id) != 0)
     {
-        make_json_error(sprintf($_LANG['title_exist'], $title));
+        // make_json_error(sprintf($_LANG['title_exist'], $title));
+        if ($exc->edit("title = '$title'", $id))
+        {
+            clear_cache_files();
+            admin_log($title, 'edit', 'article');
+            make_json_result(stripslashes($title));
+        }
+        else
+        {
+            make_json_error($db->error());
+        }
     }
     else
     {

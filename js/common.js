@@ -70,7 +70,7 @@ function addToCartResponse(result)
     {
       if (confirm(result.message))
       {
-        location.href = 'user.php?act=add_booking&id=' + result.goods_id + '&spec=' + result.product_spec;
+        location.href = '/user.php?act=add_booking&id=' + result.goods_id + '&spec=' + result.product_spec; //by thunje#URLdf
       }
     }
     // 没选规格，弹出属性选择框
@@ -86,7 +86,7 @@ function addToCartResponse(result)
   else
   {
     var cartInfo = document.getElementById('ECS_CARTINFO');
-    var cart_url = 'flow.php?step=cart';
+    var cart_url = '/flow.php?step=cart'; //by thunje#URLdf
     if (cartInfo)
     {
       cartInfo.innerHTML = result.content;
@@ -683,11 +683,11 @@ function pmwin(action, param)
     $$('pmlayer').style.top = ((clientHeight - pmheight) / 2 + scrollTop) + 'px';
     if(!param)
     {
-        pmframe.location = 'pm.php';
+        pmframe.location = '/pm.php'; //by thunje#URLdf
     }
     else
     {
-        pmframe.location = 'pm.php?' + param;
+        pmframe.location = '/pm.php?' + param; //by thunje#URLdf
     }
   }
   else if(action == 'close')
@@ -769,7 +769,7 @@ function addPackageToCartResponse(result)
     {
       if (confirm(result.message))
       {
-        location.href = 'user.php?act=add_booking&id=' + result.goods_id;
+        location.href = '/user.php?act=add_booking&id=' + result.goods_id; //by thunje#URLdf
       }
     }
     else
@@ -780,7 +780,7 @@ function addPackageToCartResponse(result)
   else
   {
     var cartInfo = document.getElementById('ECS_CARTINFO');
-    var cart_url = 'flow.php?step=cart';
+    var cart_url = '/flow.php?step=cart'; //by thunje#URLdf
     if (cartInfo)
     {
       cartInfo.innerHTML = result.content;

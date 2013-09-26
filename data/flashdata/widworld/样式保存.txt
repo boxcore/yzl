@@ -1,0 +1,46 @@
+<!-- 代码 开始 -->
+    <div id="main">
+        <div id="index_b_hero">
+            <div class="hero-wrap">
+                <ul class="heros clearfix">
+                    <li class="hero">
+                        <a href="" target="_blank" title="第一张图的说明">
+                            <img src="images/1.jpg" class="thumb" alt="" width="980" />
+                        </a>
+                    </li>
+                    <li class="hero">
+                        <a href="" target="_blank" title="第二张图的说明">
+                            <img src="images/2.jpg" class="thumb" alt="" width="980" />
+                        </a>
+                    </li>
+                    <li class="hero">
+                        <a href="" target="_blank" title="第三张图的说明">
+                            <img src="images/3.jpg" class="thumb" alt="" width="980" />
+                        </a>
+                    </li>
+                    <li class="hero">
+                        <a href="" target="_blank" title="第4张图的说明">
+                            <img src="images/4.jpg" class="thumb" alt="" width="980" />
+                        </a>
+                    </li>
+                    <li class="hero">
+                        <a href="" target="_blank" title="第5张图的说明">
+                            <img src="images/3.jpg" class="thumb" alt="" width="980" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="helper">
+                <div class="mask-left">
+                </div>
+                <div class="mask-right">
+                </div>
+                <a class="prev icon-arrow-a-left"></a>
+                <a class="next icon-arrow-a-right"></a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $.foucs({ direction: 'left' });
+    </script>
+    <!-- 代码 结束 -->

@@ -126,6 +126,7 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
     $smarty->assign('new_articles',    index_get_new_articles());   // 最新文章
     $smarty->assign('group_buy_goods', index_get_group_buy());      // 团购商品
     $smarty->assign('auction_list',    index_get_auction());        // 拍卖活动
+    $smarty->assign('playerdb',        get_flash_xml());            // FLASHJS广告
     $smarty->assign('shop_notice',     $_CFG['shop_notice']);       // 商店公告
 
     /* 首页主广告设置 */
@@ -160,6 +161,30 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
 }
 
 $smarty->display('index.dwt', $cache_id);
+
+function get_flash_xml() 
+{ 
+    $flashdb = array(); 
+    if (file_exists(ROOT_PATH . DATA_DIR . '/flash_data.xml')) 
+    { 
+
+        // 兼容v2.7.0及以前版本 
+        if (!preg_match_all('/item_url="([^"]+)"\slink="([^"]+)"\stext="([^"]*)"\ssort="([^"]*)"/', file_get_contents(ROOT_PATH . DATA_DIR . '/flash_data.xml'), $t, PREG_SET_ORDER)) 
+        { 
+            preg_match_all('/item_url="([^"]+)"\slink="([^"]+)"\stext="([^"]*)"/', file_get_contents(ROOT_PATH . DATA_DIR . '/flash_data.xml'), $t, PREG_SET_ORDER); 
+        } 
+
+        if (!empty($t)) 
+        { 
+            foreach ($t as $key => $val) 
+            { 
+                $val[4] = isset($val[4]) ? $val[4] : 0; 
+                $flashdb[] = array('src'=>$val[1],'url'=>$val[2],'text'=>$val[3],'sort'=>$val[4]); 
+            } 
+        } 
+    } 
+    return $flashdb; 
+}
 
 /*------------------------------------------------------ */
 //-- PRIVATE FUNCTIONS

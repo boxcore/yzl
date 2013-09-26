@@ -39,6 +39,17 @@ elseif (!empty($_GET['category']))
 {
     $cat_id = intval($_GET['category']);
 }
+
+/* 代码增加_start  By thunje#URLdf */
+elseif(!empty($_REQUEST['defurl']))
+{
+	$define_url=trim($_REQUEST['defurl']);
+	$cat_id=$db->getOne("select cat_id from ". $ecs->table('article_cat') ." where define_url='$define_url'  limit 0,1");
+	$cat_id=$cat_id ? $cat_id : intval($define_url);
+
+}
+/* 代码增加_end  By thunje#URLdf */
+
 else
 {
     ecs_header("Location: ./\n");
@@ -66,7 +77,7 @@ if (!$smarty->is_cached('article_cat.dwt', $cache_id))
     $smarty->assign('ur_here',              $position['ur_here']);   // 当前位置
 
     $smarty->assign('categories',           get_categories_tree(0)); // 分类树
-    $smarty->assign('article_categories',   article_categories_tree($cat_id)); //文章分类树
+    $smarty->assign('article_categories',   article_categories_tree1($cat_id)); //文章分类树
     $smarty->assign('helps',                get_shop_help());        // 网店帮助
     $smarty->assign('top_goods',            get_top10());            // 销售排行
 
@@ -77,7 +88,7 @@ if (!$smarty->is_cached('article_cat.dwt', $cache_id))
     $smarty->assign('promotion_info', get_promotion_info());
 
     /* Meta */
-    $meta = $db->getRow("SELECT keywords, cat_desc FROM " . $ecs->table('article_cat') . " WHERE cat_id = '$cat_id'");
+    $meta = $db->getRow("SELECT keywords, cat_desc, cat_detail FROM " . $ecs->table('article_cat') . " WHERE cat_id = '$cat_id'");
 
     if ($meta === false || empty($meta))
     {
@@ -88,6 +99,7 @@ if (!$smarty->is_cached('article_cat.dwt', $cache_id))
 
     $smarty->assign('keywords',    htmlspecialchars($meta['keywords']));
     $smarty->assign('description', htmlspecialchars($meta['cat_desc']));
+    $smarty->assign('cat_detail', $meta['cat_detail']);
 
     /* 获得文章总数 */
     $size   = isset($_CFG['article_page_size']) && intval($_CFG['article_page_size']) > 0 ? intval($_CFG['article_page_size']) : 20;
@@ -120,6 +132,11 @@ if (!$smarty->is_cached('article_cat.dwt', $cache_id))
 
         $goon_keywords = urlencode($_REQUEST['keywords']);
     }
+    // echo $page,$count,$size;
+    $cat_page_info['tot_page'] = ceil($count/$size);
+    $cat_page_info['size'] = $size;
+    $cat_page_info['page'] = $page;
+    $smarty->assign('cat_page_info', $cat_page_info);
     $smarty->assign('artciles_list',    get_cat_articles($cat_id, $page, $size ,$keywords));
     $smarty->assign('cat_id',    $cat_id);
     /* 分页 */

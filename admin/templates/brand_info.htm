@@ -24,6 +24,19 @@
     </span>
     </td>
   </tr>
+
+  <!--代码增加 start By thunje#URLdf-->
+    <tr>
+       <td class="label"><font color=#ff3300>自定义URL：</font></td>
+      <td>
+	  <input type="text" name="define_url" value="{$brand.define_url}" size="30"  />
+	  <input type="hidden" name="old_define_url" value="{$brand.define_url}" />
+	  <br>
+	  <span class="notice-span">只允许输入数字、字母以及 _ ，除此外不允许输入其他字符</span>
+	  </td>
+      </tr>
+  <!--代码增加 end By thunje#URLdf-->
+
   <tr>
     <td class="label">{$lang.brand_desc}</td>
     <td><textarea  name="brand_desc" cols="60" rows="4"  >{$brand.brand_desc}</textarea></td>

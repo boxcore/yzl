@@ -47,6 +47,19 @@
           <input type="radio" name="show_in_nav" value="0" {if $cat_info.show_in_nav eq 0} checked="true"{/if} /> {$lang.no}
         </td>
       </tr>
+
+	  <!--´úÂëÔö¼Ó start By thunje#URLdf-->
+	   <tr>
+        <td class="label"><font color="#ff3300">×Ô¶¨ÒåURL:</font></td>
+        <td>
+          <input type="text" name="define_url" {if $cat_info.define_url}value="{$cat_info.define_url}"{else} value=""{/if} size="30" />
+		  <input type="hidden" name="old_define_url" value="{$cat_info.define_url}" />
+		  <br>
+		  <span class="notice-span" >ÀıÈçÄúÔÚÕâÀïÊäÈëÁË nanzhuang , ÄÇÃ´Ç°Ì¨·ÖÀàÒ³ÃæµÄ URL ¾ÍÊÇ http://www.xxx.com/nanzhuang/ </span>
+        </td>
+      </tr>
+	  <!--´úÂëÔö¼Ó end By thunje#URLdf-->
+
       <tr>
         <td class="label">{$lang.show_in_index}:</td>
         <td>
@@ -160,7 +173,7 @@
 <!--
 document.forms['theForm'].elements['cat_name'].focus();
 /**
- * æ£€æŸ¥è¡¨å•è¾“å…¥çš„æ•°æ®
+ * ¼ì²é±íµ¥ÊäÈëµÄÊı¾İ
  */
 function validate()
 {
@@ -174,12 +187,12 @@ function validate()
 }
 onload = function()
 {
-  // å¼€å§‹æ£€æŸ¥è®¢å•
+  // ¿ªÊ¼¼ì²é¶©µ¥
   startCheckOrder();
 }
 
 /**
- * æ–°å¢ä¸€ä¸ªç­›é€‰å±æ€§
+ * ĞÂÔöÒ»¸öÉ¸Ñ¡ÊôĞÔ
  */
 function addFilterAttr(obj)
 {
@@ -217,7 +230,7 @@ function addFilterAttr(obj)
 }
 
 /**
- * åˆ é™¤ä¸€ä¸ªç­›é€‰å±æ€§
+ * É¾³ıÒ»¸öÉ¸Ñ¡ÊôĞÔ
  */
 function removeFilterAttr(obj)
 {

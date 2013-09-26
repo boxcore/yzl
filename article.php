@@ -33,6 +33,9 @@ if(isset($_REQUEST['cat_id']) && $_REQUEST['cat_id'] < 0)
     $article_id = $db->getOne("SELECT article_id FROM " . $ecs->table('article') . " WHERE cat_id = '".intval($_REQUEST['cat_id'])."' ");
 }
 
+$cat_id = $db->getOne("SELECT cat_id FROM " . $ecs->table('article') . " WHERE article_id = '".intval($_REQUEST['id'])."' ");
+
+
 /*------------------------------------------------------ */
 //-- PROCESSOR
 /*------------------------------------------------------ */
@@ -55,8 +58,7 @@ if (!$smarty->is_cached('article.dwt', $cache_id))
         ecs_header("location:$article[link]\n");
         exit;
     }
-
-    $smarty->assign('article_categories',   article_categories_tree($article_id)); //文章分类树
+    $smarty->assign('article_categories',   article_categories_tree1($cat_id)); //文章分类树
     $smarty->assign('categories',       get_categories_tree());  // 分类树
     $smarty->assign('helps',            get_shop_help()); // 网店帮助
     $smarty->assign('top_goods',        get_top10());    // 销售排行
@@ -93,6 +95,7 @@ if (!$smarty->is_cached('article.dwt', $cache_id))
     $position = assign_ur_here($article['cat_id'], $article['title']);
     $smarty->assign('page_title',   $position['title']);    // 页面标题
     $smarty->assign('ur_here',      $position['ur_here']);  // 当前位置
+    $smarty->assign('cat_id',      $cat_id);  // 分类id
     $smarty->assign('comment_type', 1);
 
     /* 相关商品 */

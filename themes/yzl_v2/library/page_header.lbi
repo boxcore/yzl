@@ -2,7 +2,7 @@
   <div class="vitta"></div>
 <div class="head_box">
       <div class="top">
-        <div class="logo"><a href="#"><img src="images/logo.jpg" width="303" height="76"></a></div>
+        <div class="logo"><a href="index.php"><img src="images/logo.jpg" width="303" height="76"></a></div>
 <div class="right">
                 <div class="right_top_box">
                   <span  class="loading"><a href="#" class="loading_text">登陆</a>  <a href="#">  注册</a></span>
