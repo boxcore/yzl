@@ -1659,7 +1659,7 @@ function build_uri($app, $params, $append = '', $page = 0, $keywords = '', $size
                 {
 					/* 代码修改_start  By thunje#URLdf */
 					$define_url_article_cat=$GLOBALS['db']->getOne("select define_url from ". $GLOBALS['ecs']->table("article_cat") ." where cat_id='$acid' limit 0,1");
-                    $uri = $define_url_article_cat ? 'article-'. trim($define_url_article_cat) : 'article-' . $acid;
+                    $uri = $define_url_article_cat ? 'page/'. trim($define_url_article_cat) : 'page/' . $acid;
 					/* 代码修改_end  By thunje#URLdf */
 
                     if (!empty($page))
@@ -1713,8 +1713,9 @@ function build_uri($app, $params, $append = '', $page = 0, $keywords = '', $size
 				/* 代码修改_start By thunje#URLdf */
 				$sql="select ac.cat_id, ac.define_url from ". $GLOBALS['ecs']->table('article') ."	AS a left join " . $GLOBALS['ecs']->table('article_cat') . " AS ac on a.cat_id=ac.cat_id where a.article_id='$aid' limit 0,1";
 				$cat_array = $GLOBALS['db']->getRow($sql);
-				$define_url_artcat = $cat_array['define_url'] ? 'article-'.$cat_array['define_url'].'/' : 'article-'.$cat_array['cat_id'].'/';
-                $uri = $rewrite ?  $define_url_artcat .  $aid : 'article.php?id=' . $aid;
+				// $define_url_artcat = $cat_array['define_url'] ? 'article-'.$cat_array['define_url'].'/' : 'article-'.$cat_array['cat_id'].'/';
+                // $uri = $rewrite ?  $define_url_artcat .  $aid : 'article.php?id=' . $aid;
+                $uri = $rewrite ?  'article-' .  $aid : 'article.php?id=' . $aid;
 				/* 代码修改_end By thunje#URLdf */
             }
 
@@ -1830,10 +1831,15 @@ function build_uri($app, $params, $append = '', $page = 0, $keywords = '', $size
         }
 
 		/* 代码修改_start By thunje#URLdf */
-        if($app == 'category' or $app == 'brand' or $app == 'article_cat')
+        // if($app == 'category' or $app == 'brand' or $app == 'article_cat')
+        if($app == 'category' or $app == 'brand' )
 		{
 			$uri .= '/';
 		}
+        elseif( $app == 'article_cat' )
+        {
+            $uri .= '';
+        }
 		else
 		{
 			$uri .= '.html';

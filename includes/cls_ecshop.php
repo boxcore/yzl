@@ -18,9 +18,9 @@ if (!defined('IN_ECS'))
     die('Hacking attempt');
 }
 
-define('APPNAME', 'ECSHOP');
-define('VERSION', 'v2.7.3');
-define('RELEASE', '20121106');
+define('APPNAME', 'XO-SHOP');
+define('VERSION', 'v3.0');
+define('RELEASE', '20130927');
 
 class ECS
 {
