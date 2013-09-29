@@ -40,7 +40,7 @@ elseif(isset($_REQUEST['defurl']))
 {
 	$define_url=trim($_REQUEST['defurl']);
 	$cat_id=$db->getOne("select cat_id from ". $ecs->table('category') ." where define_url='$define_url' limit 0,1");
-	$cat_id=$cat_id ? $cat_id : 0;
+	$cat_id=$cat_id ? $cat_id : trim($_REQUEST['defurl']);
 }
 /* 代码增加_end  By thunje#URLdf */
 else
@@ -339,6 +339,8 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
     $smarty->assign('page_title',       $position['title']);    // 页面标题
     $smarty->assign('ur_here',          $position['ur_here']);  // 当前位置
 
+    $pager['styleid'] = 1;
+    $smarty->assign('pager',            $pager);      // 页面标志
     $smarty->assign('categories',       get_categories_tree($cat_id)); // 分类树
     $smarty->assign('helps',            get_shop_help());              // 网店帮助
     $smarty->assign('top_goods',        get_top10());                  // 销售排行

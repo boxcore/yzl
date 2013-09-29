@@ -281,6 +281,11 @@ if ($_REQUEST['act'] == 'update')
 	/* 增加代码_start By  thunje#URLdf */
 	$old_define_url        = $_POST['old_define_url'];
 	$cat['define_url']  = !empty($_POST['define_url'])  ? $_POST['define_url']: '';
+	if ( $cat['define_url'] == trim($cat['define_url']) )
+	{
+		$link[] = array('text' => $_LANG['go_back'], 'href' => 'javascript:history.back(-1)');
+        sys_msg('自定义URL不能为空！', 0, $link);
+	}
 	if ($cat['define_url'] != $old_define_url)
     {
 		$exist_define_url=$db->getOne("select count(*) from ". $ecs->table('category') ." where define_url='$cat[define_url]' ");

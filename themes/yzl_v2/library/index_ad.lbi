@@ -5,6 +5,10 @@
     <!-- {foreach from=$playerdb item=row} -->
     <div><a href="{$row.url}" target="_blank"><img src="{$row.src}" alt="{$row.text}" /></a></div>
     <!-- {/foreach}> -->
+    <span id="main_king_shaw">
+        <a class="prev icon-arrow-a-left"></a>
+        <a class="next icon-arrow-a-right"></a>
+    </span>
 </div>
 <!--/kinMaxShow-->
 <!-- {elseif $index_ad eq 'cus'} -->

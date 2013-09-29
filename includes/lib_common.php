@@ -1585,13 +1585,7 @@ function build_uri($app, $params, $append = '', $page = 0, $keywords = '', $size
             }
             else
             {
-				/* 代码修改_start By thunje#URLdf */
-				$sql="select  c.cat_id, c.define_url , g.define_url AS goods_url from ". $GLOBALS['ecs']->table('goods') ."	AS g left join " . $GLOBALS['ecs']->table('category') . " AS c on g.cat_id=c.cat_id where g.goods_id='$gid' limit 0,1";
-				$cat_array = $GLOBALS['db']->getRow($sql);
-				$define_url_cat = $cat_array['define_url'] ? $cat_array['define_url'].'/' : 'category-'.$cat_array['cat_id'].'/';
-				$define_url_goods = $cat_array['goods_url'] ? $cat_array['goods_url'] : $gid ;
-                $uri = $rewrite ?  ($define_url_cat . $define_url_goods) : ('goods.php?id=' . $gid);
-				/* 代码修改_end By thunje#URLdf */
+                $uri = $rewrite ? 'goods-' . $gid : 'goods.php?id=' . $gid;
             }
 
             break;

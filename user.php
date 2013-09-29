@@ -150,6 +150,7 @@ elseif ($action == 'act_register')
     else
     {
         include_once(ROOT_PATH . 'includes/lib_passport.php');
+        print_r($_POST); //debug
 
         $username = isset($_POST['username']) ? trim($_POST['username']) : '';
         $password = isset($_POST['password']) ? trim($_POST['password']) : '';
@@ -167,21 +168,21 @@ elseif ($action == 'act_register')
 
         if(empty($_POST['agreement']))
         {
-            show_message($_LANG['passport_js']['agreement']);
+            show_sign_msg($_LANG['passport_js']['agreement']);
         }
         if (strlen($username) < 3)
         {
-            show_message($_LANG['passport_js']['username_shorter']);
+            show_sign_msg($_LANG['passport_js']['username_shorter']);
         }
 
         if (strlen($password) < 6)
         {
-            show_message($_LANG['passport_js']['password_shorter']);
+            show_sign_msg($_LANG['passport_js']['password_shorter']);
         }
 
         if (strpos($password, ' ') > 0)
         {
-            show_message($_LANG['passwd_balnk']);
+            show_sign_msg($_LANG['passwd_balnk']);
         }
 
         /* 验证码检查 */
@@ -189,7 +190,7 @@ elseif ($action == 'act_register')
         {
             if (empty($_POST['captcha']))
             {
-                show_message($_LANG['invalid_captcha'], $_LANG['sign_up'], 'user.php?act=register', 'error');
+                show_sign_msg($_LANG['invalid_captcha'], $_LANG['sign_up'], 'user.php?act=register', 'error');
             }
 
             /* 检查验证码 */
@@ -198,7 +199,7 @@ elseif ($action == 'act_register')
             $validator = new captcha();
             if (!$validator->check_word($_POST['captcha']))
             {
-                show_message($_LANG['invalid_captcha'], $_LANG['sign_up'], 'user.php?act=register', 'error');
+                show_sign_msg($_LANG['invalid_captcha'], $_LANG['sign_up'], 'user.php?act=register', 'error');
             }
         }
 
@@ -238,7 +239,7 @@ elseif ($action == 'act_register')
                 send_regiter_hash($_SESSION['user_id']);
             }
             $ucdata = empty($user->ucdata)? "" : $user->ucdata;
-            show_message(sprintf($_LANG['register_success'], $username . $ucdata), array($_LANG['back_up_page'], $_LANG['profile_lnk']), array($back_act, 'user.php'), 'info');
+            show_sign_msg(sprintf($_LANG['register_success'], $username . $ucdata), array($_LANG['back_up_page'], $_LANG['profile_lnk']), array($back_act, 'user.php'), 'info', false, true);
         }
         else
         {

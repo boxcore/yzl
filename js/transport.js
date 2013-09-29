@@ -743,19 +743,17 @@ Ajax.onComplete = hideLoader;
  */
 function showLoader()
 {
-
   document.getElementsByTagName('body').item(0).style.cursor = "wait";
 
-  if (top.frames['header-frame'] && top.frames['header-frame'].document.getElementById("load-div"))
-  { 
+  if (top.frames['header-frame'])
+  {
     top.frames['header-frame'].document.getElementById("load-div").style.display = "block";
-
   }
   else
-  { 
+  {
     var obj = document.getElementById('loader');
 
-    if ( ! obj && typeof(process_request) != 'undefined')
+    if ( ! obj && process_request)
     {
       obj = document.createElement("DIV");
       obj.id = "loader";
@@ -772,7 +770,7 @@ function showLoader()
 function hideLoader()
 {
   document.getElementsByTagName('body').item(0).style.cursor = "auto";
-  if (top.frames['header-frame'] && top.frames['header-frame'].document.getElementById("load-div"))
+  if (top.frames['header-frame'])
   {
     setTimeout(function(){top.frames['header-frame'].document.getElementById("load-div").style.display = "none"}, 10);
   }
@@ -787,4 +785,20 @@ function hideLoader()
     catch (ex)
     {}
   }
+}
+
+
+
+
+
+//tank:修正与JQUERY库的冲突
+if (Object.prototype.toJSONString){ 
+	var oldToJSONString = Object.toJSONString; 
+	Object.prototype.toJSONString = function(){ 
+		if (arguments.length > 0){
+			return false;
+		}else{
+			return oldToJSONString.apply(this, arguments);
+		} 
+	} 
 }

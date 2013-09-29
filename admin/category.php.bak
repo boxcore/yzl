@@ -110,6 +110,16 @@ if ($_REQUEST['act'] == 'insert')
 
     $cat['cat_recommend']  = !empty($_POST['cat_recommend'])  ? $_POST['cat_recommend'] : array();
 
+	/* 增加代码_start  By  thunje#URLdf */
+	$cat['define_url']  = !empty($_POST['define_url'])  ? $_POST['define_url']: '';
+	$exist_define_url=$db->getOne("select count(*) from ". $ecs->table('category') ." where define_url='$cat[define_url]' ");
+    if ($exist_define_url)
+    {
+           $link[] = array('text' => $_LANG['go_back'], 'href' => 'javascript:history.back(-1)');
+           sys_msg('已经存在相同的自定义URL', 0, $link);
+     }
+	 /* 增加代码_end  By  thunje#URLdf */
+
     if (cat_exists($cat['cat_name'], $cat['parent_id']))
     {
         /* 同级别下不能有重复的分类名称 */
@@ -267,6 +277,25 @@ if ($_REQUEST['act'] == 'update')
     $cat['grade']        = !empty($_POST['grade'])        ? intval($_POST['grade'])      : 0;
     $cat['filter_attr']  = !empty($_POST['filter_attr'])  ? implode(',', array_unique(array_diff($_POST['filter_attr'],array(0)))) : 0;
     $cat['cat_recommend']  = !empty($_POST['cat_recommend'])  ? $_POST['cat_recommend'] : array();
+
+	/* 增加代码_start By  thunje#URLdf */
+	$old_define_url        = $_POST['old_define_url'];
+	$cat['define_url']  = !empty($_POST['define_url'])  ? $_POST['define_url']: '';
+	if ( empty($cat['define_url']) )
+	{
+		$link[] = array('text' => $_LANG['go_back'], 'href' => 'javascript:history.back(-1)');
+        sys_msg('自定义URL不能为空！', 0, $link);
+	}
+	if ($cat['define_url'] != $old_define_url)
+    {
+		$exist_define_url=$db->getOne("select count(*) from ". $ecs->table('category') ." where define_url='$cat[define_url]' ");
+        if ($exist_define_url)
+        {
+           $link[] = array('text' => $_LANG['go_back'], 'href' => 'javascript:history.back(-1)');
+           sys_msg('已经存在相同的自定义URL', 0, $link);
+        }
+    }
+	/* 增加代码_end By  thunje#URLdf */
 
     /* 判断分类名是否重复 */
 
