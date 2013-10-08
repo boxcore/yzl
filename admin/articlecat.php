@@ -95,7 +95,7 @@ elseif ($_REQUEST['act'] == 'insert')
 
 	 /* 代码增加_start By thunje#URLdf */
     $is_only_url = $exc->is_only('define_url', $_POST['define_url']);
-    if (!$is_only_url)
+    if ( !empty($_POST['define_url']) && !$is_only_url)
     {
         sys_msg(sprintf('您输入的自定义URL已经存在', stripslashes($_POST['define_url'])), 1);
     }
@@ -218,7 +218,7 @@ elseif ($_REQUEST['act'] == 'update')
     {
         $is_only_url = $exc->is_only('define_url', $_POST['define_url'], $_POST['id']);
 
-        if (!$is_only_url)
+        if ( !empty($_POST['define_url']) && !$is_only_url)
         {
             sys_msg(sprintf('您输入的自定义URL已经存在，请换一个', stripslashes($_POST['define_url'])), 1);
         }

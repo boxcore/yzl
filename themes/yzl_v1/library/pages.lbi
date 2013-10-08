@@ -3,8 +3,9 @@
 <!--翻页 start-->
 <form name="selectPageForm" action="{$smarty.server.PHP_SELF}" method="get">
 
-{**}
+{* 产品搜索和产品分类 分页样式 *}
 <!-- {if $pager.styleid eq 0 } -->
+<h1>000000000</h1>
 <div id="pager">
   {$lang.pager_1}{$pager.record_count}{$lang.pager_2}{$lang.pager_3}{$pager.page_count}{$lang.pager_4} <span> <a href="{$pager.page_first}">{$lang.page_first}</a> <a href="{$pager.page_prev}">{$lang.page_prev}</a> <a href="{$pager.page_next}">{$lang.page_next}</a> <a href="{$pager.page_last}">{$lang.page_last}</a> </span>
     <!--{foreach from=$pager.search key=key item=item}-->
@@ -22,6 +23,7 @@
 
 {*分类产品 分页导航*}
 <!-- {elseif $pager.styleid eq 1 } -->
+<h1>1111111111/ styleid:{$pager.styleid} count：{$pager.count}</h1>
 <div class="list_page"><span>共{$pager.record_count}个产品</span>
 <!-- {if $pager.page_count neq 1} -->
   <!--{foreach from=$pager.page_number key=key item=item}-->
@@ -42,7 +44,22 @@
   </span>
 </div>
 
-
+{* 文章列表 分页样式 *}
+<!-- {elseif $pager.styleid eq 2 } -->
+<h1>2222222222222</h1>
+<div id="pager">
+  {$lang.pager_1}{$pager.record_count}{$lang.pager_2}{$lang.pager_3}{$pager.page_count}{$lang.pager_4} <span> <a href="{$pager.page_first}">{$lang.page_first}</a> <a href="{$pager.page_prev}">{$lang.page_prev}</a> <a href="{$pager.page_next}">{$lang.page_next}</a> <a href="{$pager.page_last}">{$lang.page_last}</a> </span>
+    <!--{foreach from=$pager.search key=key item=item}-->
+      {if $key eq 'keywords'}
+          <input type="hidden" name="{$key}" value="{$item|escape:decode_url}" />
+        {else}
+          <input type="hidden" name="{$key}" value="{$item}" />
+      {/if}
+    <!--{/foreach}-->
+    <select name="page" id="page" onchange="selectPage(this)">
+    {html_options options=$pager.array selected=$pager.page}
+    </select>
+</div>
 
 {*默认分页样式*}
 <!--{else}-->

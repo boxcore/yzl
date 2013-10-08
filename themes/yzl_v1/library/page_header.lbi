@@ -9,9 +9,9 @@ var process_request = "{$lang.process_request}";
         <div class="top">
             <div class="logo"><a href="index.php"><img src="images/logo.jpg" width="303" height="76"></a></div>
             <div class="right">
-              {insert_scripts files='transport1.js,utils.js'}
+              {insert_scripts files='transport.js,utils.js'}
                 <div class="right_top_box"> <span  class="loading">{insert name='member_info'}</span>
-                    <span class="collect_box"><a href="#">用户中心</a><a href="#">订购帮助</a><a class="shop_cart" href="#">我的购物车</a></span>
+                    <span class="collect_box"><a href="user.php">用户中心</a><a href="#">订购帮助</a><a class="shop_cart" href="#">我的购物车</a></span>
                     <!--search start-->
                     <script>
                     {literal}
@@ -34,7 +34,7 @@ var process_request = "{$lang.process_request}";
                     <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()" class="f_r"  style="_position:relative; top:5px;">
                       <div class="search">
                           <input name="keywords" type="text" id="keyword" value="{$search_keywords|escape}" />
-                          <input name="imageField" type="submit" class="btn" value="" class="go" style="cursor:pointer;" />
+                          <input type="submit" class="btn" value="" class="go" style="cursor:pointer;" />
                       </div>
                     </form>
                     <!--search end-->

@@ -83,7 +83,7 @@ if ($_REQUEST['act'] == 'add')
     admin_priv('article_manage');
 
     /* 创建 html editor */
-    create_html_editor('FCKeditor1');
+    create_html_kindeditor('FCKeditor1');
 
     /*初始化*/
     $article = array();
@@ -205,7 +205,7 @@ if ($_REQUEST['act'] == 'edit')
     $article = $db->GetRow($sql);
 
     /* 创建 html editor */
-    create_html_editor('FCKeditor1',$article['content']);
+    create_html_kindeditor('FCKeditor1',$article['content']);
 
     /* 取得分类、品牌 */
     $smarty->assign('goods_cat_list', cat_list());

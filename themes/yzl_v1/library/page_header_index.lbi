@@ -1,0 +1,93 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+
+<div id="head">
+    <div class="vitta"></div>
+    <div class="head_box">
+        <div class="top">
+            <div class="logo"><a href="index.php"><img src="images/logo.jpg" width="303" height="76"></a></div>
+            <div class="right">
+              {insert_scripts files='transport1.js,utils.js'}
+                <div class="right_top_box"> <span  class="loading">{insert name='member_info'}</span>
+                    <span class="collect_box"><a href="user.php">用户中心</a><a href="#">订购帮助</a><a class="shop_cart" href="#">我的购物车</a></span>
+                    <!--search start-->
+                    <script>
+                    {literal}
+                    <!--
+                    function checkSearchForm()
+                    {
+                        if(document.getElementById('keyword').value)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            alert("{$lang.no_keywords}");
+                            return false;
+                        }
+                    }
+                    -->
+                    {/literal}
+                    </script> 
+                    <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()" class="f_r"  style="_position:relative; top:5px;">
+                      <div class="search">
+                          <input name="keywords" type="text" id="keyword" value="{$search_keywords|escape}" />
+                          <input type="submit" class="btn" value="" class="go" style="cursor:pointer;" />
+                      </div>
+                    </form>
+                    <!--search end-->
+                </div>
+                <div class="right_bottom_box"> <span class="first_aid"><a href="#">皮肤急救中心</a></span>
+                    <div id="lang" class="ranklist">
+                        <p><a class="tg0" href="#">畅销排行</a></p>
+                        <p><a class="tg1" href="#">畅销排行</a></p>
+                        <ul>
+                            <li class="last"><a href="#">眼部护理</a></li>
+                            <li><a href="http://www.baidu.com/">养肤面贴膜</a></li>
+                            <li><a href="http://www.g.cn/">养肤水</a></li>
+                            <li><a href="#">精华液</a></li>
+                            <li><a href="#"> 养肤面霜</a></li>
+                            <li><a href="#">面膜泥/冻膜 </a></li>
+                            <li ><a href="http://www.baidu.com/">养肤洁面乳</a></li>
+                            
+                        </ul>
+                    </div>
+                    <script src="{$ecs_themes_path}/js/best_sale.js" type="text/javascript"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="nav_one">
+    <ul class="nav_one_box">
+        <!-- {foreach name=nav from=$navigator_list.middle item=nav} --> 
+        <li{if $smarty.foreach.nav.last} class="no_bg"{/if}><a{if $nav.opennew eq 1} target="_blank"{/if} href="{$nav.url}">{$nav.name}</a>
+        </li>
+        <!-- {/foreach} -->
+    </ul>
+    
+</div>
+
+<div id="nav_two">
+    <ul>
+        <li><a href="#">品牌宣言</a></li>
+        <li><a href="#">清洁控油</a></li>
+        <li><a href="#">补水锁湿</a></li>
+        <li><a href="#">美白提亮</a></li>
+        <li><a href="#">抗敏修复</a></li>
+        <li><a href="#">逆颜紧致</a></li>
+        <li class="selectbox">
+            <form>
+                <div class="hide_box">
+                    <select>
+                        <option value="name">活动专区</option>
+                        <option value="content">活动专区</option>
+                    </select>
+                </div>
+            </form>
+        </li>
+    </ul>
+</div>

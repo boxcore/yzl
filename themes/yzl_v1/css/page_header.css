@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+.TopNav{font-family: Tahoma; color:#cdcdcd; background-color:#F7F7F7; border-bottom:1px solid #eee;padding:8px 0;}
+
+#Top{clear:both; height:50px; padding:20px 0 0 0;}
+#Top #logo{float:left}
+#Top input{height: 20px;border: none; border: 0; float:left}
+#Top .search{float:right;width: 374px;}
+#Top .search .search_form{height: 20px;overflow: hidden;margin-bottom: 3px;border: 2px solid #2d2d2d;}
+     .search .search_input{width: 280px;padding:0 5px;line-height: 20px;font-size: 14px;}
+     .search .search_input:focus{background-color: #fcfcfc;-webkit-box-shadow: 2px 2px 3px #d2d2d2 inset;-moz-box-shadow: 2px 2px 3px #d2d2d2 inset;box-shadow: 2px 2px 3px #d2d2d2 inset;}
+     .search .search_submit{width:80px;background: #2d2d2d;font-size: 14px;font-weight: bold;color: #fff;}
+#Top .search .hotwords{height: 18px;overflow: hidden; color:#999}
+#Top .search .hotwords a{margin-right:5px; color:#999}
+#Top .search .hotwords a:hover{color:#8a5d1a}
+
+.menu{background: url(../images/menu_bg.gif) repeat-x; margin-top:8px;}
+.chromestyle{ margin:0 auto; width:900px; height:35px;}
+.chromestyle:after{ /*Add margin between menu and rest of content in Firefox*/content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.chromestyle ul{width: 100%;background: url(../images/Main_Menu.png) no-repeat 0 0;}
+.chromestyle ul li,.chromestyle ul li a{display: block; float:left;background: url(../images/Main_Menu.png) no-repeat; height:35px; text-indent:-9999px; width:100%;}
+    #dropmenu_home,#dropmenu_women,#dropmenu_man,#dropmenu_watch,#dropmenu_belt,#dropmenu_wallet,#dropmenu_glass,#dropmenu_shoe,#dropmenu_acc,#dropmenu_sale{ width:90px;}  
+    #dropmenu_home a{ background-position:0 0}
+    #dropmenu_home a:hover{ background-position:0 -35px}
+    #dropmenu_women a{ background-position:-90px 0} 
+    #dropmenu_women a:hover{ background-position:-90px -35px}
+    #dropmenu_man a{ background-position:-180px 0}
+    #dropmenu_man a:hover{ background-position:-180px -35px}
+    #dropmenu_watch a{ background-position:-270px 0}
+    #dropmenu_watch a:hover{ background-position:-270px -35px}
+    #dropmenu_belt a{ background-position:-360px 0}
+    #dropmenu_belt a:hover{ background-position:-360px -35px}
+    #dropmenu_wallet a{ background-position:-450px 0}
+    #dropmenu_wallet a:hover{ background-position:-450px -35px}
+    #dropmenu_acc a{ background-position:-540px 0}
+    #dropmenu_acc a:hover{ background-position:-540px -35px}
+    #dropmenu_glass a{ background-position:-630px 0}
+    #dropmenu_glass a:hover{ background-position:-630px -35px}
+    #dropmenu_shoe a{ background-position:-720px 0}
+    #dropmenu_shoe a:hover{ background-position:-720px -35px}
+    #dropmenu_sale a{ background-position:-810px 0}
+    #dropmenu_sale a:hover{ background-position:-810px -35px}
+
+/* ######### Style for Drop Down Menu ######### */
+
+.dropmenudiv{
+    font-size:12px; font-family:Verdana;line-height:180%;background-color:#fff;
+    position:absolute;top: 0;
+    margin:0 -3px;padding:10px 20px 30px 20px;
+    border: 3px solid #2d2d2d;border-top:none;
+    z-index:100;visibility: hidden;}
+.dropmenudiv a{padding:3px 5px;text-decoration: none;color:#2d2d2d;}
+* html .dropmenudiv a{ /*IE only hack*/}
+.dropmenudiv a:hover{background-color: #2d2d2d; color:#fafafa;text-decoration: none;}
+    .dropmenu{position: relative;zoom:1;padding: 10px 0 0 100px; padding-bottom:10px; border-bottom:1px dotted #cdcdcd;}
+    .dropmenu_nb{ border:none}
+    .dropmenu h3{position: absolute;top:10px;left:0;font-weight: bold;font-size: 13px;color: #8a5d1a;}
+    .dropmenu h3 a{ color:#8a5d1a;}
+    .dropmenu h3 a:hover{ color:#8a5d1a; background-color:#8a5d1a; color:#fff;}
+    .dropmenu_cat{margin:; }
+    .dropmenu_cat i{ color:#CCC; padding:0 2px; font-family:Arial, Helvetica, sans-serif}

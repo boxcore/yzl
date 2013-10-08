@@ -34,7 +34,7 @@
                 <dl{if $article.article_type == 1} class="red"{/if}><dt><a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title}</a></dt><dd>重庆</dd></dl>
                 <!-- {/foreach} -->
             </div>
-            <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+            <!-- #BeginLibraryItem "/library/pages_article_cat.lbi" --><!-- #EndLibraryItem -->
         </div>
     </div>
 </div>

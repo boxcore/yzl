@@ -150,7 +150,6 @@ elseif ($action == 'act_register')
     else
     {
         include_once(ROOT_PATH . 'includes/lib_passport.php');
-        print_r($_POST); //debug
 
         $username = isset($_POST['username']) ? trim($_POST['username']) : '';
         $password = isset($_POST['password']) ? trim($_POST['password']) : '';
@@ -324,7 +323,7 @@ elseif ($action == 'login')
     }
 
     $smarty->assign('back_act', $back_act);
-    $smarty->display('user_passport.dwt');
+    $smarty->display('exp.dwt');
 }
 
 /* 处理会员的登录 */

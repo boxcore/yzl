@@ -23,6 +23,8 @@ if (!function_exists("htmlspecialchars_decode"))
     }
 }
 
+/* 去掉搜索链接加密 by thunje @20120906
+
 if (empty($_GET['encode']))
 {
     $string = array_merge($_GET, $_POST);
@@ -48,7 +50,7 @@ else
         $string = unserialize($string);
         if ($string !== false)
         {
-            /* 用户在重定向的情况下当作一次访问 */
+            // 用户在重定向的情况下当作一次访问 /
             if (!empty($string['search_encode_time']))
             {
                 if (time() > $string['search_encode_time'] + 2)
@@ -72,9 +74,15 @@ else
     }
 }
 
+*/
+
 require(dirname(__FILE__) . '/includes/init.php');
 
+/* 去掉搜索链接加密 by thunje @20120906
+
 $_REQUEST = array_merge($_REQUEST, addslashes_deep($string));
+
+*/
 
 $_REQUEST['act'] = !empty($_REQUEST['act']) ? trim($_REQUEST['act']) : '';
 
@@ -506,12 +514,20 @@ else
     $position = assign_ur_here(0, $ur_here . ($_REQUEST['keywords'] ? '_' . $_REQUEST['keywords'] : ''));
     $smarty->assign('page_title', $position['title']);    // 页面标题
     $smarty->assign('ur_here',    $position['ur_here']);  // 当前位置
+
+    $pager['styleid'] = 1;
+    $smarty->assign('pager',            $pager);      // 页面标志
+    
     $smarty->assign('intromode',      $intromode);
     $smarty->assign('categories', get_categories_tree()); // 分类树
     $smarty->assign('article_categories',   article_categories_tree1(1)); //文章分类树
+
     $smarty->assign('helps',       get_shop_help());      // 网店帮助
     $smarty->assign('top_goods',  get_top10());           // 销售排行
     $smarty->assign('promotion_info', get_promotion_info());
+
+    $search_info['count'] = $count;
+    $smarty->assign('search_info',   $search_info); //文章分类树
 
     $smarty->display('search.dwt');
 }

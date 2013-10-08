@@ -26,120 +26,75 @@
         <!-- {/if} -->
         <!-- TemplateEndEditable -->
     </div>
+
     <div class="innernews_right">
         <div class="product_list">
             <div class="list_search_box">
-                <h2 class="list_search">搜索到<span>37</span>条关于'花本养肤'的结果</h2>
+                <h2 class="list_search">搜索到<span>{$search_info.count}</span>条关于'{$search_keywords|escape}'的结果</h2>
                 <ul class="up_date">
                     <li class="sales current"><span><a href="#">销量</a></span></li>
                     <li class="price"><span><a href="#">价格</a></span></li>
                     <li class="news_arrive"><span><a href="#">最新上架</a></span></li>
                 </ul>
             </div>
-            <div class="sales_box">
-                <ul>
-                    <li>
-                        <div class="pic_box"><a href="#"><img src="images/Product_one.jpg" width="47" height="172"></a></div>
-                        <div class="introduce">
-                            <h2><a href="#">荷花养肤睡眠面膜</a></h2>
-                            <p>净颜活肤 极致嫩白</p>
-                            <span>5片装 25g/片</span> <strong>￥200</strong>
-                            <div class="btn"><a href="#"><img src="images/buy_now.jpg" width="86" height="21" alt="立即购买"></a><a href="#" class="shopping_cart"><img src="images/shoping_cart.jpg" width="96" height="21"></a></div>
-                            <p>已售出 6 件 </p>
-                        </div>
-                    </li>
-                    <li class="no_padding">
-                        <div class="pic_box"><a href="#"><img src="images/Product_one.jpg" width="47" height="172"></a></div>
-                        <div class="introduce">
-                            <h2><a href="#">荷花养肤睡眠面膜</a></h2>
-                            <p>净颜活肤 极致嫩白</p>
-                            <span>5片装 25g/片</span> <strong>￥200</strong>
-                            <div class="btn"><a href="#"><img src="images/buy_now.jpg" width="86" height="21" alt="立即购买"></a><a href="#" class="shopping_cart"><img src="images/shoping_cart.jpg" width="96" height="21"></a></div>
-                            <p>已售出 6 件 </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="pic_box"><a href="#"><img src="images/Product_one.jpg" width="47" height="172"></a></div>
-                        <div class="introduce">
-                            <h2><a href="#">荷花养肤睡眠面膜</a></h2>
-                            <p>净颜活肤 极致嫩白</p>
-                            <span>5片装 25g/片</span> <strong>￥200</strong>
-                            <div class="btn"><a href="#"><img src="images/buy_now.jpg" width="86" height="21" alt="立即购买"></a><a href="#" class="shopping_cart"><img src="images/shoping_cart.jpg" width="96" height="21"></a></div>
-                            <p>已售出 6 件 </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="pic_box"><a href="#"><img src="images/Product_one.jpg" width="47" height="172"></a></div>
-                        <div class="introduce">
-                            <h2><a href="#">荷花养肤睡眠面膜</a></h2>
-                            <p>净颜活肤 极致嫩白</p>
-                            <span>5片装 25g/片</span> <strong>￥200</strong>
-                            <div class="btn"><a href="#"><img src="images/buy_now.jpg" width="86" height="21" alt="立即购买"></a><a href="#" class="shopping_cart"><img src="images/shoping_cart.jpg" width="96" height="21"></a></div>
-                            <p>已售出 6 件 </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="pic_box"><a href="#"><img src="images/Product_one.jpg" width="47" height="172"></a></div>
-                        <div class="introduce">
-                            <h2><a href="#">荷花养肤睡眠面膜</a></h2>
-                            <p>净颜活肤 极致嫩白</p>
-                            <span>5片装 25g/片</span> <strong>￥200</strong>
-                            <div class="btn"><a href="#"><img src="images/buy_now.jpg" width="86" height="21" alt="立即购买"></a><a href="#" class="shopping_cart"><img src="images/shoping_cart.jpg" width="96" height="21"></a></div>
-                            <p>已售出 6 件 </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="pic_box"><a href="#"><img src="images/Product_one.jpg" width="47" height="172"></a></div>
-                        <div class="introduce">
-                            <h2><a href="#">荷花养肤睡眠面膜</a></h2>
-                            <p>净颜活肤 极致嫩白</p>
-                            <span>5片装 25g/片</span> <strong>￥200</strong>
-                            <div class="btn"><a href="#"><img src="images/buy_now.jpg" width="86" height="21" alt="立即购买"></a><a href="#" class="shopping_cart"><img src="images/shoping_cart.jpg" width="96" height="21"></a></div>
-                            <p>已售出 6 件 </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="pic_box"><a href="#"><img src="images/Product_one.jpg" width="47" height="172"></a></div>
-                        <div class="introduce">
-                            <h2><a href="#">荷花养肤睡眠面膜</a></h2>
-                            <p>净颜活肤 极致嫩白</p>
-                            <span>5片装 25g/片</span> <strong>￥200</strong>
-                            <div class="btn"><a href="#"><img src="images/buy_now.jpg" width="86" height="21" alt="立即购买"></a><a href="#" class="shopping_cart"><img src="images/shoping_cart.jpg" width="96" height="21"></a></div>
-                            <p>已售出 6 件 </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="pic_box"><a href="#"><img src="images/Product_one.jpg" width="47" height="172"></a></div>
-                        <div class="introduce">
-                            <h2><a href="#">荷花养肤睡眠面膜</a></h2>
-                            <p>净颜活肤 极致嫩白</p>
-                            <span>5片装 25g/片</span> <strong>￥200</strong>
-                            <div class="btn"><a href="#"><img src="images/buy_now.jpg" width="86" height="21" alt="立即购买"></a><a href="#" class="shopping_cart"><img src="images/shoping_cart.jpg" width="96" height="21"></a></div>
-                            <p>已售出 6 件 </p>
-                        </div>
-                    </li>
-                </ul>
-                <div class="list_page"><span>共37个产品</span><a href="#" class="current">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><span class="then"></span><span>每页显示
-                    <select name="">
-                        <option>8</option>
-                        <option>7</option>
-                    </select>
-                    个产品</span></div>
-            </div>
+            
+                <div class="sales_box">
+                    <!--{if $goods_list}-->
+                    <form action="compare.php" method="post" name="compareForm" id="compareForm" onsubmit="return compareGoods(this);">
+                        <ul>
+                            <!--{foreach name=goods_list from=$goods_list item=goods}-->
+                            <li>
+                                <div class="pic_box"><a href="{$goods.url}"><img src="{$goods.goods_thumb}" width="47" height="172" alt="{$goods.goods_name}"></a></div>
+                                <div class="introduce">
+                                    <h2><a href="{$goods.url}"><!-- {if $goods.goods_style_name} -->{$goods.goods_style_name}<!-- {else} -->{$goods.goods_name}<!-- {/if} --></a></h2>
+                                    <p>净颜活肤 极致嫩白</p>
+                                    <span>5片装 25g/片</span>
+                                    <strong>
+                                    <!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}-->
+                                    </strong>
+                                    <div class="btn"><a href="javascript:addToCart({$goods.goods_id})"><img src="images/buy_now.jpg" width="86" height="21" alt="立即购买"></a><a href="#" class="shopping_cart"><img src="images/shoping_cart.jpg" width="96" height="21"></a></div>
+                                    <p>已售出 6 件 </p>
+                                </div>
+                            </li>
+                            <!--{/foreach}--> 
+                        </ul>
+                    </form>
+                    <script type="text/javascript">
+                        {foreach from=$lang.compare_js item=item key=key}
+                        var {$key} = "{$item}";
+                        {/foreach}
+
+                                                {foreach from=$lang.compare_js item=item key=key}
+                        {if $key neq 'button_compare'}
+                        var {$key} = "{$item}";
+                        {else}
+                        var button_compare = '';
+                        {/if}
+                        {/foreach}
+
+
+                        var compare_no_goods = "{$lang.compare_no_goods}";
+                        window.onload = function()
+                        {
+                          Compare.init();
+                          fixpng();
+                        }
+                        var btn_buy = "{$lang.btn_buy}";
+                        var is_cancel = "{$lang.is_cancel}";
+                        var select_spe = "{$lang.select_spe}";
+                    </script> 
+                    <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+                    <!--{else}-->
+                        <div style="padding:20px 0px; text-align:center" class="f5" >{$lang.no_search_result}</div>
+                    <!-- {/if} -->
+                </div>
+            
         </div>
     </div>
+
+
 </div>
 
-
-
-
-
-
-
-
-
-
-  
 
 
 <div class="blank"></div>

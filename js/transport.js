@@ -792,13 +792,26 @@ function hideLoader()
 
 
 //tank:修正与JQUERY库的冲突
-if (Object.prototype.toJSONString){ 
-	var oldToJSONString = Object.toJSONString; 
-	Object.prototype.toJSONString = function(){ 
-		if (arguments.length > 0){
-			return false;
-		}else{
-			return oldToJSONString.apply(this, arguments);
-		} 
-	} 
+// if (Object.prototype.toJSONString){ 
+// 	var oldToJSONString = Object.toJSONString; 
+// 	Object.prototype.toJSONString = function(){ 
+// 		if (arguments.length > 0){
+// 			return false;
+// 		}else{
+// 			return oldToJSONString.apply(this, arguments);
+// 		} 
+// 	} 
+// }
+
+//重新定义了冲突的 toJSONString 函数
+if (Object.prototype.toJSONString){
+     var oldToJSONString = Object.toJSONString;
+     Object.prototype.toJSONString = function(){
+         if(arguments.length > 0){
+             return false;
+         }else{
+             return oldToJSONString.apply(this, arguments);
+         }
+     }
 }
+
