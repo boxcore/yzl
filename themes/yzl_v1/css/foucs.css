@@ -21,7 +21,7 @@ html, body { background: #fff; font: 12px/1.5 tahoma,helvetica,arial,\5b8b\4f53,
 
 a { color: #262626; text-decoration: none; }
     a:hover { color: #FF4503; text-decoration: underline; }
-#main {overflow: hidden; zoom: 1; position: relative; }
+#main {overflow: hidden; zoom: 1; position: relative; z-index: 10; }
 #index_b_hero { width: 980px; height: 440px; margin: auto; position: relative; }
     #index_b_hero img { width: 980px; height: 430px; }
     #index_b_hero .heros { width: 980px; height: 440px; }

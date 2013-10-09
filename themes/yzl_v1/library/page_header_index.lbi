@@ -41,8 +41,8 @@ var process_request = "{$lang.process_request}";
                 </div>
                 <div class="right_bottom_box"> <span class="first_aid"><a href="#">皮肤急救中心</a></span>
                     <div id="lang" class="ranklist">
-                        <p><a class="tg0" href="#">畅销排行</a></p>
-                        <p><a class="tg1" href="#">畅销排行</a></p>
+                        <p><a class="tg0">畅销排行</a></p>
+                        <p><a class="tg1">畅销排行</a></p>
                         <ul>
                             <li class="last"><a href="#">眼部护理</a></li>
                             <li><a href="http://www.baidu.com/">养肤面贴膜</a></li>
@@ -63,14 +63,90 @@ var process_request = "{$lang.process_request}";
 
 <div id="nav_one">
     <ul class="nav_one_box">
-        <!-- {foreach name=nav from=$navigator_list.middle item=nav} --> 
-        <li{if $smarty.foreach.nav.last} class="no_bg"{/if}><a{if $nav.opennew eq 1} target="_blank"{/if} href="{$nav.url}">{$nav.name}</a>
+         
+        <li>
+            <a href="page/9">花本养肤</a>
+            <div class="nav_one_container">
+                <span class="line"></span>
+                <div class="nav_item" id="nav_item_bg_1">
+                    <ul class="left">
+                        <li class="current"><a href="#">花神之说</a></li>
+                        <li><a href="#">传承千年</a></li>
+                    </ul>
+                    <div class="right">
+                        <h1>花神不老颜，<br>掀起以花养颜千年历史。</h1>
+                        <P>以天然珍稀花卉作为护肤上品，一直是古今中外宫廷贵族口口相传的驻颜秘笈。借由花神之说，易张脸深度挖掘花本养颜悠久历史，缔造天然花本精粹护肤的奢华传奇…</P>
+                    </div>
+                </div>
+            </div>
         </li>
-        <!-- {/foreach} -->
-    </ul>
+         
+        <li>
+            <a href="page/myjt">美颜讲堂</a>
+            <div class="nav_one_container">
+                <span class="line"></span>
+                <div class="nav_item" id="nav_item_bg_2">
+                    <ul class="left">
+                        <li class="current"><a href="#">肤质解析堂</a></li>
+                        <li><a href="#">养肤常识堂</a></li>
+                        <li><a href="#">花本养肤堂</a></li>
+
+                    </ul>
+                    <div class="right">
+                        <h1>" 花养颜娇颜如花 "</h1>
+                        <P>以天然珍稀花卉作为护肤上品，一直是古今中外宫廷贵族口口相传的驻颜秘笈。借由花神之说，易张脸深度挖掘花本养颜悠久历史，缔造天然花本精粹护肤的奢华传奇…</P>
+                    </div>
+                </div>
+            </div>
+        </li>
+         
+        <li>
+            <a href="page/13">易颜之法</a>
+            <div class="nav_one_container nav_one_container_last">
+                <span class="line2"></span>
+                <div class="nav_item" id="nav_item_bg_3">
+                    <ul class="left">
+                        <li class="current"><a href="#">公司介绍</a></li>
+                        <li><a href="#">科研实力</a></li>
+                        <li><a href="#">生产工艺</a></li>
+                    </ul>
+                    <div class="right">
+                        <h1>自然、安全、化繁为简</h1>
+                        <P>以天然珍稀花卉作为护肤上品，一直是古今中外宫廷贵族口口相传的驻颜秘笈。借由花神之说，易张脸深度挖掘花本养颜悠久历史，缔造天然花本精粹护肤的奢华传奇…</P>
+                    </div>
+                </div>
+            </div>
+        </li>
+         
+        <li class="no_bg">
+            <a href="page/14">美自天然</a>
+            <div class="nav_one_container nav_one_container_last">
+                <span class="line2"></span>
+                <div class="nav_item" id="nav_item_bg_4">
+                    <ul class="left">
+                        <li class="current"><a href="#">公司介绍</a></li>
+                        <li><a href="#">科研实力</a></li>
+                        <li><a href="#">生产工艺</a></li>
+                    </ul>
+                    <div class="right">
+                        <h1>自然、安全、化繁为简</h1>
+                        <P>以天然珍稀花卉作为护肤上品，一直是古今中外宫廷贵族口口相传的驻颜秘笈。借由花神之说，易张脸深度挖掘花本养颜悠久历史，缔造天然花本精粹护肤的奢华传奇…</P>
+                    </div>
+                </div>
+            </div>
+        </li>
+            </ul>
     
 </div>
-
+<script>
+    $(function() {
+        $(".nav_one_box > li ").hover(function(){
+            $(this).find(".nav_one_container").attr({style:"display:block"});
+        },function(){
+            $(this).find(".nav_one_container").css("display","none");
+        });
+    });
+</script>
 <div id="nav_two">
     <ul>
         <li><a href="#">品牌宣言</a></li>

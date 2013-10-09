@@ -16,7 +16,7 @@
     {insert_scripts files='common.js,index.js'}
 </head>
 <body>
-<!-- #BeginLibraryItem "/library/page_header_index.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
 <!--焦点图 START-->
 <!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem -->
 <!--焦点图 END-->
@@ -167,6 +167,6 @@
 <!--友情链接 end-->
 
 
-<!-- #BeginLibraryItem "/library/page_footer_index.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
 </html>

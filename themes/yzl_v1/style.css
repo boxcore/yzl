@@ -82,22 +82,7 @@ visibility:hidden;
   background-color:#edf8fe;  overflow:hidden;
   }
   .boxCenterList{padding:8px;}
-  /*模块标题*/
- /* h3{height:33px; line-height:33px; font-size:12px; background:url(images/h3title.gif) repeat-x left top; text-align:right;
-  padding:0 12px; font-weight:100;
-  }
-  h3.border{border:1px solid #c5e4ff; border-bottom:none;}
-  h3 img{position:relative; top:7px;}
-  h3 span{float:left; background:url(images/bg.gif) no-repeat 0px -570px;width:auto; height:33px; line-height:33px; text-align:left;
-   font-weight:bold; color:#56a5ee; padding-left:12px;}
-  h5{height:26px; line-height:26px; text-align:right; background-color:#edf7ff; font-size:12px;
-  color:#56a5ee; padding:0 10px 0 0;
-  }
-  h5 span{float:left; font-weight:bold; background:url(images/bg.gif) no-repeat 0 -616px; padding-left:25px;}
-  h6{height:23px; line-height:23px; text-align:right; font-size:12px; background:#edf7ff; color:#3f3f3f;
-  border:1px solid #fff; padding-right:10px;
-  }
-  h6 span{float:left; padding-left:15px;}*/
+  
 
   /*页面留白*/
   .blank{height:8px; line-height:8px; clear:both; visibility:hidden;}
@@ -105,57 +90,6 @@ visibility:hidden;
   /*布局*/
   .AreaL{width:200px; float:left; margin-right:10px;}
   .AreaR{width:750px; float:left;}
-
-/* ====================
-     导航部分
-==================== */
-  /*顶部管理型导航*/
-  .log{height:50px;}
-  .log li{float:left;}
-  .log .userInfo{*margin-right:10px; /*width:300px;*/ text-align:left;}
-  .log .userInfo a{color:#006acd; text-decoration:none;}
-  .log li img{position:relative; top:5px;}
-  #topNav{background:url(images/topNavBg.gif) no-repeat left top; height:31px;
-  line-height:31px; color:#bebfc1; padding:0px 15px; margin:0px 10px; position:relative;
-  }
-  #topNav .topNavR{background:url(images/topNavR.gif) no-repeat; width:5px; height:31px;
-  position:absolute; top:0px; right:0px;
-  }
-  #topNav a{color:#006ad0; text-decoration:none;}
-  /*页面主导航*/
-  #mainNav{padding:0 25px; width:910px;}
-  #mainNav a{display:block; height:26p; float:left; line-height:26px; text-align:center;
-  padding:0 15px; background:url(images/NavBg.gif) no-repeat 0 -29px; position:relative;
-  margin-right:2px; color:#026acb; text-decoration:none;
-  }
-  #mainNav a span{width:3px; height:26px; background:url(images/NavBg.gif) no-repeat 0 -88px;
-  position:absolute; top:0px; right:0px;
-  }
-  #mainNav a:hover{display:block; height:26p; float:left; line-height:26px; text-align:center;
-  padding:0 15px; background:url(images/NavBg.gif) no-repeat 0 0; position:relative;
-  margin-right:2px; color:#fff; text-decoration:none;
-  }
-  #mainNav .cur{display:block; height:26p; float:left; line-height:26px; text-align:center;
-  padding:0 15px; background:url(images/NavBg.gif) no-repeat 0 0; position:relative;
-  margin-right:2px; color:#fff; text-decoration:none; font-weight:bold;
-  }
-  #mainNav a:hover span,#mainNav .cur span{width:3px; height:26px; background:url(images/NavBg.gif) no-repeat 0 -59px;
-  position:absolute; top:0px; right:0px;
-  }
-  /*搜索*/
-  #search{border:1px solid #5cb4e6; background:url(images/searchBg.gif) repeat-x left top; width:918px;
-  padding:0px 20px; height:36px; line-height:36px;
-  }
-  #search a{color:#fff; text-decoration:none;}
-  #search .keys{background:url(images/bg.gif) no-repeat 0 -28px;
-  color:#fff; padding-left:40px;
-  }
-  #search .go{background:url(images/bnt_search.gif); border:none; width:52px; height:19px;/* position:relative; top:2px; utf8下*/}
-  /*当前位置*/
-  #ur_here{border:1px solid #c5e4ff; border-top:none; background:url(images/uh_bg.gif) repeat-x left top;
-  height:36px; line-height:36px; padding:0 12px;
-  }
-  #ur_here a{color:#006cce; text-decoration:none;}
 
 /* ====================
      模块
@@ -254,16 +188,7 @@ visibility:hidden;
        .goodsItem span.news{background:url(images/bg.gif) no-repeat -75px -304px;}
        .goodsItem span.hot{background:url(images/bg.gif) no-repeat -161px -304px;}
 
-   /*帮助*/
-   .helpTitBg{background:url(images/helpTitBg.gif) repeat-x left top; text-align:left; border:1px solid #c5e4ff; background-color:#fff;
-   padding:0 0 10px 15px;
-   }
-   .helpTitBg dl{float:left; margin-right:30px; _margin-right:20px; _width:130px;}
-   .helpTitBg dt{background:url(images/bg.gif) no-repeat 0px -570px;width:auto; height:33px; line-height:33px; text-align:left;
-   font-weight:bold; color:#56a5ee; padding-left:12px; margin-bottom:8px;}
-     .helpTitBg dt a{font-weight:bold; color:#56a5ee; text-decoration:none;}
-   .helpTitBg dd a{color:#006acd; text-decoration:none; background:url(images/bg.gif) no-repeat 0px -170px; padding:0px 0px 0px 10px;}
-
+   
    /*相关商品*/
    .boxCenterList ul{height:1%; margin-bottom:5px;}
    .boxCenterList li{float:left; width:120px;}
@@ -551,22 +476,7 @@ a:link,a:visited{ text-decoration:none;}
 #lang ul li.last { background:none;}
 
 #head .right_bottom_box span{float:left;}
-#nav_one{width:100%; height:56px; border-bottom:1px solid #ccc;}
-#nav_one .nav_one_box{width:980px; overflow:hidden; margin:0 auto;}
-#nav_one .nav_one_box li{float:left; width:245px; height:56px; background:url(images/flower.jpg) no-repeat 60px 17px; text-align:center; line-height:56px;}
-#nav_one .nav_one_box li a{ display:block; width:245px; height:56px; float:left; background:url(images/nav1_line.jpg) no-repeat right center;}
-#nav_one .nav_one_box .no_bg a{background:none;}
-#nav_one .nav_one_box li a{color:#916553; font-size:18px;}
-#nav_one .nav_one_box li a:hover{color:#c08874;}
-#nav_one .nav_two_box li{width:135px; float:left;}
-#nav_two{width:980px; margin:0 auto; height:37px;}
-#nav_two li{float:left; width:140px; height:37px; line-height:37px; text-align:center; _width:136px;}
-#nav_two .selectbox{width:140px; height:37px; }
-#nav_two .hide_box{width:140px; overflow:hidden; border-right:1px solid #ccc;border-left:1px solid #ccc; height:37px; float:left;}
-#nav_two .selectbox select{width:160px; float:left; font-size:14px; color:#bb9f6e; padding:8px 0 0 30px; cursor:pointer;  background:url(images/select_arrows.jpg) no-repeat 100px 18px; border:none; border:1px solid #fff; }
-#nav_two .selectbox select option{ border:none; background:#ede0cd; width:140px; height:35px; text-align:center;line-height:35px;}
-#nav_two li a{color:#bb9f6e; font-size:15px;}
-#nav_two li a:hover{color:#d1bc9c;}
+
 .skin {width:980px; overflow:hidden; margin:43px auto 0;}
 .skin div{float:left;}
 #foot_inner{width:100%; overflow:hidden; border-top:1px solid #e3e3e3; padding-top:18px;}
@@ -1114,7 +1024,7 @@ c .progress li{float:left; width:170px;}
 
 /*网上商城*/
 .pop_box{width: 980px; margin:0 auto; position:absolute;}
-.web_shop{width:970px; overflow:hidden; margin:0 auto 20px; position:absolute;z-index:9999; background-color: #fff;bottom: 0px;right:0;}
+.web_shop{width:970px; overflow:hidden; margin:0 auto 20px; position:absolute;z-index:9999; background-color: #fff;bottom: 0px;right:0;*right:120px;*bottom:30px;}
 .web_shop .web_shop_left{width:755px; overflow:hidden; float:left; border-left:1px solid #fe6e63;border-bottom:1px solid #fe6e63; *width:753px;}
 .web_shop .web_shop_left h1{width:755px; background:#e5514f; height:24px; font-size:12px; color:#fff; text-align:center; font-weight:normal; line-height:24px;}
 .web_shop .web_shop_right{width:213px; _width:211px;overflow:hidden; border-left:1px solid #dadada; float:left;}
@@ -1165,6 +1075,48 @@ c .progress li{float:left; width:170px;}
 
 
 
+/*主导航*/
+#nav_one{width:100%; height:56px; overflow:visible; border-bottom:1px solid #ccc;}
+#nav_one .nav_one_box{width:980px; height: 100%; overflow:visible; margin:0 auto;}
+#nav_one .nav_one_box > li{float:left; width:245px; height:56px; background:url(images/flower.jpg) no-repeat 60px 17px; text-align:center; line-height:56px; position:relative; z-index: 99;}
+#nav_one .nav_one_box > li > a{ display:block; width:245px; height:56px; float:left; background:url(images/nav1_line.jpg) no-repeat right center;}
+#nav_one .nav_one_box .no_bg > a{background:none;}
+#nav_one .nav_one_box > li > a{color:#916553; font-size:18px;}
+#nav_one .nav_one_box > li > a:hover{color:#c08874;}
+#nav_one .nav_two_box > li{width:135px; float:left;}
+  /**/
+#nav_one .nav_one_container {width:675px; height:183px; margin:10px auto;position:absolute;z-index:9999;left:0;top:45px;display: none;}
+#nav_one .nav_one_container_last {left:-430px;}
+#nav_one .nav_one_container .line {width: 245px;height: 1px;display: block;border-bottom: 1px solid #c6a168;text-align: left;}
+#nav_one .nav_one_container .line2 {width: 245px;height: 1px;display: block;border-bottom: 1px solid #c6a168;float: right;}
+#nav_one .nav_one_container .nav_item{width: 673px;height: 180px;border: 1px solid #c6a168}
+  #nav_item_bg_1 {background: url(images/nav_bgone.jpg) no-repeat;}
+  #nav_item_bg_2 {background: url(images/nav_bgtwo.jpg) no-repeat;}
+  #nav_item_bg_3 {background: url(images/nav_bgthree.jpg) no-repeat;}
+  #nav_item_bg_4 {background: url(images/nav_bgfour.jpg) no-repeat;}
+#nav_one .nav_one_container {}
+#nav_one .nav_one_container {}
+#nav_one .nav_one_container {}
+#nav_one .nav_one_container {}
+#nav_one .nav_one_container .left{width:90px; overflow:hidden; margin:34px 0 0 67px; float:left;}
+#nav_one .nav_one_container .left li{ height:34px; line-height:34px; padding-left:10px;}
+#nav_one .nav_one_container .current{ background:url(images/navone_inner_icon.jpg) no-repeat left center;}
+#nav_one .nav_one_container .left li a{color:#986f5e; font-size:16px;}
+#nav_one .nav_one_container .right{width:298px; overflow:hidden; float:left;line-height:20px;text-align:left;}
+#nav_one .nav_one_container .right h1{font-size:16px; font-family:"方正正纤黑简体","微软雅黑";color:#986f5e;  margin:40px 0 0 44px; font-weight:normal;}
+#nav_one .nav_one_container .right p{font-size:12px; margin-left:44px;color:#986f5e; margin-top:10px;font-family:"方正正纤黑简体","微软雅黑"; line-height:16px;}
+
+
+/*副导航*/
+#nav_two{width:980px; margin:0 auto; height:37px;}
+#nav_two li{float:left; width:140px; height:37px; line-height:37px; text-align:center; _width:136px;}
+#nav_two li a{color:#bb9f6e; font-size:15px;}
+#nav_two li a:hover{color:#d1bc9c;}
+  /*活动专区*/
+#nav_two .selectbox{width:140px; height:37px; } 
+#nav_two .hide_box{width:140px; overflow:hidden; border-right:1px solid #ccc;border-left:1px solid #ccc; height:37px; float:left;}
+#nav_two .selectbox select{width:160px; float:left; font-size:14px; color:#bb9f6e; padding:8px 0 0 30px; cursor:pointer;  background:url(images/select_arrows.jpg) no-repeat 100px 18px; border:none; border:1px solid #fff; }
+#nav_two .selectbox select option{ border:none; background:#ede0cd; width:140px; height:35px; text-align:center;line-height:35px;}
 
 
 

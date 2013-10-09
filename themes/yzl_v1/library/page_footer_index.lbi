@@ -141,7 +141,7 @@
 
 
             <li class="online_wall">
-                <p><a href="#">网上商城  Online wall</a><span><a href="javascript:;" class="pointer"><img src="images/arrow.jpg" width="13" height="13"></a></span> </p>
+                <p><a class="pointer" href="javascript:;">网上商城  Online wall</a><span><a href="javascript:;" class="pointer"><img src="images/arrow.jpg" width="13" height="13"></a></span> </p>
                 <ul class="part">
                     <li><a href="#"><img src="images/club.jpg" width="147" height="35"></a></li>
                     <li><a href="#"><img src="images/webo.jpg" width="115" height="35"></a></li>
