@@ -15,6 +15,11 @@
 #logo-div {
   height: 50px;
   float: left;
+  font: 700 22px/40px "microsoft yahei";
+  font-weight:bold;
+  color:#fff;
+  padding-left:10px;
+  
 }
 
 #license-div {
@@ -187,17 +192,16 @@ var adminId = "{$admin_id}";
 </head>
 <body>
 <div id="header-div">
-  <div id="logo-div" style="bgcolor:#000000;"></div>
+  <div id="logo-div" style="bgcolor:#000000;">易张脸管理平台</div>
   <div id="license-div" style="bgcolor:#000000;"></div>
   <div id="submenu-div">
     <ul>
-      <li><a href="javascript:web_address();">{$lang.help}</a></li>
       <li><a href="../" target="_blank">{$lang.preview}</a></li>
       <li><a href="message.php?act=list" target="main-frame">{$lang.view_message}</a></li>
       <li><a href="privilege.php?act=modif" target="main-frame">{$lang.profile}</a></li>
       <li><a href="javascript:window.top.frames['main-frame'].document.location.reload();window.top.frames['header-frame'].document.location.reload()">{$lang.refresh}</a></li>
-      <li><a href="#"  onclick="ShowToDoList()">{$lang.todolist}</a></li>
-      <li style="border-left:none;"><a href="index.php?act=first" target="main-frame">{$lang.shop_guide}</a></li>
+      <li style="border-left:none;"><a href="#"  onclick="ShowToDoList()">{$lang.todolist}</a></li>
+      <!--li style="border-left:none;"><a href="index.php?act=first" target="main-frame">{$lang.shop_guide}</a></li-->
     </ul>
     <div id="send_info" style="padding: 5px 10px 0 0; clear:right;text-align: right; color: #FF9900;width:40%;float: right;">
       {if $send_mail_on eq 'on'}
