@@ -1,15 +1,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- {if $index_ad eq 'sys'} -->
-<!--kinMaxShow-->
-<div id="kinMaxShow">
-    <!-- {foreach from=$playerdb item=row} -->
-    <div><a href="{$row.url}" target="_blank"><img src="{$row.src}" alt="{$row.text}" /></a></div>
-    <!-- {/foreach}> -->
-    <!--span id="main_king_shaw">
-        <a class="prev icon-arrow-a-left"></a>
-        <a class="next icon-arrow-a-right"></a>
-    </span-->
+<link href="{$ecs_themes_path}/css/foucs.css" rel="stylesheet" />
+<script src="{$ecs_themes_path}/js/jquery.foucs.js" type="text/javascript"></script>
+<!-- 代码 开始 -->
+<div id="main">
+    <div id="index_b_hero">
+        <div class="hero-wrap">
+            <ul class="heros clearfix">
+                 <!-- {foreach from=$playerdb item=row} -->
+                <li class="hero">
+                    <a href="{$row.url}" target="_blank" title="{$row.text}">
+                        <img src="{$row.src}" class="thumb" alt="{$row.text}" />
+                    </a>
+                </li>
+                <!-- {/foreach}> -->
+            </ul>
+        </div>
+        <div class="helper">
+            <div class="mask-left">
+            </div>
+            <div class="mask-right">
+            </div>
+            <a class="prev icon-arrow-a-left"></a>
+            <a class="next icon-arrow-a-right"></a>
+        </div>
+    </div>
 </div>
-<!--/kinMaxShow-->
+<script type="text/javascript">
+    $.foucs({ direction: 'right' });
+</script>
+<!-- 代码 结束 -->
+
 <!-- {elseif $index_ad eq 'cus'} -->
 <!-- {/if} -->

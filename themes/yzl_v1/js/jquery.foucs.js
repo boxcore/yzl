@@ -3,11 +3,11 @@
         'foucs': function (con) {
             var $container = $('#index_b_hero')
                 , $imgs = $container.find('li.hero')
-            , $leftBtn = $container.find('a.prev')
-            , $rightBtn = $container.find('a.next')
+            , $leftBtn = $container.find('a.next')
+            , $rightBtn = $container.find('a.prev')
             , config = {
                 interval: con && con.interval || 3500,
-                animateTime: con && con.animateTime || 400,
+                animateTime: con && con.animateTime || 500,
                 direction: con && (con.direction === 'right'),
                 _imgLen: $imgs.length
             }

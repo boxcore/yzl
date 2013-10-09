@@ -13,14 +13,7 @@
     <link rel="icon" href="animated_favicon.gif" type="image/gif" />
     <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
     <script src="{$ecs_themes_path}/js/jquery-1.10.2.min.js" type="text/javascript"></script>
-    <script src="{$ecs_themes_path}/js/jquery.kinMaxShow-1.0.src.js" type="text/javascript"></script>
-    <link href="{$ecs_themes_path}/css/index_slide.css" rel="stylesheet" type="text/css" />
     {insert_scripts files='common.js,index.js'}
-    <script type="text/javascript">
-    $(function(){
-        $("#kinMaxShow").kinMaxShow();
-    });
-    </script>
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header_index.lbi" --><!-- #EndLibraryItem -->
@@ -174,6 +167,6 @@
 <!--友情链接 end-->
 
 
-<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer_index.lbi" --><!-- #EndLibraryItem -->
 </body>
 </html>
