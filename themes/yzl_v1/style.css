@@ -42,10 +42,6 @@ visibility:hidden;
 /*英文强制换行*/
 .word{word-break:break-all;}
 
-  /*边框*/
-  .B_blue{border:1px solid #c5e4ff;}
-  .B_input{border:1px solid #0f97ed;}
-  .inputBg{border:1px solid #b3b3b3; background:url(images/inputbg.gif) repeat-x left top; height:18px;}
   /*字体颜色*/
   .f1{color:#ff6666;}
   .f2{color:#006bd0; font-weight:bold; margin-right:15px;}
@@ -878,13 +874,16 @@ c .progress li{float:left; width:170px;}
 .user_box .submit_order .right .shoud_cost .btn a{color:#fff; font-size:18px; }
 .user_box .submit_order .right .shoud_cost .btn img{float:right; margin:0;}
 /*用户中心个人资料*/
-.user_box .data_box{width:880px; margin:60px auto 0; color:#916553; font-size:14px;}
+.data_box{width:880px; margin:60px auto 0; color:#916553; font-size:14px;}
 .user_box .data_box td strong{font-weight:normal; padding-left:6px;}
-.user_box .data_box td{padding:10px 0 0 0; height:28px; line-height:28px;}
-.user_box .data_box td .qq{padding-left:18px; *float:left;}
-.user_box .data_box .name{border:1px solid #d2bf9e; width:182px; height:22px; *float:left;}
-.user_box .data_box .notes{font-size:12px;}
-.user_box .data_box td .postal_add{width:452px; height:22px; border:1px solid #d2bf9e;*float:left;}
+.data_box td{padding:10px 0 0 0; height:28px; line-height:28px;}
+.data_box td .qq{padding-left:18px; *float:left;}
+.data_box .name{border:1px solid #d2bf9e; width:182px; height:22px; *float:left;}
+.data_box .name_add{width:430px; height:22px; line-height:22px;border:1px solid #d2bf9e; }
+.data_box .mailing_address strong{float:left;}
+.data_box .mailing_address form{ float:left;}
+.data_box .notes{font-size:12px;}
+.data_box td .postal_add{width:452px; height:22px; border:1px solid #d2bf9e;*float:left;}
 .user_box .personege{font-size:14px; color:#916553; width:880px; overflow:hidden; margin:10px auto 0;}
 .user_box .personege h4{ font-weight:normal; height:28px; line-height:28px; margin-top:5px;}
 .user_box .personege h4 span{margin-left:12px;}
@@ -892,7 +891,7 @@ c .progress li{float:left; width:170px;}
 .user_box .personege .person_skin span{margin:0px 19px; width:108px; display:inline-block; height:40px; float:left;}
 .user_box .personege textarea{width:530px; height:44px;border:1px solid #d2bf9e; margin-top:5px; margin-left:10px;}
 .user_box .personege .no_null{width:880px; height:24px; line-height:24px; margin-top:60px;}
-.user_box .personege .person_submit{width:136px; height:29px; background:url(images/suborder_btn.jpg) no-repeat; margin:26px auto 0; line-height:29px; text-align:center;  cursor:pointer;}
+.person_submit{width:136px; height:29px; background:url(images/suborder_btn.jpg) no-repeat; margin:26px auto 0; line-height:29px; text-align:center;  cursor:pointer; *margin-top:0px;}
 .user_box .personege .person_submit input{color:#fff; font-size:18px;cursor:pointer;}
 /*用户中心 密码修改*/
 .change_password{width:290px; overflow:hidden;color:#916553; font-size:14px; margin:60px auto 0;}
@@ -1119,4 +1118,36 @@ c .progress li{float:left; width:170px;}
 #nav_two .selectbox select option{ border:none; background:#ede0cd; width:140px; height:35px; text-align:center;line-height:35px;}
 
 
+
+
+/*养肤体验馆*/
+.experience_box .Skin_home_tittle{width:644px; height:110px; background:url(images/Skin_home_tittle.jpg) no-repeat; border-bottom:1px dashed #d2bf9e; margin:70px 0 0 60px;}
+.experience_box .data{width:879px; height:32px; margin-top:46px; background:url(images/Skin-login-one.jpg) no-repeat;}
+.experience_box .data li{float:left; color:#916553; width:256px; height:32px; line-height:32px; text-align:center; padding:0px 10px; margin-left:17px; font-family:"方正正纤黑简体","微软雅黑"; font-size:20px; _margin-left:12px;}
+.experience_box .data .current{color:#d2bf9e;}
+.experience_box .data_two{width:879px; height:32px; margin-top:46px; background:url(images/Skin-login-two.jpg) no-repeat;}
+.experience_box .data_two li{float:left; color:#916553; width:256px; height:32px; line-height:32px; text-align:center; padding:0px 10px; margin-left:17px; font-family:"方正正纤黑简体","微软雅黑"; font-size:20px; _margin-left:12px;}
+.experience_box .data_two .current{color:#d2bf9e;}
+.experience_box .data_three{width:879px; height:32px; margin-top:46px; background:url(images/Skin-login-three.jpg) no-repeat;}
+.experience_box .data_three li{float:left; color:#916553; width:256px; height:32px; line-height:32px; text-align:center; padding:0px 10px; margin-left:17px; font-family:"方正正纤黑简体","微软雅黑"; font-size:20px;_margin-left:12px;}
+.experience_box .data_three .current{color:#d2bf9e;}
+.experience_box .news_box{width:780px; overflow:hidden; margin-top:30px; margin-left:100px;}
+.experience_box .box_one{width:880px; margin-left:0px;}
+.experience_box .register{float:left; width:596px; padding-top:54px;}
+.experience_box .news_box .text{float:left; width:253px; overflow:hidden; padding:50px 0 50px 30px;  border-left:1px dashed #ccc;}
+.experience_box .news_box .text .register_text{font-size:14px; color:#916553; line-height:25px;}
+.experience_box .news_box .text .atonce{width:100px; height:44px; line-height:44px; font-size:14px;}
+.experience_box .news_box .text .atonce a{color:#e5514f;}
+.data_box_one{margin-top:30px; width:700px; overflow:hidden; margin-left:0px;}
+.which_brand h2{font-size:14px; color:#916553; height:30px; line-height:30px; margin-top:15px;}
+.which_brand textarea{width:530px; height:44px; border:1px solid #d2bf9e;}
+.person_skin h2{font-size:14px; color:#916553; height:30px; line-height:30px; margin-top:5px;}
+.person_skin span{margin:0px 19px; width:108px; display:inline-block; height:40px; float:left;}
+.person_submit input {color: #FFFFFF;cursor: pointer;font-size: 18px;}
+.inner_fourbanner {background: url("images/inner_onebanner.jpg") no-repeat scroll center center;border-top: 1px solid #CCCCCC;height: 394px;margin-bottom: 495px;overflow: hidden; width: 100%;}
+.submit_success{width:213px; height:45px; margin:20px 0 0 250px;}
+.submit_text{width:595px; height:220px; line-height:26px; font-size:18px; color:#916553; font-family:"方正正纤黑简体","微软雅黑";  margin:30px 0 0 70px; background:url(images/pass_flower.jpg) no-repeat 233px 70px;}
+.which_brand{width:780px; height:76px; *height:90px;}
+.which_brand form{*float:left;}
+.person_skin form{*float:left;}
 

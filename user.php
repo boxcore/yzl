@@ -323,7 +323,7 @@ elseif ($action == 'login')
     }
 
     $smarty->assign('back_act', $back_act);
-    $smarty->display('exp.dwt');
+    $smarty->display('user_passport.dwt');
 }
 
 /* 处理会员的登录 */
@@ -332,14 +332,16 @@ elseif ($action == 'act_login')
     $username = isset($_POST['username']) ? trim($_POST['username']) : '';
     $password = isset($_POST['password']) ? trim($_POST['password']) : '';
     $back_act = isset($_POST['back_act']) ? trim($_POST['back_act']) : '';
-
+    if($back_act !== 'exp.php'){
+        $do_back_act = "user.php";
+    }
 
     $captcha = intval($_CFG['captcha']);
     if (($captcha & CAPTCHA_LOGIN) && (!($captcha & CAPTCHA_LOGIN_FAIL) || (($captcha & CAPTCHA_LOGIN_FAIL) && $_SESSION['login_fail'] > 2)) && gd_version() > 0)
     {
         if (empty($_POST['captcha']))
         {
-            show_message($_LANG['invalid_captcha'], $_LANG['relogin_lnk'], 'user.php', 'error');
+            show_message($_LANG['invalid_captcha'], $_LANG['relogin_lnk'], $do_back_act, 'error');
         }
 
         /* 检查验证码 */
@@ -349,7 +351,7 @@ elseif ($action == 'act_login')
         $validator->session_word = 'captcha_login';
         if (!$validator->check_word($_POST['captcha']))
         {
-            show_message($_LANG['invalid_captcha'], $_LANG['relogin_lnk'], 'user.php', 'error');
+            show_message($_LANG['invalid_captcha'], $_LANG['relogin_lnk'], $do_back_act, 'error');
         }
     }
 
@@ -364,7 +366,7 @@ elseif ($action == 'act_login')
     else
     {
         $_SESSION['login_fail'] ++ ;
-        show_message($_LANG['login_failure'], $_LANG['relogin_lnk'], 'user.php', 'error');
+        show_message($_LANG['login_failure'], $_LANG['relogin_lnk'], $do_back_act, 'error');
     }
 }
 

@@ -27,7 +27,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    $.foucs({ direction: 'right' });
+    $.foucs({ direction: 'left' });
 </script>
 <!-- 代码 结束 -->
 
