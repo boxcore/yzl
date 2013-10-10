@@ -18,7 +18,7 @@ RewriteRule ^feed-type([^-]+)\.xml$       feed\.php\?type=$1 [L]
 RewriteRule ^feed\.xml$                 feed\.php [L]
 
 
-# 商品分类
+# 商品链接
 RewriteRule ^category-([0-9]+)[\/]*$ category\.php\?defurl=$1  [QSA,L]
 
 RewriteRule ^([0-9a-zA-Z_]+)(?:-b([0-9]+))?-min([0-9]+)-max([0-9]+)-attr([^-]*)-([0-9]+)-(.+)-([a-zA-Z]+)[\/]*$  category\.php\?defurl=$1&brand=$2&price_min=$3&price_max=$4&filter_attr=$5&page=$6&sort=$7&order=$8 [QSA,L]
@@ -32,7 +32,7 @@ RewriteRule ^([0-9a-zA-Z_]+)[\/]*$ category\.php\?defurl=$1  [QSA,L]
 RewriteRule ^goods-([0-9]+)(.*)\.html$  goods\.php\?id=$1 [QSA,L]
 
 
-# 文章类的要放在前面，要不会跟商品的冲突
+# 文章列表
 RewriteRule ^page\/([0-9a-zA-Z_]+)-([0-9]+)-(.+)-([a-zA-Z]+)[\/]*$  article_cat\.php\?defurl=$1&page=$2&sort=$3&order=$4  [QSA,L]
 RewriteRule ^page\/([0-9a-zA-Z_]+)-([0-9]+)-(.+)[\/]*$              article_cat\.php\?defurl=$1&page=$2&keywords=$3 [QSA,L]
 RewriteRule ^page\/([0-9a-zA-Z_]+)-([0-9]+)[\/]*$                   article_cat\.php\?defurl=$1&page=$2   [QSA,L]
