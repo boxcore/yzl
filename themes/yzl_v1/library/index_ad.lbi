@@ -28,6 +28,10 @@
 </div>
 <script type="text/javascript">
     $.foucs({ direction: 'left' });
+    $(function () {
+        var $w = $(window);
+        $w.scrollLeft($w.outerWidth() * 0.25);
+    });
 </script>
 <!-- 代码 结束 -->
 

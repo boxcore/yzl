@@ -117,7 +117,7 @@ $modules['11_system']['captcha_manage']             = 'captcha_manage.php?act=ma
 $modules['11_system']['ucenter_setup']              = 'integrate.php?act=setup&code=ucenter';
 $modules['11_system']['navigator']                  = 'navigator.php?act=list';
 $modules['11_system']['file_check']                 = 'filecheck.php';
-//$modules['11_system']['021_reg_fields']             = 'reg_fields.php?act=list';
+$modules['11_system']['021_reg_fields']             = 'reg_fields.php?act=list';
 
 
 $modules['12_template']['02_template_select']       = 'template.php?act=list';
