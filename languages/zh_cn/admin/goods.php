@@ -154,7 +154,9 @@ $_LANG['alone_sale'] = '打勾表示能作为普通商品销售，否则只能�
 $_LANG['free_shipping'] = '打勾表示此商品不会产生运费花销，否则按照正常运费计算。';
 
 $_LANG['invalid_goods_img'] = '商品图片格式不正确！';
+$_LANG['invalid_article_img'] = '文章图片格式不正确！';
 $_LANG['invalid_goods_thumb'] = '商品缩略图格式不正确！';
+$_LANG['invalid_article_thumb'] = '文章缩略图格式不正确！';
 $_LANG['invalid_img_url'] = '商品相册中第%s个图片格式不正确!';
 
 $_LANG['goods_img_too_big'] = '商品图片文件太大了（最大值：%s），无法上传。';

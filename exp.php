@@ -1,17 +1,5 @@
 <?php
 
-/**
- * ECSHOP 会员中心
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.xxoopp.org；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: user.php 17217 2011-01-19 06:29:08Z liubo $
-*/
 
 define('IN_ECS', true);
 
@@ -93,19 +81,43 @@ if (in_array($action, $ui_arr))
 //用户中心欢迎页
 if ($action == 'default')
 {
-    // include_once(ROOT_PATH .'includes/lib_clips.php');
-    // if ($rank = get_rank_info())
-    // {
-    //     $smarty->assign('rank_name', sprintf($_LANG['your_level'], $rank['rank_name']));
-    //     if (!empty($rank['next_rank_name']))
-    //     {
-    //         $smarty->assign('next_rank_name', sprintf($_LANG['next_level'], $rank['next_rank'] ,$rank['next_rank_name']));
-    //     }
-    // }
-    // $smarty->assign('info',        get_user_default($user_id));
-    // $smarty->assign('user_notice', $_CFG['user_notice']);
-    // $smarty->assign('prompt',      get_user_prompt($user_id));
-    // $smarty->display('user_clips.dwt');
+    $user_info = get_profile($user_id);
+
+    /* 取出注册扩展字段 */
+    $sql = 'SELECT * FROM ' . $ecs->table('reg_fields') . ' WHERE type < 2 AND display = 1 ORDER BY dis_order, id';
+    $extend_info_list = $db->getAll($sql);
+
+    $sql = 'SELECT reg_field_id, content ' .
+           'FROM ' . $ecs->table('reg_extend_info') .
+           " WHERE user_id = $user_id";
+    $extend_info_arr = $db->getAll($sql);
+
+    $temp_arr = array();
+    foreach ($extend_info_arr AS $val)
+    {
+        $temp_arr[$val['reg_field_id']] = $val['content'];
+    }
+
+    foreach ($extend_info_list AS $key => $val)
+    {
+        switch ($val['id'])
+        {
+            case 1:     $extend_info_list[$key]['content'] = $user_info['msn']; break;
+            case 2:     $extend_info_list[$key]['content'] = $user_info['qq']; break;
+            case 3:     $extend_info_list[$key]['content'] = $user_info['office_phone']; break;
+            case 4:     $extend_info_list[$key]['content'] = $user_info['home_phone']; break;
+            case 5:     $extend_info_list[$key]['content'] = $user_info['mobile_phone']; break;
+            default:    $extend_info_list[$key]['content'] = empty($temp_arr[$val['id']]) ? '' : $temp_arr[$val['id']] ;
+        }
+    }
+
+    $smarty->assign('extend_info_list', $extend_info_list);
+
+    /* 密码提示问题 */
+    $smarty->assign('passwd_questions', $_LANG['passwd_questions']);
+
+    $smarty->assign('profile', $user_info);
+    
     $smarty->display('exp.dwt');
 }
 

@@ -20,6 +20,12 @@ $_LANG['type_name'][SYSTEM_CAT] = '系统分类';
 $_LANG['type_name'][INFO_CAT]   = '网店信息';
 $_LANG['type_name'][UPHELP_CAT] = '帮助分类';
 $_LANG['type_name'][HELP_CAT]   = '网店帮助';
+/*boxcore 自定义分类*/
+$_LANG['type_name'][DOWN_CAT] = '下载分类';
+$_LANG['type_name'][IMAGE_CAT]   = '图片下载分类';
+$_LANG['type_name'][VIDEO_CAT] = '视频下载分类';
+$_LANG['type_name'][HR_CAT]   = '招聘分类';
+
 
 $_LANG['cat_keywords'] = '关键字';
 $_LANG['cat_desc'] = '描述';

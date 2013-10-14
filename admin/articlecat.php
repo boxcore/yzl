@@ -70,7 +70,7 @@ elseif ($_REQUEST['act'] == 'add')
     /* 创建 html editor */
     create_html_editor('cat_detail');
 
-
+	//$cat_type_arr = array()
     $smarty->assign('cat_select',  article_cat_list(0));
     $smarty->assign('ur_here',     $_LANG['articlecat_add']);
     $smarty->assign('action_link', array('text' => $_LANG['02_articlecat_list'], 'href' => 'articlecat.php?act=list'));
@@ -101,7 +101,8 @@ elseif ($_REQUEST['act'] == 'insert')
     }
 	/* 代码增加_end By thunje#URLdf */
 
-    $cat_type = 1;
+    $cat_type = $_POST['catType']?$_POST['catType']:1; //boxcore
+
     if ($_POST['parent_id'] > 0)
     {
         $sql = "SELECT cat_type FROM " . $ecs->table('article_cat') . " WHERE cat_id = '$_POST[parent_id]'";
@@ -159,7 +160,8 @@ elseif ($_REQUEST['act'] == 'edit')
 	/* 代码修改_end By thunje#URLdf */
 
     $cat = $db->GetRow($sql);
-
+	$catType = $cat['cat_type'];
+	$smarty->assign('catType', $catType);
     if ($cat['cat_type'] == 2 || $cat['cat_type'] == 3 || $cat['cat_type'] ==4)
     {
         $smarty->assign('disabled', 1);
@@ -275,7 +277,7 @@ elseif ($_REQUEST['act'] == 'update')
     $dat = $db->getOne("SELECT cat_name, show_in_nav FROM ". $ecs->table('article_cat') . " WHERE cat_id = '" . $_POST['id'] . "'");
 
 	/* 下面这行代码有修改 By thunje#URLdf */
-    if ($exc->edit("cat_name = '$_POST[cat_name]', cat_desc ='$_POST[cat_desc]',cat_detail ='$_POST[cat_detail]', keywords='$_POST[keywords]',parent_id = '$_POST[parent_id]', cat_type='$cat_type', sort_order='$_POST[sort_order]', show_in_nav = '$_POST[show_in_nav]', define_url='$_POST[define_url]' ",  $_POST['id']))
+    if ($exc->edit("cat_name = '$_POST[cat_name]', cat_desc ='$_POST[cat_desc]',cat_detail ='$_POST[cat_detail]', keywords='$_POST[keywords]',parent_id = '$_POST[parent_id]', cat_type='$_POST[catType]', sort_order='$_POST[sort_order]', show_in_nav = '$_POST[show_in_nav]', define_url='$_POST[define_url]' ",  $_POST['id']))
     {
         if($_POST['cat_name'] != $dat['cat_name'])
         {

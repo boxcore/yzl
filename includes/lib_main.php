@@ -1864,7 +1864,7 @@ function article_categories_tree($cat_id = 0)
                     'b.cat_id AS child_id, b.cat_name AS child_name, b.sort_order AS child_order ' .
                 'FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
                 'LEFT JOIN ' . $GLOBALS['ecs']->table('article_cat') . ' AS b ON b.parent_id = a.cat_id ' .
-                "WHERE a.parent_id = '$parent_id' AND a.cat_type=1 ORDER BY parent_order ASC, a.cat_id ASC, child_order ASC";
+                "WHERE a.parent_id = '$parent_id'  ORDER BY parent_order ASC, a.cat_id ASC, child_order ASC";
 
         // $sql = 'SELECT a.cat_id, a.cat_name, b.cat_id AS child_id, b.cat_name AS child_name, b.sort_order ' .
         //         'FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
@@ -1877,7 +1877,7 @@ function article_categories_tree($cat_id = 0)
         $sql = 'SELECT a.cat_id, a.cat_name, b.cat_id AS child_id, b.cat_name AS child_name, b.sort_order ' .
                 'FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
                 'LEFT JOIN ' . $GLOBALS['ecs']->table('article_cat') . ' AS b ON b.parent_id = a.cat_id ' .
-                "WHERE b.parent_id = '$parent_id' AND b.cat_type = 1 ORDER BY sort_order ASC";
+                "WHERE b.parent_id = '$parent_id'  ORDER BY sort_order ASC";
     }
     $res = $GLOBALS['db']->getAll($sql);
 
@@ -1933,13 +1933,13 @@ function article_categories_tree1($cat_id = 0)
                         'b.cat_id AS child_id, b.cat_name AS child_name, b.sort_order AS child_order ' .
                     'FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
                     'LEFT JOIN ' . $GLOBALS['ecs']->table('article_cat') . ' AS b ON b.parent_id = a.cat_id ' .
-                    "WHERE a.cat_id = '$cat_id' AND a.cat_type=1 ORDER BY parent_order ASC, a.cat_id ASC, child_order ASC";
+                    "WHERE a.cat_id = '$cat_id' ORDER BY parent_order ASC, a.cat_id ASC, child_order ASC";
         } else {
             /* 获取当前分类及其父分类 */
             $sql = 'SELECT a.cat_id, a.cat_name, b.cat_id AS child_id, b.cat_name AS child_name, b.sort_order ' .
                 'FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
                 'LEFT JOIN ' . $GLOBALS['ecs']->table('article_cat') . ' AS b ON b.parent_id = a.cat_id ' .
-                "WHERE b.parent_id = '$parent_id' AND b.cat_type = 1 ORDER BY sort_order ASC";
+                "WHERE b.parent_id = '$parent_id'  ORDER BY sort_order ASC";
         }
     }
     else
@@ -1948,7 +1948,7 @@ function article_categories_tree1($cat_id = 0)
         $sql = 'SELECT a.cat_id, a.cat_name, b.cat_id AS child_id, b.cat_name AS child_name, b.sort_order ' .
                 'FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
                 'LEFT JOIN ' . $GLOBALS['ecs']->table('article_cat') . ' AS b ON b.parent_id = a.cat_id ' .
-                "WHERE b.parent_id = '$parent_id' AND b.cat_type = 1 ORDER BY sort_order ASC";
+                "WHERE b.parent_id = '$parent_id' ORDER BY sort_order ASC";
     }
     $res = $GLOBALS['db']->getAll($sql);
     $cat_arr = array();

@@ -402,6 +402,122 @@ function handle_gallery_image($goods_id, $image_files, $image_descs, $image_urls
 }
 
 /**
+ * 保存某文章的相册图片
+ * @param   int     $goods_id
+ * @param   array   $image_files
+ * @param   array   $image_descs
+ * @return  void
+ */
+function handle_wallpaper_image($goods_id, $image_files, $image_descs, $image_urls)
+{
+    /* 是否处理缩略图 */
+    $proc_thumb = (isset($GLOBALS['shop_id']) && $GLOBALS['shop_id'] > 0)? false : true;
+    foreach ($image_descs AS $key => $img_desc)
+    {
+        /* 是否成功上传 */
+        $flag = false;
+        if (isset($image_files['error']))
+        {
+            if ($image_files['error'][$key] == 0)
+            {
+                $flag = true;
+            }
+        }
+        else
+        {
+            if ($image_files['tmp_name'][$key] != 'none')
+            {
+                $flag = true;
+            }
+        }
+
+        if ($flag)
+        {
+            // 生成缩略图
+            if ($proc_thumb)
+            {
+                $thumb_url = $GLOBALS['image']->make_thumb($image_files['tmp_name'][$key], $GLOBALS['_CFG']['thumb_width'],  $GLOBALS['_CFG']['thumb_height']);
+                $thumb_url = is_string($thumb_url) ? $thumb_url : '';
+            }
+
+            $upload = array(
+                'name' => $image_files['name'][$key],
+                'type' => $image_files['type'][$key],
+                'tmp_name' => $image_files['tmp_name'][$key],
+                'size' => $image_files['size'][$key],
+            );
+            if (isset($image_files['error']))
+            {
+                $upload['error'] = $image_files['error'][$key];
+            }
+            $img_original = $GLOBALS['image']->upload_image($upload);
+            if ($img_original === false)
+            {
+                sys_msg($GLOBALS['image']->error_msg(), 1, array(), false);
+            }
+            $img_url = $img_original;
+
+            if (!$proc_thumb)
+            {
+                $thumb_url = $img_original;
+            }
+            // 如果服务器支持GD 则添加水印
+            if ($proc_thumb && gd_version() > 0)
+            {
+                $pos        = strpos(basename($img_original), '.');
+                $newname    = dirname($img_original) . '/' . $GLOBALS['image']->random_filename() . substr(basename($img_original), $pos);
+                copy('../' . $img_original, '../' . $newname);
+                $img_url    = $newname;
+
+                $GLOBALS['image']->add_watermark('../'.$img_url,'',$GLOBALS['_CFG']['watermark'], $GLOBALS['_CFG']['watermark_place'], $GLOBALS['_CFG']['watermark_alpha']);
+            }
+
+            /* 重新格式化图片名称 */
+            $img_original = reformat_image_name('gallery', $goods_id, $img_original, 'source');
+            $img_url = reformat_image_name('gallery', $goods_id, $img_url, 'goods');
+            $thumb_url = reformat_image_name('gallery_thumb', $goods_id, $thumb_url, 'thumb');
+            $sql = "INSERT INTO " . $GLOBALS['ecs']->table('article_wallpaper') . " (article_id, img_url, img_desc, thumb_url, img_original) " .
+                    "VALUES ('$goods_id', '$img_url', '$img_desc', '$thumb_url', '$img_original')";
+            $GLOBALS['db']->query($sql);
+            /* 不保留商品原图的时候删除原图 */
+            if ($proc_thumb && !$GLOBALS['_CFG']['retain_original_img'] && !empty($img_original))
+            {
+                $GLOBALS['db']->query("UPDATE " . $GLOBALS['ecs']->table('article_wallpaper') . " SET img_original='' WHERE `article_id`='{$article_id}'");
+                @unlink('../' . $img_original);
+            }
+        }
+        elseif (!empty($image_urls[$key]) && ($image_urls[$key] != $GLOBALS['_LANG']['img_file']) && ($image_urls[$key] != 'http://') && copy(trim($image_urls[$key]), ROOT_PATH . 'temp/' . basename($image_urls[$key])))
+        {
+            $image_url = trim($image_urls[$key]);
+
+            //定义原图路径
+            $down_img = ROOT_PATH . 'temp/' . basename($image_url);
+
+            // 生成缩略图
+            if ($proc_thumb)
+            {
+                $thumb_url = $GLOBALS['image']->make_thumb($down_img, $GLOBALS['_CFG']['thumb_width'],  $GLOBALS['_CFG']['thumb_height']);
+                $thumb_url = is_string($thumb_url) ? $thumb_url : '';
+                $thumb_url = reformat_image_name('gallery_thumb', $goods_id, $thumb_url, 'thumb');
+            }
+
+            if (!$proc_thumb)
+            {
+                $thumb_url = htmlspecialchars($image_url);
+            }
+
+            /* 重新格式化图片名称 */
+            $img_url = $img_original = htmlspecialchars($image_url);
+            $sql = "INSERT INTO " . $GLOBALS['ecs']->table('article_wallpaper') . " (article_id, img_url, img_desc, thumb_url, img_original) " .
+                    "VALUES ('$article_id', '$img_url', '$img_desc', '$thumb_url', '$img_original')";
+            $GLOBALS['db']->query($sql);
+
+            @unlink($down_img);
+        }
+    }
+}
+
+/**
  * 修改商品某字段值
  * @param   string  $goods_id   商品编号，可以为多个，用 ',' 隔开
  * @param   string  $field      字段名

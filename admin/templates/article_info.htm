@@ -1,13 +1,14 @@
 <!-- $Id: article_info.htm 16780 2009-11-09 09:28:30Z sxc_shop $ -->
 {include file="pageheader.htm"}
-{insert_scripts files="../js/utils.js,selectzone.js,validator.js"}
+{insert_scripts files="../js/utils.js,selectzone.js,validator.js,../js/jquery.js"}
 <!-- start goods form -->
 <div class="tab-div">
   <div id="tabbar-div">
     <p>
-      <span class="tab-front" id="general-tab">{$lang.tab_general}</span><span
-      class="tab-back" id="detail-tab">{$lang.tab_content}</span><span
-      class="tab-back" id="goods-tab">{$lang.tab_goods}</span>
+      <span class="tab-front" id="general-tab">{$lang.tab_general}</span>
+      <span class="tab-back" id="detail-tab">{$lang.tab_content}</span>
+      <span class="tab-back" id="wallpaper-tab">壁纸图片</span>
+      <span class="tab-back" id="goods-tab">{$lang.tab_goods}</span>
     </p>
   </div>
 
@@ -72,6 +73,12 @@
         <td class="narrow-label">{$lang.lable_description}</td>
         <td><textarea name="description" id="description" cols="40" rows="5">{$article.description|escape}</textarea></td>
       </tr>
+
+      <tr>
+        <td class="narrow-label">视频地址</td>
+        <td><input name="vedio_link" id="vedio_link" value="{$article.vedio_link|escape}"></td>
+      </tr>
+
       <tr>
         <td class="narrow-label">{$lang.external_links}</td>
         <td><input name="link_url" type="text" id="link_url" value="{if $article.link neq ''}{$article.link|escape}{else}http://{/if}" maxlength="60" /></td>
@@ -83,12 +90,75 @@
           <input name="file_url" type="text" value="{$article.file_url|escape}" size="30" maxlength="255" />
           </span></td>
       </tr>
-    </table>
+      <!-- 文章缩略图 start by boxcore -->
+      
+      <tr>
+        <td class="label">上传文章图片</td>
+        <td>
+          <input type="file" name="article_img" size="35" />
+          {if $article.article_img}
+            <a href="article.php?act=show_image&img_url={$article.article_img}" target="_blank"><img src="images/yes.gif" border="0" /></a>
+          {else}
+            <img src="images/no.gif" />
+          {/if}
+          <br /><input type="text" size="40" value="{$lang.lab_picture_url}" style="color:#aaa;" onfocus="if (this.value == '{$lang.lab_picture_url}'){this.value='http://';this.style.color='#000';}" name="article_img_url"/>
+        </td>
+      </tr>
+      <tr id="auto_thumb_1">
+        <td class="label"> 上传文章缩略图</td>
+        <td id="auto_thumb_3">
+          <input type="file" name="article_thumb" size="35" />
+          {if $article.article_thumb}
+            <a href="article.php?act=show_image&img_url={$article.article_thumb}" target="_blank"><img src="images/yes.gif" border="0" /></a>
+          {else}
+            <img src="images/no.gif" />
+          {/if}
+          <br /><input type="text" size="40" value="{$lang.lab_thumb_url}" style="color:#aaa;" onfocus="if (this.value == '{$lang.lab_thumb_url}'){this.value='http://';this.style.color='#000';}" name="article_thumb_url"/>
+          {if $gd > 0}
+          <br /><label for="auto_thumb"><input type="checkbox" id="auto_thumb" name="auto_thumb" checked="true" value="1" onclick="handleAutoThumb(this.checked)" />{$lang.auto_thumb}</label>{/if}
+        </td>
+      </tr>
 
+      <!-- 文章缩略图 end -->
+
+
+      
+    </table>
+    
+
+    <!-- 文章壁纸图片 -->
+    <table width="90%" id="wallpaper-table" style="display:none" align="center">
+          <!-- 图片列表 -->
+          <tr>
+            <td>
+              {foreach from=$img_list item=img key=i}
+              <div id="wallpaper_{$img.img_id}" style="float:left; text-align:center; border: 1px solid #DADADA; margin: 4px; padding:2px;">
+                <a href="javascript:;" onclick="if (confirm('{$lang.drop_img_confirm}')) dropImg('{$img.img_id}')">[-]</a><br />
+                <a href="goods.php?act=show_image&img_url={$img.img_url}" target="_blank">
+                <img src="../{if $img.thumb_url}{$img.thumb_url}{else}{$img.img_url}{/if}" {if $thumb_width neq 0}width="{$thumb_width}"{/if} {if $thumb_height neq 0}height="{$thumb_height}"{/if} border="0" />
+                </a><br />
+                <input type="text" value="{$img.img_desc|escape}" size="15" name="old_img_desc[{$img.img_id}]" />
+              </div>
+              {/foreach}
+            </td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
+          <!-- 上传图片 -->
+          <tr>
+            <td>
+              <a href="javascript:;" onclick="addImg(this)">[+]</a>
+              {$lang.img_desc} <input type="text" name="img_desc[]" size="20" />
+              {$lang.img_url} <input type="file" name="img_url[]" />
+              <input type="text" size="40" value="{$lang.img_file}" style="color:#aaa;" onfocus="if (this.value == '{$lang.img_file}'){this.value='http://';this.style.color='#000';}" name="img_file[]"/>
+            </td>
+          </tr>
+    </table>
+	
+    
     <table width="90%" id="detail-table" style="display:none">
      <tr><td>{$KindEditor}</td></tr>
     </table>
-
+    
     <table width="90%" id="goods-table" style="display:none">
       <!-- 商品搜索 -->
       <tr>
@@ -152,6 +222,11 @@ onload = function()
 {
   // 开始检查订单
   startCheckOrder();
+  if (document.forms['theForm'].elements['auto_thumb'])
+  {
+      handleAutoThumb(document.forms['theForm'].elements['auto_thumb'].checked);
+  }
+
 }
 
 function validate()
@@ -277,5 +352,58 @@ function catChanged()
 
   return true;
 }
+
+
+/**
+ * 图片处理相关函数
+ */
+
+  /**
+   * 新增一个图片
+   */
+  function addImg(obj)
+  {
+      var src  = obj.parentNode.parentNode;
+      var idx  = rowindex(src);
+      var tbl  = document.getElementById('wallpaper-table');
+      var row  = tbl.insertRow(idx + 1);
+      var cell = row.insertCell(-1);
+      cell.innerHTML = src.cells[0].innerHTML.replace(/(.*)(addImg)(.*)(\[)(\+)/i, "$1removeImg$3$4-");
+  }
+
+  /**
+   * 删除图片上传
+   */
+  function removeImg(obj)
+  {
+      var row = rowindex(obj.parentNode.parentNode);
+      var tbl = document.getElementById('wallpaper-table');
+
+      tbl.deleteRow(row);
+  }
+
+  /**
+   * 删除图片
+   */
+  function dropImg(imgId)
+  {
+    Ajax.call('article.php?is_ajax=1&act=drop_image', "img_id="+imgId, dropImgResponse, "GET", "JSON");
+  }
+
+  function dropImgResponse(result)
+  {
+      if (result.error == 0)
+      {
+          document.getElementById('wallpaper_' + result.content).style.display = 'none';
+      }
+  }
+
+  function handleAutoThumb(checked)
+  {
+      document.forms['theForm'].elements['article_thumb'].disabled = checked;
+      document.forms['theForm'].elements['article_thumb_url'].disabled = checked;
+  }
+
+
 </script>
 {include file="pagefooter.htm"}

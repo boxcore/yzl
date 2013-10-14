@@ -170,6 +170,13 @@ define('SYSTEM_CAT',                2); //系统默认分类
 define('INFO_CAT',                  3); //网店信息分类
 define('UPHELP_CAT',                4); //网店帮助分类分类
 define('HELP_CAT',                  5); //网店帮助分类
+define('DOWN_CAT',                  6); //下载分类
+define('IMAGE_CAT',                 7); //图片下载分类
+define('VIDEO_CAT',                 8); //视频下载分类
+define('HR_CAT',                  	9); //招聘分类
+//define('HR_CAT',                  	7); //招聘分
+//define('HR_CAT',                  	7); //招聘分
+
 
 /* 活动状态 */
 define('PRE_START',                 0); // 未开始
