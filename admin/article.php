@@ -1089,6 +1089,31 @@ elseif ($_REQUEST['act'] == 'remove')
         @unlink(ROOT_PATH . $old_url);
     }
 
+    //删除壁纸相册图片
+    $del_wall_list = $GLOBALS['db']->getAll('SELECT * FROM ' .$GLOBALS['ecs']->table('article_wallpaper').' WHERE article_id = "'.$id.'" ORDER BY img_id ASC');
+    if(!empty($del_wall_list))
+    {
+        foreach( $del_wall_list as $v)
+        {
+            if ($v['img_url'] != '' && is_file('../' . $v['img_url']))
+            {
+                @unlink('../' . $v['img_url']);
+            }
+            if ($v['thumb_url'] != '' && is_file('../' . $v['thumb_url']))
+            {
+                @unlink('../' . $v['thumb_url']);
+            }
+            if ($v['img_original'] != '' && is_file('../' . $v['img_original']))
+            {
+                @unlink('../' . $v['img_original']);
+            }
+
+            $sql = "DELETE FROM " . $GLOBALS['ecs']->table('article_wallpaper') . " WHERE img_id = '$v[img_id]' LIMIT 1";
+            $GLOBALS['db']->query($sql);
+        }
+    }
+
+
     $name = $exc->get_name($id);
     if ($exc->drop($id))
     {
