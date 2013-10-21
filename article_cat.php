@@ -88,7 +88,8 @@ if (!$smarty->is_cached('article_cat.dwt', $cache_id))
     $smarty->assign('promotion_info', get_promotion_info());
 
     /* Meta */
-    $meta = $db->getRow("SELECT keywords, cat_desc, cat_detail FROM " . $ecs->table('article_cat') . " WHERE cat_id = '$cat_id'");
+    $meta = $db->getRow("SELECT keywords, cat_desc, cat_detail, cat_type FROM " . $ecs->table('article_cat') . " WHERE cat_id = '$cat_id'");
+    $cat_type = $meta['cat_type'];
 
     if ($meta === false || empty($meta))
     {

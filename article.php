@@ -123,13 +123,20 @@ if (!$smarty->is_cached('article.dwt', $cache_id))
 
     assign_dynamic('article');
 }
-if(isset($article) && $article['cat_id'] > 2)
-{
+echo $_GET['dodo'].'<hr>';
+if( $article['cat_type'] == '8') {//视频广告模板
+    $smarty->display('article_vedio.dwt', $cache_id);
+} elseif( $article['cat_type'] == '18' ) {
     $smarty->display('article.dwt', $cache_id);
-}
-else
-{
-    $smarty->display('article_culture.dwt', $cache_id);
+} else {
+    if(isset($article) && $article['cat_id'] > 2)
+    {
+        $smarty->display('article.dwt', $cache_id);
+    }
+    else
+    {
+        $smarty->display('article_culture.dwt', $cache_id);
+    }
 }
 
 /*------------------------------------------------------ */
@@ -146,9 +153,10 @@ else
 function get_article_info($article_id)
 {
     /* 获得文章的信息 */
-    $sql = "SELECT a.*, IFNULL(AVG(r.comment_rank), 0) AS comment_rank ".
+    $sql = "SELECT a.*, IFNULL(AVG(r.comment_rank), 0) AS comment_rank ,c.cat_type ".
             "FROM " .$GLOBALS['ecs']->table('article'). " AS a ".
             "LEFT JOIN " .$GLOBALS['ecs']->table('comment'). " AS r ON r.id_value = a.article_id AND comment_type = 1 ".
+            "LEFT JOIN " .$GLOBALS['ecs']->table('article_cat'). " AS c ON c.cat_id = a.cat_id ".
             "WHERE a.is_open = 1 AND a.article_id = '$article_id' GROUP BY a.article_id";
     $row = $GLOBALS['db']->getRow($sql);
 

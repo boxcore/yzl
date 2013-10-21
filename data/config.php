@@ -9,7 +9,7 @@ $db_name   = "ohmyface";
 $db_user   = "ohmyface";
 
 // database password
-$db_pass   = "ohmyface";
+$db_pass   = "!pi@yan#chong$";
 
 // table prefix
 $prefix    = "yzl_";
