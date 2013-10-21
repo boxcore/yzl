@@ -123,21 +123,42 @@ if (!$smarty->is_cached('article.dwt', $cache_id))
 
     assign_dynamic('article');
 }
-echo $_GET['dodo'].'<hr>';
-if( $article['cat_type'] == '8') {//视频广告模板
-    $smarty->display('article_vedio.dwt', $cache_id);
-} elseif( $article['cat_type'] == '18' ) {
-    $smarty->display('article.dwt', $cache_id);
-} else {
-    if(isset($article) && $article['cat_id'] > 2)
-    {
-        $smarty->display('article.dwt', $cache_id);
-    }
-    else
-    {
-        $smarty->display('article_culture.dwt', $cache_id);
-    }
+//文章模板类型配置
+// echo '<pre>';print_r($article);echo '</pre>';exit;
+switch($article['cat_type']){
+    case 1:
+        $article_themes = 'article_culture.dwt';
+        break;
+    case 7://壁纸下载模板
+        $article_themes = 'article_wallpaper.dwt';
+        break;
+    case 8://视频广告模板
+        $article_themes = 'article_vedio.dwt';
+        break;
+    case 9://招聘分类模板
+        $article_themes = 'article_hr.dwt';
+        break;
+    default:
+        $article_themes = 'article.dwt';
 }
+$article_themes = $article_themes?$article_themes:'article.dwt';
+$smarty->display($article_themes, $cache_id);
+// if( $article['cat_type'] == '8') {//视频广告模板
+//     $smarty->display('article_vedio.dwt', $cache_id);
+// } elseif( $article['cat_type'] == '7' ) {//壁纸下载模板
+//     $smarty->display('article_wallpaper.dwt', $cache_id);
+// } elseif( $article['cat_type'] == '9' ) {//招聘分类模板
+//     $smarty->display('article_hr.dwt', $cache_id);
+// } else {
+//     if(isset($article) && $article['cat_id'] > 2)
+//     {
+//         $smarty->display('article.dwt', $cache_id);
+//     }
+//     else
+//     {
+//         $smarty->display('article_culture.dwt', $cache_id);
+//     }
+// }
 
 /*------------------------------------------------------ */
 //-- PRIVATE FUNCTION

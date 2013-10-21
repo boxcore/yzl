@@ -209,14 +209,18 @@ class cls_image
 
         if ($org_info[0] / $thumb_width > $org_info[1] / $thumb_height)
         {
-            $lessen_width  = $thumb_width;
-            $lessen_height  = $thumb_width / $scale_org;
+            // $lessen_width  = $thumb_width;
+            // $lessen_height  = $thumb_width / $scale_org;
+            $lessen_width  = $thumb_height * $scale_org;
+            $lessen_height = $thumb_height;
         }
         else
         {
             /* 原始图片比较高，则以高度为准 */
-            $lessen_width  = $thumb_height * $scale_org;
-            $lessen_height = $thumb_height;
+            // $lessen_width  = $thumb_height * $scale_org;
+            // $lessen_height = $thumb_height;
+            $lessen_width  = $thumb_width;
+            $lessen_height  = $thumb_width / $scale_org;
         }
 
         $dst_x = ($thumb_width  - $lessen_width)  / 2;

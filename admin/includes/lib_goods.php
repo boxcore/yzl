@@ -436,7 +436,7 @@ function handle_wallpaper_image($goods_id, $image_files, $image_descs, $image_ur
             // 生成缩略图
             if ($proc_thumb)
             {
-                $thumb_url = $GLOBALS['image']->make_thumb($image_files['tmp_name'][$key], $GLOBALS['_CFG']['thumb_width'],  $GLOBALS['_CFG']['thumb_height']);
+                $thumb_url = $GLOBALS['image']->make_thumb($image_files['tmp_name'][$key], $GLOBALS['_CFG']['thumb_wall_width'],  $GLOBALS['_CFG']['thumb_wall_height']);
                 $thumb_url = is_string($thumb_url) ? $thumb_url : '';
             }
 

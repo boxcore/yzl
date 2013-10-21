@@ -579,6 +579,8 @@ function load_config()
         $arr['thumb_height']         = intval($arr['thumb_height']);
         $arr['image_width']          = intval($arr['image_width']);
         $arr['image_height']         = intval($arr['image_height']);
+		$arr['thumb_wall_width']     = intval($arr['thumb_wall_width']); //boxcore 20131021
+        $arr['thumb_wall_height']    = intval($arr['thumb_wall_height']); //boxcore 20131021
         $arr['best_number']          = !empty($arr['best_number']) && intval($arr['best_number']) > 0 ? intval($arr['best_number'])     : 3;
         $arr['new_number']           = !empty($arr['new_number']) && intval($arr['new_number']) > 0 ? intval($arr['new_number'])      : 3;
         $arr['hot_number']           = !empty($arr['hot_number']) && intval($arr['hot_number']) > 0 ? intval($arr['hot_number'])      : 3;

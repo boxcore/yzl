@@ -46,6 +46,7 @@ elseif(!empty($_REQUEST['defurl']))
 	$define_url=trim($_REQUEST['defurl']);
 	$cat_id=$db->getOne("select cat_id from ". $ecs->table('article_cat') ." where define_url='$define_url'  limit 0,1");
 	$cat_id=$cat_id ? $cat_id : intval($define_url);
+    $cat_info = $db->getRow("SELECT * FROM " . $ecs->table('article_cat') . " WHERE cat_id = '$cat_id'");//boxcore 获取分类信息
 
 }
 /* 代码增加_end  By thunje#URLdf */
@@ -80,6 +81,7 @@ if (!$smarty->is_cached('article_cat.dwt', $cache_id))
     $smarty->assign('article_categories',   article_categories_tree1($cat_id)); //文章分类树
     $smarty->assign('helps',                get_shop_help());        // 网店帮助
     $smarty->assign('top_goods',            get_top10());            // 销售排行
+    $smarty->assign('cat_info',             $cat_info);            // 获取分类信息 by boxcore
 
     $smarty->assign('best_goods',           get_recommend_goods('best'));
     $smarty->assign('new_goods',            get_recommend_goods('new'));
@@ -139,6 +141,7 @@ if (!$smarty->is_cached('article_cat.dwt', $cache_id))
     $cat_page_info['page'] = $page;
     $smarty->assign('cat_page_info', $cat_page_info);
     $smarty->assign('artciles_list',    get_cat_articles($cat_id, $page, $size ,$keywords));
+    
     $smarty->assign('cat_id',    $cat_id);
     /* 分页 */
     assign_pager('article_cat', $cat_id, $count, $size, '', '', $page, $goon_keywords);
@@ -146,6 +149,23 @@ if (!$smarty->is_cached('article_cat.dwt', $cache_id))
 }
 
 $smarty->assign('feed_url',         ($_CFG['rewrite'] == 1) ? "feed-typearticle_cat" . $cat_id . ".xml" : 'feed.php?type=article_cat' . $cat_id); // RSS URL
-
-$smarty->display('article_cat.dwt', $cache_id);
+// echo '<pre>';print_r($cat_info);echo '</pre>';exit;
+switch($cat_info['cat_type']){
+    // case 1:
+    //     $article_cat_themes = 'article_cat_culture.dwt';
+    //     break;
+    case 7://壁纸下载模板
+        $article_cat_themes = 'article_cat_wallpaper.dwt';
+        break;
+    // case 8://视频广告模板
+    //     $article_cat_themes = 'article_cat_vedio.dwt';
+    //     break;
+    case 9://招聘分类模板
+        $article_cat_themes = 'article_cat_hr.dwt';
+        break;
+    default:
+        $article_cat_themes = 'article_cat.dwt';
+}
+$article_cat_themes = $article_cat_themes?$article_cat_themes:'article_cat.dwt';
+$smarty->display($article_cat_themes, $cache_id);
 ?>

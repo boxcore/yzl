@@ -72,6 +72,8 @@ function get_cat_articles($cat_id, $page = 1, $size = 20 ,$requirement='')
             $arr[$article_id]['url']         = $row['open_type'] != 1 ? build_uri('article', array('aid'=>$article_id), $row['title']) : trim($row['file_url']);
             $arr[$article_id]['add_time']    = date($GLOBALS['_CFG']['date_format'], $row['add_time']);
 			$arr[$article_id]['article_type']    = $row['article_type'];
+			//添加壁纸相册 by boxcore
+			$arr[$article_id]['article_wallpaper'] = $GLOBALS['db']->getAll('SELECT * FROM ' .$GLOBALS['ecs']->table('article_wallpaper').' WHERE article_id = "'.$article_id.'" ORDER BY img_id ASC');
         }
     }
 

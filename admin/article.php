@@ -347,9 +347,9 @@ if ($_REQUEST['act'] == 'insert')
             /* 添加判断是否自动生成相册图片 */
             if ($_CFG['auto_generate_gallery'])
             {
-                if ($_CFG['thumb_width'] != 0 || $_CFG['thumb_height'] != 0)
+                if ($_CFG['thumb_wall_width'] != 0 || $_CFG['thumb_wall_height'] != 0)
                 {
-                    $gallery_thumb = $image->make_thumb('../' . $img, $GLOBALS['_CFG']['thumb_width'],  $GLOBALS['_CFG']['thumb_height']);
+                    $gallery_thumb = $image->make_thumb('../' . $img, $GLOBALS['_CFG']['thumb_wall_width'],  $GLOBALS['_CFG']['thumb_wall_height']);
                     if ($gallery_thumb === false)
                     {
                         sys_msg($image->error_msg(), 1, array(), false);
@@ -376,9 +376,9 @@ if ($_REQUEST['act'] == 'insert')
         if ($proc_thumb && isset($_POST['auto_thumb']) && !empty($original_img))
         {
             // 如果设置缩略图大小不为0，生成缩略图
-            if ($_CFG['thumb_width'] != 0 || $_CFG['thumb_height'] != 0)
+            if ($_CFG['thumb_wall_width'] != 0 || $_CFG['thumb_wall_height'] != 0)
             {
-                $article_thumb = $image->make_thumb('../' . $original_img, $GLOBALS['_CFG']['thumb_width'],  $GLOBALS['_CFG']['thumb_height']);
+                $article_thumb = $image->make_thumb('../' . $original_img, $GLOBALS['_CFG']['thumb_wall_width'],  $GLOBALS['_CFG']['thumb_wall_height']);
                 if ($article_thumb === false)
                 {
                     sys_msg($image->error_msg(), 1, array(), false);
@@ -590,8 +590,8 @@ if ($_REQUEST['act'] == 'edit')
     /* 文章图片相册功能 start by bocxore */
     $smarty->assign('img_list', $img_list);
     $smarty->assign('gd', gd_version());
-    $smarty->assign('thumb_width', $_CFG['thumb_width']);
-    $smarty->assign('thumb_height', $_CFG['thumb_height']);
+    $smarty->assign('thumb_wall_width', $_CFG['thumb_wall_width']);
+    $smarty->assign('thumb_wall_height', $_CFG['thumb_wall_height']);
     /* 文章图片相册功能 end by bocxore */
 
 
@@ -854,9 +854,9 @@ if ($_REQUEST['act'] =='update')
             /* 添加判断是否自动生成相册图片 */
             if ($_CFG['auto_generate_gallery'])
             {
-                if ($_CFG['thumb_width'] != 0 || $_CFG['thumb_height'] != 0)
+                if ($_CFG['thumb_wall_width'] != 0 || $_CFG['thumb_wall_height'] != 0)
                 {
-                    $gallery_thumb = $image->make_thumb('../' . $img, $GLOBALS['_CFG']['thumb_width'],  $GLOBALS['_CFG']['thumb_height']);
+                    $gallery_thumb = $image->make_thumb('../' . $img, $GLOBALS['_CFG']['thumb_wall_width'],  $GLOBALS['_CFG']['thumb_wall_height']);
                     if ($gallery_thumb === false)
                     {
                         sys_msg($image->error_msg(), 1, array(), false);
@@ -884,9 +884,9 @@ if ($_REQUEST['act'] =='update')
         if ($proc_thumb && isset($_POST['auto_thumb']) && !empty($original_img))
         {
             // 如果设置缩略图大小不为0，生成缩略图
-            if ($_CFG['thumb_width'] != 0 || $_CFG['thumb_height'] != 0)
+            if ($_CFG['thumb_wall_width'] != 0 || $_CFG['thumb_wall_height'] != 0)
             {
-                $article_thumb = $image->make_thumb('../' . $original_img, $GLOBALS['_CFG']['thumb_width'],  $GLOBALS['_CFG']['thumb_height']);
+                $article_thumb = $image->make_thumb('../' . $original_img, $GLOBALS['_CFG']['thumb_wall_width'],  $GLOBALS['_CFG']['thumb_wall_height']);
                 if ($article_thumb === false)
                 {
                     sys_msg($image->error_msg(), 1, array(), false);
@@ -1329,6 +1329,42 @@ elseif ($_REQUEST['act'] == 'show_image')
     }
     $smarty->assign('img_url', $img_url);
     $smarty->display('goods_show_image.htm');
+}
+
+/*------------------------------------------------------ */
+//-- 删除图片
+/*------------------------------------------------------ */
+elseif ($_REQUEST['act'] == 'drop_image')
+{
+    check_authz_json('article_manage');
+
+    $img_id = empty($_REQUEST['img_id']) ? 0 : intval($_REQUEST['img_id']);
+
+    /* 删除图片文件 */
+    $sql = "SELECT img_url, thumb_url, img_original " .
+            " FROM " . $GLOBALS['ecs']->table('article_wallpaper') .
+            " WHERE img_id = '$img_id'";
+    $row = $GLOBALS['db']->getRow($sql);
+
+    if ($row['img_url'] != '' && is_file('../' . $row['img_url']))
+    {
+        @unlink('../' . $row['img_url']);
+    }
+    if ($row['thumb_url'] != '' && is_file('../' . $row['thumb_url']))
+    {
+        @unlink('../' . $row['thumb_url']);
+    }
+    if ($row['img_original'] != '' && is_file('../' . $row['img_original']))
+    {
+        @unlink('../' . $row['img_original']);
+    }
+
+    /* 删除数据 */
+    $sql = "DELETE FROM " . $GLOBALS['ecs']->table('article_wallpaper') . " WHERE img_id = '$img_id' LIMIT 1";
+    $GLOBALS['db']->query($sql);
+
+    clear_cache_files();
+    make_json_result($img_id);
 }
 
 /* 把商品删除关联 */

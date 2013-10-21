@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- {if $index_ad eq 'sys'} -->
-<link href="{$ecs_themes_path}/css/foucs.css" rel="stylesheet" />
-<script src="{$ecs_themes_path}/js/jquery.foucs.js" type="text/javascript"></script>
+<link href="data/flashdata/{$flash_theme}/css/foucs.css" rel="stylesheet" />
+<script src="data/flashdata/{$flash_theme}/js/jquery.foucs.js" type="text/javascript"></script>
 <!-- 代码 开始 -->
 <div id="main">
     <div id="index_b_hero">

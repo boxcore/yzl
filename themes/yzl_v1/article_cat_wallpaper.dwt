@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+    <!-- TemplateBeginEditable name="doctitle" -->
+    <title>{$page_title}</title>
+    <!-- TemplateEndEditable -->
+    <!-- TemplateBeginEditable name="head" -->
+    <!-- TemplateEndEditable -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+    {insert_scripts files='common.js,index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="inner_banner"></div>
+<div class="inner_content">
+    <div class="innernews_left">
+        <!-- TemplateBeginEditable name="左边区域" -->
+        <!-- {if $article_categories} -->
+        <!-- #BeginLibraryItem "/library/article_category_tree.lbi" --><!-- #EndLibraryItem -->
+        <!-- {/if} -->
+        <!-- TemplateEndEditable -->
+    </div>
+    <div class="innernews_right">
+        <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+        <div class="companynew_list">
+            <h1 class="wall_paper"></h1>
+            <ul class="wall-box">
+                <!-- {foreach from=$artciles_list item=article name=lista} -->
+                <li {if $smarty.foreach.lista.iteration/2 neq 0 }class="no-margin"{/if}><img src="<!--{if $article.article_wallpaper}-->{$article.article_wallpaper.0.thumb_url}<!-- {else} -->未上传图片<!-- {/if} -->" width="300" height="197">
+                    <div class="wall-text">
+                        <!-- {foreach from=$article.article_wallpaper item=wallpaper} -->
+                        <p><a href="download.php?name={$wallpaper.img_desc}&url={$wallpaper.img_original}&">{$wallpaper.img_desc}</a></p>
+                        <!-- {/foreach} -->
+                    </div>
+                </li>
+                <!-- {/foreach} -->
+            </ul>
+            <!--{*<div class="job-list">
+                <!-- {foreach from=$artciles_list item=article} -->
+                <dl{if $article.article_type == 1} class="red"{/if}><dt><a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title}</a></dt><dd>重庆</dd></dl>
+                <!-- {/foreach} -->
+            </div>*}-->
+            <!-- #BeginLibraryItem "/library/pages_article_cat.lbi" --><!-- #EndLibraryItem -->
+        </div>
+    </div>
+</div>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>
