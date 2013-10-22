@@ -1,4 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="clear clearfix"></div>
 <!--底部导航 start-->
    <!-- {if $navigator_list.bottom1} -->
    <!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} -->

@@ -157,11 +157,14 @@ switch($cat_info['cat_type']){
     case 7://壁纸下载模板
         $article_cat_themes = 'article_cat_wallpaper.dwt';
         break;
-    // case 8://视频广告模板
-    //     $article_cat_themes = 'article_cat_vedio.dwt';
-    //     break;
+    case 8://视频广告模板
+        $article_cat_themes = 'article_cat_vedio.dwt';
+        break;
     case 9://招聘分类模板
         $article_cat_themes = 'article_cat_hr.dwt';
+        break;
+    case 10://新闻分类模板
+        $article_cat_themes = 'article_cat_news.dwt';
         break;
     default:
         $article_cat_themes = 'article_cat.dwt';

@@ -32,7 +32,14 @@ RewriteRule ^([0-9a-zA-Z_]+)[\/]*$ category\.php\?defurl=$1  [QSA,L]
 RewriteRule ^goods-([0-9]+)(.*)\.html$  goods\.php\?id=$1 [QSA,L]
 
 
-# 文章列表
+# --------文章列表------------------------------------
+RewriteRule ^page\/brand_download[\/]*$ article_cat\.php\?defurl=wallpaper   [QSA,L]
+RewriteRule ^page\/5[\/]*$ article_cat\.php\?defurl=wallpaper   [QSA,L]
+RewriteRule ^page\/3[\/]*$ article_cat\.php\?defurl=online_wall   [QSA,L]
+RewriteRule ^page\/9[\/]*$ article_cat\.php\?defurl=10   [QSA,L]
+#线上商城
+RewriteRule ^page\/8[\/]*$ article_cat\.php\?defurl=21   [QSA,L]
+
 RewriteRule ^page\/([0-9a-zA-Z_]+)-([0-9]+)-(.+)-([a-zA-Z]+)[\/]*$  article_cat\.php\?defurl=$1&page=$2&sort=$3&order=$4  [QSA,L]
 RewriteRule ^page\/([0-9a-zA-Z_]+)-([0-9]+)-(.+)[\/]*$              article_cat\.php\?defurl=$1&page=$2&keywords=$3 [QSA,L]
 RewriteRule ^page\/([0-9a-zA-Z_]+)-([0-9]+)[\/]*$                   article_cat\.php\?defurl=$1&page=$2   [QSA,L]

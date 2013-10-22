@@ -36,7 +36,7 @@ $modules['02_cat_and_goods']['51_virtual_card_add']    = 'goods.php?act=add&exte
 $modules['02_cat_and_goods']['52_virtual_card_change'] = 'virtual_card.php?act=change';
 $modules['02_cat_and_goods']['goods_auto']             = 'goods_auto.php?act=list';
 
-/*  促销管理
+/*  促销管理 */
 $modules['03_promotion']['02_snatch_list']          = 'snatch.php?act=list';
 $modules['03_promotion']['04_bonustype_list']       = 'bonus.php?act=list';
 $modules['03_promotion']['06_pack_list']            = 'pack.php?act=list';
@@ -49,7 +49,7 @@ $modules['03_promotion']['13_wholesale']            = 'wholesale.php?act=list';
 $modules['03_promotion']['14_package_list']         = 'package.php?act=list';
 //$modules['03_promotion']['ebao_commend']            = 'ebao_commend.php?act=list';
 $modules['03_promotion']['15_exchange_goods']       = 'exchange_goods.php?act=list';
-*/
+/**/
 
 /* 订单管理
 $modules['04_order']['02_order_list']               = 'order.php?act=list';
@@ -160,4 +160,8 @@ $modules['16_email_manage']['magazine_list']        = 'magazine_list.php?act=lis
 $modules['16_email_manage']['attention_list']       = 'attention_list.php?act=list';
 $modules['16_email_manage']['view_sendlist']        = 'view_sendlist.php?act=list';
 */
+
+/*  专题管理 */
+$modules['17_topic_manage']['09_topic']                = 'topic.php?act=list';
+
 ?>

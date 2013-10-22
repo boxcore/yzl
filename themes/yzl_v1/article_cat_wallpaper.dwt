@@ -31,7 +31,7 @@
             <h1 class="wall_paper"></h1>
             <ul class="wall-box">
                 <!-- {foreach from=$artciles_list item=article name=lista} -->
-                <li {if $smarty.foreach.lista.iteration/2 neq 0 }class="no-margin"{/if}><img src="<!--{if $article.article_wallpaper}-->{$article.article_wallpaper.0.thumb_url}<!-- {else} -->未上传图片<!-- {/if} -->" width="300" height="197">
+                <li {if $smarty.foreach.lista.iteration/2 neq 0 }class="no-margin"{/if}><img src="<!--{if $article.article_wallpaper}-->{$article.article_wallpaper.0.thumb_url}<!-- {else} -->未上传图片<!-- {/if} -->" width="300" height="197" title="{$article.title|escape:html}">
                     <div class="wall-text">
                         <!-- {foreach from=$article.article_wallpaper item=wallpaper} -->
                         <p><a href="download.php?name={$wallpaper.img_desc}&url={$wallpaper.img_original}&">{$wallpaper.img_desc}</a></p>

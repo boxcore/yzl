@@ -174,6 +174,7 @@ define('DOWN_CAT',                  6); //下载分类
 define('IMAGE_CAT',                 7); //图片下载分类
 define('VIDEO_CAT',                 8); //视频下载分类
 define('HR_CAT',                  	9); //招聘分类
+define('NEWS_CAT',                  10); //新闻分类
 //define('HR_CAT',                  	7); //招聘分
 //define('HR_CAT',                  	7); //招聘分
 

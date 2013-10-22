@@ -25,6 +25,7 @@ $_LANG['type_name'][DOWN_CAT] = '下载分类';
 $_LANG['type_name'][IMAGE_CAT]   = '图片下载分类';
 $_LANG['type_name'][VIDEO_CAT] = '视频下载分类';
 $_LANG['type_name'][HR_CAT]   = '招聘分类';
+$_LANG['type_name'][NEWS_CAT]   = '新闻分类';
 
 
 $_LANG['cat_keywords'] = '关键字';

@@ -144,6 +144,7 @@ $_LANG['13_backup'] = '数据库管理';
 $_LANG['14_sms'] = '短信管理';
 $_LANG['15_rec'] = '推荐管理';
 $_LANG['16_email_manage'] = '邮件群发管理';
+$_LANG['17_topic_manage'] = '专题管理';
 
 /* 商品管理 */
 $_LANG['01_goods_list'] = '商品列表';

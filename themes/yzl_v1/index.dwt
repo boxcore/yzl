@@ -147,9 +147,9 @@
 <!--帮助 {/if} -->
 
 <div class="skin">
-    <div><a href="jiance.php"><img src="images/pic1.jpg" width="330" height="140" alt="皮肤检测中心"></a></div>
+    <div><a href="skin_detection.php"><img src="images/pic1.jpg" width="330" height="140" alt="皮肤检测中心"></a></div>
     <div><a href="exp.php"><img src="images/pic2.jpg" width="335" height="140" alt="养肤体验馆"></a></div>
-    <div><a href="#"><img src="images/pic3.jpg" width="303" height="141" alt="易享"></a></div>
+    <div><a href="/page/3"><img src="images/pic3.jpg" width="303" height="141" alt="易享"></a></div>
 </div>
 
 

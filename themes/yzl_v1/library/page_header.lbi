@@ -40,7 +40,7 @@ var process_request = "{$lang.process_request}";
                     </form>
                     <!--search end-->
                 </div>
-                <div class="right_bottom_box"> <span class="first_aid"><a href="#">皮肤急救中心</a></span>
+                <div class="right_bottom_box"> <span class="first_aid"><a href="/topic.php?topic_id=2">皮肤急救中心</a></span>
                     <div id="lang" class="ranklist">
                         <p><a class="tg0">畅销排行</a></p>
                         <p><a class="tg1">畅销排行</a></p>

@@ -15,7 +15,6 @@
   {insert_scripts files='common.js,index.js'}
 </head>
 <body>
-  <h1>dfdsadfaewf</h1>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
 <div class="inner_banner"></div>
 <div class="inner_content">
@@ -29,10 +28,11 @@
     <div class="innernews_right">
         <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
         <div class="companynew_list">
+            <h1 class="join_us"></h1>
             {$cat_detail}
             <div class="job-list">
                 <!-- {foreach from=$artciles_list item=article} -->
-                <dl{if $article.article_type == 1} class="red"{/if}><dt><a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title}</a></dt><dd>重庆</dd></dl>
+                <dl{if $article.article_type == 1} class="red"{/if}><dt><a href="{$article.url}" title="{$article.title|escape:html}">[{$article.add_time}]{$article.short_title}</a></dt><dd>重庆</dd></dl>
                 <!-- {/foreach} -->
             </div>
             <!-- #BeginLibraryItem "/library/pages_article_cat.lbi" --><!-- #EndLibraryItem -->
