@@ -1,9 +1,9 @@
 <?php
-#Vars - written at 2013-09-30
+#Vars - written at 2013-10-22
 $dbhost="localhost";
 $dbname="ohmyface";
 $dbuser="ohmyface";
-$dbpass="ohmyface";
+$dbpass="!pi\@yan#chong\$";
 $dbport=3306;
 $dbsocket="";
 $compression=1;

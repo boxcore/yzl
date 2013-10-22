@@ -11,7 +11,7 @@ $config['dbsocket'] = '';
 // Username
 $config['dbuser'] = 'ohmyface';
 //User-Pass. For no Password leave empty
-$config['dbpass'] = 'ohmyface';
+$config['dbpass'] = '!pi@yan#chong$';
 
 //Speed Values between 50 and 1000000
 //use low values if you have bad connection or slow machines

@@ -1,4 +1,4 @@
-<?php exit;?>a:3:{s:8:"template";a:4:{i:0;s:50:"D:/AppServ/www/work/noface/themes/yzl_v1/index.dwt";i:1;s:64:"D:/AppServ/www/work/noface/themes/yzl_v1/library/page_header.lbi";i:2;s:61:"D:/AppServ/www/work/noface/themes/yzl_v1/library/index_ad.lbi";i:3;s:64:"D:/AppServ/www/work/noface/themes/yzl_v1/library/page_footer.lbi";}s:7:"expires";i:1382423668;s:8:"maketime";i:1382420068;}<!DOCTYPE HTML>
+<?php exit;?>a:3:{s:8:"template";a:4:{i:0;s:50:"D:/AppServ/www/work/noface/themes/yzl_v1/index.dwt";i:1;s:64:"D:/AppServ/www/work/noface/themes/yzl_v1/library/page_header.lbi";i:2;s:61:"D:/AppServ/www/work/noface/themes/yzl_v1/library/index_ad.lbi";i:3;s:64:"D:/AppServ/www/work/noface/themes/yzl_v1/library/page_footer.lbi";}s:7:"expires";i:1382435085;s:8:"maketime";i:1382431485;}<!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 <base href="http://demo.yizhanglian.com/" />
@@ -55,7 +55,7 @@ var process_request = "正在处理您的请求...";
                     </form>
                     
                 </div>
-                <div class="right_bottom_box"> <span class="first_aid"><a href="#">皮肤急救中心</a></span>
+                <div class="right_bottom_box"> <span class="first_aid"><a href="/topic.php?topic_id=2">皮肤急救中心</a></span>
                     <div id="lang" class="ranklist">
                         <p><a class="tg0">畅销排行</a></p>
                         <p><a class="tg1">畅销排行</a></p>
