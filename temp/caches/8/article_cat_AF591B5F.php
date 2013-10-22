@@ -1,20 +1,19 @@
-<?php exit;?>a:3:{s:8:"template";a:4:{i:0;s:50:"D:/AppServ/www/work/noface/themes/yzl_v1/index.dwt";i:1;s:64:"D:/AppServ/www/work/noface/themes/yzl_v1/library/page_header.lbi";i:2;s:61:"D:/AppServ/www/work/noface/themes/yzl_v1/library/index_ad.lbi";i:3;s:64:"D:/AppServ/www/work/noface/themes/yzl_v1/library/page_footer.lbi";}s:7:"expires";i:1382435085;s:8:"maketime";i:1382431485;}<!DOCTYPE HTML>
+<?php exit;?>a:3:{s:8:"template";a:6:{i:0;s:56:"D:/AppServ/www/work/noface/themes/yzl_v1/article_cat.dwt";i:1;s:64:"D:/AppServ/www/work/noface/themes/yzl_v1/library/page_header.lbi";i:2;s:74:"D:/AppServ/www/work/noface/themes/yzl_v1/library/article_category_tree.lbi";i:3;s:60:"D:/AppServ/www/work/noface/themes/yzl_v1/library/ur_here.lbi";i:4;s:70:"D:/AppServ/www/work/noface/themes/yzl_v1/library/pages_article_cat.lbi";i:5;s:64:"D:/AppServ/www/work/noface/themes/yzl_v1/library/page_footer.lbi";}s:7:"expires";i:1382435734;s:8:"maketime";i:1382432134;}<!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 <base href="http://demo.yizhanglian.com/" />
-    <meta charset="UTF-8">
-    <meta name="keywords" content="易张脸,美容,美肤" />
-    <meta name="description" content="易张脸官网" />
-    
-    <title>易张脸官网</title>
-    
-    
-    
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
-    <link href="themes/yzl_v1/style.css" rel="stylesheet" type="text/css" />
-    <script src="themes/yzl_v1/js/jquery-1.10.2.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/common.js"></script><script type="text/javascript" src="js/index.js"></script></head>
+  <meta charset="UTF-8">
+  <meta name="Keywords" content="" />
+  <meta name="Description" content="" />
+  
+  <title>网店集中营_线上商城_易享·花养颜_易张脸官网</title>
+  
+  
+  
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+  <link href="themes/yzl_v1/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/common.js"></script><script type="text/javascript" src="js/index.js"></script></head>
 <body>
 <script src="themes/yzl_v1/js/jquery-1.10.2.min.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -186,55 +185,70 @@ var process_request = "正在处理您的请求...";
         </li>
     </ul>
 </div>
-<link href="data/flashdata/mywid-980/css/foucs.css" rel="stylesheet" />
-<script src="data/flashdata/mywid-980/js/jquery.foucs.js" type="text/javascript"></script>
-<div id="main">
-    <div id="index_b_hero">
-        <div class="hero-wrap">
-            <ul class="heros clearfix">
-                                 <li class="hero">
-                    <a href="http://" target="_blank" title="">
-                        <img src="data/afficheimg/20131010fyvpwq.jpg" class="thumb" alt="" />
-                    </a>
+<div class="inner_banner"></div>
+<div class="inner_content">
+    <div class="innernews_left">
+        
+                <div class="innernews_left_box">
+        <h1>线上商城</h1>
+    <ul class="innernews_list">
+                <li><a href="page/online_wall">网店集中营</a></li>
+                <li><a href="page/24">订购帮助</a></li>
+                <li class="no_border"><a href="page/25">手机专享</a></li>
+            </ul>
+    </div>
+                
+    </div>
+    <div class="innernews_right">
+        <h3 class="bread_crumbs"><a href=".">首页</a> <code>&gt;</code> <a href="page/3">易享·花养颜</a> <code>&gt;</code> <a href="page/8">线上商城</a> <code>&gt;</code> <a href="page/online_wall">网店集中营</a></h3>        <div class="companynew_list">
+            <div class="companynew_list">
+            <h1 class="online_store"></h1>
+            <ul class="online_store_box">
+                <li><a href="#"><img src="images/cat_wall.jpg" width="192" height="77"></a>
+                    <p><a href="#">天猫商城-易张脸官方旗舰店</a></p>
                 </li>
-                                <li class="hero">
-                    <a href="http://" target="_blank" title="">
-                        <img src="data/afficheimg/20131010kferlo.jpg" class="thumb" alt="" />
-                    </a>
+                <li><a href="#"><img src="images/paipai_wall.jpg" width="192" height="77"></a>
+                    <p><a href="#">拍拍商城-易张脸官方旗舰店</a></p>
                 </li>
-                                <li class="hero">
-                    <a href="http://" target="_blank" title="">
-                        <img src="data/afficheimg/20131010ozrbyw.jpg" class="thumb" alt="" />
-                    </a>
+                <li class="no_margin"><a href="#"><img src="images/jd_wall.jpg" alt="" width="192" height="77"></a>
+                    <p><a href="#">京东商城-易张脸官方旗舰店</a></p>
                 </li>
-                                <li class="hero">
-                    <a href="http://" target="_blank" title="">
-                        <img src="data/afficheimg/20131010isukcy.jpg" class="thumb" alt="" />
-                    </a>
+                <li><a href="#"><img src="images/taobao_wall.jpg" width="192" height="77"></a>
+                    <p><a href="#">淘宝商城-易张脸官方旗舰店</a></p>
                 </li>
-                            </ul>
-        </div>
-        <div class="helper">
-            <div class="mask-left">
-            </div>
-            <div class="mask-right">
-            </div>
-            <a class="prev icon-arrow-a-left"></a>
-            <a class="next icon-arrow-a-right"></a>
+                <li><a href="#"><img src="images/paipai_wall.jpg" width="192" height="77"></a>
+                    <p><a href="#">拍拍商城-易张脸授权店(成都)</a></p>
+                </li>
+                <li class="no_margin"><a href="#"><img src="images/taobao_wall.jpg" width="192" height="77"></a>
+                    <p><a href="#">淘宝商城-易张脸授权店(深圳)</a></p>
+                </li>
+                <li><a href="#"><img src="images/jumei_wall.jpg" width="192" height="77"></a>
+                    <p><a href="#">聚美优品-易张脸授权店(上海)</a></p>
+                </li>
+                <li><a href="#"><img src="images/weipin_wall.jpg" width="192" height="77"></a>
+                    <p><a href="#">唯品会-易张脸授权店(广州)</a></p>
+                </li>
+                <li class="no_margin"><a href="#"><img src="images/meili_wall.jpg" width="192" height="77"></a>
+                    <p><a href="#">美丽说-易张脸授权店(重庆)</a></p>
+                </li>
+            </ul>
+        </div>            <div class="job-list">
+                            </div>
+            
+<form name="selectPageForm" action="/article_cat.php" method="get">
+  </div>
+</form>
+<script type="Text/Javascript" language="JavaScript">
+<!--
+function selectPage(sel)
+{
+  sel.form.submit();
+}
+//-->
+</script>
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $.foucs({direction: 'left'});
-    $(function () {
-        var $w = $(window);
-        $w.scrollLeft($w.outerWidth() * 0.25);
-    });
-</script>
-<div class="skin">
-    <div><a href="skin_detection.php"><img src="themes/yzl_v1/images/pic1.jpg" width="330" height="140" alt="皮肤检测中心"></a></div>
-    <div><a href="exp.php"><img src="themes/yzl_v1/images/pic2.jpg" width="335" height="140" alt="养肤体验馆"></a></div>
-    <div><a href="/page/3"><img src="themes/yzl_v1/images/pic3.jpg" width="303" height="141" alt="易享"></a></div>
 </div>
 <div class="clear clearfix"></div>
    

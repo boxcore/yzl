@@ -1,1 +1,0 @@
-<h3 class="bread_crumbs"><?php echo $this->_var['ur_here']; ?></h3>
