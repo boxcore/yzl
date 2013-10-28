@@ -118,12 +118,12 @@ elseif ($_REQUEST['act'] == 'insert')
     }
 
 	/* 代码修改_start By thunje#URLdf */
-    $sql = "INSERT INTO ".$ecs->table('article_cat')."(cat_name, cat_type, cat_desc,keywords, parent_id, sort_order, show_in_nav, define_url)
-           VALUES ('$_POST[cat_name]', '$cat_type',  '$_POST[cat_desc]','$_POST[keywords]', '$_POST[parent_id]', '$_POST[sort_order]', '$_POST[show_in_nav]', '$_POST[define_url]')";
+    $sql = "INSERT INTO ".$ecs->table('article_cat')."(cat_name, cat_type, cat_desc,keywords, parent_id, sort_order, show_in_nav, define_url, define_theme)
+           VALUES ('$_POST[cat_name]', '$cat_type',  '$_POST[cat_desc]','$_POST[keywords]', '$_POST[parent_id]', '$_POST[sort_order]', '$_POST[show_in_nav]', '$_POST[define_url]'), '$_POST[define_theme]')";
 	/* 代码修改_end By thunje#URLdf */
 
-    $sql = "INSERT INTO ".$ecs->table('article_cat')."(cat_name, cat_type, cat_desc, cat_detail, keywords, parent_id, sort_order, show_in_nav)
-           VALUES ('$_POST[cat_name]', '$cat_type', '$_POST[cat_desc]', '$_POST[cat_detail]', '$_POST[keywords]', '$_POST[parent_id]', '$_POST[sort_order]', '$_POST[show_in_nav]')";
+//    $sql = "INSERT INTO ".$ecs->table('article_cat')."(cat_name, cat_type, cat_desc, cat_detail, keywords, parent_id, sort_order, show_in_nav)
+//           VALUES ('$_POST[cat_name]', '$cat_type', '$_POST[cat_desc]', '$_POST[cat_detail]', '$_POST[keywords]', '$_POST[parent_id]', '$_POST[sort_order]', '$_POST[show_in_nav]')";
     $db->query($sql);
 
     if($_POST['show_in_nav'] == 1)
@@ -155,7 +155,7 @@ elseif ($_REQUEST['act'] == 'edit')
     admin_priv('article_cat');
 
 	/* 代码修改_start By thunje#URLdf */
-    $sql = "SELECT cat_id, cat_name, cat_type, cat_desc, cat_detail, show_in_nav, keywords, parent_id,sort_order, define_url FROM ".
+    $sql = "SELECT cat_id, cat_name, cat_type, cat_desc, cat_detail, show_in_nav, keywords, parent_id,sort_order, define_url, define_theme FROM ".
            $ecs->table('article_cat'). " WHERE cat_id='$_REQUEST[id]'";
 	/* 代码修改_end By thunje#URLdf */
 
@@ -277,7 +277,7 @@ elseif ($_REQUEST['act'] == 'update')
     $dat = $db->getOne("SELECT cat_name, show_in_nav FROM ". $ecs->table('article_cat') . " WHERE cat_id = '" . $_POST['id'] . "'");
 
 	/* 下面这行代码有修改 By thunje#URLdf */
-    if ($exc->edit("cat_name = '$_POST[cat_name]', cat_desc ='$_POST[cat_desc]',cat_detail ='$_POST[cat_detail]', keywords='$_POST[keywords]',parent_id = '$_POST[parent_id]', cat_type='$_POST[catType]', sort_order='$_POST[sort_order]', show_in_nav = '$_POST[show_in_nav]', define_url='$_POST[define_url]' ",  $_POST['id']))
+    if ($exc->edit("cat_name = '$_POST[cat_name]', cat_desc ='$_POST[cat_desc]',cat_detail ='$_POST[cat_detail]', keywords='$_POST[keywords]',parent_id = '$_POST[parent_id]', cat_type='$_POST[catType]', sort_order='$_POST[sort_order]', show_in_nav = '$_POST[show_in_nav]', define_url='$_POST[define_url]', define_theme='$_POST[define_theme]' ",  $_POST['id']))
     {
         if($_POST['cat_name'] != $dat['cat_name'])
         {

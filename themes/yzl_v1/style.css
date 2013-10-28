@@ -12,6 +12,9 @@ Logo filename: logo.gif
 body{margin:0px; padding:0px;}
 p,ul,li,dl,dt,dd,h1,h2,h3,h4,img,span,input,select,option{margin:0px; padding:0px; list-style:none; border:none; background:none;}
 *{font-family:Microsoft Yahei;}
+.hide{display:none;}
+.show{display:block;}
+
 #head{width:100%; height:76px;background:url(images/hide_pic.jpg) repeat-x left bottom; position:relative;}
 a:link,a:visited{ text-decoration:none;}
 .clear {display: block; clear: both; }
