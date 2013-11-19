@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/common/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="content_box">
+    <div class="banner"><a href="#"><img src="images/banner.jpg" width="998" height="434"></a></div>
+    <div class="nav_box">
+        <div class="nav_box_inner"></div>
+    </div>
+    <ul class="nav_inner">
+        <li>
+            <div class="one_menu menu_hover"><a href="#">首页</a></div>
+            <div class="two_menu"></div>
+        </li>
+        <li class="one_menu_hover">
+            <div class="one_menu"><a href="#">品牌故事</a></div>
+            <div class="two_menu"><a href="#">易张脸</a> <a href="#">品牌理念</a> <a href="#">品牌愿景</a> <a href="#">品牌宣言</a>
+            </div>
+        </li>
+        <li>
+            <div class="one_menu"><a href="#">花本养肤</a></div>
+            <div class="two_menu"><a href="#">养颜古方</a> <a href="#">花本专家</a> <a href="#">生产基地</a> <a href="#">科研实力</a> <a
+                        href="#">科研实力</a></div>
+        </li>
+        <li>
+            <div class="one_menu"><a href="#">养颜学堂</a></div>
+            <div class="two_menu"><a href="#">花本功效</a> <a href="#">肤质解析堂</a> <a href="#">养肤常识堂</a> <a href="#">花本养肤堂</a>
+            </div>
+        </li>
+        <li>
+            <div class="one_menu"><a href="#">全线产品</a></div>
+            <div class="two_menu all_products">
+                <div class="one"><span><a href="#">玫瑰莹润焕白</a></span><a href="#">洋甘菊清透保湿</a> <a href="#">雪莲逆颜抗衰</a></div>
+                <div class="one"><span><a href="#">产品类型</a></span><a href="#">养肤洁面乳</a> <a href="#">养肤水</a> <a href="#">品牌宣言</a><a
+                            href="#">养肤乳液</a> <a href="#">养肤面霜</a><a href="#">养肤蚕丝面膜</a><a href="#">养肤蚕丝面膜</a></div>
+                <div class="one"><span><a href="#">肌肤需求</a></span><a href="#">肌肤黯沉、疲倦</a> <a href="#">干燥、粗糙</a> <a
+                            href="#">毛孔粗大、脫屑</a> <a href="#">细纹/幼纹</a> <a href="#">松弛、皱纹</a><a href="#">色斑、肤色不均</a></div>
+            </div>
+        </li>
+        <li class="search">
+            <form><input name="" type="text" class="text"><input name="" type="button" class="btn"></form>
+        </li>
+    </ul>
+</div>
+</div>
+<div class="product_show">
+    <ul>
+        <li><a href="#"><img src="images/index_pic1.jpg" width="229" height="128"></a></li>
+        <li><a href="#"><img src="images/index_pic2.jpg" width="237" height="128"></a></li>
+        <li><a href="#"><img src="images/index_pic3.jpg" width="235" height="128"></a></li>
+        <li><a href="#"><img src="images/index_pic4.jpg" width="227" height="128"></a></li>
+    </ul>
+</div>
+<div class="skin_nav"><a href="#">皮肤检测中心</a><a href="#">养肤体验馆</a><a href="#" class="samll_shop">易享·华养颜</a></div>
+
+<!-- #BeginLibraryItem "/library/common/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!-- {if $article_categories} -->
+<div class="innernews_left_box">
+    <!--{foreach from=$article_categories item=cat}-->
+    <h1>{$cat.name|escape:html}</h1>
+    <ul class="innernews_list">
+        <!--{foreach name=nav from=$cat.children item=child}-->
+        <li{if $smarty.foreach.nav.last} class="no_border"{/if}><a href="{$child.url}">{$child.name|escape:html}</a></li>
+        <!--{/foreach}-->
+    </ul>
+    <!--{/foreach}-->
+</div>
+<!-- {/if} -->
