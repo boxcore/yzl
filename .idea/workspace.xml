@@ -7,6 +7,11 @@
     </list>
     <ignored path="noface.iws" />
     <ignored path=".idea/workspace.xml" />
+    <file path="/a.html" changelist="d7867e13-9e5f-4199-b1b3-749d55b0c39f" time="1384832122109" ignored="false" />
+    <file path="/index.dwt" changelist="d7867e13-9e5f-4199-b1b3-749d55b0c39f" time="1384844566968" ignored="false" />
+    <file path="/head.lbi" changelist="d7867e13-9e5f-4199-b1b3-749d55b0c39f" time="1384844426906" ignored="false" />
+    <file path="/a.dummy" changelist="d7867e13-9e5f-4199-b1b3-749d55b0c39f" time="1384843222156" ignored="false" />
+    <file path="$PROJECT_DIR$/temp/compiled/head.lbi.php" changelist="d7867e13-9e5f-4199-b1b3-749d55b0c39f" time="1384844444906" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,10 +31,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="nginx.conf" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="nginx.conf" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="28" selection-start="367" selection-end="367" vertical-scroll-proportion="0.2753623">
+            <state line="38" column="50" selection-start="3381" selection-end="3381" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.dwt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/v3/index.dwt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="10" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page_footer.lbi" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/v3/library/common/page_footer.lbi">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="6" selection-start="654" selection-end="654" vertical-scroll-proportion="-7.464286">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://D:/project/易张脸/易张脸改版_三/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="7" selection-start="166" selection-end="166" vertical-scroll-proportion="-4.071429">
+              <folding>
+                <element signature="tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#4;tag#body#0;tag#html#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page_header.lbi" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/v3/library/common/page_header.lbi">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="38" selection-start="300" selection-end="300" vertical-scroll-proportion="-4.071429">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/themes/v3/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="2" selection-start="141" selection-end="141" vertical-scroll-proportion="0.3653846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/v3/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="47" selection-start="1348" selection-end="1349" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="head.lbi" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/v3/library/common/head.lbi">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="31" selection-start="250" selection-end="250" vertical-scroll-proportion="-3.392857">
               <folding />
             </state>
           </provider>
@@ -49,6 +120,13 @@
         <option value="$PROJECT_DIR$/admin/articlecat.php" />
         <option value="$PROJECT_DIR$/article_cat.php" />
         <option value="$PROJECT_DIR$/js/transport.js" />
+        <option value="$PROJECT_DIR$/themes/v3/style.css" />
+        <option value="$PROJECT_DIR$/themes/v3/css/style.css" />
+        <option value="$PROJECT_DIR$/themes/v3/library/common/head.lbi" />
+        <option value="$PROJECT_DIR$/themes/v3/library/common/page_header.lbi" />
+        <option value="D:/project/易张脸/易张脸改版_三/index.html" />
+        <option value="$PROJECT_DIR$/themes/v3/library/common/page_footer.lbi" />
+        <option value="$PROJECT_DIR$/themes/v3/index.dwt" />
       </list>
     </option>
   </component>
@@ -57,10 +135,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1378" />
-    <option name="height" value="754" />
+    <option name="x" value="-4" />
+    <option name="y" value="-4" />
+    <option name="width" value="1374" />
+    <option name="height" value="746" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -82,6 +160,11 @@
             <id>RELAX NG</id>
           </State>
         </expanded-state>
+        <selected-state>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -144,6 +227,72 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="noface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yizhanglian.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="noface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yizhanglian.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="noface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yizhanglian.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -152,7 +301,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.fileTypes" />
+    <property name="options.lastSelected" value="editor" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
     <property name="options.searchVisible" value="true" />
@@ -234,14 +383,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="754" extended-state="0" />
-    <editor active="true" />
+    <frame x="-4" y="-4" width="1374" height="746" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15454546" sideWeight="0.670068" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1550152" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -251,7 +401,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -317,47 +466,19 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="noface" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="yizhanglian.com" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/themes/yzl_v1/article_cat_news.dwt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="24" selection-start="67" selection-end="67" vertical-scroll-proportion="0.04859335" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/articlecat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="277" column="0" selection-start="9419" selection-end="9419" vertical-scroll-proportion="0.02" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/article_cat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="23" selection-start="5614" selection-end="5614" vertical-scroll-proportion="3.5234375" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/cls_mysql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="517" column="13" selection-start="14221" selection-end="14221" vertical-scroll-proportion="0.19739293" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobile/article.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="31" selection-start="1031" selection-end="1031" vertical-scroll-proportion="0.03538175" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nginx2.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="0" selection-start="922" selection-end="922" vertical-scroll-proportion="0.33274022" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="26" selection-start="26" selection-end="26" vertical-scroll-proportion="-0.20284697" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/yzl_v1/library/page_header.lbi">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="28" selection-start="1152" selection-end="1181" vertical-scroll-proportion="0.32678133" />
@@ -393,13 +514,87 @@
         <state line="50" column="14" selection-start="1316" selection-end="1316" vertical-scroll-proportion="0.849162" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nginx.conf">
+    <entry file="file://$PROJECT_DIR$/themes/v3/css/old.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="28" selection-start="367" selection-end="367" vertical-scroll-proportion="0.2753623">
+        <state line="43" column="2" selection-start="2006" selection-end="2006" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nginx.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="50" selection-start="3381" selection-end="3381" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/v3/library/common/head.lbi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="31" selection-start="250" selection-end="250" vertical-scroll-proportion="-3.392857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/v3/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="47" selection-start="1348" selection-end="1349" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/v3/index.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="10" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/v3/library/common/page_footer.lbi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="6" selection-start="654" selection-end="654" vertical-scroll-proportion="-7.464286">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/project/易张脸/易张脸改版_三/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="7" selection-start="166" selection-end="166" vertical-scroll-proportion="-4.071429">
+          <folding>
+            <element signature="tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#4;tag#body#0;tag#html#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/v3/library/common/page_header.lbi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="38" selection-start="300" selection-end="300" vertical-scroll-proportion="-4.071429">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/v3/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="2" selection-start="141" selection-end="141" vertical-scroll-proportion="0.3653846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 
