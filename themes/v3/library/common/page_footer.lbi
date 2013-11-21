@@ -6,7 +6,45 @@
         <p class="record">@2013广州欧菲诗化妆品有限公司 版权所有京工商备案号：8568965398</p>
     </div>
     <div class="right"><a href="#"><img src="images/share_1.jpg" width="15" height="15"></a><a href="#"><img
-                    src="images/share_2.jpg" width="15" height="15"></a><a href="#"><img src="images/share_3.jpg" width="15"
-                                                                                         height="15"></a>
+                    src="images/share_2.jpg" width="15" height="15"></a><a href="#"><img src="images/share_3.jpg" width="15" height="15"></a>
     </div>
+</div>
+
+<!-- 登陆 -->
+<div id="login_module" style="display:none;height:300px;width:430px;margin:0 auto;border:7px solid #808080;position:absolute; left:30%;top:130px;z-index:100001;background-color:#ffffff">
+<div style="text-align:right;margin:4px"><a href="javascript:void(0);"  onclick="close_login()"><img src="images/closelabel.gif"/></a></div>
+<div style="margin-top:20px;margin-left:80px;height:30px; background:url(images/ur_bg.gif) no-repeat 0px 0px;"></div>
+<form name="formLogin" action="user.php" method="post" submit="return userLogin()">
+<table width="100%" border="0" align="center">
+<tr>
+<td width="30%" align="right">email：</td>
+<td width="70%"><input name="username" type="text" size="30" id="username" /></td>
+</tr>
+<tr>
+<td align="right">password：</td>
+<td><input name="password" type="password" size="30" id="password" /></td>
+</tr>
+<!– {if $enabled_captcha} 判断是否启用验证码 –>
+<tr>
+<th align="right">{$lang.comment_captcha}：</th>
+<td>
+<input type="text" size="8" name="captcha" />
+<img src="captcha.php?is_login=1&{$rand}" onClick="this.src=’captcha.php?is_login=1&’+Math.random()" alt="captcha" style="cursor:pointer;" />
+</td>
+</tr>
+<!– {/if} –>
+<tr>
+<td colspan="2" align="center">
+<input type="submit" name="login" value="Enter" />
+<input type="button" name="register" value="Submit" onclick="window.location.href=’user.php?act=register’"/>
+<input type="hidden" name="act" value="act_login" />
+<input type="hidden" name="back_act" value="{$back_act}" />            </td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+<a href="user.php?act=get_password">{$lang.get_password_by_mail}</a></td>
+</tr>
+</table>
+</form>
+<center> <a href="javascript:void(0);"  onclick="fbLogin()"><img src=""/></a></center>
 </div>

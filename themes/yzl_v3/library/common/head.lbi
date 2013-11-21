@@ -1,0 +1,13 @@
+    <meta charset="UTF-8">
+    <meta name="keywords" content="{$keywords}" />
+    <meta name="description" content="{$description}" />
+    <!-- TemplateBeginEditable name="doctitle" -->
+    <title>{$page_title}</title>
+    <!-- TemplateEndEditable -->
+    <!-- TemplateBeginEditable name="head" -->
+    <!-- TemplateEndEditable -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link href="{$ecs_themes_path}/css/style.css" rel="stylesheet" type="text/css" />
+    {insert_scripts files='common.js,jquery.js'}
+    <script type="text/javascript" src="{$ecs_themes_path}/js/base.js"></script>

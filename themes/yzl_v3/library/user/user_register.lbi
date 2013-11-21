@@ -1,0 +1,111 @@
+<!-- {if $shop_reg_closed eq 1} -->
+{$lang.shop_register_closed}
+<!-- {else} -->
+{insert_scripts files='utils.js'}
+
+<div class="login_content">
+    <p class="login_crumbs">用户注册</p>
+
+    <div class="login_box">
+        <form id="user_register" action="user.php" method="post" name="formUser">
+            {*<form action="user.php" method="post" name="formUser" onsubmit="return register();" autocomplete="off">*}
+            <table width="600" border="0" cellspacing="0" cellpadding="0" class="input_box">
+                <tr>
+                    <td width="83" align="right"><label for="username">用户名：</label></td>
+                    <td width="231"><input type="text" class="text required" name="username" id="username"></td>
+                </tr>
+                <tr>
+                    <td align="right">电子邮箱：</td>
+                    <td><input class="text" name="email" type="text" size="25" id="email" class="inputBg"/></td>
+                </tr>
+                <tr>
+                    <td align="right">密码：</td>
+                    <td><input class="text" name="password" type="password" id="password" placeholder="由6-16个字母组成"></td>
+                </tr>
+                <tr>
+                    <td align="right">确认密码：</td>
+                    <td><input class="text" name="confirm_password" type="password" id="conform_password" ></td>
+                </tr>
+                <!-- 判断是否启用验证码{if $enabled_captcha} -->
+                <tr>
+                    <td align="right">验证码：</td>
+                    <td><div style="float: left;width: 100px;"><input class="auth_code" type="text" size="8" name="captcha">&nbsp;&nbsp;</div><div style="float: right; width: 100px;"><img
+                                    src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;height: 22px; margin-bottom: 6px;float: left; text-align: left;" onClick="this.src='captcha.php?'+Math.random()"/></div></td>
+                </tr>
+                <!--{/if}-->
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="accept"><input name="agreement" id="agreement" type="checkbox" value="1"
+                                              checked="checked">
+
+                        <p>我已阅读并接受<a href="#">《易张脸用户协议》</a></p></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <input type="hidden" name="act" value="act_register">
+                    <input type="hidden" name="back_act" value="{$back_act}"/>
+                    <td><input name="Submit" type="submit" class="login_btn" value=""></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<script>
+    $().ready(function() {
+        $("#user_register").validate({
+//            errorContainer: $(".container_error"),
+//            errorLabelContainer: $(".container_error ol"),
+            wrapper: 'div',
+//            errorLabelContainer: $("#form1 div.error"),
+
+            rules: {
+                username: {
+                    required:true,
+                    rangelength:[6,18]
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+                confirm_password: {
+                    required: true,
+                    minlength: 5,
+                    equalTo: "#password"
+                },
+                captcha: {
+                    required: true
+                },
+                agreement: "required"
+            },
+            messages: {
+                username: {
+                    required:"请输入姓名",
+                    rangelength:'至少6个以上的字'
+                },
+                email: {
+                    required: "请输入Email地址",
+                    email: "请输入正确的email地址"
+                },
+                password: {
+                    required: "请输入密码",
+                    minlength: jQuery.format("密码不能小于{0}个字 符")
+                },
+                confirm_password: {
+                    required: "请输入确认密码",
+                    minlength: "确认密码不能小于5个字符",
+                    equalTo: "两次输入密码不一致不一致"
+                },
+                captcha: {
+                    required: "请输入验证码"
+                },
+                agreement: "请接受条款"
+            }
+        });
+    });
+</script>
+<!--{/if}-->

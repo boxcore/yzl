@@ -1,0 +1,15 @@
+
+<!-- {if $article_categories} -->
+<ul class="left_nav">
+    <!--{foreach from=$article_categories item=cat}-->
+    <li>
+        <span><a href="#">{$cat.name|escape:html}</a></span>
+        <div class="inner">
+            <!--{foreach name=nav from=$cat.children item=child}-->
+            <a{if $child.id eq $cat_info.cat_id} class="current"{/if} href="{$child.url}">{$child.name|escape:html}</a>
+            <!--{/foreach}-->
+        </div>
+    </li>
+    <!--{/foreach}-->
+</ul>
+<!-- {/if} -->

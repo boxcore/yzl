@@ -119,7 +119,7 @@ elseif ($_REQUEST['act'] == 'insert')
 
 	/* 代码修改_start By thunje#URLdf */
     $sql = "INSERT INTO ".$ecs->table('article_cat')."(cat_name, cat_type, cat_desc,keywords, parent_id, sort_order, show_in_nav, define_url, define_theme)
-           VALUES ('$_POST[cat_name]', '$cat_type',  '$_POST[cat_desc]','$_POST[keywords]', '$_POST[parent_id]', '$_POST[sort_order]', '$_POST[show_in_nav]', '$_POST[define_url]'), '$_POST[define_theme]')";
+           VALUES ('$_POST[cat_name]', '$cat_type',  '$_POST[cat_desc]','$_POST[keywords]', '$_POST[parent_id]', '$_POST[sort_order]', '$_POST[show_in_nav]', '$_POST[define_url]', '$_POST[define_theme]')";
 	/* 代码修改_end By thunje#URLdf */
 
 //    $sql = "INSERT INTO ".$ecs->table('article_cat')."(cat_name, cat_type, cat_desc, cat_detail, keywords, parent_id, sort_order, show_in_nav)

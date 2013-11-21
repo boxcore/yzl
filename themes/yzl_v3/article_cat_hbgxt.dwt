@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+  {insert_scripts files='index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/common/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="content">
+    <div class="left">
+        <!-- TemplateBeginEditable name="左边区域" -->
+        <!-- {if $article_categories} -->
+        <!-- #BeginLibraryItem "/library/common/article_category_tree.lbi" --><!-- #EndLibraryItem -->
+        <!-- {/if} -->
+        <!-- TemplateEndEditable -->
+    </div>
+    <div class="right">
+        {$cat_detail}
+        <h2 class="flower">{$cat_info.cat_name|escape:html}</h2>
+        <p class="preface"> 娇艳的花朵，包含自然的真谛。<br>
+            回归自然的传统型经典美容方式正悄然流行，"<span>鲜花美容</span>"已渐成时尚。<br>
+            让我们一起来探寻花本植物的天赋本能，潜心研究花本精粹。<br>
+        </p>
+
+        <ul class="flower_display">
+            <li class="rose">
+                <p><a href="beautiful_school1.html"><img src="images/f_rose.jpg" width="57" height="46"></a><a href="beautiful_school1.html"> 玫瑰</a></p>
+            </li>
+            <li class="mum">
+                <p><a href="#"><img src="images/f_mum.jpg" width="50" height="50"></a><a href="beautiful_school1_num.html"> 洋甘菊</a></p>
+            </li>
+            <li class="lotus">
+                <p><a><img src="images/f_lotus.jpg" width="68" height="40"></a><a href="beautiful_school1_lotus.html"> 雪莲</a></p>
+            </li>
+            <!-- {foreach from=$artciles_list item=article} -->
+            <li class="" {if $article.article_type == 1} class="red"{/if}>
+                <p><a href="{$article.url}" title="{$article.title|escape:html}"><img src="images/f_lotus.jpg" width="68" height="40"></a><a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title}</a></p>
+            </li>
+            <!-- {/foreach} -->
+        </ul>
+        <!-- #BeginLibraryItem "/library/pages_article_cat.lbi" --><!-- #EndLibraryItem -->
+    </div>
+</div>
+
+
+<!-- #BeginLibraryItem "/library/common/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script>
+    $(function() {
+        $(".the_flower_box li").hover(function(){
+            $(this).find(".hide").attr({style:"display:block"});
+            $(this).find(".show").attr({style:"display:none"});
+        },function(){
+            $(this).find(".hide").attr({style:"display:none"});
+            $(this).find(".show").attr({style:"display:block"});
+        });
+
+    });
+</script>
+</html>

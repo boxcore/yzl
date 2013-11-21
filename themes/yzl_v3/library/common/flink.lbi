@@ -1,0 +1,8 @@
+<!--开始图片类型的友情链接{foreach from=$img_links item=link}-->
+<a href="{$link.url}" target="_blank" title="{$link.name}"><img src="{$link.logo}" alt="{$link.name}" border="0" /></a>
+<!--结束图片类型的友情链接{/foreach}-->
+<!-- {if $txt_links} -->
+<!--开始文字类型的友情链接{foreach from=$txt_links item=link}-->
+[<a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a>]
+<!--结束文字类型的友情链接{/foreach}-->
+<!-- {/if} -->

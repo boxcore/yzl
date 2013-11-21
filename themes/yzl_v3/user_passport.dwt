@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+    {insert_scripts files='user.js,jquery/jquery.validate.min.js'}
+<body>
+<!-- #BeginLibraryItem "/library/common/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<!--#新登录界面 start-->
+<!-- {if $action eq 'login'} -->
+<!-- #BeginLibraryItem "/library/user/user_login.lbi" --><!-- #EndLibraryItem -->
+<!--{/if}-->
+<!--#新登录界面 end-->
+
+
+<!--*会员注册界面 start-->
+<!--{if $action eq 'register'}-->
+<!-- #BeginLibraryItem "/library/user/user_register.lbi" --><!-- #EndLibraryItem -->
+<!--{/if}-->
+<!--#会员注册界面 end-->
+
+
+<!--#旧登录界面 start-->
+<!-- {if $action eq 'oldlogin'} -->
+<!-- #BeginLibraryItem "/library/user/user_login.org.lbi" --><!-- #EndLibraryItem -->
+<!--{/if}-->
+<!--#旧登录界面 end-->
+
+<!--*找回密码界面 -->
+    <!--{if $action eq 'get_password'} -->
+    <!-- #BeginLibraryItem "/library/user/user_get_password.lbi" --><!-- #EndLibraryItem -->
+    <!--{/if}-->
+
+    <!--*通过问题找回密码的确认找回账号界面 -->
+    <!--{if $action eq 'qpassword_name'} -->
+    <!-- #BeginLibraryItem "/library/user/user_qpassword_name.lbi" --><!-- #EndLibraryItem -->
+    <!--{/if}-->
+
+    <!--*根据输入账号显示密码问题界面 -->
+    <!--{if $action eq 'get_passwd_question'} -->
+    <!-- #BeginLibraryItem "/library/user/user_get_passwd_question.lbi" --><!-- #EndLibraryItem -->
+    <!--{/if}-->
+
+    <!-- {if $action eq 'reset_password'} -->
+    <!-- #BeginLibraryItem "/library/user/user_reset_password.lbi" --><!-- #EndLibraryItem -->
+    <!--{/if}-->
+<!--#找回密码界面 end-->
+
+<div class="blank"></div>
+
+<!-- #BeginLibraryItem "/library/common/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+{foreach from=$lang.passport_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+var username_exist = "{$lang.username_exist}";
+
+</script>
+</html>

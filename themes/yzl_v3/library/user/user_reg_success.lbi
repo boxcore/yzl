@@ -1,0 +1,13 @@
+<div class="login_content">
+    <p class="login_crumbs">{$lang.system_info}</p>
+    <div class="login_box">
+        <P class="login_success">{$message.content}</P>
+
+        <div class="btn" style="margin-bottom: 100px;">
+            <form>
+                <a href="user.php?act=profile" title="修改资料"><input name="" type="button" class="perfect"></a>
+                <a href="/index.php" title="进入商城"><input name="" type="button" class="enter_city"></a>
+            </form>
+        </div>
+    </div>
+</div>

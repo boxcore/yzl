@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Keywords" content="{$keywords}" />
+  <meta name="Description" content="{$description}" />
+  <!-- TemplateBeginEditable name="doctitle" -->
+  <title>{$page_title}</title>
+  <!-- TemplateEndEditable -->
+  <!-- TemplateBeginEditable name="head" -->
+  <!-- TemplateEndEditable -->
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+  <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+  {insert_scripts files='common.js,index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="inner_banner"></div>
+<div class="inner_content">
+    <div class="innernews_left">
+        <!-- TemplateBeginEditable name="左边区域" -->
+        <!-- {if $article_categories} -->
+        <!-- #BeginLibraryItem "/library/article_category_tree.lbi" --><!-- #EndLibraryItem -->
+        <!-- {/if} -->
+        <!-- TemplateEndEditable -->
+    </div>
+    <div class="innernews_right">
+        <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+        <div class="companynew_list">
+            <h1 class="the_flower"></h1>
+            <ul class="the_flower_box">
+                <li><span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><a href="#"><span class="show"><img src="images/Jasmine_pic.png" width="341" height="341"></span><span class="hide"><img src="images/Jasmine.png" width="341" height="341"></span></a></li>
+                <li><span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><a href="#"><span class="show"><img src="images/lily_flower_pic.png" width="167" height="341"></span><span class="hide"><img src="images/lily_flower.png" width="167" height="341"></span></a></li>
+                <li><span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><a href="#"><span class="show"><img src="images/lily_flower_pic.png" width="167" height="341"></span><span class="hide"><img src="images/rose.png" width="167" height="341"></span></a></li>
+                <li><span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><a href="#"><span class="show"><img src="images/lily_flower_pic.png" width="167" height="341"></span><span class="hide"><img src="images/sakura.png" width="167" height="341"></span></a></li>
+                <li><span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><a href="#"><span class="show"><img src="images/lily_flower_pic.png" width="167" height="341"></span><span class="hide"><img src="images/peony.png" width="167" height="341"></span></a></li>
+                <li><span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><a href="#"><span class="show"><img src="images/lily_flower_pic.png" width="167" height="341"></span><span class="hide"><img src="images/Bodhi.png" width="167" height="341"></span></a></li>
+                <li><span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><a href="#"><span class="show"><img src="images/lily_flower_pic.png" width="167" height="341"></span><span class="hide"><img src="images/Lavender.png" width="167" height="341"></span></a></li>
+                <li><span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><a href="#"><span class="show"><img src="images/Jasmine_pic.png" width="341" height="341"></span><span class="hide"><img src="images/peach.png" width="341" height="341"></span></a></li>
+                <li><span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><a href="#"><span class="show"><img src="images/lily_flower_pic.png" width="167" height="341"></span><span class="hide"><img src="images/Snow-lotus.png" width="167" height="341"></span></a></li>
+                <li><span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><a href="#"><span class="show"><img src="images/lily_flower_pic.png" width="167" height="341"></span><span class="hide"><img src="images/orchid.png" width="167" height="341"></span></a></li>
+                <li><span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><a href="#"><span class="show"><img src="images/lily_flower_pic.png" width="167" height="341"></span><span class="hide"><img src="images/Marigold.png" width="167" height="341"></span></a></li>
+                <li><span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><a href="#"><span class="show"><img src="images/lily_flower_pic.png" width="167" height="341"></span><span class="hide"><img src="images/Chamomile.png" width="167" height="341"></span></a></li>
+                <li><span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><a href="#"><span class="show"><img src="images/Jasmine_pic.png" width="341" height="341"></span><span class="hide"><img src="images/Lotus.png" width="341" height="341"></span></a></li>
+            </ul>
+
+            <script>
+                $(function() {
+                    $(".the_flower_box li").hover(function(){
+                        $(this).find(".hide").attr({style:"display:block"});
+                  $(this).find(".show").attr({style:"display:none"});
+                    },function(){
+                        $(this).find(".hide").attr({style:"display:none"});
+                  $(this).find(".show").attr({style:"display:block"});
+                    });
+                    
+                });
+            </script>
+        </div>
+<!-- old themes code -->
+        <div class="companynew_list">
+            {$cat_detail}
+            <div class="job-list">
+                <!-- {foreach from=$artciles_list item=article} -->
+                <dl{if $article.article_type == 1} class="red"{/if}><dt><a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title}</a></dt><dd>重庆</dd></dl>
+                <!-- {/foreach} -->
+            </div>
+            <!-- #BeginLibraryItem "/library/pages_article_cat.lbi" --><!-- #EndLibraryItem -->
+        </div>
+<!-- old themes code -->
+    </div>
+</div>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

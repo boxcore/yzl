@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+    {insert_scripts files='index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/common/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="content">
+    {*主体内容开始*}
+    <h1 class="policy_tittle">{$article.title|escape:html}</h1>
+    {*//更新时间$article.add_time*}
+    <!-- {if $article.content } -->
+    {$article.content}
+    <!-- {/if} -->
+    {*主体内容结束*}
+</div>
+
+<!-- #BeginLibraryItem "/library/common/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

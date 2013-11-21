@@ -175,7 +175,7 @@ if( isset($cat_info['define_theme']) && !empty($cat_info['define_theme']) ){
             $article_cat_themes = 'article_cat.dwt';
     }
 }
-
+echo "<!-- \ncat_info:\n";print_r($cat_info);echo "-->";
 $article_cat_themes = $article_cat_themes?$article_cat_themes:'article_cat.dwt';
 $smarty->display($article_cat_themes, $cache_id);
 ?>

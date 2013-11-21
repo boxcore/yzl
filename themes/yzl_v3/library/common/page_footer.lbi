@@ -1,0 +1,12 @@
+<div class="foot">
+    <div class="left">
+        <p class="foot_nav">
+            <!-- {foreach name=nav from=$navigator_list.bottom item=nav} --><a{if $nav.opennew eq 1} target="_blank"{/if} href="{$nav.url}">{$nav.name}</a><!-- {/foreach} -->
+        </p>
+
+        <p class="record">@2013广州欧菲诗化妆品有限公司 版权所有京工商备案号：8568965398</p>
+    </div>
+    <div class="right"><a href="#"><img src="images/share_1.jpg" width="15" height="15"></a><a href="#"><img
+                    src="images/share_2.jpg" width="15" height="15"></a><a href="#"><img src="images/share_3.jpg" width="15" height="15"></a>
+    </div>
+</div>

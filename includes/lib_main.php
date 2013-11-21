@@ -230,7 +230,7 @@ function assign_ur_here($cat = 0, $str = '')
             {
                 $page_title = $GLOBALS['_LANG']['snatch'] . '_' . $page_title;
                 $args       = array('id' => '0');
-                $ur_here   .= ' <code> &gt; </code><a href="snatch.php">' .                                 $GLOBALS['_LANG']['snatch_list'] . '</a>';
+                $ur_here   .= ' <code> &gt; </code><a href="snatch.php">' . $GLOBALS['_LANG']['snatch_list'] . '</a>';
             }
             /* 批发 */
             elseif ('wholesale' == $filename)
@@ -519,6 +519,9 @@ function assign_pager($app, $cat, $record_count, $size, $sort, $order, $page = 1
             break;
         case 'exchange':
             $uri_args = array('cid' => $cat, 'integral_min'=>$price_min, 'integral_max'=>$price_max, 'sort' => $sort, 'order' => $order, 'display' => $display_type);
+            break;
+        case 'topic':
+            $uri_args = array('cid' => $cat, 'bid' => $brand, 'sort' => $sort, 'order' => $order);
             break;
     }
     /* 分页样式 */

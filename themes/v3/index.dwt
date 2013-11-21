@@ -14,9 +14,9 @@
     <ul class="nav_inner">
         <li>
             <div class="one_menu menu_hover"><a href="#">首页</a></div>
-            <div class="two_menu"></div>
+            
         </li>
-        <li class="one_menu_hover">
+        <li>
             <div class="one_menu"><a href="#">品牌故事</a></div>
             <div class="two_menu"><a href="#">易张脸</a> <a href="#">品牌理念</a> <a href="#">品牌愿景</a> <a href="#">品牌宣言</a>
             </div>

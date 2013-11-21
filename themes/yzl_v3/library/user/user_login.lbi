@@ -1,0 +1,90 @@
+<div class="login_content">
+    <p class="login_crumbs">账号登陆</p>
+    <div class="login_box">
+        <form name="formLogin" action="user.php" method="post" onSubmit="return userLogin()">
+            <table border="0" cellspacing="0" cellpadding="0" class="input_box">
+                <tr>
+                    <td width="83"><span>用户名：</span></td>
+                    <td width="231"><input name="username" type="text" size="25" id="username" class="inputBg"><br/><span id="username_notice" style="color:#FF0000"></span></td>
+                </tr>
+                <tr>
+                    <td><span>密码：</span></td>
+                    <td><input name="password" type="password" id="password1" onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)" class="inputBg" style="width:179px;" /><br/><span id="password_notice">包含6-16个数字或英文字母</span></td>
+                </tr>
+
+                <!-- 判断是否启用验证码{if $enabled_captcha} -->
+                <tr>
+                    <td><span>验证码：</span></td>
+                    <td class="auth"><input type="text" size="8" name="captcha" class="inputBg" /><img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" /></td>
+                </tr>
+                <!--{/if}-->
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="radius_input"><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember">{$lang.remember}</label></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <input type="hidden" name="act" value="act_login" />
+                    <input type="hidden" name="back_act" value="{$back_act}" />
+                    <td class="btn"><input name="Submit" type="submit" value="" /></td>
+                </tr>
+                <tr><td></td><td>忘记密码？点<a href="user.php?act=get_password" style="color:red;">这里</a>找回密码</td></tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+<script>
+    $().ready(function() {
+        $("#user_register").validate({
+            wrapper: 'div',
+            rules: {
+                username: {
+                    required:true,
+                    rangelength:[6,18]
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+                confirm_password: {
+                    required: true,
+                    minlength: 5,
+                    equalTo: "#password"
+                },
+                captcha: {
+                    required: true
+                },
+                agreement: "required"
+            },
+            messages: {
+                username: {
+                    required:"请输入姓名",
+                    rangelength:'至少6个以上的字'
+                },
+                email: {
+                    required: "请输入Email地址",
+                    email: "请输入正确的email地址"
+                },
+                password: {
+                    required: "请输入密码",
+                    minlength: jQuery.format("密码不能小于{0}个字 符")
+                },
+                confirm_password: {
+                    required: "请输入确认密码",
+                    minlength: "确认密码不能小于5个字符",
+                    equalTo: "两次输入密码不一致不一致"
+                },
+                captcha: {
+                    required: "请输入验证码"
+                },
+                agreement: "请接受条款"
+            }
+        });
+    });
+</script>

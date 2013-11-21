@@ -127,7 +127,11 @@ if (!$smarty->is_cached('article.dwt', $cache_id))
 // echo '<pre>';print_r($article);echo '</pre>';exit;
 switch($article['cat_type']){
     case 1:
-        $article_themes = 'article_culture.dwt';
+//        $article_themes = 'article_culture.dwt';
+        $article_themes = 'article_df.dwt';
+        break;
+    case 5://帮助中心模版
+        $article_themes = 'article_help.dwt';
         break;
     case 7://壁纸下载模板
         $article_themes = 'article_wallpaper.dwt';
@@ -141,6 +145,7 @@ switch($article['cat_type']){
     default:
         $article_themes = 'article.dwt';
 }
+print_r($article);exit;
 $article_themes = $article_themes?$article_themes:'article.dwt';
 $smarty->display($article_themes, $cache_id);
 // if( $article['cat_type'] == '8') {//视频广告模板
