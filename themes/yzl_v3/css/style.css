@@ -25,7 +25,7 @@ a:hover{ text-decoration:none;}
 .content_box .nav_inner .one_menu_hover .one_menu{width:104px; height:31px; background:#fff; margin-right:1px;}
 .content_box .nav_inner .one_menu_hover .one_menu a{color:#984e9a;}
 .content_box .nav_inner .one_menu a{color:#fff;}
-.content_box .nav_inner .one_menu_hover .two_menu{width:104px; overflow:hidden; padding-bottom:2px; border-bottom:1px solid #984e9a; background:#fff; display:block;}
+.content_box .nav_inner .one_menu_hover .two_menu{width:104px; padding-bottom:2px; border-bottom:1px solid #984e9a; background:#fff; display:block;}
 .content_box .nav_inner .two_menu{ display:none;}
 .content_box .nav_inner .one_menu_hover .all_products{width:312px; position:absolute; left:-74px; top:31px;}
 .content_box .nav_inner .one_menu_hover .two_menu a{width:80px; height:21px; line-height:21px; text-align:left; background:#fff; font-size:11px;color:#595757; display:block; padding-left:24px;}

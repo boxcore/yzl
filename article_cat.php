@@ -106,6 +106,9 @@ if (!$smarty->is_cached('article_cat.dwt', $cache_id))
 
     /* 获得文章总数 */
     $size   = isset($_CFG['article_page_size']) && intval($_CFG['article_page_size']) > 0 ? intval($_CFG['article_page_size']) : 20;
+    if($cat_info['cat_id']==27){
+        $size = 9;
+    }
     $count  = get_article_count($cat_id);
     $pages  = ($count > 0) ? ceil($count / $size) : 1;
 

@@ -122,6 +122,33 @@
       <!-- 文章缩略图 end -->
 
 
+        <tr>
+            <td class="label">文章图标1</td>
+            <td>
+                <input type="file" name="article_icon_1" size="35" />
+                {if $article.article_icon_1}
+                <a href="article.php?act=show_image&img_url={$article.article_icon_1}" target="_blank"><img src="images/yes.gif" border="0" /></a>
+                <input name="old_article_icon_1" type="hidden" value="{$article.article_icon_1}"/>
+                {else}
+                <img src="images/no.gif" />
+                {/if}
+            </td>
+        </tr>
+
+        <tr>
+            <td class="label">文章图标2</td>
+            <td>
+                <input type="file" name="article_icon_2" size="35" />
+                {if $article.article_icon_2}
+                <a href="article.php?act=show_image&img_url={$article.article_icon_2}" target="_blank"><img src="images/yes.gif" border="0" /></a>
+                <input name="old_article_icon_2" type="hidden" value="{$article.article_icon_2}"/>
+                {else}
+                <img src="images/no.gif" />
+                {/if}
+            </td>
+        </tr>
+
+
       
     </table>
     

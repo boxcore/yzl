@@ -399,6 +399,31 @@ if ($_REQUEST['act'] == 'insert')
         $url_article_img = $article_img = $original_img = htmlspecialchars(trim($_POST['article_img_url']));
     }
 
+    /* 文章图标处理 begin */
+    $article_icon_1 = '';
+    $article_icon_2     = '';
+    $save_path =  'icon/'.date('Ym',time());
+    if ( ($_FILES['article_icon_1']['tmp_name'] != '' && $_FILES['article_icon_1']['tmp_name'] != 'none') ){
+        $original_article_icon_1   = $image->upload_image($_FILES['article_icon_1'], $save_path); // 原始图片
+        if ($original_article_icon_1 === false)
+        {
+            sys_msg($image->error_msg(), 1, array(), false);
+        }
+        $article_icon_1      = $original_article_icon_1;   // 商品图片
+    }
+    if ( ($_FILES['article_icon_2']['tmp_name'] != '' && $_FILES['article_icon_2']['tmp_name'] != 'none') ){
+        $original_article_icon_2   = $image->upload_image($_FILES['article_icon_2'], $save_path); // 原始图片
+        if ($original_article_icon_2 === false)
+        {
+            sys_msg($image->error_msg(), 1, array(), false);
+        }
+        $article_icon_2      = $original_article_icon_2;   // 商品图片
+    }
+
+
+    /* 文章图标处理 end */
+
+
     $article_thumb = (empty($article_thumb) && !empty($_POST['article_thumb_url']) && goods_parse_url($_POST['article_thumb_url'])) ? htmlspecialchars(trim($_POST['article_thumb_url'])) : $article_thumb;
     $article_thumb = (empty($article_thumb) && isset($_POST['auto_thumb']))? $article_img : $article_thumb;
 
@@ -412,10 +437,10 @@ if ($_REQUEST['act'] == 'insert')
         $_POST['cat_id'] = 0;
     }
     $sql = "INSERT INTO ".$ecs->table('article')."(title, cat_id, article_type, is_open, author, ".
-                "author_email, keywords, content, add_time, file_url, article_img, article_thumb, original_img, open_type, link, description, vedio_link) ".
+                "author_email, keywords, content, add_time, file_url, article_img, article_thumb, original_img,article_icon_1,article_icon_2, open_type, link, description, vedio_link) ".
             "VALUES ('$_POST[title]', '$_POST[article_cat]', '$_POST[article_type]', '$_POST[is_open]', ".
                 "'$_POST[author]', '$_POST[author_email]', '$_POST[keywords]', '$_POST[FCKeditor1]', ".
-                "'$add_time', '$file_url', '$article_img', '$article_thumb', '$original_img', '$open_type', '$_POST[link_url]', '$_POST[description]', '$_POST[vedio_link]')";
+                "'$add_time', '$file_url', '$article_img', '$article_thumb', '$original_img', '$original_article_icon_1', '$original_article_icon_2','$open_type', '$_POST[link_url]', '$_POST[description]', '$_POST[vedio_link]')";
     $db->query($sql);
 
     /* 处理关联商品 */
@@ -434,14 +459,11 @@ if ($_REQUEST['act'] == 'insert')
 
     /*文章图片相册功能 start by bocxore*/
 
-    /* 重新格式化图片名称 */
+    //重新格式化图片名称
     $original_img = reformat_image_name('goods', $article_id, $original_img, 'source');
     $article_img = reformat_image_name('goods', $article_id, $article_img, 'goods');
     $article_thumb = reformat_image_name('goods_thumb', $article_id, $article_thumb, 'thumb');
-    echo "<pre>";
-    print_r($original_img.'+'.$article_img.'+'.$article_thumb);
-    echo "</pre>";
-    echo '<hr>';
+
     if ($article_img !== false)
     {
         $db->query("UPDATE " . $ecs->table('article') . " SET article_img = '$article_img' WHERE article_id='$article_id'");
@@ -649,6 +671,35 @@ if ($_REQUEST['act'] =='update')
     {
         $file_url = $_POST['file_url'];
     }
+
+    /* 文章图标处理 begin */
+
+    $article_icon_1 = '';
+    $article_icon_2     = '';
+
+    $save_path =  'icon/'.date('Ym',time());
+    if ( ($_FILES['article_icon_1']['tmp_name'] != '' && $_FILES['article_icon_1']['tmp_name'] != 'none') ){
+        $original_article_icon_1   = $image->upload_image($_FILES['article_icon_1'], $save_path); // 原始图片
+        if ($original_article_icon_1 === false)
+        {
+            sys_msg($image->error_msg(), 1, array(), false);
+        }
+        $article_icon_1      = $original_article_icon_1;   // 商品图片
+        @unlink(ROOT_PATH . $_POST['old_article_icon_1']);
+        $exc->edit("article_icon_1='$article_icon_1'", $_POST['id']);
+    }
+    if ( ($_FILES['article_icon_2']['tmp_name'] != '' && $_FILES['article_icon_2']['tmp_name'] != 'none') ){
+        $original_article_icon_2   = $image->upload_image($_FILES['article_icon_2'], $save_path); // 原始图片
+        if ($original_article_icon_2 === false)
+        {
+            sys_msg($image->error_msg(), 1, array(), false);
+        }
+        $article_icon_2      = $original_article_icon_2;   // 商品图片
+        @unlink(ROOT_PATH . $_POST['old_article_icon_2']);
+        $exc->edit("article_icon_2='$article_icon_2'", $_POST['id']);
+    }
+
+    /* 文章图标处理 end */
 
     /* 计算文章打开方式 */
     if ($file_url == '')
@@ -1088,6 +1139,13 @@ elseif ($_REQUEST['act'] == 'remove')
     {
         @unlink(ROOT_PATH . $old_url);
     }
+
+    /* 取文章数据 */
+    $del_article = array();
+    $sql = "SELECT * FROM " .$ecs->table('article'). " WHERE article_id='$id'";
+    $del_article = $db->GetRow($sql);
+    @unlink(ROOT_PATH . $del_article['article_icon_1']);
+    @unlink(ROOT_PATH . $del_article['article_icon_2']);
 
     //删除壁纸相册图片
     $del_wall_list = $GLOBALS['db']->getAll('SELECT * FROM ' .$GLOBALS['ecs']->table('article_wallpaper').' WHERE article_id = "'.$id.'" ORDER BY img_id ASC');

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+  {insert_scripts files='index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/common/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="content">
+    <div class="left">
+        <!-- TemplateBeginEditable name="左边区域" -->
+        <!-- {if $article_categories} -->
+        <!-- #BeginLibraryItem "/library/common/article_category_tree.lbi" --><!-- #EndLibraryItem -->
+        <!-- {/if} -->
+        <!-- TemplateEndEditable -->
+    </div>
+    <div class="right">
+        <h2><span>花本功效堂</span></h2>
+
+        <div class="flower_roll"> <span class="left"><a href="#"><img src="images/roll_left.gif" width="5" height="8"></a></span>
+            <ul class="center">
+                <li class="rose">
+                    <p><a href="#"><img src="images/roll_rose.png" width="41" height="34"></a><a href="#"> 玫瑰</a></p>
+                </li>
+                <li class="num">
+                    <p><a href="#"><img src="images/roll_num.png" width="37" height="37"></a><a href="#"> 洋甘菊</a></p>
+                </li>
+                <li class="lotus">
+                    <p class="current"><a href="#"><img src="images/roll_lotus_c.png" width="52" height="37"></a><a href="#">雪莲</a></p>
+                </li>
+            </ul>
+            <span class="right"><a href="#"><img src="images/roll_right.gif" width="5" height="8"></a></span>
+        </div>
+
+        <!-- {if $article.content } -->
+        {$article.content}
+        <!-- {/if} -->
+
+        <!-- {if $related_goods} -->
+        <div class="recommend">
+
+            <h1>推荐产品</h1>
+            <table width="859" border="0" cellspacing="0" cellpadding="0" class="three_steps_godds">
+                <tr>
+                <!--{foreach from=$related_goods item=releated_goods_data name=cur}-->
+                    {if $smarty.foreach.cur.iteration eq 5}</tr><tr>{/if}
+                    <td>
+                        <a href="{$releated_goods_data.url}"><img src="{$releated_goods_data.goods_thumb}" width="190" height="204"></a>
+                        <p><a href="{$releated_goods_data.url}">{$releated_goods_data.goods_name}</a><br><span><a href="#">{$releated_goods_data.short_name}</a></span></p>
+                    </td>
+
+                    {if $xxoo}
+                        <!-- {if $releated_goods_data.promote_price neq 0} -->
+                        {$lang.promote_price}<font class="f1">{$releated_goods_data.formated_promote_price}</font>
+                        <!-- {else} -->
+                        {$lang.shop_price}<font class="f1">{$releated_goods_data.shop_price}</font>
+                        <!-- {/if} -->
+                    {/if}
+
+                <!--{/foreach}-->
+                </tr>
+            </table>
+
+        </div>
+        <!-- {/if} -->
+
+
+
+        {if $artciles_list}
+                <!-- {foreach from=$artciles_list item=article} -->
+            <li class="" {if $article.article_type == 1} class="red"{/if}>
+                <p><a class="icon_f_style" href="{$article.url}" title="{$article.title|escape:html}" data1="{$article.article_icon_1}" data2="{$article.article_icon_2}"><img src="{$article.article_icon_1}" width="68" height="40"></a><a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title}</a></p>
+            </li>
+            <!-- {/foreach} -->
+        {/if}
+
+    </div>
+</div>
+<!-- #BeginLibraryItem "/library/common/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script>
+    jQuery(document).ready(function() {
+     $("a.icon_f_style ").hover(function(){
+         var image_name_2 = $(this).attr("data2");
+         $("img", this).attr("src", image_name_2);
+    },function(){
+         var image_name_1 = $(this).attr("data1");
+         $("img", this).attr("src", image_name_1);
+    });
+
+    });
+</script>
+</html>

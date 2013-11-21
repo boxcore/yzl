@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+  {insert_scripts files='index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/common/page_header.lbi" --><!-- #EndLibraryItem -->
+
+
+<div class="content">
+    <h1 class="active_tittle">臻享好礼</h1>
+    <p class="ac_tittleS">{$article.title|escape:html}<span>{$article.add_time}</span></p>
+    <div class="active_box">
+        <div class="left">
+            <!-- {if $article.content } -->
+            {$article.content}
+            <!-- {/if} -->
+        </div>
+        <div class="right"> <a href="#"><img src="images/offer_pic1.jpg" width="320" height="145"></a><a href="#"><img src="images/offer_pic1.jpg" width="320" height="145"></a></div>
+    </div>
+</div>
+
+
+<!-- #BeginLibraryItem "/library/common/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script>
+    jQuery(document).ready(function() {
+     $("a.icon_f_style ").hover(function(){
+         var image_name_2 = $(this).attr("data2");
+         $("img", this).attr("src", image_name_2);
+    },function(){
+         var image_name_1 = $(this).attr("data1");
+         $("img", this).attr("src", image_name_1);
+    });
+
+    });
+</script>
+</html>

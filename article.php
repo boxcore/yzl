@@ -145,7 +145,15 @@ switch($article['cat_type']){
     default:
         $article_themes = 'article.dwt';
 }
-print_r($article);exit;
+
+switch($article['cat_id']){
+    case 17:
+        $article_themes = 'article_hbgxt.dwt';
+        break;
+    case 27:
+        $article_themes = 'article_topic.dwt';
+}
+//print_r($article);exit;
 $article_themes = $article_themes?$article_themes:'article.dwt';
 $smarty->display($article_themes, $cache_id);
 // if( $article['cat_type'] == '8') {//视频广告模板

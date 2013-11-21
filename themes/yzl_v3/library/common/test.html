@@ -1,3 +1,20 @@
-<style>
-
-</style>
+/* 文章图标处理 begin */
+$article_icon_1 = '';
+$article_icon_2     = '';
+$save_path =  'icon/'.date('Ym',time());
+if ( ($_FILES['article_icon_1']['tmp_name'] != '' && $_FILES['article_icon_1']['tmp_name'] != 'none') ){
+$original_article_icon_1   = $image->upload_image($_FILES['article_icon_1'], $save_path); // 原始图片
+if ($original_article_icon_1 === false)
+{
+sys_msg($image->error_msg(), 1, array(), false);
+}
+$article_icon_1      = $original_article_icon_1;   // 商品图片
+}
+if ( ($_FILES['article_icon_2']['tmp_name'] != '' && $_FILES['article_icon_2']['tmp_name'] != 'none') ){
+$original_article_icon_2   = $image->upload_image($_FILES['article_icon_2'], $save_path); // 原始图片
+if ($original_article_icon_2 === false)
+{
+sys_msg($image->error_msg(), 1, array(), false);
+}
+$article_icon_2      = $original_article_icon_2;   // 商品图片
+}

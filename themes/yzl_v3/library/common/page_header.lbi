@@ -33,8 +33,8 @@
             <div class="two_menu"> <a href="#">养颜古方</a> <a href="#">花本专家</a> <a href="#">生产基地</a> <a href="#">科研实力</a> <a href="#">科研实力</a></div>
         </li>
         <li>
-            <div class="one_menu"><a href="beautiful_school.html">养颜学堂</a></div>
-            <div class="two_menu"> <a href="#">花本功效</a> <a href="#">肤质解析堂</a> <a href="#">养肤常识堂</a> <a href="#">花本养肤堂</a> </div>
+            <div class="one_menu"><a href="/page/12">养颜学堂</a></div>
+            <div class="two_menu"> <a href="/page/17">花本功效</a> <a href="#">肤质解析堂</a> <a href="#">养肤常识堂</a> <a href="#">花本养肤堂</a> </div>
         </li>
         <li>
             <div class="one_menu"><a href="#">全线产品</a></div>
@@ -45,10 +45,28 @@
             </div>
         </li>
         <li class="search">
-            <form>
-                <input name="" type="text" class="text">
-                <input name="" type="button" class="btn">
+            <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()">
+                <input name="keywords" type="text" id="keyword" value="{$search_keywords|escape}" class="text">
+                <input type="submit" class="btn" class="go" value="" style="cursor:pointer;">
             </form>
         </li>
+        <script>
+            {literal}
+            <!--
+            function checkSearchForm()
+            {
+                if(document.getElementById('keyword').value)
+                {
+                    return true;
+                }
+                else
+                {
+                    alert("{$lang.no_keywords}");
+                    return false;
+                }
+            }
+            -->
+            {/literal}
+        </script> 
     </ul>
 </div>

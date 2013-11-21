@@ -68,7 +68,7 @@ elseif ($_REQUEST['act'] == 'add')
     admin_priv('article_cat');
 
     /* 创建 html editor */
-    create_html_editor('cat_detail');
+    create_html_kindeditor('cat_detail');
 
 	//$cat_type_arr = array()
     $smarty->assign('cat_select',  article_cat_list(0));
@@ -171,7 +171,7 @@ elseif ($_REQUEST['act'] == 'edit')
     $selected   =   $cat['parent_id'];
 
     /* 创建 html editor */
-    create_html_editor('cat_detail', $cat['cat_detail']);
+    create_html_kindeditor('cat_detail', $cat['cat_detail']);
 
     foreach ($options as $var)
     {
