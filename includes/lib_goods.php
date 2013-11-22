@@ -528,6 +528,7 @@ function get_goods_info($goods_id)
         if ($row['promote_price'] > 0)
         {
             $promote_price = bargain_price($row['promote_price'], $row['promote_start_date'], $row['promote_end_date']);
+            $row['youhui'] = $row['shop_price'] - $promote_price;
         }
         else
         {

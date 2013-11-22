@@ -341,11 +341,12 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
 
     $pager['styleid'] = 1;
     $smarty->assign('pager',            $pager);      // 页面标志
-    $smarty->assign('categories',       get_categories_tree($cat_id)); // 分类树
+    $smarty->assign('categories',       get_categories_tree(0)); // 分类树
     $smarty->assign('helps',            get_shop_help());              // 网店帮助
     $smarty->assign('top_goods',        get_top10());                  // 销售排行
     $smarty->assign('show_marketprice', $_CFG['show_marketprice']);
     $smarty->assign('category',         $cat_id);
+    $smarty->assign('cat',              $cat);
     $smarty->assign('brand_id',         $brand);
     $smarty->assign('price_max',        $price_max);
     $smarty->assign('price_min',        $price_min);

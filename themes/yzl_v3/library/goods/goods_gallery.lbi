@@ -1,0 +1,17 @@
+<!-- {if $pictures}-->
+<a href="javascript:;" onclick="window.open('gallery.php?id={$goods.goods_id}'); return false;">
+    <img src="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}"/>
+</a>
+<!-- {else} -->
+<img src="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}"/>
+<!-- {/if}-->
+
+<!-- {if $pictures}-->
+
+<!-- {foreach from=$pictures item=picture}-->
+<li><a href="gallery.php?id={$id}&amp;img={$picture.img_id}" target="_blank"><img
+                src="{if $picture.thumb_url}{$picture.thumb_url}{else}{$picture.img_url}{/if}" alt="{$goods.goods_name}"
+                class="B_blue"/></a>
+</li>
+<!--{/foreach}-->
+<!-- {/if}-->

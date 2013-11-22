@@ -1,74 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE HTML>
+<html lang="en-US">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="Keywords" content="{$keywords}" />
-<meta name="Description" content="{$description}" />
-<!-- TemplateBeginEditable name="doctitle" -->
-<title>{$page_title}</title>
-<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
-<link rel="shortcut icon" href="favicon.ico" />
-<link rel="icon" href="animated_favicon.gif" type="image/gif" />
-<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
-<!-- {if $cat_style} -->
-<link href="{$cat_style}" rel="stylesheet" type="text/css" />
-<!-- {/if} -->
+    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+    <!-- {if $cat_style} -->
+    <link href="{$cat_style}" rel="stylesheet" type="text/css" />
+    <!-- {/if} -->
 {* 包含脚本文件 *}
-{insert_scripts files='common.js,global.js,compare.js'}
+{insert_scripts files='global.js,compare.js'}
 </head>
 <body>
-<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/common/page_header.lbi" --><!-- #EndLibraryItem -->
 
-
-<div class="inner_banner"></div>
-<div class="inner_content">
-    <!-- 左边栏 -->
-    <div class="innernews_left innernews_big_left">
-        <div class="innernews_left_box">
-            <!-- #BeginLibraryItem "/library/category_tree.lbi" -->
-            <!-- #EndLibraryItem -->
-            <div class="product_search">
-                <p>产品搜索：</p>
-                <form>
-                    <span class="text_product">
-                    <input name="" type="text">
-                    </span>
-                    <input name="" type="button" class="btn_product">
-                </form>
-                <div class="keyword">
-                    <p>热门关键字</p>
-                    <ul>
-                        <li><a href="#">新品</a></li>
-                        <li><a href="#">花本养肤</a></li>
-                        <li><a href="#">清洁</a></li>
-                        <li><a href="#">保湿</a></li>
-                        <li><a href="#">美白</a></li>
-                        <li><a href="#">抗皱</a></li>
-                        <li><a href="#">活肤</a></li>
-                        <li><a href="#">防晒</a></li>
-                        <li><a href="#">祛痘</a></li>
-                        <li><a href="#">脱敏</a></li>
-                    </ul>
-                </div>
-            </div>
+<div class="content">
+    <div class="left">
+        <!-- #BeginLibraryItem "/library/goods/category_tree.lbi" --><!-- #EndLibraryItem -->
+        <!--{foreach from=$filter_attr_list2 item=filter_attr}-->
+        <div class="screeBox">
+            <strong>{$filter_attr.filter_attr_name|escape:html} :</strong>
+            <!--{foreach from=$filter_attr.attr_list item=attr}-->
+            <!-- {if $attr.selected} -->
+            <span>{$attr.attr_value}</span>
+            <!-- {else} -->
+            <a href="{$attr.url}">{$attr.attr_value}</a>&nbsp;
+            <!-- {/if} -->
+            <!--{/foreach}-->
         </div>
+        <!--{/foreach}-->
     </div>
-    <!-- /左边栏 -->
-
-    <!-- 右边栏 -->
-    <div class="innernews_right">
-        <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
-        <div class="product_list">
-        <!-- #BeginLibraryItem "/library/goods_list.lbi" --><!-- #EndLibraryItem -->
-        <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
-        </div>
-    
+    <div class="right">
+        <!-- #BeginLibraryItem "/library/goods/goods_list.lbi" --><!-- #EndLibraryItem -->
+        {if $goods_list}<!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->{/if}
     </div>
-    <!-- /右边栏 -->
 </div>
 
-
-<div class="clearfix"></div>
-<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/common/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
 </html>

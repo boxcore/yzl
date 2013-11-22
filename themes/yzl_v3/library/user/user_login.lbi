@@ -27,7 +27,7 @@
                     <td>&nbsp;</td>
                     <input type="hidden" name="act" value="act_login" />
                     <input type="hidden" name="back_act" value="{$back_act}" />
-                    <td class="btn"><input name="Submit" type="submit" value="" /></td>
+                    <td class="btn"><input name="Submit" type="submit" value="登陆" /></td>
                 </tr>
                 <tr><td></td><td>忘记密码？点<a href="user.php?act=get_password" style="color:red;">这里</a>找回密码</td></tr>
             </table>

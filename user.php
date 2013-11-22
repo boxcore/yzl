@@ -337,6 +337,7 @@ elseif ($action == 'act_login')
     }
 
     $captcha = intval($_CFG['captcha']);
+
     if (($captcha & CAPTCHA_LOGIN) && (!($captcha & CAPTCHA_LOGIN_FAIL) || (($captcha & CAPTCHA_LOGIN_FAIL) && $_SESSION['login_fail'] > 2)) && gd_version() > 0)
     {
         if (empty($_POST['captcha']))
@@ -348,7 +349,17 @@ elseif ($action == 'act_login')
         include_once('includes/cls_captcha.php');
 
         $validator = new captcha();
-        $validator->session_word = 'captcha_login';
+
+        $validator->session_word = 'captcha_word';
+        //        $validator->session_word = 'captcha_login';
+
+//        print_r($_SESSION);
+//        echo '<br>';
+//        print_r(base64_decode($_SESSION['captcha_word']));
+//        echo '<hr>';
+//        print_r(md5(strtoupper($_POST['captcha'])));
+//        exit;
+
         if (!$validator->check_word($_POST['captcha']))
         {
             show_message($_LANG['invalid_captcha'], $_LANG['relogin_lnk'], $do_back_act, 'error');
