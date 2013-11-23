@@ -20,11 +20,11 @@
         <div class="nav_box_inner"></div>
     </div>
     <ul class="nav_inner">
-        <li>
+        <li class="one_menu_hover">
             <div class="one_menu menu_hover"><a href="index.html">首页</a></div>
             <div class="two_menu"></div>
         </li>
-        <li>
+        <li class="one_menu_hover">
             <div class="one_menu"><a href="#">品牌故事</a></div>
             <div class="two_menu"> <a href="#">易张脸</a> <a href="#">品牌理念</a> <a href="#">品牌愿景</a> <a href="#">品牌宣言</a> </div>
         </li>

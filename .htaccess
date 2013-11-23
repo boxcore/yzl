@@ -7,6 +7,7 @@ RewriteEngine On
 #RewriteBase /
 
 # direct one-word access
+RewriteRule ^ohmylike/*$ ohmylike/index.php  [QSA,L]
 RewriteRule ^admin/*$ admin/index.php  [QSA,L]
 RewriteRule ^index\.html$    index\.php [L]
 RewriteRule ^category$      index\.php [L]
@@ -36,13 +37,7 @@ RewriteRule ^([0-9a-zA-Z_]+)[\/]*$ category\.php\?defurl=$1  [QSA,L]
 
 RewriteRule ^goods-([0-9]+)(.*)\.html$  goods\.php\?id=$1 [QSA,L]
 
-
-# --------文章列表------------------------------------
-#RewriteRule ^page\/brand_download[\/]*$ article_cat\.php\?defurl=wallpaper   [QSA,L]
-#RewriteRule ^page\/5[\/]*$ article_cat\.php\?defurl=wallpaper   [QSA,L]
 RewriteRule ^page\/12[\/]*$ article_cat\.php\?defurl=17   [QSA,L]
-#RewriteRule ^page\/9[\/]*$ article_cat\.php\?defurl=10   [QSA,L]
-
 
 RewriteRule ^page\/([0-9a-zA-Z_]+)-([0-9]+)-(.+)-([a-zA-Z]+)[\/]*$  article_cat\.php\?defurl=$1&page=$2&sort=$3&order=$4  [QSA,L]
 RewriteRule ^page\/([0-9a-zA-Z_]+)-([0-9]+)-(.+)[\/]*$              article_cat\.php\?defurl=$1&page=$2&keywords=$3 [QSA,L]
@@ -61,7 +56,6 @@ RewriteRule ^brand-([0-9a-zA-Z_]+)(?:-c([0-9]+))?-([0-9]+)[\/]*$                
 RewriteRule ^brand-([0-9a-zA-Z_]+)(?:-c([0-9]+))?[\/]*$                         brand\.php\?defurl=$1&cat=$2 [QSA,L]
 RewriteRule ^brand-([0-9a-zA-Z_]+)[\/]*$                                   brand\.php\?defurl=$1 [QSA,L]
 
-
 RewriteRule ^category-([0-9]+)-b([0-9]+)-min([0-9]+)-max([0-9]+)-attr([^-]*)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$  category\.php\?id=$1&brand=$2&price_min=$3&price_max=$4&filter_attr=$5&page=$6&sort=$7&order=$8 [QSA,L]
 RewriteRule ^category-([0-9]+)-b([0-9]+)-min([0-9]+)-max([0-9]+)-attr([^-]*)(.*)\.html$                            category\.php\?id=$1&brand=$2&price_min=$3&price_max=$4&filter_attr=$5 [QSA,L]
 RewriteRule ^category-([0-9]+)-b([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$                                      category\.php\?id=$1&brand=$2&page=$3&sort=$4&order=$5 [QSA,L]
@@ -69,11 +63,8 @@ RewriteRule ^category-([0-9]+)-b([0-9]+)-([0-9]+)(.*)\.html$                    
 RewriteRule ^category-([0-9]+)-b([0-9]+)(.*)\.html$                                                                category\.php\?id=$1&brand=$2  [QSA,L]
 RewriteRule ^category-([0-9]+)(.*)\.html$                                                                          category\.php\?id=$1  [QSA,L]
 
-
-
 RewriteRule ^includes(.*)$  includes$1 [QSA,L]
 RewriteRule ^(?:[0-9a-zA-Z_]+)/([0-9a-zA-Z_-]+)(.*)\.html$  goods\.php\?defurl=$1 [QSA,L]
-#RewriteRule ^goods-([0-9]+)(.*)\.html$  goods\.php\?id=$1 [QSA,L]
 
 RewriteRule ^tag-(.*)\.html                                             search\.php\?keywords=$1 [QSA,L]
 RewriteRule ^snatch-([0-9]+)\.html$                                     snatch\.php\?id=$1 [QSA,L]

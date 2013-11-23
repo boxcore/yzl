@@ -5,7 +5,7 @@
     {insert_scripts files='index.js'}
 </head>
 <body>
-<!-- #BeginLibraryItem "/library/common/page_header.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
 
 <!--焦点图 START-->
 <!-- #BeginLibraryItem "/library/index/index_banner.lbi" --><!-- #EndLibraryItem -->
