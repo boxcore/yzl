@@ -1,6 +1,6 @@
 //页面公用类js
 
-$(document).ready(function () {
+jQuery(document).ready(function () {
     $("#navmenu ul li:has(div.two_menu)").hover(function () {
     	// alert(1111);
         // $(this).children("a").css({color: "#fff"});
