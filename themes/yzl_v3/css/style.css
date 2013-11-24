@@ -18,16 +18,16 @@ a:hover{ text-decoration:none;}
 #header .header_r_r .shop_bag a{ color:#5a5a5a;}
 #header .header_r_r .code{float:left;}
 .banner{width:998px; height:434px; margin:auto 0;}
-.content_box{ position:relative; width:998px; margin:5px auto 0; min-height:33px;overflow:hidden; }
-.content_box .nav_inner{ position:absolute; top:2px; right:0px; width:658px; overflow:hidden;z-index: 999!important;display: block;}
+.content_box{ position:relative; width:998px; margin:5px auto 0; min-height:33px;}
+.content_box .nav_inner{float: right; width:658px; display: block;}
 .content_box .nav_inner li{float:left; position:relative;}
-.content_box .nav_inner .one_menu{width:104px; height:31px; line-height:28px; font-size:14px; text-align:center;}
+.content_box .nav_inner .one_menu{position: relative;width:104px; height:31px; line-height:28px; font-size:14px; text-align:center;}
 .content_box .nav_inner .one_menu_hover .one_menu{width:104px; height:31px; background:#fff; margin-right:1px;}
 .content_box .nav_inner .one_menu_hover .one_menu a{color:#984e9a;}
 .content_box .nav_inner .one_menu a{color:#fff;}
-.content_box .nav_inner .one_menu_hover .two_menu{width:104px; padding-bottom:2px; border-bottom:1px solid #984e9a; background:#fff; display:block; z-index: 9999;}
-.content_box .nav_inner .two_menu{ display:none;}
-.content_box .nav_inner .one_menu_hover .all_products{width:312px; position:absolute; left:-74px; top:31px;}
+.content_box .nav_inner .one_menu_hover .two_menu{width:104px; padding-bottom:2px; border-bottom:1px solid #984e9a; background:#fff; display:block; /*border-left:1px solid #984e9a;border-right:1px solid #984e9a;*/}
+.content_box .nav_inner .two_menu{ display:none;position: absolute; top:30px;left:0; visibility:visible;}
+.content_box .nav_inner .one_menu_hover .all_products{width:312px; left:-104px; top:31px;}
 .content_box .nav_inner .one_menu_hover .two_menu a{width:80px; height:21px; line-height:21px; text-align:left; background:#fff; font-size:11px;color:#595757; display:block; padding-left:24px;}
 .content_box .nav_inner .one_menu_hover .two_menu a:hover{ background:#dcdddd;}
 .content_box .nav_inner .one_menu_hover .all_products .one{float:left; display:inline;}
@@ -47,8 +47,10 @@ a:hover{ text-decoration:none;}
 .foot .left .foot_nav a{color:#5a5a5a; margin-right:26px;}
 .foot .right{float:right; width:80px; overflow:hidden;}
 .foot .right img{margin-left:5px;}
-#main_nav{position: relative; z-index: 9999;}
-.nav_box{width:998px;height:31px;border-top:2px solid #954d97;position:absolute;top:-3px;left:0px;}
+
+#navmenu{position: relative; z-index: 10;}
+
+.nav_box{width:998px;height:31px;border-top:0px solid #954d97;position:absolute;top:-3px;left:0px;}
 .nav_box_inner{width:998px; height:31px; background:#9fa0a0; opacity:0.5; }
 /*用户注册*/
 .login_content{width:998px; overflow:hidden; margin:28px auto 0;}

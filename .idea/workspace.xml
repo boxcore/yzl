@@ -9,13 +9,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="d7867e13-9e5f-4199-b1b3-749d55b0c39f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animated_favicon.gif" afterPath="$PROJECT_DIR$/animated_favicon.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/favicon.ico" afterPath="$PROJECT_DIR$/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/config.php" afterPath="$PROJECT_DIR$/data/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/yzl_v3/index.dwt" afterPath="$PROJECT_DIR$/themes/yzl_v3/index.dwt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/yzl_v3/js/base.js" afterPath="$PROJECT_DIR$/themes/yzl_v3/js/base.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/flashdata/o.slider/css/o.slider.css" afterPath="$PROJECT_DIR$/data/flashdata/o.slider/css/o.slider.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/yzl_v3/library/page_header.lbi" afterPath="$PROJECT_DIR$/themes/yzl_v3/library/page_header.lbi" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rewrite.ac" afterPath="$PROJECT_DIR$/rewrite.ac" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/yzl_v3/css/style.css" afterPath="$PROJECT_DIR$/themes/yzl_v3/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -1858,7 +1854,26 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="zt.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zt.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="74" column="13" selection-start="1898" selection-end="1898" vertical-scroll-proportion="-11.4" vertical-offset="912" max-vertical-offset="7296">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="51" selection-start="257" selection-end="257" vertical-scroll-proportion="0.17335767" vertical-offset="0" max-vertical-offset="548">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -1868,7 +1883,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/goods.php" />
         <option value="$PROJECT_DIR$/includes/lib_goods.php" />
         <option value="$PROJECT_DIR$/admin/templates/goods_info.htm" />
         <option value="$PROJECT_DIR$/admin/goods.php" />
@@ -1884,6 +1898,7 @@
         <option value="$PROJECT_DIR$/themes/yzl_v3/index.dwt" />
         <option value="$PROJECT_DIR$/themes/yzl_v3/library/page_header.lbi" />
         <option value="$PROJECT_DIR$/themes/yzl_v3/css/style.css" />
+        <option value="$PROJECT_DIR$/test.php" />
       </list>
     </option>
   </component>
@@ -1892,9 +1907,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1358" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1378" />
     <option name="height" value="754" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -1962,6 +1977,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="noface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="noface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="noface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2082,15 +2111,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1378" height="754" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1780303" sideWeight="0.6716667" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18465045" sideWeight="0.6716667" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19772728" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -2117,16 +2146,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/themes/yzl_v3/library/user/user_login.lbi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="20" selection-start="567" selection-end="567" vertical-scroll-proportion="0.23709369" vertical-offset="66" max-vertical-offset="988" />
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="9" selection-start="7908" selection-end="7908" vertical-scroll-proportion="0.34790874" vertical-offset="4187" max-vertical-offset="20672" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/cls_captcha.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="131" column="13" selection-start="2975" selection-end="2975" vertical-scroll-proportion="-7.32" vertical-offset="2097" max-vertical-offset="5282" />
@@ -2168,11 +2187,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rewrite.ac">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="13" selection-start="284" selection-end="284" vertical-scroll-proportion="0.2084095" vertical-offset="0" max-vertical-offset="1102" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/yzl_v3/user_transaction.dwt">
@@ -2198,6 +2217,20 @@
     <entry file="file://$PROJECT_DIR$/themes/yzl_v3/index.dwt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="30" selection-start="304" selection-end="304" vertical-scroll-proportion="0.034671534" vertical-offset="171" max-vertical-offset="3268" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="13" selection-start="1898" selection-end="1898" vertical-scroll-proportion="-11.4" vertical-offset="912" max-vertical-offset="7296">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="51" selection-start="257" selection-end="257" vertical-scroll-proportion="0.17335767" vertical-offset="0" max-vertical-offset="548">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
