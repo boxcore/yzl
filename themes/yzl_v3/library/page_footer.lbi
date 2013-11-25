@@ -10,3 +10,96 @@
                     src="images/share_2.jpg" width="15" height="15"></a><a href="#"><img src="images/share_3.jpg" width="15" height="15"></a>
     </div>
 </div>
+
+
+<div class="login_wrap" id="login_pop" style="display:none">
+	{insert_scripts files='jquery/jquery.validate.min.js'}
+	<div class="login_inner">
+    	<h3>用户登陆</h3>
+    <div class="loginface_box">
+    	<form action="user.php" method="post" id="user_login">
+            <table width="345" border="0" cellspacing="0" cellpadding="0">	
+                <tbody><tr>
+                    <td width="65" align="right">用户名 ：</td>
+                    <td width="186"><input type="text" class="text required" name="username" id="username"></td>
+                    <td width="94">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="right">密码 ：</td>
+                    <td><input class="text" name="password" type="password" id="password" placeholder="由6-16个字母组成"></td>
+                    <td align="left"><a href="/user.php?act=get_password">忘记密码？</a></td>
+                </tr>
+                <tr>
+                    <td align="right">验证码 ：</td>
+                    <td><input class="auth_code" type="text" size="8" name="captcha"><img
+                                    src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;height: 20px; margin-bottom: 6px;text-align: left;" onClick="this.src='captcha.php?'+Math.random()"/></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>还没有易张脸帐号？<a href="/user.php?act=register">立即注册</a></td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody></table>
+            <div>
+            	<input type="hidden" name="act" value="act_login" />
+            	<input type="hidden" name="back_act" value="" />
+            	<input name="submit" type="submit" class="btn" value="登录">
+            </div>
+        </form>
+    </div>	
+    </div>
+</div>
+<script>
+    $().ready(function() {
+        $("#user_login").validate({
+//            errorContainer: $(".container_error"),
+//            errorLabelContainer: $(".container_error ol"),
+//            wrapper: 'div',
+//            errorLabelContainer: $("#form1 div.error"),
+
+            rules: {
+                username: {
+                    required:true,
+                    rangelength:[6,18]
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+                captcha: {
+                    required: true
+                }
+            },
+            messages: {
+                username: {
+                    required:"请输入姓名",
+                    rangelength:'至少6个以上的字'
+                },
+                password: {
+                    required: "请输入密码",
+                    minlength: jQuery.format("密码不能小于{0}个字 符")
+                },
+                captcha: {
+                    required: "请输入验证码"
+                }
+            },
+            /* 失去焦点时不验证 */ 
+	        onfocusout: false,
+	        onkeyup: false,
+            showErrors: function(errorMap, errorList) {
+	            var msg = "";
+	            $.each( errorList, function(i,v){
+	              msg += (v.message+"\r\n");
+	            });
+	            if(msg!="") alert(msg);
+	        },
+	        onsubmit: true
+	        
+        });
+    });
+
+    var local_url = window.location.href;
+    $("input[name='back_act']").val(local_url);
+
+</script>

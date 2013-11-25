@@ -15,7 +15,12 @@ jQuery(document).ready(function () {
         $(this).removeClass("one_menu_hover");
         $('.two_menu', this).attr({style:'display:none;'});
     });
-})
+
+    $("#login_btn").click(function(){
+        $('#login_pop').skygqbox();
+    });
+
+});
 
 // jQuery(document).ready(function() {
 // 	$("ul.nav_inner li").hover(
@@ -37,22 +42,11 @@ jQuery(document).ready(function () {
 //     }
 // );
 
-////弹窗登陆
-//function login_module(){//点击登录时，调用的函数
-//	var mengban=document.getElementById("mengban");
-//	mengban.className="mengban";
-//	var divs=document.getElementById("login_module");
-//	divs.style.display="block";
-//}
-//function close_login(){//关闭弹窗时，调用的函数
-//	var mengban=document.getElementById("mengban");
-//	mengban.className=" ";
-//	document.getElementById("login_module").style.display = "none";
-//	document.getElementById("register_module").style.display = "none";
-//}
-//function register_module(){//注册时，调用的函数
-//	var mengban=document.getElementById("mengban");
-//	mengban.className="mengban";
-//	var divs=document.getElementById("register_module");
-//	divs.style.display="block";
-//}
+(function($){
+    $.getUrlParam = function(name)
+    {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r!=null) return unescape(r[2]); return null;
+    }
+})(jQuery);

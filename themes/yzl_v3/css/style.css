@@ -82,15 +82,17 @@ a:hover{ text-decoration:none;}
 .login_loginface .login_11{height:62px; background:url(../images/loading_11.jpg) no-repeat center center;}
 .login_loginface .login_12{height:61px; background:url(../images/loading_12.jpg) no-repeat center center;}
 .login_loginface .login_13{height:62px; background:url(../images/loading_13.jpg) no-repeat center center;}
-.login_loginface .login_wrap{width:625px; margin:0 auto;}
-.login_loginface .login_inner{width:625px; height:240px; background:url(../images/loading_inerface.jpg) no-repeat; position:absolute; top:242px; left:center;}
-.login_loginface .login_inner h3{font-size:15px; color:#fff; text-align:center; height:30px; line-height:26px; font-weight:normal;}
-.login_loginface .login_inner .loginface_box{width:625px; overflow:hidden; margin-top:38px;}
-.login_loginface .login_inner .loginface_box table{font-size:14px; color:#fff; margin-left:70px; float:left;}
-.login_loginface .login_inner .loginface_box table td{padding-bottom:20px;}
-.login_loginface .login_inner .loginface_box table td a{ text-decoration:underline; color:#fff;}
-.login_loginface .login_inner .loginface_box table .text{width:182px; height:21px; line-height:21px; border-top:1px solid #8f7ea2; border-right:1px solid #8f7ea2; color:#984E9A;}
-.login_loginface .login_inner .loginface_box .btn{width:113px; height:113px; background:url(../images/interface_btn.png) no-repeat; float:right; margin-right:60px; cursor:pointer; font-size:28px; color:#fff;}
+
+.login_wrap{width:625px;}
+.login_inner{width:625px; height:240px; background:url(../images/loading_inerface.jpg) no-repeat;}
+.login_inner h3{font-size:15px; color:#fff; text-align:center; height:30px; line-height:26px; font-weight:normal;}
+.login_inner .loginface_box{width:625px; overflow:hidden; margin-top:38px;}
+.login_inner .loginface_box table{font-size:14px; color:#fff; margin-left:70px; float:left;}
+.login_inner .loginface_box table td{padding-bottom:20px;}
+.login_inner .loginface_box table td a{ text-decoration:underline; color:#fff;}
+.login_inner .loginface_box table .text{width:182px; height:21px; line-height:21px; border-top:1px solid #8f7ea2; border-right:1px solid #8f7ea2; color:#984E9A;}
+.login_inner .loginface_box .btn{width:113px; height:113px; background:url(../images/interface_btn.png) no-repeat; float:right; margin-right:60px; cursor:pointer; font-size:28px; color:#fff;}
+
 /*全线产品*/
 .content{width:998px; overflow:hidden; margin:36px auto 30px;}
 .content .left{width:104px; overflow:hidden; float:left;}

@@ -30,7 +30,7 @@ $back_act='';
 
 // 不需要登录的操作或自己验证是否登录（如ajax处理）的act
 $not_login_arr =
-array('login','act_login','register','act_register','act_edit_password','get_password','send_pwd_email','password', 'signin', 'add_tag', 'collect', 'return_to_cart', 'logout', 'email_list', 'validate_email', 'send_hash_mail', 'order_query', 'is_registered', 'check_email','clear_history','qpassword_name', 'get_passwd_question', 'check_answer');
+array('login','act_login','register','act_register','act_edit_password','get_password','send_pwd_email','password', 'signin', 'add_tag', 'collect', 'return_to_cart', 'logout', 'email_list', 'validate_email', 'send_hash_mail', 'order_query', 'is_registered', 'check_email','clear_history','qpassword_name', 'get_passwd_question', 'check_answer','act_login_pop');
 
 /* 显示页面的action列表 */
 $ui_arr = array('register', 'login', 'profile', 'order_list', 'order_detail', 'address_list', 'collection_list',
@@ -381,6 +381,56 @@ elseif ($action == 'act_login')
     }
 }
 
+/* 处理弹窗登录 */
+elseif ($action == 'act_login_pop')
+{
+    $username = isset($_POST['username']) ? trim($_POST['username']) : '';
+    $password = isset($_POST['password']) ? trim($_POST['password']) : '';
+    $captcha = intval($_CFG['captcha']);
+
+    /*if (($captcha & CAPTCHA_LOGIN) && (!($captcha & CAPTCHA_LOGIN_FAIL) || (($captcha & CAPTCHA_LOGIN_FAIL) && $_SESSION['login_fail'] > 2)) && gd_version() > 0)
+    {
+        if (empty($_POST['captcha']))
+        {
+            $result['flag'] = 0;
+            $result['content'] = '验证码不能为空';
+
+        }
+
+        // 检查验证码
+        include_once('includes/cls_captcha.php');
+
+        $validator = new captcha();
+
+        $validator->session_word = 'captcha_word';
+
+        if (!$validator->check_word($_POST['captcha']))
+        {
+            $result['flag'] = 0;
+            $result['content'] = '验证码不正确';
+        }
+    }*/
+
+    echo $user->login();
+
+    if ($user->login($username, $password))
+    {
+        update_user_info();
+        recalculate_price();
+
+        $ucdata = isset($user->ucdata)? $user->ucdata : '';
+        $result['flag'] = 1;
+        $result['content'] = '登陆成功!';
+    }
+    else
+    {
+        $_SESSION['login_fail'] ++ ;
+        $result['flag'] = 0;
+        $result['content'] = '登陆失败!';
+    }
+    echo json_encode($result);
+}
+
 /* 处理 ajax 的登录请求 */
 elseif ($action == 'signin')
 {
@@ -402,7 +452,7 @@ elseif ($action == 'signin')
             die($json->encode($result));
         }
 
-        /* 检查验证码 */
+        // 检查验证码 
         include_once('includes/cls_captcha.php');
 
         $validator = new captcha();

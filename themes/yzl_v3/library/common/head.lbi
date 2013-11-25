@@ -11,3 +11,5 @@
     <link href="{$ecs_themes_path}/css/style.css" rel="stylesheet" type="text/css" />
     {insert_scripts files='common.js,jquery.js'}
     <script type="text/javascript" src="{$ecs_themes_path}/js/base.js"></script>
+    <script type="text/javascript" src="{$ecs_themes_path}/js/thickbox.js"></script>
+    <link href="{$ecs_themes_path}/js/thickbox.css" rel="stylesheet" type="text/css" />
