@@ -6,8 +6,8 @@ a:link,a:visited{ text-decoration:none;}
 a:hover{ text-decoration:none;}
 #header{width:998px; margin:0 auto; overflow:hidden;}
 #header .logo{width:116px; height:41px; float:left; margin-top:28px;}
-#header .header_r{widhth:556p; overflow:hidden; float:right;}
-#header .header_r_inner{width:305px;float:left; margin-top:48px; overflow:hidden;}
+#header .header_r{/*width:556px;*/ overflow:hidden; float:right;}
+#header .header_r_inner{/*width:305px;*/float:left; margin-top:48px; overflow:hidden;}
 #header .header_r_inner li{float:left; font-size:11px; width:76px; height:22px; background:url(../images/header_r_bg.jpg) no-repeat right center; line-height:22px; text-align:center;}
 #header .header_r_inner li a{ color:#5a5a5a;}
 #header .header_r_inner li a:hover{color:#984e9a;}
@@ -40,17 +40,18 @@ a:hover{ text-decoration:none;}
 .skin_nav a{color:#5a5a5a;display:inline-block; width:106px; height:22px;line-height:22px; text-align:center; background:url(../images/header_r_bg.jpg) no-repeat right center;}
 .skin_nav .samll_shop{width:115px; heigth:22px; background:url(../images/Sshop_bag.jpg) no-repeat right center;}
 .skin_nav a:hover{color:#984e9a;}
-.foot{width:988px; overflow:hidden; margin:0 auto; padding-top:14px;  border-top:1px solid #ccc;}
+.foot{width:988px;  margin:0 auto; padding-top:14px;  border-top:1px solid #ccc;}
 .foot .left{float:left; width:420px; overflow:hidden;}
 .foot .left .record{color:#5a5a5a; font-size:11px; height:32px; line-height:32px;}
 .foot .left .foot_nav{width:420px; overflow:hidden; font-size:11px;}
 .foot .left .foot_nav a{color:#5a5a5a; margin-right:26px;}
-.foot .right{float:right; width:80px; overflow:hidden;}
+.foot .right{float:right; width:80px;}
 .foot .right img{margin-left:5px;}
+	#weixin_img{display: none;position: relative; top:-145px;left:-25px; z-index: 101;/*border: 4px solid #525252*/}
 
 #navmenu{position: relative; z-index: 10;}
 
-.nav_box{width:998px;height:31px;border-top:0px solid #954d97;position:absolute;top:-3px;left:0px;}
+.nav_box{width:998px;height:31px;border-top:2px solid #954d97;position:relative;top:-1px;left:0px;}
 .nav_box_inner{width:998px; height:31px; background:#9fa0a0; opacity:0.5; }
 /*用户注册*/
 .login_content{width:998px; overflow:hidden; margin:28px auto 0;}

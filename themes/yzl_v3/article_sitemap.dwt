@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+    {insert_scripts files='index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="content">
+    {*主体内容开始*}
+    <h1 class="policy_tittle">{$article.title|escape:html}</h1>
+    {*//更新时间$article.add_time*}
+    <!-- {if $article.content } -->
+    {*$article.content*}
+    <!-- {/if} -->
+    {*主体内容结束*}
+    <div class="web_map_box">
+        <ul class="left_nav">
+            <li class="all_pro_box">
+                <div class="all_products">
+                <span class="big_tittle"><a href="/all/">全线产品</a></span>
+                <!--{foreach from=$categories item=cat}-->
+                    <div class="one">
+                        <span><a href="{$cat.url}" class="pro_title">{$cat.name|escape:html}</a></span>
+                        <!--{foreach from=$cat.cat_id item=child}-->
+                        <a href="{$child.url}">{$child.name|escape:html}</a>
+                        <!--{foreach from=$child.cat_id item=childer}-->
+                        <a href="{$childer.url}">{$childer.name|escape:html}</a>
+                        <!--{/foreach}-->
+                        <!--{/foreach}-->
+                    </div>
+                <!--{/foreach}-->
+                </div>
+            </li>
+            <li> <span><a href="#">用户中心</a></span>
+                <div class="inner"><a href="#">我的订单</a><a href="#">我的购物袋 </a><a href="#">个人资料 </a><a href="#" class="current">用户密码 </a></div>
+            </li>
+            <li> <span><a href="#">活动中心</a></span>
+                <div class="inner"><a href="#">新品发布</a><a href="#">优惠活动 </a></div>
+            </li>
+        </ul>
+    </div>
+    <div class="web_map_box">
+        <ul class="left_nav">
+            <?php $GLOBALS['smarty']->assign('article_map_a',    article_categories_tree(3)); ?>
+            <!--{foreach from=$article_map_a item=cat}-->
+                <li><span><a href="{$cat.url}">{$cat.name|escape:html}</a></span>
+                    <div class="inner">
+                    <!--{foreach from=$cat.children item=child}-->
+                        <a href="{$child.url}">{$child.name|escape:html}</a>
+                    <!--{/foreach}-->
+                    </div>
+                </li>
+            <!--{/foreach}-->
+        </ul>
+    </div>
+    <div class="web_map_box">
+        <ul class="left_nav">
+            <li> <span><a href="#">养肤体验馆</a></span>
+            </li>
+            <li> <span><a href="#">在线客服</a></span>
+            </li>
+            <li> <span><a href="#">常见问题</a></span>
+            </li>
+            <li> <span><a href="#">网站地图</a></span>
+            </li>
+            <li> <span><a href="#">隐私条款</a></span>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="web_map_box">
+        <ul class="left_nav">
+
+            <li> <span><a href="#">隐私条款</a></span>
+            </li>
+
+        </ul>
+    </div>
+
+</div>
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

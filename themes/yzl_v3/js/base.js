@@ -50,3 +50,70 @@ jQuery(document).ready(function () {
         if (r!=null) return unescape(r[2]); return null;
     }
 })(jQuery);
+
+$().ready(function() {
+    $("#user_login").validate({
+//            errorContainer: $(".container_error"),
+//            errorLabelContainer: $(".container_error ol"),
+//            wrapper: 'div',
+//            errorLabelContainer: $("#form1 div.error"),
+
+        rules: {
+            username: {
+                required:true,
+                rangelength:[6,18]
+            },
+            password: {
+                required: true,
+                minlength: 5
+            },
+            captcha: {
+                required: true
+            }
+        },
+        messages: {
+            username: {
+                required:"请输入姓名",
+                rangelength:'至少6个以上的字'
+            },
+            password: {
+                required: "请输入密码",
+                minlength: jQuery.format("密码不能小于{0}个字 符")
+            },
+            captcha: {
+                required: "请输入验证码"
+            }
+        },
+        /* 失去焦点时不验证 */
+        onfocusout: false,
+        onkeyup: false,
+        showErrors: function(errorMap, errorList) {
+            var msg = "";
+            $.each( errorList, function(i,v){
+                msg += (v.message+"\r\n");
+            });
+            if(msg!="") alert(msg);
+        },
+        onsubmit: true
+
+    });
+
+    $('#show_weixin').hover(
+        function(){
+            $('#weixin_img').attr({style:"display:block;"})
+        },
+        function(){
+            $('#weixin_img').attr({style:"display:none;"})
+        }
+    );
+
+    //
+    var local_url = window.location.href;
+    var input = $("input[name='back_act']");
+    if(!input.val()){
+        input.val(local_url);
+    };
+
+});
+
+

@@ -1,5 +1,5 @@
 <?php
-#Vars - written at 2013-11-26
+#Vars - written at 2013-11-27
 $dbhost="localhost";
 $dbname="ohmyface";
 $dbuser="ohmyface";

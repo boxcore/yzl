@@ -3,8 +3,9 @@
     <div class="header_r">
         <ul class="header_r_inner">
             {insert_scripts files='utils.js'}{insert name='member_info'}
-            <li><a href="#">在线客服</a></li>
-            <li><a href="#">免费试用</a></li>
+            <!-- {foreach name=nav from=$navigator_list.top item=nav} -->
+            <li><a{if $nav.opennew eq 1} target="_blank"{/if} href="{$nav.url}">{$nav.name}</a></li>
+            <!-- {/foreach} -->
             <li class="gallery"><a href="#">快速购物通道</a></li>
         </ul>
         <div class="header_r_r">

@@ -1,4 +1,5 @@
 <div class="foot">
+
     <div class="left">
         <p class="foot_nav">
             <!-- {foreach name=nav from=$navigator_list.bottom item=nav} --><a{if $nav.opennew eq 1} target="_blank"{/if} href="{$nav.url}">{$nav.name}</a><!-- {/foreach} -->
@@ -6,9 +7,15 @@
 
         <p class="record">@2013广州欧菲诗化妆品有限公司 版权所有京工商备案号：8568965398</p>
     </div>
-    <div class="right"><a href="#"><img src="images/share_1.jpg" width="15" height="15"></a><a href="#"><img
-                    src="images/share_2.jpg" width="15" height="15"></a><a href="#"><img src="images/share_3.jpg" width="15" height="15"></a>
+    <div class="right">
+        <a href="#"><img src="images/v3/share_weibo.jpg" width="15" height="15"></a>
+        <a href="#"><img src="images/v3/share_qzone.jpg" width="15" height="15"></a>
+        <a href="javascrip:void(0);" id="show_weixin"><img src="images/v3/share_weixin.jpg" width="15" height="15">
+            <div id="weixin_img"><img src="images/v3/weixin-td-code.jpg" alt="易张脸微信"/></div>
+        </a>
+
     </div>
+
 </div>
 
 
@@ -50,56 +57,3 @@
     </div>	
     </div>
 </div>
-<script>
-    $().ready(function() {
-        $("#user_login").validate({
-//            errorContainer: $(".container_error"),
-//            errorLabelContainer: $(".container_error ol"),
-//            wrapper: 'div',
-//            errorLabelContainer: $("#form1 div.error"),
-
-            rules: {
-                username: {
-                    required:true,
-                    rangelength:[6,18]
-                },
-                password: {
-                    required: true,
-                    minlength: 5
-                },
-                captcha: {
-                    required: true
-                }
-            },
-            messages: {
-                username: {
-                    required:"请输入姓名",
-                    rangelength:'至少6个以上的字'
-                },
-                password: {
-                    required: "请输入密码",
-                    minlength: jQuery.format("密码不能小于{0}个字 符")
-                },
-                captcha: {
-                    required: "请输入验证码"
-                }
-            },
-            /* 失去焦点时不验证 */ 
-	        onfocusout: false,
-	        onkeyup: false,
-            showErrors: function(errorMap, errorList) {
-	            var msg = "";
-	            $.each( errorList, function(i,v){
-	              msg += (v.message+"\r\n");
-	            });
-	            if(msg!="") alert(msg);
-	        },
-	        onsubmit: true
-	        
-        });
-    });
-
-    var local_url = window.location.href;
-    $("input[name='back_act']").val(local_url);
-
-</script>

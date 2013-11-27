@@ -51,6 +51,10 @@ else
     exit;
 }
 
+if($cat_id  == 'all'){
+    $cat_id=0;
+}
+
 
 /* 初始化分页信息 */
 $page = isset($_REQUEST['page'])   && intval($_REQUEST['page'])  > 0 ? intval($_REQUEST['page'])  : 1;
@@ -91,7 +95,7 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
 
     $cat = get_cat_info($cat_id);   // 获得分类的相关信息
 
-    if (!empty($cat))
+    if (!empty($cat)||$cat_id == 'all')
     {
         $smarty->assign('keywords',    htmlspecialchars($cat['keywords']));
         $smarty->assign('description', htmlspecialchars($cat['cat_desc']));
@@ -352,7 +356,6 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
     $smarty->assign('price_min',        $price_min);
     $smarty->assign('filter_attr',      $filter_attr_str);
     $smarty->assign('feed_url',         ($_CFG['rewrite'] == 1) ? "feed-c$cat_id.xml" : 'feed.php?cat=' . $cat_id); // RSS URL
-
     if ($brand > 0)
     {
         $arr['all'] = array('brand_id'  => 0,

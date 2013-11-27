@@ -436,9 +436,9 @@ if ($_REQUEST['act'] == 'insert')
     {
         $_POST['cat_id'] = 0;
     }
-    $sql = "INSERT INTO ".$ecs->table('article')."(title, cat_id, article_type, is_open, author, ".
+    $sql = "INSERT INTO ".$ecs->table('article')."(title, cat_id, article_type, is_open, define_url,define_theme, author, ".
                 "author_email, keywords, content, add_time, file_url, article_img, article_thumb, original_img,article_icon_1,article_icon_2, open_type, link, description, vedio_link) ".
-            "VALUES ('$_POST[title]', '$_POST[article_cat]', '$_POST[article_type]', '$_POST[is_open]', ".
+            "VALUES ('$_POST[title]', '$_POST[article_cat]', '$_POST[article_type]', '$_POST[is_open]', '$_POST[define_url]', '$_POST[define_theme]', ".
                 "'$_POST[author]', '$_POST[author_email]', '$_POST[keywords]', '$_POST[FCKeditor1]', ".
                 "'$add_time', '$file_url', '$article_img', '$article_thumb', '$original_img', '$original_article_icon_1', '$original_article_icon_2','$open_type', '$_POST[link_url]', '$_POST[description]', '$_POST[vedio_link]')";
     $db->query($sql);
@@ -962,7 +962,7 @@ if ($_REQUEST['act'] =='update')
     /*文章图片相册功能 end by bocxore*/
 
 
-    if ($exc->edit("title='$_POST[title]', cat_id='$_POST[article_cat]', article_type='$_POST[article_type]', is_open='$_POST[is_open]', author='$_POST[author]', author_email='$_POST[author_email]', keywords ='$_POST[keywords]', file_url ='$file_url', open_type='$open_type', content='$_POST[FCKeditor1]', link='$_POST[link_url]', description = '$_POST[description]', vedio_link = '$_POST[vedio_link]'", $_POST['id']))
+    if ($exc->edit("title='$_POST[title]', cat_id='$_POST[article_cat]', article_type='$_POST[article_type]', is_open='$_POST[is_open]', define_url='$_POST[define_url]', define_theme='$_POST[define_theme]', author='$_POST[author]', author_email='$_POST[author_email]', keywords ='$_POST[keywords]', file_url ='$file_url', open_type='$open_type', content='$_POST[FCKeditor1]', link='$_POST[link_url]', description = '$_POST[description]', vedio_link = '$_POST[vedio_link]'", $_POST['id']))
     {
         $link[0]['text'] = $_LANG['back_list'];
         $link[0]['href'] = 'article.php?act=list&' . list_link_postfix();

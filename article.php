@@ -155,23 +155,9 @@ switch($article['cat_id']){
 }
 //print_r($article);exit;
 $article_themes = $article_themes?$article_themes:'article.dwt';
+$article['define_theme'] = trim($article['define_theme']);
+if(!empty( $article['define_theme'] ) ){$article_themes = $article['define_theme'];}
 $smarty->display($article_themes, $cache_id);
-// if( $article['cat_type'] == '8') {//视频广告模板
-//     $smarty->display('article_vedio.dwt', $cache_id);
-// } elseif( $article['cat_type'] == '7' ) {//壁纸下载模板
-//     $smarty->display('article_wallpaper.dwt', $cache_id);
-// } elseif( $article['cat_type'] == '9' ) {//招聘分类模板
-//     $smarty->display('article_hr.dwt', $cache_id);
-// } else {
-//     if(isset($article) && $article['cat_id'] > 2)
-//     {
-//         $smarty->display('article.dwt', $cache_id);
-//     }
-//     else
-//     {
-//         $smarty->display('article_culture.dwt', $cache_id);
-//     }
-// }
 
 /*------------------------------------------------------ */
 //-- PRIVATE FUNCTION
