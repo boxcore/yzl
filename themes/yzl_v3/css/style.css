@@ -51,7 +51,7 @@ a:hover{ text-decoration:none;}
 #navmenu{position: relative; z-index: 10;}
 
 .nav_box{width:998px;height:31px;border-top:2px solid #954d97;position:absolute;top:-1px;left:0px;}
-.nav_box_inner{width:998px; height:31px; background:#9fa0a0; opacity:0.5; }
+.nav_box_inner{width:998px; height:31px; background:#9fa0a0; /*opacity:0.5;*/filter: alpha(opacity=75);-moz-opacity: 0.75; opacity: 0.75; }
 /*用户注册*/
 .login_content{width:998px; overflow:hidden; margin:28px auto 0;}
 .login_content .login_crumbs{font-size:14px; color:#984e9a; height:32px; line-height:32px;}
