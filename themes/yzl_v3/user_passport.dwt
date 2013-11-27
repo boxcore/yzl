@@ -4,7 +4,7 @@
     <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
     {insert_scripts files='user.js,jquery/jquery.validate.min.js'}
 <body>
-<!-- #BeginLibraryItem "/library/common/page_header.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
 
 <!--#新登录界面 start-->
 <!-- {if $action eq 'login'} -->

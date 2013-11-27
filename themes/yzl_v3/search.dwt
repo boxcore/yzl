@@ -6,7 +6,7 @@
 {insert_scripts files='utils.js,global.js,compare.js'}
 </head>
 <body>
-<!-- #BeginLibraryItem "/library/common/page_header.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
 
 
 <div class="content">

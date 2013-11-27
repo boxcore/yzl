@@ -46,7 +46,7 @@ elseif(!empty($_REQUEST['defurl']))
 	$define_url=trim($_REQUEST['defurl']);
 	$cat_id=$db->getOne("select cat_id from ". $ecs->table('article_cat') ." where define_url='$define_url'  limit 0,1");
 	$cat_id=$cat_id ? $cat_id : intval($define_url);
-    $cat_info = $db->getRow("SELECT * FROM " . $ecs->table('article_cat') . " WHERE cat_id = '$cat_id'");//boxcore 获取分类信息
+
 
 }
 /* 代码增加_end  By thunje#URLdf */
@@ -57,6 +57,14 @@ else
 
     exit;
 }
+
+//判断是否跳转到子分类
+$article_cat_rewrite=$db->getOne("select article_cat_rewrite from ". $ecs->table('article_cat') ." where cat_id='$cat_id'  limit 0,1");
+if($article_cat_rewrite){
+    $cat_id = $article_cat_rewrite;
+}
+
+$cat_info = $db->getRow("SELECT * FROM " . $ecs->table('article_cat') . " WHERE cat_id = '$cat_id'");//boxcore 获取分类信息
 
 /* 获得当前页码 */
 $page   = !empty($_REQUEST['page'])  && intval($_REQUEST['page'])  > 0 ? intval($_REQUEST['page'])  : 1;

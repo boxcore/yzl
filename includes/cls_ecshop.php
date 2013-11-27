@@ -20,7 +20,7 @@ if (!defined('IN_ECS'))
 
 define('APPNAME', 'XO-SHOP');
 define('VERSION', 'v3.0');
-define('RELEASE', '20130927');
+define('RELEASE', '20131127');
 
 class ECS
 {

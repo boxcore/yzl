@@ -6,7 +6,7 @@
     {insert_scripts files='transport.js,user.js'}
 </head>
 <body>
-<!-- #BeginLibraryItem "/library/common/page_header.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
 
 <div class="content">
     <div class="left">

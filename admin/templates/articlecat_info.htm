@@ -38,6 +38,17 @@
       <input type="text" name='sort_order' {if $cat.sort_order}value='{$cat.sort_order}'{else} value="50"{/if} size="15" />
     </td>
   </tr>
+
+    <tr>
+        <td class="label">跳转到子分类:</td>
+        <td>
+            <select name="article_cat_rewrite" onchange="catChanged()" {if $disabled }disabled="disabled"{/if} >
+            <option value="0">跳转到的子类</option>
+            {$cat_child_select}
+            </select>
+        </td>
+    </tr>
+
     <tr>
     <td class="label">{$lang.show_in_nav}:</td>
     <td>

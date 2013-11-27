@@ -26,32 +26,38 @@
             <div class="two_menu"></div>
         </li>
         <li>
-            <div class="one_menu"><a href="#">品牌故事</a></div>
-            <div class="two_menu">
-                <?php $GLOBALS['smarty']->assign('nav-cat-1',    article_categories_tree(31)); ?>
-                <!--{foreach from=$nav-cat-1 item=nav}-->
-                <a href="{$nav.url}">{$nav.name}</a>
-                <!-- {/foreach} -->
 
-            </div>
-        </li>
-        <li>
-            <div class="one_menu"><a href="#">花本养肤</a></div>
+            <?php $GLOBALS['smarty']->assign('nav-cat-3',    article_categories_tree1(31)); ?>
+            <!--{foreach from=$nav-cat-3 item=nav}-->
+            <div class="one_menu"><a href="{$nav.url}">{$nav.name|escape:html}</a></div>
             <div class="two_menu">
-                <?php $GLOBALS['smarty']->assign('nav-cat-2',    article_categories_tree(41)); ?>
-                <!--{foreach from=$nav-cat-2 item=nav}-->
-                <a href="{$nav.url}">{$nav.name}</a>
+                <!--{foreach from=$nav.children item=child}-->
+                <a href="{$child.url}">{$child.name|escape:html}</a>
                 <!-- {/foreach} -->
             </div>
+            <!-- {/foreach} -->
         </li>
         <li>
-            <div class="one_menu"><a href="/page/12">养颜学堂</a></div>
+            <?php $GLOBALS['smarty']->assign('nav-cat-3',    article_categories_tree1(41)); ?>
+            <!--{foreach from=$nav-cat-3 item=nav}-->
+            <div class="one_menu"><a href="{$nav.url}">{$nav.name|escape:html}</a></div>
             <div class="two_menu">
-                <?php $GLOBALS['smarty']->assign('nav-cat-3',    article_categories_tree(17)); ?>
-                <!--{foreach from=$nav-cat-3 item=nav}-->
-                <a href="{$nav.url}">{$nav.name}</a>
+                <!--{foreach from=$nav.children item=child}-->
+                <a href="{$child.url}">{$child.name|escape:html}</a>
                 <!-- {/foreach} -->
             </div>
+            <!-- {/foreach} -->
+        </li>
+        <li>
+            <?php $GLOBALS['smarty']->assign('nav-cat-3',    article_categories_tree1(17)); ?>
+            <!--{foreach from=$nav-cat-3 item=nav}-->
+            <div class="one_menu"><a href="{$nav.url}">{$nav.name|escape:html}</a></div>
+            <div class="two_menu">
+                <!--{foreach from=$nav.children item=child}-->
+                <a href="{$child.url}">{$child.name|escape:html}</a>
+                <!-- {/foreach} -->
+            </div>
+            <!-- {/foreach} -->
         </li>
         <li>
             <div class="one_menu"><a href="#">全线产品</a></div>

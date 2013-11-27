@@ -12,7 +12,7 @@ p a {
 }
 </style>
 </head><body>
-<!-- #BeginLibraryItem "/library/common/page_header.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
 
 <!-- {if $testact eq 1} -->
 <div class="blank"></div>

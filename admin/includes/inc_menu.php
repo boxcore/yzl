@@ -130,13 +130,12 @@ $modules['12_template']['06_template_backup']       = 'template.php?act=backup_s
 $modules['12_template']['mail_template_manage']     = 'mail_template.php?act=list';
 
 /**数据库管理*/
-/*
 $modules['13_backup']['02_db_manage']               = 'database.php?act=backup';
 $modules['13_backup']['03_db_optimize']             = 'database.php?act=optimize';
 $modules['13_backup']['04_sql_query']               = 'sql.php?act=main';
-//$modules['13_backup']['05_synchronous']             = 'integrate.php?act=sync';
+$modules['13_backup']['05_synchronous']             = 'integrate.php?act=sync';
 $modules['13_backup']['convert']                    = 'convert.php?act=main';
-*/
+
 
 /* 短信中心 */
 /*
