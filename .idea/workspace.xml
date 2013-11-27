@@ -2,24 +2,17 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/admin/article.php" line="1134" />
-    <bookmark url="file://$PROJECT_DIR$/category.php" line="320" />
-    <bookmark url="file://$PROJECT_DIR$/category.php" line="89" />
-    <bookmark url="file://$PROJECT_DIR$/category.php" line="265" />
-    <bookmark url="file://$PROJECT_DIR$/category.php" line="426" />
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="d7867e13-9e5f-4199-b1b3-749d55b0c39f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/msd/work/log/mysqldump.log.gz" afterPath="$PROJECT_DIR$/data/msd/work/log/mysqldump.log.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/article.php" afterPath="$PROJECT_DIR$/article.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/article.php" afterPath="$PROJECT_DIR$/admin/article.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/templates/article_info.htm" afterPath="$PROJECT_DIR$/admin/templates/article_info.htm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/yzl_v3/js/base.js" afterPath="$PROJECT_DIR$/themes/yzl_v3/js/base.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category.php" afterPath="$PROJECT_DIR$/category.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/templates/category_list.htm" afterPath="$PROJECT_DIR$/admin/templates/category_list.htm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/config.php" afterPath="$PROJECT_DIR$/data/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/lib_main.php" afterPath="$PROJECT_DIR$/includes/lib_main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/yzl_v3/library/page_footer.lbi" afterPath="$PROJECT_DIR$/themes/yzl_v3/library/page_footer.lbi" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/yzl_v3/library/page_header.lbi" afterPath="$PROJECT_DIR$/themes/yzl_v3/library/page_header.lbi" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/yzl_v3/library/pages.lbi" afterPath="$PROJECT_DIR$/themes/yzl_v3/library/pages.lbi" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/yzl_v3/css/style.css" afterPath="$PROJECT_DIR$/themes/yzl_v3/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -1867,7 +1860,7 @@
       <file leaf-file-name="article_info.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/templates/article_info.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="43" selection-start="3094" selection-end="3100" vertical-scroll-proportion="-0.0" vertical-offset="1311" max-vertical-offset="8531">
+            <state line="61" column="43" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.0" vertical-offset="1159" max-vertical-offset="8379">
               <folding />
             </state>
           </provider>
@@ -1876,16 +1869,25 @@
       <file leaf-file-name="article.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/article.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="438" column="37" selection-start="15446" selection-end="15446" vertical-scroll-proportion="0.0" vertical-offset="8322" max-vertical-offset="29678">
+            <state line="435" column="5" selection-start="15372" selection-end="15372" vertical-scroll-proportion="2.28" vertical-offset="8113" max-vertical-offset="30343">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lib_main.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/lib_main.php">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/languages/zh_cn/admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1844" column="32" selection-start="56275" selection-end="56298" vertical-scroll-proportion="0.0" vertical-offset="35036" max-vertical-offset="42864">
+            <state line="97" column="32" selection-start="3005" selection-end="3005" vertical-scroll-proportion="-4.16" vertical-offset="1530" max-vertical-offset="3857">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cls_ecshop.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/includes/cls_ecshop.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="27" selection-start="630" selection-end="630" vertical-scroll-proportion="0.36236933" vertical-offset="105" max-vertical-offset="3781">
               <folding />
             </state>
           </provider>
@@ -1894,16 +1896,7 @@
       <file leaf-file-name="base.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/yzl_v3/js/base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="26" selection-start="2794" selection-end="2804" vertical-scroll-proportion="0.0" vertical-offset="1739" max-vertical-offset="2375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="article.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/article.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="64" selection-start="2074" selection-end="2074" vertical-scroll-proportion="0.0" vertical-offset="1197" max-vertical-offset="4731">
+            <state line="35" column="3" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.0" vertical-offset="466" max-vertical-offset="1102">
               <folding />
             </state>
           </provider>
@@ -1921,20 +1914,8 @@
       <file leaf-file-name="page_footer.lbi" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/yzl_v3/library/page_footer.lbi">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="29" selection-start="972" selection-end="972" vertical-scroll-proportion="-9.12" vertical-offset="247" max-vertical-offset="1273">
+            <state line="30" column="21" selection-start="1513" selection-end="1513" vertical-scroll-proportion="-8.36" vertical-offset="361" max-vertical-offset="2166">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="category.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/category.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="391" column="39" selection-start="16856" selection-end="16856" vertical-scroll-proportion="0.59090906" vertical-offset="7530" max-vertical-offset="9709">
-              <folding>
-                <element signature="n#category_get_goods#0;n#!!top" expanded="false" />
-                <element signature="n#get_parent_grade#0;n#!!top" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -1958,14 +1939,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test.php" />
-        <option value="$PROJECT_DIR$/includes/init.php" />
         <option value="$PROJECT_DIR$/user.php" />
         <option value="$PROJECT_DIR$/admin/templates/articlecat_list.htm" />
         <option value="$PROJECT_DIR$/themes/yzl_v3/library/page_header.lbi" />
         <option value="$PROJECT_DIR$/themes/yzl_v3/css/style.css" />
         <option value="$PROJECT_DIR$/includes/lib_main.php" />
-        <option value="$PROJECT_DIR$/category.php" />
         <option value="$PROJECT_DIR$/admin/templates/category_list.htm" />
         <option value="$PROJECT_DIR$/themes/yzl_v3/library/pages.lbi" />
         <option value="$PROJECT_DIR$/admin/templates/article_info.htm" />
@@ -1973,7 +1951,10 @@
         <option value="$PROJECT_DIR$/article.php" />
         <option value="$PROJECT_DIR$/themes/yzl_v3/article_sitemap.dwt" />
         <option value="$PROJECT_DIR$/themes/yzl_v3/js/base.js" />
+        <option value="$PROJECT_DIR$/category.php" />
         <option value="$PROJECT_DIR$/themes/yzl_v3/library/page_footer.lbi" />
+        <option value="$PROJECT_DIR$/languages/zh_cn/admin/index.php" />
+        <option value="$PROJECT_DIR$/includes/cls_ecshop.php" />
       </list>
     </option>
   </component>
@@ -1982,9 +1963,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="12" />
+    <option name="x" value="1421" />
+    <option name="y" value="30" />
     <option name="width" value="1252" />
-    <option name="height" value="668" />
+    <option name="height" value="690" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -2035,7 +2017,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2056,6 +2037,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2070,8 +2052,8 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="FullScreen" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -2079,7 +2061,12 @@
       <recent name="D:\AppServ\www\work\noface\themes\yzl_v3\library\common" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.article.php">
+    <configuration default="false" name="article.php" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:2016/noface/admin/article.php">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
@@ -2090,10 +2077,10 @@
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application">
       <method />
     </configuration>
-    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request">
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug">
       <method />
     </configuration>
-    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request">
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -2127,7 +2114,14 @@
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
-    <list size="0" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.article.php" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.article.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="true" SSL_PROTOCOLS="all">
@@ -2176,26 +2170,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="12" y="0" width="1252" height="668" extended-state="1" />
+    <frame x="1421" y="30" width="1252" height="690" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32649255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21092437" sideWeight="0.6716667" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20364742" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39925373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20364742" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32941177" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" x="880" y="407" width="431" height="151" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21428572" sideWeight="0.67350745" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32941177" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" x="880" y="407" width="431" height="151" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833335" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -2213,16 +2207,37 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/themes/yzl_v3/js/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="26" selection-start="2794" selection-end="2804" vertical-scroll-proportion="0.0" vertical-offset="1739" max-vertical-offset="2375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/yzl_v3/article_sitemap.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="17" selection-start="2525" selection-end="2525" vertical-scroll-proportion="0.0" vertical-offset="936" max-vertical-offset="1767">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/yzl_v3/library/page_footer.lbi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="29" selection-start="804" selection-end="804" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="2109">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/yzl_v3/library/page_header.lbi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="20" selection-start="2497" selection-end="2568" vertical-scroll-proportion="0.0" vertical-offset="985" max-vertical-offset="2204">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/themes/yzl_v3/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="9" selection-start="417" selection-end="417" vertical-scroll-proportion="-6.08" vertical-offset="0" max-vertical-offset="11571" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/lib_common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="859" column="9" selection-start="28830" selection-end="28830" vertical-scroll-proportion="0.34854016" vertical-offset="16206" max-vertical-offset="53922">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/templates/category_info.htm">
@@ -2242,21 +2257,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/templates/article_info.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="43" selection-start="3094" selection-end="3100" vertical-scroll-proportion="-0.0" vertical-offset="1311" max-vertical-offset="8531">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/article.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="438" column="37" selection-start="15446" selection-end="15446" vertical-scroll-proportion="0.0" vertical-offset="8322" max-vertical-offset="29678">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/article.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="64" selection-start="2074" selection-end="2074" vertical-scroll-proportion="0.0" vertical-offset="1197" max-vertical-offset="4731">
+        <state line="61" column="43" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.0" vertical-offset="1159" max-vertical-offset="8379">
           <folding />
         </state>
       </provider>
@@ -2275,46 +2276,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/kindeditor/examples/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2160" column="0" selection-start="58769" selection-end="58769" vertical-scroll-proportion="-1.0816697" vertical-offset="41446" max-vertical-offset="180063" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/lib_main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1844" column="32" selection-start="56275" selection-end="56298" vertical-scroll-proportion="0.0" vertical-offset="35036" max-vertical-offset="42864">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/yzl_v3/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="26" selection-start="2794" selection-end="2804" vertical-scroll-proportion="0.0" vertical-offset="1739" max-vertical-offset="2375">
+        <state line="35" column="3" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.0" vertical-offset="466" max-vertical-offset="1102">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/yzl_v3/library/page_footer.lbi">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="29" selection-start="972" selection-end="972" vertical-scroll-proportion="-9.12" vertical-offset="247" max-vertical-offset="1273">
+        <state line="30" column="21" selection-start="1513" selection-end="1513" vertical-scroll-proportion="-8.36" vertical-offset="361" max-vertical-offset="2166">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/lib_goods.php">
+    <entry file="file://$PROJECT_DIR$/admin/article.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="414" column="1" selection-start="16750" selection-end="16750" vertical-scroll-proportion="0.375" vertical-offset="7777" max-vertical-offset="29013">
+        <state line="435" column="5" selection-start="15372" selection-end="15372" vertical-scroll-proportion="2.28" vertical-offset="8113" max-vertical-offset="30343">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/category.php">
+    <entry file="file://$PROJECT_DIR$/languages/zh_cn/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="391" column="39" selection-start="16856" selection-end="16856" vertical-scroll-proportion="0.59090906" vertical-offset="7530" max-vertical-offset="9709">
-          <folding>
-            <element signature="n#category_get_goods#0;n#!!top" expanded="false" />
-            <element signature="n#get_parent_grade#0;n#!!top" expanded="false" />
-          </folding>
+        <state line="97" column="32" selection-start="3005" selection-end="3005" vertical-scroll-proportion="-4.16" vertical-offset="1530" max-vertical-offset="3857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/cls_ecshop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="27" selection-start="630" selection-end="630" vertical-scroll-proportion="0.36236933" vertical-offset="105" max-vertical-offset="3781">
+          <folding />
         </state>
       </provider>
     </entry>

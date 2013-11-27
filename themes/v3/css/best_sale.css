@@ -1,5 +1,0 @@
-/** html #quick {position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight));}*/
-
-#lang {position:absolute;}
-h1{padding:0 0 0 10px;}
-

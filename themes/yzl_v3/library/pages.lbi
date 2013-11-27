@@ -23,6 +23,7 @@
 
 {*分类产品 分页导航*}
 <!-- {elseif $pager.styleid eq 1 } -->
+<h1>1111111111/ styleid:{$pager.styleid} count：{$pager.count}</h1>
 <div class="list_page"><span>共{$pager.record_count}个产品</span>
 <!-- {if $pager.page_count neq 1} -->
   <!--{foreach from=$pager.page_number key=key item=item}-->
@@ -34,6 +35,13 @@
   <!--{/foreach}-->
 <!-- {/if} -->
 <!-- {if $pager.page_next} --><a class="next" href="{$pager.page_next}"><span class="then"></span></a><!-- {/if} -->
+  <span>每页显示
+      <select name="">
+          <option>4</option>
+          <option>8</option>
+      </select>
+      个产品
+  </span>
 </div>
 
 {* 文章列表 分页样式 *}

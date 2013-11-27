@@ -39,7 +39,6 @@
     <td><span onclick="listTable.edit(this, 'edit_grade', {$cat.cat_id})">{$cat.grade}</span></td>
     <td width="10%" align="right"><span onclick="listTable.edit(this, 'edit_sort_order', {$cat.cat_id})">{$cat.sort_order}</span></td>
     <td width="24%" align="center">
-      <a target="_blank" href="/category.php?id={$cat.cat_id}"><img src="images/icon_view.gif" width="16" height="16" border="0"></a> |
       <a href="category.php?act=move&cat_id={$cat.cat_id}">{$lang.move_goods}</a> |
       <a href="category.php?act=edit&amp;cat_id={$cat.cat_id}">{$lang.edit}</a> |
       <a href="javascript:;" onclick="listTable.remove({$cat.cat_id}, '{$lang.drop_confirm}')" title="{$lang.remove}">{$lang.remove}</a>

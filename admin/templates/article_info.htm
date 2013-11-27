@@ -18,7 +18,7 @@
       <tr>
         <td class="narrow-label">{$lang.title}</td>
         <td><input type="text" name="title" size ="40" maxlength="60" value="{$article.title|escape}" />{$lang.require_field}</td>
-      </tr>
+      </tr>          
       <!-- {if $article.cat_id >= 0} -->
       <tr>
         <td class="narrow-label">{$lang.cat} </td>
@@ -53,18 +53,10 @@
 
 	  <!--代码增加 start By thunje#URLdf-->
 		  <tr>
-            <td class="label"><font color=#ff3300>自定义URL</font></td>
+            <td class="label"><font color=#ff3300>自定义URL：</font></td>
             <td><input type="text" name="define_url" value="{$article.define_url}" size="30"  /><span id="define_url_notice"></span></td>
           </tr>
 		  <!--代码增加 end By thunje#URLdf-->
-
-        <!--代码增加 start By thunje-->
-        <tr>
-            <td class="label"><font>自定义模版</font></td>
-            <td><input type="text" name="define_theme" value="{$article.define_theme}" /><span
-                    id="define_theme_notice"></span><br/><span class="notice-span">自定义模版格式如:default.dwt,且模版目录必须有同名文件!</span></td>
-        </tr>
-        <!--代码增加 end By thunje-->
 		<tr>
         <td class="narrow-label">{$lang.author}</td>
         <td><input type="text" name="author" maxlength="60" value="{$article.author|escape}" /></td>
@@ -99,7 +91,7 @@
           </span></td>
       </tr>
       <!-- 文章缩略图 start by boxcore -->
-
+      
       <tr>
         <td class="label">上传文章图片</td>
         <td>
@@ -157,9 +149,9 @@
         </tr>
 
 
-
+      
     </table>
-
+    
 
     <!-- 文章壁纸图片 -->
     <table width="90%" id="wallpaper-table" style="display:none" align="center">
@@ -188,12 +180,12 @@
             </td>
           </tr>
     </table>
-
-
+	
+    
     <table width="90%" id="detail-table" style="display:none">
      <tr><td>{$KindEditor}</td></tr>
     </table>
-
+    
     <table width="90%" id="goods-table" style="display:none">
       <!-- 商品搜索 -->
       <tr>
