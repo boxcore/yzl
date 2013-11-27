@@ -1,17 +1,63 @@
-<!-- {if $pictures}-->
-<a href="javascript:;" onclick="window.open('gallery.php?id={$goods.goods_id}'); return false;">
-    <img src="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}"/>
-</a>
-<!-- {else} -->
-<img src="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}"/>
-<!-- {/if}-->
+<link href="{$ecs_themes_path}/css/jquery.jcarousel.css" rel="stylesheet" type="text/css"  />
+<link href="{$ecs_themes_path}/css/jqzoom.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    .curr_base {border:2px solid #ccc;}
+    .cur_on { border:2px solid #954d97;}
+</style>
 
-<!-- {if $pictures}-->
+<table border="0" align="left" style="margin-left: 10px;">
+    <tr>
+        <td style="width:356px;height:355px;">
+        <!-- {if $pictures}-->
+        <div id="BigImage" class="jqzoom" style="border:1px solid #ccc">
+            <img id="_middleImage" src="{$goods.goods_img}" width="350" height="350" longdesc="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}" />
+        </div>
+        <!-- {else} -->
+        <img src="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}"/>
+        <!-- {/if}-->
+        </td>
+    </tr>
 
-<!-- {foreach from=$pictures item=picture}-->
-<li><a href="gallery.php?id={$id}&amp;img={$picture.img_id}" target="_blank"><img
-                src="{if $picture.thumb_url}{$picture.thumb_url}{else}{$picture.img_url}{/if}" alt="{$goods.goods_name}"
-                class="B_blue"/></a>
-</li>
-<!--{/foreach}-->
-<!-- {/if}-->
+    <tr>
+        <td>
+        <!-- {if $pictures}-->
+        <ul id="mycarousel" class="jcarousel-skin-tango">
+            <!-- {foreach from=$pictures item=picture name=foo}-->
+            <li><img alt="{$goods.goods_name}" {if $smarty.foreach.foo.iteration eq 1}class="curr_base"{/if} style="width:90px;height:90px;" src="{if $picture.thumb_url}{$picture.thumb_url}{else}{$picture.img_url}{/if}"  name="{$picture.img_url}"/></li>
+            <!--{/foreach}-->
+        </ul>
+        <!-- {/if}-->
+        </td>
+    </tr>
+</table>
+
+
+<script type="text/javascript" src="{$ecs_themes_path}/js/jcarousel.js"></script>
+<script type="text/javascript" src="{$ecs_themes_path}/js/jqzoom.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#mycarousel").jcarousel({initCallback:mycarousel_initCallback});
+        $(".jqzoom").jqueryzoom({
+            xzoom:320,
+            yzoom:240,
+            offset:10,
+            position:"right",
+            preload:1,
+            lens:1
+        });
+
+    });
+
+    function mycarousel_initCallback(carousel){
+        $("#mycarousel li").mouseover(function(){
+            var JQ_img = $("img", this);
+            var image_name = JQ_img.attr("name");
+            $("#_middleImage").attr("src", "" + image_name).attr("longdesc", "" + image_name);
+            $(this).siblings().each(function(){
+                $("img", this).removeClass().addClass("curr_base");
+            })
+            JQ_img.addClass("cur_on");
+        })
+    };
+</script>

@@ -2,7 +2,7 @@
     <div class="logo"><a href="/"><img src="images/logo.jpg" width="116" height="41"></a></div>
     <div class="header_r">
         <ul class="header_r_inner">
-            {insert_scripts files='utils.js'}{insert name='member_info'}
+            {insert name='member_info'}
             <!-- {foreach name=nav from=$navigator_list.top item=nav} -->
             <li><a{if $nav.opennew eq 1} target="_blank"{/if} href="{$nav.url}">{$nav.name}</a></li>
             <!-- {/foreach} -->
@@ -113,4 +113,7 @@
 </div>
 
 <!-- 新版 导航 -->
+
+<script>
+</script>
 

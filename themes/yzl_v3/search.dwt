@@ -2,8 +2,6 @@
 <html lang="en-US">
 <head>
     <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
-{* 包含脚本文件 *}
-{insert_scripts files='utils.js,global.js,compare.js'}
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->

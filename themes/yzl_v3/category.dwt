@@ -5,8 +5,7 @@
     <!-- {if $cat_style} -->
     <link href="{$cat_style}" rel="stylesheet" type="text/css" />
     <!-- {/if} -->
-{* 包含脚本文件 *}
-{insert_scripts files='global.js,compare.js'}
+{*与jq冲突 insert_scripts files='global.js,compare.js'*}
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->

@@ -30,8 +30,6 @@ function reg(str){
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
-
-
 <div class="content">
     <div class="left">
         <!-- #BeginLibraryItem "/library/goods/category_tree.lbi" --><!-- #EndLibraryItem -->
@@ -40,9 +38,8 @@ function reg(str){
         <h2><span>玫瑰莹润焕白</span></h2>
         <div class="product_detail">
             <div class="left">
-                <img src="images/productpic_lunzhan.jpg" width="350" height="453">
+                <!-- #BeginLibraryItem "/library/goods/goods_gallery.lbi" --><!-- #EndLibraryItem -->
             </div>
-
             <div class="center">
                 <h1>{$goods.goods_style_name}</h1>
                 <p class="explain">{$goods.goods_subtitle}</p>
@@ -56,7 +53,7 @@ function reg(str){
                     <p><span>包装规格：</span>{$goods.goods_packing}</p>
                 </div>
                 <div class="buybox">
-                    {if $goods.promote_price}
+                    {if $goods.promote_price > 0}
                         <p>售价<span>{$goods.promote_price}</span>限时优惠<strong>-￥{$goods.youhui}</strong></p>
                     {else}
                         <p>售价<span>￥{$goods.shop_price}</span></p>
