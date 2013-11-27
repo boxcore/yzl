@@ -6,8 +6,10 @@
 
         <p class="record">@2013广州欧菲诗化妆品有限公司 版权所有京工商备案号：8568965398</p>
     </div>
-    <div class="right"><a href="#"><img src="images/share_1.jpg" width="15" height="15"></a><a href="#"><img
-                    src="images/share_2.jpg" width="15" height="15"></a><a href="#"><img src="images/share_3.jpg" width="15" height="15"></a>
+    <div class="right">
+        <a target="_blank" rel="nofollow" href="http://yizhanglian.tmall.com/"><img src="images/icon_tmall_15.jpg" width="15" height="15"></a>
+        <a target="_blank" rel="nofollow" href="http://weibo.com/p/1006063172166825"><img src="images/share_1.jpg" width="15" height="15"></a>
+        <a target="_blank" rel="nofollow" id="weixin_hover" href="#"><img src="images/share_3.jpg" width="15" height="15"><div id="show_weixin"><img src="images/yzl-td-code.jpg" alt="易张脸官方微信"/></div></a>
     </div>
 </div>
 
@@ -84,7 +86,7 @@
                     required: "请输入验证码"
                 }
             },
-            /* 失去焦点时不验证 */ 
+            /* 失去焦点时不验证 */
 	        onfocusout: false,
 	        onkeyup: false,
             showErrors: function(errorMap, errorList) {
@@ -95,11 +97,10 @@
 	            if(msg!="") alert(msg);
 	        },
 	        onsubmit: true
-	        
+
         });
     });
 
     var local_url = window.location.href;
     $("input[name='back_act']").val(local_url);
-
 </script>

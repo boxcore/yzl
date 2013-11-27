@@ -20,6 +20,15 @@ jQuery(document).ready(function () {
         $('#login_pop').skygqbox();
     });
 
+    $("#weixin_hover").hover(
+        function(){
+            $("#show_weixin").attr({style:"display:block;"});
+        },
+        function(){
+            $("#show_weixin").attr({style:"display:none;"});
+        }
+    );
+
 });
 
 // jQuery(document).ready(function() {
