@@ -1,0 +1,31 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--{if $do eq 'default'}-->
+<form action="skin_detection.php?act=step1" method="post">
+    <div class="detection_wrap">
+      <h2></h2>
+        <div class="inner">
+          <p class="step"><span>你认为你的皮肤属于敏感性皮肤吗？时常会在一些外界刺激下出现烧灼、瘙痒、刺痛等皮肤反应？</span></p>
+            <div class="judge"><form><input type="radio" name="id_sens" value="Y"><span class="step2_yes">是</span><input type="radio" value="N" name="id_sens"><span class="step2_no">否</span></form></div>
+        </div>
+    </div>
+    <div class="detection_btn">
+      <input type="hidden" name="do" value="do_sens">
+      <input type="submit" value="开始测试" class="btn" name="">
+    </div>
+    </form>
+<!--{/if}-->
+<!--{if $do eq 'do_sens33'}-->
+<form action="skin_detection.php?act=step1" method="post">
+    <div class="detection_wrap">
+      <h2></h2>
+        <div class="inner">
+          <p class="step"><span>你认为你的皮肤属于敏感性皮肤吗？时常会在一些外界刺激下出现烧灼、瘙痒、刺痛等皮肤反应？</span></p>
+            <div class="judge"><form><input type="radio" name="id_sens" value="Y"><span class="step2_yes">是</span><input type="radio" value="N" name="id_sens"><span class="step2_no">否</span></form></div>
+        </div>
+    </div>
+    <div class="detection_btn">
+      <input type="hidden" name="do" value="do_sens">
+      <input type="submit" value="开始测试" class="btn" name="">
+    </div>
+    </form>
+<!--{/if}-->

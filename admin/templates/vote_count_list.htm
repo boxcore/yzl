@@ -1,0 +1,59 @@
+<!-- $Id: vote_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{if $full_page}
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+按调查问卷显示：<select  onchange="window.location.href='vote_count.php?act=list&pid='+this.value">
+      	<option value=0>全部显示</option>
+      	{$sheet_option}
+</select>
+<form method="post" action="" name="listForm">
+<!-- start vote list -->
+<div class="list-div" id="listDiv">
+{/if}
+
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th>调查问卷</th>
+    <th>IP</th>
+    <th>位置</th>
+    <th>问卷详细</th>
+    <th>提交时间</th>
+  </tr>
+  {foreach from=$list item=list}
+  <tr>
+    <td align="center">{$list.name}</td>
+    <td align="center"><a href="http://ip38.com/index.php?ip={$list.ip_address}" target="_blank">{$list.ip_address}</a></td>
+    <td align="center">{$list.loc}</td>
+    <td align="left">{$list.vote_info}</td>
+    <td align="center"><span>{$list.vote_time}</span></td>
+  </tr>
+  {foreachelse}
+    <tr><td class="no-records" colspan="10">{$lang.no_vote_name}</td></tr>
+  {/foreach}
+  <tr>
+    <td align="right" nowrap="true" colspan="10">{include file="page.htm"}</td>
+  </tr>
+</table>
+
+{if $full_page}
+</div>
+<!-- end ad_position list -->
+</form>
+
+<script type="text/javascript" language="JavaScript">
+  listTable.recordCount = {$record_count};
+  listTable.pageCount = {$page_count};
+
+  {foreach from=$filter item=item key=key}
+  listTable.filter.{$key} = '{$item}';
+  {/foreach}
+  {literal}
+  onload = function()
+  {
+    // 开始检查订单
+    startCheckOrder();
+  }
+  {/literal}
+</script>
+{include file="pagefooter.htm"}
+{/if}

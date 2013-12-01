@@ -7,9 +7,9 @@
 
 <table border="0" align="left" style="margin-left: 10px;">
     <tr>
-        <td style="width:356px;height:355px;">
+        <td style="width:355px;height:355px;">
         <!-- {if $pictures}-->
-        <div id="BigImage" class="jqzoom" style="border:1px solid #ccc">
+        <div id="BigImage" class="jqzoom" style="border:0px solid #ccc">
             <img id="_middleImage" src="{$goods.goods_img}" width="350" height="350" longdesc="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}" />
         </div>
         <!-- {else} -->

@@ -2,7 +2,10 @@
 {if $full_page}
 {include file="pageheader.htm"}
 {insert_scripts files="../js/utils.js,listtable.js"}
-
+按调查问卷显示：<select  onchange="window.location.href='vote.php?act=list&pid='+this.value">
+      	<option value=0>全部显示</option>
+      	{$sheet_option}
+</select>
 <form method="post" action="" name="listForm">
 <!-- start vote list -->
 <div class="list-div" id="listDiv">

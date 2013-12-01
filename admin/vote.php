@@ -3,14 +3,14 @@
 /**
  * ECSHOP  调查管理程序
  * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.xxoopp.org；
+ * 版权所有 2005-2010 上海商派网络科技有限公司，并保留所有权利。
+ * 网站地址: http://www.ecshop.com；
  * ----------------------------------------------------------------------------
  * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
- * $Author: liubo $
- * $Id: vote.php 17217 2011-01-19 06:29:08Z liubo $
+ * $Author: liuhui $
+ * $Id: vote.php 17063 2010-03-25 06:35:46Z liuhui $
 */
 
 define('IN_ECS', true);
@@ -35,12 +35,14 @@ $exc_opn = new exchange($ecs->table("vote_option"), $db, 'option_id', 'option_na
 /*------------------------------------------------------ */
 if ($_REQUEST['act'] == 'list')
 {
+	$pid = !empty($_REQUEST['pid']) ? intval($_REQUEST['pid']) : 0;
     /* 模板赋值 */
+	$smarty->assign('sheet_option',      get_vote_sheet_option($pid));
     $smarty->assign('ur_here',      $_LANG['list_vote']);
     $smarty->assign('action_link',  array('text' => $_LANG['add_vote'], 'href'=>'vote.php?act=add'));
     $smarty->assign('full_page',    1);
 
-    $vote_list = get_votelist();
+    $vote_list = get_votelist($pid);
 
     $smarty->assign('list',            $vote_list['list']);
     $smarty->assign('filter',          $vote_list['filter']);
@@ -82,7 +84,8 @@ elseif ($_REQUEST['act'] == 'add')
     /* 模板赋值 */
     $smarty->assign('ur_here',      $_LANG['add_vote']);
     $smarty->assign('action_link',  array('href'=>'vote.php?act=list', 'text' => $_LANG['list_vote']));
-
+	
+    $smarty->assign('sheet_option',      get_vote_sheet_option());
     $smarty->assign('action',       'add');
     $smarty->assign('form_act',     'insert');
     $smarty->assign('vote_arr',     $vote);
@@ -105,8 +108,8 @@ elseif ($_REQUEST['act'] == 'insert')
     if ($db->getOne($sql) == 0)
     {
         /* 插入数据 */
-        $sql = "INSERT INTO ".$ecs->table('vote')." (vote_name, start_time, end_time, can_multi, vote_count)
-        VALUES ('$_POST[vote_name]', '$start_time', '$end_time', '$_POST[can_multi]', '0')";
+        $sql = "INSERT INTO ".$ecs->table('vote')." (vote_sheet_id, vote_name, start_time, end_time, can_multi, vote_count)
+        VALUES ('$_POST[vote_sheet_id]', '$_POST[vote_name]', '$start_time', '$end_time', '$_POST[can_multi]', '0')";
         $db->query($sql);
 
         $new_id = $db->Insert_ID();
@@ -149,6 +152,7 @@ elseif ($_REQUEST['act'] == 'edit')
     $vote_arr['end_time']   = local_date('Y-m-d', $vote_arr['end_time']);
 
     /* 模板赋值 */
+    $smarty->assign('sheet_option',      get_vote_sheet_option($vote_arr['vote_sheet_id']));
     $smarty->assign('ur_here',      $_LANG['edit_vote']);
     $smarty->assign('action_link',  array('href'=>'vote.php?act=list', 'text' => $_LANG['list_vote']));
     $smarty->assign('form_act',     'update');
@@ -165,6 +169,7 @@ elseif ($_REQUEST['act'] == 'update')
 
     /* 更新信息 */
     $sql = "UPDATE " .$ecs->table('vote'). " SET ".
+    		"vote_sheet_id     = '$_POST[vote_sheet_id]', ".
             "vote_name     = '$_POST[vote_name]', ".
             "start_time    = '$start_time', ".
             "end_time      = '$end_time', ".
@@ -375,18 +380,23 @@ elseif ($_REQUEST['act'] == 'remove_option')
 }
 
 /* 获取在线调查数据列表 */
-function get_votelist()
+function get_votelist($pid)
 {
+	$where = '';
+	if ($pid != 0)
+	{
+		$where = ' where vote_sheet_id='.$pid;
+	}
     $filter   = array();
 
     /* 记录总数以及页数 */
-    $sql = 'SELECT COUNT(*) FROM ' . $GLOBALS['ecs']->table('vote');
+    $sql = 'SELECT COUNT(*) FROM ' . $GLOBALS['ecs']->table('vote') . $where;
     $filter['record_count'] = $GLOBALS['db']->getOne($sql);
 
     $filter = page_and_size($filter);
 
     /* 查询数据 */
-    $sql  = 'SELECT * FROM ' .$GLOBALS['ecs']->table('vote'). ' ORDER BY vote_id DESC';
+    $sql  = 'SELECT * FROM ' .$GLOBALS['ecs']->table('vote').$where. ' ORDER BY vote_id DESC';
     $res  = $GLOBALS['db']->selectLimit($sql, $filter['page_size'], $filter['start']);
 
     $list = array();
@@ -415,5 +425,18 @@ function get_optionlist($id)
 
     return $list;
 }
-
+/* 获取调查问卷选项列表 */
+function get_vote_sheet_option($id=0)
+{
+	$id = intval($id);
+	$list = '';
+	$sql = 'SELECT id,name FROM ' . $GLOBALS['ecs']->table('vote_sheet') . ' ORDER BY add_time desc';
+	$res  = $GLOBALS['db']->query($sql);
+	while ($rows = $GLOBALS['db']->fetchRow($res))
+    {
+    	$selected = $id == $rows['id']?'selected=1':'';
+        $list .= '<option '.$selected.' value='.$rows['id'].'>'.$rows['name'].'</option>';
+    }
+    return $list;
+}
 ?>

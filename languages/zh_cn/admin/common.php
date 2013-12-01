@@ -233,6 +233,8 @@ $_LANG['shop_article'] = '网店文章';
 $_LANG['shop_info'] = '网店信息';
 $_LANG['shop_help'] = '网店帮助';
 $_LANG['vote_list'] = '在线调查';
+$_LANG['vote_sheet_list'] = '在线调查卷列表';
+$_LANG['vote_count_list'] = '在线调查统计结果';
 
 /* 会员管理 */
 $_LANG['08_unreply_msg'] = '会员留言';

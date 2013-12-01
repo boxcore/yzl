@@ -6,6 +6,15 @@
 <form action="vote.php" method="post" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
 <table width="100%" id="general-table">
   <tr>
+    <td class="label">所属调查表</td>
+    <td>
+      <select name="vote_sheet_id" id="sheetid">
+      	<option value=0>请选择...</option>
+      	{$sheet_option}
+      </select>
+    </td>
+  </tr>
+  <tr>
     <td class="label">{$lang.vote_name}</td>
     <td>
       <input type='text' name='vote_name' value='{$vote_arr.vote_name}' size='40' />
@@ -29,6 +38,8 @@
       <input type="radio" name="can_multi" value="0"{if $vote_arr.can_multi eq 0} checked="true" {/if}/>{$lang.is_multi}
       &nbsp;&nbsp;&nbsp;&nbsp;
       <input type="radio" name="can_multi" value="1"{if $vote_arr.can_multi eq 1} checked="true" {/if}/>{$lang.no_multi}
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="can_multi" value="2"{if $vote_arr.can_multi eq 2} checked="true" {/if}/>文本
     </td>
   </tr>
   <tr>
@@ -58,6 +69,11 @@ function validate()
 {
     validator = new Validator("theForm");
     validator.required("vote_name",      vote_name_empty);
+    if(document.getElementById('sheetid').value == 0)
+   	{
+    	alert('请选择所属调查问卷');
+    	return false;
+   	}
     if(document.getElementById('start_time').value > document.getElementById('end_time').value)
     {
       alert(date_error);

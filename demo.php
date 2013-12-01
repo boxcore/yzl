@@ -21,6 +21,7 @@ $smarty->assign('ur_here',    $position['ur_here']);
 if (!empty($_CFG['points_rule']) && unserialize($_CFG['points_rule'])){// 是否显示积分兑换
     $smarty->assign('show_transform_points',     1);
 }
+
 $smarty->assign('helps',      get_shop_help());        // 网店帮助
 $smarty->assign('data_dir',   DATA_DIR);   // 数据目录
 $smarty->assign('action',     $action);
