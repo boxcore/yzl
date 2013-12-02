@@ -4,6 +4,9 @@ body{margin:0px; padding:0px;}
 p,ul,li,h1,h2,h3,h4,h5,dl,dt,dd,img,span,strong,a,input{margin:0px; padding:0px; list-style:none; border:none; font-family:"Microsoft Yahei";}
 a:link,a:visited{ text-decoration:none;}
 a:hover{ text-decoration:none;}
+
+.c1{color:#984e9a;}
+
 #header{width:998px; margin:0 auto; overflow:hidden;}
 #header .logo{width:116px; height:41px; float:left; margin-top:28px;}
 #header .header_r{/*width:556px;*/ overflow:hidden; float:right;}
@@ -29,6 +32,8 @@ a:hover{ text-decoration:none;}
 .content_box .nav_inner .two_menu{ display:none;position: absolute; top:30px;left:0; visibility:visible;}
 .content_box .nav_inner .one_menu_hover .all_products{width:312px; left:-104px; top:31px;}
 .content_box .nav_inner .one_menu_hover .two_menu a{width:80px; height:21px; line-height:21px; text-align:left; background:#fff; font-size:11px;color:#595757; display:block; padding-left:24px;}
+.content_box .nav_inner .one_menu_hover .two_menu span a{width:80px; height:21px; line-height:21px; text-align:left; background:#fff; font-size:11px;color:#984e9a; display:block; padding-left:24px;}
+
 .content_box .nav_inner .one_menu_hover .two_menu a:hover{ background:#dcdddd;}
 .content_box .nav_inner .one_menu_hover .all_products .one{float:left; display:inline;}
 .content_box .nav_inner .search{width:127px; height:25px; padding-left:7px; padding-top:7px;}
