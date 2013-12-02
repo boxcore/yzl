@@ -25,7 +25,6 @@ function reg(str){
   $id(str+"_h").className="none";
   $id(str+"_v").innerHTML=$id(str+"_h").getElementsByTagName("blockquote")[0].innerHTML;
 }
-
 </script>
 </head>
 <body>
@@ -83,24 +82,8 @@ function reg(str){
                     <!-- {/foreach}-->
                 </table>
             </div>
-            <div class="right">
-                <h4>-猜你可能需要-</h4>
-                <dl>
-                    <dt><a href="#"><img src="images/wantto.jpg" width="66" height="62"></a></dt>
-                    <dd>
-                        <p><a href="#">荷花养肤睡眠面膜</a><span><br>
-                            <a href="#">净颜活肤 极致嫩白</a></span><strong>￥200</strong></p>
-                    </dd>
-                </dl>
-                <dl class="no_border">
-                    <dt><a href="#"><img src="images/want_to_two.jpg" width="37" height="110"></a></dt>
-                    <dd>
-                        <p><a href="#">荷花养肤睡眠面膜</a><span><br>
-                            <a href="#">净颜活肤 极致嫩白</a></span><strong>￥200</strong></p>
-                    </dd>
-                </dl>
-                <div class="detial_page"><a href="#"><img src="images/details_last.jpg" width="27" height="27"></a><a href="#"><img src="images/details_next.jpg" width="27" height="27"></a></div>
-            </div>
+            <!-- #BeginLibraryItem "/library/recommend_guest.lbi" --><!-- #EndLibraryItem -->
+
         </div>
     </div>
 </div>
@@ -110,7 +93,7 @@ function reg(str){
      <!--相册 END-->
 
 
-<!-- #BeginLibraryItem "/library/common/page_footer.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
 <script type="text/javascript">
 var goods_id = {$goods_id};

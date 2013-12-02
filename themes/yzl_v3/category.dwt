@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+    <!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
     <!-- {if $cat_style} -->
     <link href="{$cat_style}" rel="stylesheet" type="text/css" />
     <!-- {/if} -->
@@ -32,6 +32,6 @@
     </div>
 </div>
 
-<!-- #BeginLibraryItem "/library/common/page_footer.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
 </html>

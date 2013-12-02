@@ -11,6 +11,7 @@ require(dirname(__FILE__) . '/includes/init.php');
 require_once(ROOT_PATH . 'languages/' .$_CFG['lang']. '/demo.php');
 
 // 对页面进行赋值
+assign_template();
 $position = assign_ur_here(0, '皮肤检测中心');
 $smarty->assign('page_title', $position['title']); // 页面标题
 $smarty->assign('keywords', '自定义关键字'); // 页面标题
@@ -63,8 +64,8 @@ elseif($_SESSION['suvery']['act'] == "id_sens"){
 
 }
 
-echo '<pre>';print_r($_REQUEST);echo '</pre>';
-echo '<hr>';print_r($_SESSION);echo '<hr>';
+//echo '<pre>';print_r($_REQUEST);echo '</pre>';
+//echo '<hr>';print_r($_SESSION);echo '<hr>';
 $smarty->display('skin_detection.dwt');
 
 function get_step1_quest($id){

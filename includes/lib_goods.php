@@ -411,7 +411,7 @@ function get_promote_goods($cats = '')
  * @param   string      $ext        商品扩展查询
  * @return  array
  */
-function get_category_recommend_goods($type = '', $cats = '', $brand = 0, $min =0,  $max = 0, $ext='')
+function get_category_recommend_goods($type = '', $cats = '', $brand = 0, $min =0,  $max = 0, $ext='', $show_num)
 {
     $brand_where = ($brand > 0) ? " AND g.brand_id = '$brand'" : '';
 
@@ -429,7 +429,7 @@ function get_category_recommend_goods($type = '', $cats = '', $brand = 0, $min =
     $num = 0;
     $type2lib = array('best'=>'recommend_best', 'new'=>'recommend_new', 'hot'=>'recommend_hot', 'promote'=>'recommend_promotion');
     $num = get_library_number($type2lib[$type]);
-
+    $num = (!empty($show_num )) ? $show_num : $num;//by thunje
     switch ($type)
     {
         case 'best':

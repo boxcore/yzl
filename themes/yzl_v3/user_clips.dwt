@@ -846,7 +846,7 @@ var {$key} =
 <!--right end-->
 </div>
 <div class="blank"></div>
-<!-- #BeginLibraryItem "/library/common/page_footer.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
 <script type="text/javascript">
     {foreach from=$lang.clips_js item=item key=key}

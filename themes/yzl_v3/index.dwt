@@ -21,9 +21,9 @@
 </div>
 
 <div class="skin_nav">
-    <a href="skin_detection.html">皮肤检测中心</a>
-    <a href="Skin_experience .html">养肤体验馆</a>
-    <a href="#" class="samll_shop">易享·华养颜</a>
+    <a target="_blank" href="skin_detection.php">皮肤检测中心</a>
+    <a target="_blank" href="skin_experience.php">养肤体验馆</a>
+    <a target="_blank" href="#" class="samll_shop">易享·华养颜</a>
 </div>
 
 <!-- {if $oldindex } -->

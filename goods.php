@@ -239,6 +239,10 @@ if (!$smarty->is_cached('goods.dwt', $cache_id))
         $smarty->assign('bought_goods',        get_also_bought($goods_id));                      // 购买了该商品的用户还购买了哪些商品
         $smarty->assign('goods_rank',          get_goods_rank($goods_id));                       // 商品的销售排名
 
+        $children = get_children($goods['cat_id']);
+        $smarty->assign('best_goods',      get_category_recommend_goods('best', $children,0,0,0,'',8));
+        //print_r(get_category_recommend_goods('best', $children,0,0,0,'',8));
+
         //获取tag
         $tag_array = get_tags($goods_id);
         $smarty->assign('tags',                $tag_array);                                       // 商品的标记

@@ -1,0 +1,55 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $best_goods} -->
+<script type="text/javascript" src="{$ecs_themes_path}/js/jcarousellite.js"></script>
+<script type="text/javascript" src="{$ecs_themes_path}/js/easing.js"></script>
+
+<div class="right">
+    <h4>-猜你可能需要5-</h4>
+    {*<dl>*}
+        {*<dt><a href="#"><img src="images/wantto.jpg" width="66" height="62"></a></dt>*}
+        {*<dd>*}
+            {*<p><a href="#">荷花养肤睡眠面膜</a><span><br>*}
+                            {*<a href="#">净颜活肤 极致嫩白</a></span><strong>￥200</strong></p>*}
+        {*</dd>*}
+    {*</dl>*}
+    {*<dl class="no_border">*}
+        {*<dt><a href="#"><img src="images/want_to_two.jpg" width="37" height="110"></a></dt>*}
+        {*<dd>*}
+            {*<p><a href="#">荷花养肤睡眠面膜</a><span><br>*}
+                            {*<a href="#">净颜活肤 极致嫩白</a></span><strong>￥200</strong></p>*}
+        {*</dd>*}
+    {*</dl>*}
+    <div class="jCarouselLite-01" id="demo-06">
+        <ul>
+            <!--{foreach from=$best_goods item=goods}-->
+            <li>
+                <dl {if $smarty.foreach.best_goods.iteration %2 ==0}class="no_border"{/if}>
+                    <dt><a href="{$goods.url}"><img src="{$goods.thumb}" width="66" height="62"></a></dt>
+                    <dd>
+                        <p><a href="#">{$goods.brand_name}</a><span><br>
+        <a href="#">{$goods.short_name}</a></span><strong>{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</strong></p>
+                    </dd>
+                </dl>
+            </li>
+            <!--{/foreach}-->
+        </ul>
+
+    </div>
+
+    <div class="detial_page">
+        <a href="javascript:void(0);" class="prev" id="prev-06"><img src="images/details_last.jpg" width="27" height="27"></a>
+        <a href="javascript:void(0);" class="next" id="next-06"><img src="images/details_next.jpg" width="27" height="27"></a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#demo-06').jCarouselLite({
+            btnPrev: '#prev-06',
+            btnNext: '#next-06',
+            visible: 2,
+            vertical: true
+        });
+    });
+</script>
+<!-- {/if} -->

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+    {insert_scripts files='index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="content">
+    <div class="skin_experience">
+        <div class="inner">
+            <h1>欢迎光临易张脸养肤体验馆，请先登录或注册！</h1>
+            <form>
+                <table width="320" border="0" cellspacing="0" cellpadding="0" class="skin_load">
+                    <tbody><tr>
+                        <td align="right">电子邮箱/用户名 ：</td>
+                        <td><input name="" type="text" class="text"></td>
+                    </tr>
+                    <tr>
+                        <td align="right">密码 ：</td>
+                        <td><input name="" type="text" class="text"></td>
+                    </tr>
+                    <tr>
+                        <td align="right">验证码 ：</td>
+                        <td><input name="" type="text" class="auth_code"></td>
+                    </tr>
+                    </tbody></table>
+                <div class="skin_loadding"><input name="" type="button" value="登录"></div>
+            </form>
+            <div class="right">
+                <p>注册属于您自己的账户，成为易张脸专属会员，以便登陆查看订单状态，迅速结账等各种福利哦。</p>
+                <a href="/user.php?act=register">马上注册 &gt;&gt;</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

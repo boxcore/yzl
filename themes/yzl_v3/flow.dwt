@@ -840,7 +840,7 @@
 
 </div>
 
-<!-- #BeginLibraryItem "/library/common/page_footer.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
 <script type="text/javascript">
 var process_request = "{$lang.process_request}";
