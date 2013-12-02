@@ -10,7 +10,7 @@
         </ul>
         <div class="header_r_r">
             <p class="shop_bag"><a href="flow.php">购物袋<br>0件-0元</a></p>
-            <p class="code"><a href="#"><img src="images/code.gif" width="149" height="42"></a></p>
+            <p class="code"><a><img src="images/code.gif" width="149" height="42"></a></p>
         </div>
     </div>
 </div>
