@@ -6,9 +6,23 @@ a:link,a:visited{ text-decoration:none;}
 a:hover{ text-decoration:none;}
 
 .c1{color:#984e9a;}
+a.indiv{display: block; float: left; width:100%; height: 100%; overflow: hidden;}
+
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*+height:1%;}
+.clear{overflow:auto;_height:1%}
+
+.c1{color:#9C4D9E;}
+.c2{}
+
+.pl5{padding-left: 5px;}
+.pl10{padding-left: 10px;}
+.ml15{margin-left: 15px;}
 
 #header{width:998px; margin:0 auto; overflow:hidden;}
-#header .logo{width:116px; height:41px; float:left; margin-top:28px;}
+#header .logo{width:280px; height:41px; float:left; margin-top:28px;}
+#header .logo a{background: url(../images/logo.gif) no-repeat left center;}
+
 #header .header_r{/*width:556px;*/ overflow:hidden; float:right;}
 #header .header_r_inner{/*width:305px;*/float:left; margin-top:48px; overflow:hidden;}
 #header .header_r_inner li{float:left; font-size:11px; width:76px; height:22px; background:url(../images/header_r_bg.jpg) no-repeat right center; line-height:22px; text-align:center;}
@@ -31,7 +45,7 @@ a:hover{ text-decoration:none;}
 .content_box .nav_inner .one_menu_hover .two_menu{width:104px; padding-bottom:2px; border-bottom:1px solid #984e9a; background:#fff; display:block; /*border-left:1px solid #984e9a;border-right:1px solid #984e9a;*/}
 .content_box .nav_inner .two_menu{ display:none;position: absolute; top:30px;left:0; visibility:visible;}
 .content_box .nav_inner .one_menu_hover .all_products{width:312px; left:-104px; top:31px;}
-.content_box .nav_inner .one_menu_hover .two_menu a{width:80px; height:21px; line-height:21px; text-align:left; background:#fff; font-size:11px;color:#595757; display:block; padding-left:24px;}
+.content_box .nav_inner .one_menu_hover .two_menu a{width:94px; height:21px; line-height:21px; text-align:left; background:#fff; font-size:11px;color:#595757; display:block; padding-left:10px;}
 .content_box .nav_inner .one_menu_hover .two_menu span a{width:80px; height:21px; line-height:21px; text-align:left; background:#fff; font-size:11px;color:#984e9a; display:block; padding-left:24px;}
 
 .content_box .nav_inner .one_menu_hover .two_menu a:hover{ background:#dcdddd;}
@@ -100,14 +114,31 @@ a:hover{ text-decoration:none;}
 .login_inner .loginface_box .btn{width:113px; height:113px; background:url(../images/interface_btn.png) no-repeat; float:right; margin-right:60px; cursor:pointer; font-size:28px; color:#fff;}
 
 /*全线产品*/
+#good_list {background-color: red;}
+#good_list ul {display:block; width: 420px; height: 240px; background-color: #F4EFF1; float:left; overflow: hidden;margin-top:10px;}
+#good_list ul li.good_pic {float: left; width: 238px; height: 238px; display: block; }
+#good_list ul li.good_text {float:left; width:120px; height: 160px; font-size:12px; padding:55px 5px 0 5px; margin-left: 40px; }
+#good_list ul li.good_text p.good_brand{ color:#7C7C7C;width:120px; /*word-wrap: break-word;word-break: normal;*/ overflow: hidden; }
+#good_list ul li.good_text h3 { }
+#good_list ul li.good_text span.good_price{ font-weight: bold; }
+#good_list ul li.good_text a.buy-now{margin-top: 20px; display: block; width:57px; height:17px; background: url("../images/goods-buy-now.gif") no-repeat left center; }
+#good_list ul li.good_text span.detail{display: block; margin-top: 40px;}
+/*#good_list ul li .good-text a{}*/
+
+b.img-asc{ width:16px; height:16px; background: url("../images/ui-icons_984e9a_256x240.png") no-repeat 0 -16px;}
+b.img-desc{ width:16px; height:16px; background: url("../images/ui-icons_984e9a_256x240.png") no-repeat -64px -16px;}
+
+
+
+
 .content{width:998px; overflow:hidden; margin:36px auto 30px;}
 .content .left{width:104px; overflow:hidden; float:left;}
 .content .right{width:859px;float:right;}
 .content .left_nav li{width:104px; overflow:hidden; padding:2px 0 12px; border-bottom:1px solid #984e9a;}
 .content .left_nav span a{color:#984e9a; font-size:14px; height:22px;text-align:left; display:block; padding-left:25px; width:79px;}
-.content .left_nav .inner a{width:79px; height:21px; line-height:21px; text-align:left; color:#595757; display:block; font-size:11px; padding-left:25px;}
+.content .left_nav .inner a{width:85px; height:21px; line-height:21px; text-align:left; color:#595757; display:block; font-size:11px; padding-left:10px;}
 .content .left_nav .inner a:hover{ background:#dcdddd;}
-.content .left_nav .inner .current{width:79px; height:21px; line-height:21px;background:#dcdddd;}
+.content .left_nav .inner .current{width:85px; height:21px; line-height:21px;background:#dcdddd;}
 .content .right .search_con{color:#984e9a; font-size:14px; font-weight:normal; width:240px; height:30px; line-height:30px; background:url(../images/search_glass.jpg) no-repeat left center; padding-left:30px;}
 .content .right h1 span{font-size:18px;}
 .content .right .pic_show{width:858px; overflow:hidden;}
@@ -115,8 +146,8 @@ a:hover{ text-decoration:none;}
 .content .right .pic_show .no_margin{margin-right:0px;}
 .content .right h2 span{color:#984e9a; font-size:14px; font-weight:normal; width:240px; height:30px; line-height:30px; float:left;}
 .content .right h2 strong{float:right;font-weight:normal; font-size:12px; height:30px; line-height:30px;}
-.content .right h2 strong a{width:60px; height:30px; display:block; float:left; text-align:center; color:#727171;}
-.content .right h2 strong .current{width:52px; height:30px; background:url(../images/arrows.jpg) no-repeat right center; color:#984e9a; padding-right:8px;}
+.content .right h2 strong a{width:70px; height:30px; display:block; float:left; text-align:center; color:#727171;}
+.content .right h2 strong .current{width:70px; height:30px; /*background:url(../images/arrows.jpg) no-repeat right center;*/ color:#984e9a; padding-right:8px;}
 /*全线产品——详情*/
 .product_detail{width:858px; overflow:hidden; margin:40px 0;}
 .product_detail .left{float:left; width:350px; overflow:hidden;}

@@ -1,108 +1,44 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  
+<style>
+    div.list_page {padding: 3px; margin: 3px; text-align: right;font-size:12px}
+    div.list_page a {color: #984e9a; padding: 2px 5px; text-decoration: none; margin: 2px; border:#fff 1px solid;}
+    div.list_page a:hover {border: #984e9a 1px solid;}
+    div.list_page a:active {border: #984e9a 1px solid; color: #000; }
+    div.list_page span.current {padding:2px 5px; font-weight: bold; margin: 2px; color: #fff; background-color: #984e9a;}
+    div.list_page a.prev, div.list_page a.next{border:#984e9a 1px solid;}
+    /*span.prev-icon {display:block;background:url("./themes/yzl_v3/images/ui-icons_984e9a_256x240.png") no-repeat -100px -16px; width:20px;heght:20px; background-color:red;}*/
+    div.list_page a.blur {border:#ccc 1px solid; color:#ccc;}
+
+    div.list_page span.blur {border: #eee 1px solid; padding:2px 5px;  margin: 2px; color: #ddd;}
+</style>
 <!--翻页 start-->
 <form name="selectPageForm" action="{$smarty.server.PHP_SELF}" method="get">
-
-{* 产品搜索和产品分类 分页样式 *}
-<!-- {if $pager.styleid eq 0 } -->
-<h1>000000000</h1>
-<div id="pager">
-  {$lang.pager_1}{$pager.record_count}{$lang.pager_2}{$lang.pager_3}{$pager.page_count}{$lang.pager_4} <span> <a href="{$pager.page_first}">{$lang.page_first}</a> <a href="{$pager.page_prev}">{$lang.page_prev}</a> <a href="{$pager.page_next}">{$lang.page_next}</a> <a href="{$pager.page_last}">{$lang.page_last}</a> </span>
-    <!--{foreach from=$pager.search key=key item=item}-->
-      {if $key eq 'keywords'}
-          <input type="hidden" name="{$key}" value="{$item|escape:decode_url}" />
-        {else}
-          <input type="hidden" name="{$key}" value="{$item}" />
-      {/if}
-    <!--{/foreach}-->
-    <select name="page" id="page" onchange="selectPage(this)">
-    {html_options options=$pager.array selected=$pager.page}
-    </select>
-</div>
+    <!--h1>1111111111/ styleid:{$pager.styleid} count：{$pager.count}  <span>共{$pager.record_count}个产品</span></h1-->
 
 
-{*分类产品 分页导航*}
-<!-- {elseif $pager.styleid eq 1 } -->
-<h1>1111111111/ styleid:{$pager.styleid} count：{$pager.count}</h1>
-<div class="list_page"><span>共{$pager.record_count}个产品</span>
-<!-- {if $pager.page_count neq 1} -->
-  <!--{foreach from=$pager.page_number key=key item=item}-->
-    <!-- {if $pager.page eq $key} -->
-    <a class="current">{$key}</a>
-    <!-- {else} -->
-    <a href="{$item}">{$key}</a>
-    <!-- {/if} -->
-  <!--{/foreach}-->
-<!-- {/if} -->
-<!-- {if $pager.page_next} --><a class="next" href="{$pager.page_next}"><span class="then"></span></a><!-- {/if} -->
-  <span>每页显示
-      <select name="">
-          <option>4</option>
-          <option>8</option>
-      </select>
-      个产品
-  </span>
-</div>
+    <div class="list_page">
 
-{* 文章列表 分页样式 *}
-<!-- {elseif $pager.styleid eq 2 } -->
-<h1>2222222222222</h1>
-<div id="pager">
-  {$lang.pager_1}{$pager.record_count}{$lang.pager_2}{$lang.pager_3}{$pager.page_count}{$lang.pager_4} <span> <a href="{$pager.page_first}">{$lang.page_first}</a> <a href="{$pager.page_prev}">{$lang.page_prev}</a> <a href="{$pager.page_next}">{$lang.page_next}</a> <a href="{$pager.page_last}">{$lang.page_last}</a> </span>
-    <!--{foreach from=$pager.search key=key item=item}-->
-      {if $key eq 'keywords'}
-          <input type="hidden" name="{$key}" value="{$item|escape:decode_url}" />
-        {else}
-          <input type="hidden" name="{$key}" value="{$item}" />
-      {/if}
-    <!--{/foreach}-->
-    <select name="page" id="page" onchange="selectPage(this)">
-    {html_options options=$pager.array selected=$pager.page}
-    </select>
-</div>
+        <!-- {if $pager.page_prev} --><a class="prev" href="{$pager.page_prev}"><span class="prev-icon"></span>上一页</a><!-- {else} --><a class="blur"><span class="prev-icon"></span>上一页</a><!-- {/if} -->
 
-{*默认分页样式*}
-<!--{else}-->
-
-<!--翻页 start-->
-    <div id="pager" class="pagebar">
-      <span class="f_l f6" style="margin-right:10px;">{$lang.pager_1}<b>{$pager.record_count}</b> {$lang.pager_2}</span>
-      <!-- {if $pager.page_first} --><a href="{$pager.page_first}">{$lang.page_first} ...</a><!-- {/if} -->
-      <!-- {if $pager.page_prev} --><a class="prev" href="{$pager.page_prev}">{$lang.page_prev}</a><!-- {/if} -->
-      <!-- {if $pager.page_count neq 1} -->
-        <!--{foreach from=$pager.page_number key=key item=item}-->
-          <!-- {if $pager.page eq $key} -->
-          <span class="page_now">{$key}</span>
-          <!-- {else} -->
-          <a href="{$item}">[{$key}]</a>
-          <!-- {/if} -->
-        <!--{/foreach}-->
-      <!-- {/if} -->
-
-      <!-- {if $pager.page_next} --><a class="next" href="{$pager.page_next}">{$lang.page_next}</a><!-- {/if} -->
-      <!-- {if $pager.page_last} --><a class="last" href="{$pager.page_last}">...{$lang.page_last}</a><!-- {/if} -->
-      <!-- {if $pager.page_kbd} -->
-        <!--{foreach from=$pager.search key=key item=item}-->
-          {if $key eq 'keywords'}
-              <input type="hidden" name="{$key}" value="{$item|escape:decode_url}" />
-            {else}
-              <input type="hidden" name="{$key}" value="{$item}" />
-          {/if}
-        <!--{/foreach}-->
-        <kbd style="float:left; margin-left:8px; position:relative; bottom:3px;"><input type="text" name="page" onkeydown="if(event.keyCode==13)selectPage(this)" size="3" class="B_blue" /></kbd>
+        <!-- {if $pager.page_count neq 1} -->
+            <!--{foreach from=$pager.page_number key=key item=item}-->
+                <!-- {if $pager.page eq $key} -->
+                    <span class="current">{$key}</span>
+                <!-- {else} -->
+                    <a href="{$item}">{$key}</a>
+                <!-- {/if} -->
+            <!--{/foreach}-->
         <!-- {/if} -->
-    </div>
-<!--翻页 END-->
 
-<!-- {/if} -->
+        <!-- {if $pager.page_next} --><a class="next" href="{$pager.page_next}"><span class="next-icon"></span>下一页</a><!-- {else} --><a class="blur"><span class="next-icon"></span>下一页</a><!-- {/if} -->
+    </div>
 </form>
 <script type="Text/Javascript" language="JavaScript">
-<!--
-{literal}
-function selectPage(sel)
-{
-  sel.form.submit();
-}
-{/literal}
-//-->
+    <!--
+    {literal}
+    function selectPage(sel) {
+        sel.form.submit();
+    }
+    {/literal}
+    //-->
 </script>

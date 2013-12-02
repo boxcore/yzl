@@ -1504,4 +1504,21 @@ function get_products_info($goods_id, $spec_goods_attr_id)
     }
     return $return_array;
 }
+
+//调用商品销量
+function selled_count($goods_id)
+{
+    $basenume=0;
+    $sql= "select sum(goods_number) as count from ".$GLOBALS['ecs']->table('order_goods')."where goods_id ='".$goods_id."'";
+    $res = $GLOBALS['db']->getOne($sql);
+    $res = $res+ $basenume;
+    if($res>0)
+    {
+        return $res;
+    }
+    else
+    {
+        return('0');
+    }
+}
 ?>

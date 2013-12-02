@@ -1,5 +1,5 @@
 <div id="header">
-    <div class="logo"><a href="/"><img src="images/logo.gif" width="" height="41"></a></div>
+    <div class="logo"><a href="/" class="indiv"></a></div>
     <div class="header_r">
         <ul class="header_r_inner">
             {insert name='member_info'}

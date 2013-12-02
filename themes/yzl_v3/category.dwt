@@ -27,7 +27,7 @@
         <!--{/foreach}-->
     </div>
     <div class="right">
-        <!-- #BeginLibraryItem "/library/goods/goods_list.lbi" --><!-- #EndLibraryItem -->
+        <!-- #BeginLibraryItem "/library/goods_list.lbi" --><!-- #EndLibraryItem -->
         {if $goods_list}<!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->{/if}
     </div>
 </div>
