@@ -46,6 +46,7 @@ if (!$smarty->is_cached('article.dwt', $cache_id))
 {
     /* 文章详情 */
     $article = get_article_info($article_id);
+    //print_r(get_article_info($article_id));
 
     if (empty($article))
     {
@@ -190,6 +191,8 @@ function get_article_info($article_id)
         {
             $row['author'] = $GLOBALS['_CFG']['shop_name'];
         }
+        //添加壁纸相册 by boxcore
+        $row['article_wallpaper'] = $GLOBALS['db']->getAll('SELECT * FROM ' .$GLOBALS['ecs']->table('article_wallpaper').' WHERE article_id = "'.$article_id.'" ORDER BY img_id ASC');
     }
 
     return $row;

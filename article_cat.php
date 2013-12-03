@@ -152,6 +152,7 @@ if (!$smarty->is_cached('article_cat.dwt', $cache_id))
     $cat_page_info['page'] = $page;
     $smarty->assign('cat_page_info', $cat_page_info);
     $smarty->assign('artciles_list',    get_cat_articles($cat_id, $page, $size ,$keywords));
+    //print_r(get_cat_articles($cat_id, $page, $size ,$keywords));
     
     $smarty->assign('cat_id',    $cat_id);
     /* 分页 */
