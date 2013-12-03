@@ -291,6 +291,7 @@ elseif ($_REQUEST['act'] == 'add' || $_REQUEST['act'] == 'edit' || $_REQUEST['ac
             $goods['goods_sn'] = '';
             $goods['goods_name'] = '';
             $goods['goods_subtitle'] = '';
+            $goods['taobao_url'] = '';
             $goods['goods_img'] = '';
             $goods['goods_thumb'] = '';
             $goods['original_img'] = '';
@@ -825,12 +826,12 @@ elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
     {
         if ($code == '')
         {
-            $sql = "INSERT INTO " . $ecs->table('goods') . " (goods_name, goods_name_style, goods_subtitle, goods_sn, " .
+            $sql = "INSERT INTO " . $ecs->table('goods') . " (goods_name, goods_name_style, goods_subtitle, taobao_url, goods_sn, " .
                     "cat_id, brand_id, shop_price, market_price, is_promote, promote_price, " .
                     "promote_start_date, promote_end_date, goods_img, goods_thumb, original_img, keywords, goods_for_skin, composition, goods_packing, goods_brief, " .
                     "seller_note, goods_weight, goods_number, warn_number, integral, give_integral, is_best, is_new, is_hot, " .
                     "is_on_sale, is_alone_sale, is_shipping, goods_desc, add_time, last_update, goods_type, rank_integral, suppliers_id)" .
-                "VALUES ('$_POST[goods_name]', '$goods_name_style', '$_POST[goods_subtitle]', '$goods_sn', '$catgory_id', " .
+                "VALUES ('$_POST[goods_name]', '$goods_name_style', '$_POST[goods_subtitle]', '$_POST[taobao_url]', '$goods_sn', '$catgory_id', " .
                     "'$brand_id', '$shop_price', '$market_price', '$is_promote','$promote_price', ".
                     "'$promote_start_date', '$promote_end_date', '$goods_img', '$goods_thumb', '$original_img', ".
                     "'$_POST[keywords]', '$_POST[goods_for_skin]', '$_POST[composition]', '$_POST[goods_packing]', '$_POST[goods_brief]', '$_POST[seller_note]', '$goods_weight', '$goods_number',".
@@ -839,12 +840,12 @@ elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
         }
         else
         {
-            $sql = "INSERT INTO " . $ecs->table('goods') . " (goods_name, goods_name_style, goods_subtitle, goods_sn, " .
+            $sql = "INSERT INTO " . $ecs->table('goods') . " (goods_name, goods_name_style, goods_subtitle, taobao_url, goods_sn, " .
                     "cat_id, brand_id, shop_price, market_price, is_promote, promote_price, " .
                     "promote_start_date, promote_end_date, goods_img, goods_thumb, original_img, keywords, goods_for_skin, composition, goods_packing, goods_brief, " .
                     "seller_note, goods_weight, goods_number, warn_number, integral, give_integral, is_best, is_new, is_hot, is_real, " .
                     "is_on_sale, is_alone_sale, is_shipping, goods_desc, add_time, last_update, goods_type, extension_code, rank_integral)" .
-                "VALUES ('$_POST[goods_name]', '$goods_name_style', '$_POST[goods_subtitle]', '$goods_sn', '$catgory_id', " .
+                "VALUES ('$_POST[goods_name]', '$goods_name_style', '$_POST[goods_subtitle]', '$_POST[taobao_url]', '$goods_sn', '$catgory_id', " .
                     "'$brand_id', '$shop_price', '$market_price', '$is_promote','$promote_price', ".
                     "'$promote_start_date', '$promote_end_date', '$goods_img', '$goods_thumb', '$original_img', ".
                     "'$_POST[keywords]', '$_POST[goods_for_skin]', '$_POST[composition]', '$_POST[goods_packing]', '$_POST[goods_brief]', '$_POST[seller_note]', '$goods_weight', '$goods_number',".
@@ -874,6 +875,7 @@ elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
                 "goods_name = '$_POST[goods_name]', " .
                 "goods_name_style = '$goods_name_style', " .
                 "goods_subtitle =  '$_POST[goods_subtitle]', " .
+                "taobao_url =  '$_POST[taobao_url]', " .
                 "goods_sn = '$goods_sn', " .
                 "cat_id = '$catgory_id', " .
                 "brand_id = '$brand_id', " .

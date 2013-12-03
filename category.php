@@ -396,13 +396,14 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
         $page = $max_page;
     }
     $goodslist = category_get_goods($children, $brand, $price_min, $price_max, $ext, $size, $page, $sort, $order);
-    if($display == 'grid')
-    {
-        if(count($goodslist) % 2 != 0)
-        {
-            $goodslist[] = array();
-        }
-    }
+//    if($display == 'grid')
+//    {
+//        if(count($goodslist) % 2 != 0)
+//        {
+//            $goodslist[] = array();
+//        }
+//    }
+    //print_r($goodslist);
     $smarty->assign('goods_list',       $goodslist);
     $smarty->assign('category',         $cat_id);
     $smarty->assign('script_name', 'category');
@@ -459,7 +460,7 @@ function category_get_goods($children, $brand, $min, $max, $ext, $size, $page, $
     }
 
     /* 获得商品列表 */
-    $sql = 'SELECT g.goods_id, g.goods_name, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, ' .
+    $sql = 'SELECT g.goods_id, g.goods_name, g.goods_name_style, g.goods_subtitle, g.taobao_url, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, ' .
                 "IFNULL(mp.user_price, g.shop_price * '$_SESSION[discount]') AS shop_price, g.promote_price, g.goods_type, " .
                 'g.promote_start_date, g.promote_end_date, g.goods_brief, g.goods_thumb , g.goods_img ' .
             'FROM ' . $GLOBALS['ecs']->table('goods') . ' AS g ' .
@@ -517,6 +518,9 @@ function category_get_goods($children, $brand, $min, $max, $ext, $size, $page, $
         $arr[$row['goods_id']]['name']             = $row['goods_name'];
         $arr[$row['goods_id']]['goods_brief']      = $row['goods_brief'];
         $arr[$row['goods_id']]['goods_style_name'] = add_style($row['goods_name'],$row['goods_name_style']);
+        $arr[$row['goods_id']]['goods_subtitle']      = $row['goods_subtitle'];
+        $arr[$row['goods_id']]['taobao_url']      = $row['taobao_url'];
+
         $arr[$row['goods_id']]['market_price']     = price_format($row['market_price']);
         $arr[$row['goods_id']]['shop_price']       = price_format($row['shop_price']);
         $arr[$row['goods_id']]['type']             = $row['goods_type'];

@@ -27,5 +27,7 @@ $smarty->assign('data_dir',   DATA_DIR);   // 数据目录
 $smarty->assign('action',     $action);
 $smarty->assign('lang',       $_LANG);
 
+$a = get_categories_tree1(3);
+print_r($a);
 
 $smarty->display('demo.dwt');

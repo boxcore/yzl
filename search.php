@@ -250,7 +250,7 @@ else
     $default_sort_order_method = $_CFG['sort_order_method'] == '0' ? 'DESC' : 'ASC';
     $default_sort_order_type   = $_CFG['sort_order_type'] == '0' ? 'goods_id' : ($_CFG['sort_order_type'] == '1' ? 'shop_price' : 'last_update');
 
-    $sort = (isset($_REQUEST['sort'])  && in_array(trim(strtolower($_REQUEST['sort'])), array('goods_id', 'shop_price', 'last_update'))) ? trim($_REQUEST['sort'])  : $default_sort_order_type;
+    $sort = (isset($_REQUEST['sort'])  && in_array(trim(strtolower($_REQUEST['sort'])), array('goods_id', 'shop_price', 'last_update', 'salesnum', 'click_count'))) ? trim($_REQUEST['sort'])  : $default_sort_order_type;
     $order = (isset($_REQUEST['order']) && in_array(trim(strtoupper($_REQUEST['order'])), array('ASC', 'DESC'))) ? trim($_REQUEST['order']) : $default_sort_order_method;
     $display  = (isset($_REQUEST['display']) && in_array(trim(strtolower($_REQUEST['display'])), array('list', 'grid', 'text'))) ? trim($_REQUEST['display'])  : (isset($_SESSION['display_search']) ? $_SESSION['display_search'] : $default_display_type);
 
@@ -389,7 +389,7 @@ else
     }
 
     /* 查询商品 */
-    $sql = "SELECT g.goods_id, g.goods_name, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, ".
+    $sql = "SELECT g.goods_id, g.goods_name, g.goods_subtitle, g.taobao_url, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, ".
                 "IFNULL(mp.user_price, g.shop_price * '$_SESSION[discount]') AS shop_price, ".
                 "g.promote_price, g.promote_start_date, g.promote_end_date, g.goods_thumb, g.goods_img, g.goods_brief, g.goods_type ".
             "FROM " .$ecs->table('goods'). " AS g ".
@@ -447,6 +447,8 @@ else
         {
             $arr[$row['goods_id']]['goods_name'] = $row['goods_name'];
         }
+        $arr[$row['goods_id']]['goods_subtitle']      = $row['goods_subtitle'];
+        $arr[$row['goods_id']]['taobao_url']      = $row['taobao_url'];
         $arr[$row['goods_id']]['type']          = $row['goods_type'];
         $arr[$row['goods_id']]['market_price']  = price_format($row['market_price']);
         $arr[$row['goods_id']]['shop_price']    = price_format($row['shop_price']);
@@ -457,13 +459,13 @@ else
         $arr[$row['goods_id']]['url']           = build_uri('goods', array('gid' => $row['goods_id']), $row['goods_name']);
     }
 
-    if($display == 'grid')
-    {
-        if(count($arr) % 2 != 0)
-        {
-            $arr[] = array();
-        }
-    }
+//    if($display == 'grid')
+//    {
+//        if(count($arr) % 2 != 0)
+//        {
+//            $arr[] = array();
+//        }
+//    }
     $smarty->assign('goods_list', $arr);
     $smarty->assign('category',   $category);
     $smarty->assign('keywords',   htmlspecialchars(stripslashes($_REQUEST['keywords'])));
@@ -512,6 +514,9 @@ else
     assign_template();
     assign_dynamic('search');
     $position = assign_ur_here(0, $ur_here . ($_REQUEST['keywords'] ? '_' . $_REQUEST['keywords'] : ''));
+    if(empty($_REQUEST['keywords'])){
+        $position['title'] = "全线产品";
+    }
     $smarty->assign('page_title', $position['title']);    // 页面标题
     $smarty->assign('ur_here',    $position['ur_here']);  // 当前位置
 
@@ -525,6 +530,7 @@ else
     $smarty->assign('helps',       get_shop_help());      // 网店帮助
     $smarty->assign('top_goods',  get_top10());           // 销售排行
     $smarty->assign('promotion_info', get_promotion_info());
+    $smarty->assign('script_name', 'search');
 
     $search_info['count'] = $count;
     $smarty->assign('search_info',   $search_info); //文章分类树

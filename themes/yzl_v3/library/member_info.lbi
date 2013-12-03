@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 {if $user_info}
-<li><a href="user.php" style="color:red; width:120px;">{*$user_info.username*}我的</a>/<a href="/user.php?act=logout">登出</a></li>
+<li class="c1" style="width: 150px;">Hi!<a href="user.php" class="c1" style="font-weight: bold;color:#984e9a">{$user_info.username}</a> / <a href="/user.php?act=logout">登出</a></li>
 {else}
 <li><a  href="#TB_inline?height=240&width=625&inlineId=login_pop" class="thickbox">登录</a> / <a href="/user.php?act=register">注册</a></li>
 {/if}

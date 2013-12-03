@@ -1,9 +1,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--{*说明:
+$pager.page_count总页数;
+$pager.record_count符合结果总数;
+$pager.styleid分页样式;
+$pager.page_prev上一页
+*}-->
 <!--翻页 start-->
 <form name="selectPageForm" action="{$smarty.server.PHP_SELF}" method="get">
-    <!--h1>1111111111/ styleid:{$pager.styleid} count：{$pager.count}  <span>共{$pager.record_count}个产品</span></h1-->
 
-
+    {if $pager.page_count gt 1}
     <div class="list_page">
 
         <!-- {if $pager.page_prev} --><a class="prev" href="{$pager.page_prev}"><span class="prev-icon"></span>上一页</a><!-- {else} --><a class="blur"><span class="prev-icon"></span>上一页</a><!-- {/if} -->
@@ -20,6 +25,7 @@
 
         <!-- {if $pager.page_next} --><a class="next" href="{$pager.page_next}"><span class="next-icon"></span>下一页</a><!-- {else} --><a class="blur"><span class="next-icon"></span>下一页</a><!-- {/if} -->
     </div>
+    {/if}
 </form>
 <script type="Text/Javascript" language="JavaScript">
     <!--

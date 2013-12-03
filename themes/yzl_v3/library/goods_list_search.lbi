@@ -1,0 +1,35 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>
+    <span><!--{if $cat}-->{$cat.cat_name|escape:html}<!--{/if}--></span>
+    <strong>
+        <a href="{$script_name}.php?keywords={$search_keywords}&display={$pager.search.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.search.page}&sort=salesnum&order={if $pager.search.sort == 'salesnum' && $pager.search.order == 'DESC'}ASC{else}DESC{/if}#goods_list" {if $pager.search.sort == 'salesnum' }class="current"{/if}>销量{if $pager.search.sort == 'salesnum'}<b class="{if $pager.search.sort == 'salesnum' && $pager.search.order == 'DESC'}img-asc{else}img-desc{/if}">&nbsp;&nbsp;&nbsp;&nbsp;</b>{/if}</a>
+        <a href="{$script_name}.php?keywords={$search_keywords}&display={$pager.search.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.search.page}&sort=shop_price&order=<!-- {if $pager.search.sort == 'shop_price' && $pager.search.order == 'DESC'} -->ASC<!-- {else} -->'DESC'<!-- {/if} -->#goods_list" {if $pager.search.sort == 'shop_price' }class="current"{/if}>价格{if $pager.search.sort == 'shop_price'}<b class="{if $pager.search.sort == 'shop_price' && $pager.search.order == 'DESC'}img-asc{else}img-desc{/if}">&nbsp;&nbsp;&nbsp;&nbsp;</b>{/if}</a>
+        <a href="{$script_name}.php?keywords={$search_keywords}&display={$pager.search.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.search.page}&sort=click_count&order=<!-- {if $pager.search.sort == 'click_count' && $pager.search.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list" {if $pager.search.sort == 'click_count' }class="current"{/if}>人气{if $pager.search.sort == 'click_count'}<b class="{if $pager.search.sort == 'click_count' && $pager.search.order == 'DESC'}img-asc{else}img-desc{/if}">&nbsp;&nbsp;&nbsp;&nbsp;</b>{/if}</a>
+        <a href="{$script_name}.php?keywords={$search_keywords}&display={$pager.search.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.search.page}&sort=goods_id&order=<!-- {if $pager.search.sort == 'goods_id' && $pager.search.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list" {if $pager.search.sort == 'goods_id' }class="current"{/if}>上新时间{if $pager.search.sort == 'goods_id'}<b class="{if $pager.search.sort == 'goods_id' && $pager.search.order == 'DESC'}img-asc{else}img-desc{/if}">&nbsp;&nbsp;&nbsp;&nbsp;</b>{/if}</a>
+    </strong>
+</h2>
+<div class="clearfix"></div>
+
+<div id="good_list">
+    {if $goods_list}
+        <!--{foreach name=goods_list from=$goods_list item=goods}-->
+        <ul {if $smarty.foreach.goods_list.iteration %2 ==0}class="ml15"{/if}>
+            <li class="good_pic">
+                <a href="{$goods.url}"><img src="{$goods.goods_thumb}" alt="" width="238" height="238" /></a>
+            </li>
+            <li class="good_text">
+                <p class="good_brand">{$goods.goods_subtitle}</p>
+                <h3 class="c1"><a href="{$goods.url}" class="c1"><!-- {if $goods.goods_style_name} -->{$goods.goods_style_name}<!-- {else} -->{$goods.goods_name}<!-- {/if} --></a></h3>
+                <span class="good_price c1"><!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--></span>
+                <a class="buy-now" href="{$goods.taobao_url}"></a>
+                <span class="detail"><a class="c1" href="{$goods.url}">更多详情&gt;&gt;</a></span>
+            </li>
+        </ul>
+        <!--{/foreach}-->
+    {else}
+        <ul class="pic_show">
+            <li>分类为空</li>
+        </ul>
+    {/if}
+</div>
+<div class="clearfix"></div>

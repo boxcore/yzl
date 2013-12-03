@@ -26,7 +26,7 @@
                 <dl {if $smarty.foreach.best_goods.iteration %2 ==0}class="no_border"{/if}>
                     <dt><a href="{$goods.url}"><img src="{$goods.thumb}" width="122" height="122"></a></dt>
                     <dd>
-                        <p><a href="{$goods.url}">{$goods.short_name}</a><span><br>
+                        <p><a href="{$goods.url}">{$goods.name}</a><span><br>
         <a href="{$goods.url}">{$goods.goods_subtitle}</a></span><strong>{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</strong></p>
                     </dd>
                 </dl>

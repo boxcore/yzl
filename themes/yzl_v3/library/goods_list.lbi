@@ -21,7 +21,7 @@
                 <p class="good_brand">{$goods.goods_subtitle}</p>
                 <h3 class="c1"><a href="{$goods.url}" class="c1"><!-- {if $goods.goods_style_name} -->{$goods.goods_style_name}<!-- {else} -->{$goods.goods_name}<!-- {/if} --></a></h3>
                 <span class="good_price c1"><!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--></span>
-                <a class="buy-now" href="{$goods.url}"></a>
+                <a class="buy-now" href="{$goods.taobao_url}"></a>
                 <span class="detail"><a class="c1" href="{$goods.url}">更多详情&gt;&gt;</a></span>
             </li>
         </ul>

@@ -85,6 +85,35 @@ function get_categories_tree($cat_id = 0)
     }
 }
 
+/**
+ * 获得指定分类以及该分类下的子分类
+ *
+ * @access  public
+ * @param   integer     $cat_id     分类编号
+ * @return  array
+ */
+function get_categories_tree1($cat_id = 0)
+{
+
+    /* 获取当前分类及其子分类 */
+    $sql = 'SELECT cat_id,cat_name ,parent_id,is_show ' .
+        'FROM ' . $GLOBALS['ecs']->table('category') .
+        "WHERE cat_id = '$cat_id' AND is_show = 1";
+
+    $row = $GLOBALS['db']->getRow($sql);
+
+    $cat_arr['id']   = $row['cat_id'];
+    $cat_arr['name'] = $row['cat_name'];
+    $cat_arr['url']  = build_uri('category', array('cid' => $row['cat_id']), $row['cat_name']);
+    $cat_arr['cat_id'] = get_child_tree($row['cat_id']);
+
+
+    if(isset($cat_arr))
+    {
+        return $cat_arr;
+    }
+}
+
 function get_child_tree($tree_id = 0)
 {
     $three_arr = array();
@@ -418,7 +447,7 @@ function get_category_recommend_goods($type = '', $cats = '', $brand = 0, $min =
     $price_where = ($min > 0) ? " AND g.shop_price >= $min " : '';
     $price_where .= ($max > 0) ? " AND g.shop_price <= $max " : '';
 
-    $sql =  'SELECT g.goods_id, g.goods_name, g.goods_name_style, g.market_price, g.shop_price AS org_price, g.promote_price, ' .
+    $sql =  'SELECT g.goods_id, g.goods_name, g.goods_name_style, g.goods_subtitle, g.market_price, g.shop_price AS org_price, g.promote_price, ' .
                 "IFNULL(mp.user_price, g.shop_price * '$_SESSION[discount]') AS shop_price, ".
                 'promote_start_date, promote_end_date, g.goods_brief, g.goods_thumb, goods_img, b.brand_name ' .
             'FROM ' . $GLOBALS['ecs']->table('goods') . ' AS g ' .
@@ -472,6 +501,8 @@ function get_category_recommend_goods($type = '', $cats = '', $brand = 0, $min =
 
         $goods[$idx]['id']           = $row['goods_id'];
         $goods[$idx]['name']         = $row['goods_name'];
+        $goods[$idx]['goods_subtitle']         = $row['goods_subtitle'];
+
         $goods[$idx]['brief']        = $row['goods_brief'];
         $goods[$idx]['brand_name']   = $row['brand_name'];
         $goods[$idx]['short_name']   = $GLOBALS['_CFG']['goods_name_length'] > 0 ?

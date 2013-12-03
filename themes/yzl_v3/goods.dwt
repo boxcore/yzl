@@ -58,7 +58,7 @@ function reg(str){
                         <p>售价<span>￥{$goods.shop_price}</span></p>
                     {/if}
                     <strong></strong>
-                    <div class="btn"><a href="#"><img src="images/detail_buynow.jpg" width="101" height="27"></a><a href="#"><img src="images/detail_cart.jpg" width="117" height="27"></a><span>已售出 6100 件</span></div>
+                    <div class="btn"><a target="_blank" href="{$goods.taobao_url}" title="天猫购买"><img src="images/detail_buynow.jpg" width="101" height="27"></a><a href="#"><img src="images/detail_cart.jpg" width="117" height="27"></a><span>已售出 6100 件</span></div>
                 </div>
                 <ul class="teamwork">
                     <li class="current"><a href="#">合作商城</a></li>
