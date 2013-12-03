@@ -37,7 +37,7 @@ function reg(str){
         <h2><span>玫瑰莹润焕白</span></h2>
         <div class="product_detail">
             <div class="left">
-                <!-- #BeginLibraryItem "/library/goods/goods_gallery.lbi" --><!-- #EndLibraryItem -->
+                <!-- #BeginLibraryItem "/library/goods_gallery.lbi" --><!-- #EndLibraryItem -->
             </div>
             <div class="center">
                 <h1>{$goods.goods_style_name}</h1>

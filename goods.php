@@ -242,6 +242,7 @@ if (!$smarty->is_cached('goods.dwt', $cache_id))
         $children = get_children($goods['cat_id']);
         $smarty->assign('best_goods',      get_category_recommend_goods('best', $children,0,0,0,'',8));
         //print_r(get_category_recommend_goods('best', $children,0,0,0,'',8));
+        //print_r(get_goods_gallery($goods_id));
 
         //获取tag
         $tag_array = get_tags($goods_id);
