@@ -18,7 +18,7 @@
                 <a href="{$goods.url}"><img src="{$goods.goods_thumb}" alt="" width="238" height="238" /></a>
             </li>
             <li class="good_text">
-                <p class="good_brand">好看些列{$smarty.foreach.goods_list.iteration}</p>
+                <p class="good_brand">{$goods.goods_subtitle}</p>
                 <h3 class="c1"><a href="{$goods.url}" class="c1"><!-- {if $goods.goods_style_name} -->{$goods.goods_style_name}<!-- {else} -->{$goods.goods_name}<!-- {/if} --></a></h3>
                 <span class="good_price c1"><!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--></span>
                 <a class="buy-now" href="{$goods.url}"></a>

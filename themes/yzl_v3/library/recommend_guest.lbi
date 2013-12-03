@@ -4,7 +4,7 @@
 <script type="text/javascript" src="{$ecs_themes_path}/js/easing.js"></script>
 
 <div class="right">
-    <h4>-猜你可能需要5-</h4>
+    <h4>-猜你可能需要-</h4>
     {*<dl>*}
         {*<dt><a href="#"><img src="images/wantto.jpg" width="66" height="62"></a></dt>*}
         {*<dd>*}
@@ -24,10 +24,10 @@
             <!--{foreach from=$best_goods item=goods}-->
             <li>
                 <dl {if $smarty.foreach.best_goods.iteration %2 ==0}class="no_border"{/if}>
-                    <dt><a href="{$goods.url}"><img src="{$goods.thumb}" width="66" height="62"></a></dt>
+                    <dt><a href="{$goods.url}"><img src="{$goods.thumb}" width="122" height="122"></a></dt>
                     <dd>
-                        <p><a href="#">{$goods.brand_name}</a><span><br>
-        <a href="#">{$goods.short_name}</a></span><strong>{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</strong></p>
+                        <p><a href="{$goods.url}">{$goods.short_name}</a><span><br>
+        <a href="{$goods.url}">{$goods.goods_subtitle}</a></span><strong>{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</strong></p>
                     </dd>
                 </dl>
             </li>

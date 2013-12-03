@@ -30,6 +30,7 @@
             </li>
             <!-- {/foreach} -->
         </ul>
+        <div class="clearfix"></div>
         <!-- #BeginLibraryItem "/library/pages_article_cat.lbi" --><!-- #EndLibraryItem -->
     </div>
 </div>

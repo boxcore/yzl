@@ -20,7 +20,7 @@
         <div class="right">
             {if $article.article_wallpaper}
                 {foreach from=$article.article_wallpaper item=article_gallery name=foo }
-                    <a href="{$article_gallery.img_original}"><img src="{$article_gallery.img_original}" width="320" height="100%"></a>
+                    <a href="{$article_gallery.img_original}"><img src="{$article_gallery.img_original}" width="319" height="100%"></a>
                 {/foreach}
             {/if}
         </div>

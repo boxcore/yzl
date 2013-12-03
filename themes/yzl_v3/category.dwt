@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-    <!-- #BeginLibraryItem "/library/head.lbi" --><!-- #EndLibraryItem -->
+    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
     <!-- {if $cat_style} -->
     <link href="{$cat_style}" rel="stylesheet" type="text/css" />
     <!-- {/if} -->

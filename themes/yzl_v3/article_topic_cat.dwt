@@ -13,7 +13,7 @@
         <ul>
             <!-- {foreach from=$artciles_list item=article name=foo} -->
             <li {if ($smarty.foreach.foo.iteration % 3 == 0) && ($smarty.foreach.foo.iteration != 0)}class="no_margin"{/if}>
-                <a href="{$article.url}"><img src="{$article.original_img}" width="322" height="185"></a>
+                <a href="{$article.url}"><img src="{$article.original_img}" width="319" height="145"></a>
                 <h4 class="tittle"><a href="{$article.url}">{$article.short_title}</a></h4>
                 <p><a href="{$article.url}">{$article.title|escape:html}{$article.title|escape:html}{$article.title|escape:html}</a></p>
                 <span><a href="{$article.url}">查看详情&gt;&gt;</a></span>
@@ -22,7 +22,9 @@
         </ul>
 
     </div>
-    <div class="clear"><!-- #BeginLibraryItem "/library/pages_article_cat.lbi" --><!-- #EndLibraryItem --></div>
+    <div class="clear"></div>
+    <div class="clearfix"></div>
+    <!-- #BeginLibraryItem "/library/pages_article_cat.lbi" --><!-- #EndLibraryItem -->
 </div>
 
 
