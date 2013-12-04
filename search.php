@@ -467,7 +467,6 @@ else
 //            $arr[] = array();
 //        }
 //    }
-    print_r($arr);
     $smarty->assign('goods_list', $arr);
     $smarty->assign('category',   $category);
     $smarty->assign('keywords',   htmlspecialchars(stripslashes($_REQUEST['keywords'])));
