@@ -439,14 +439,15 @@ else
         }
 
         $arr[$row['goods_id']]['goods_id']      = $row['goods_id'];
-        if($display == 'grid')
-        {
-            $arr[$row['goods_id']]['goods_name']    = $GLOBALS['_CFG']['goods_name_length'] > 0 ? sub_str($row['goods_name'], $GLOBALS['_CFG']['goods_name_length']) : $row['goods_name'];
-        }
-        else
-        {
-            $arr[$row['goods_id']]['goods_name'] = $row['goods_name'];
-        }
+//        if($display == 'grid')
+//        {
+//            $arr[$row['goods_id']]['goods_name']    = $GLOBALS['_CFG']['goods_name_length'] > 0 ? sub_str($row['goods_name'], $GLOBALS['_CFG']['goods_name_length']) : $row['goods_name'];
+//        }
+//        else
+//        {
+//            $arr[$row['goods_id']]['goods_name'] = $row['goods_name'];
+//        }
+        $arr[$row['goods_id']]['goods_name'] = $row['goods_name'];
         $arr[$row['goods_id']]['goods_subtitle']      = $row['goods_subtitle'];
         $arr[$row['goods_id']]['taobao_url']      = $row['taobao_url'];
         $arr[$row['goods_id']]['type']          = $row['goods_type'];
@@ -466,6 +467,7 @@ else
 //            $arr[] = array();
 //        }
 //    }
+    print_r($arr);
     $smarty->assign('goods_list', $arr);
     $smarty->assign('category',   $category);
     $smarty->assign('keywords',   htmlspecialchars(stripslashes($_REQUEST['keywords'])));
