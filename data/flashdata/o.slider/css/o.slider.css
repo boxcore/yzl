@@ -2,7 +2,7 @@
 
 /* Main wrapper
 -------------------------------------------------------------------------*/
-.o-slider-external {display: block;position: relative;overflow: hidden;top:-32px;
+.o-slider-external {display: block;position: relative;overflow: hidden;top:-33px;
 	/* You can change the following attributes */
 	width: 100%;min-width: 900px;padding-top: 0px;padding-bottom: 0px; z-index:1;}
 
