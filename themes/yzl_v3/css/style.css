@@ -135,7 +135,7 @@ b.img-desc{ width:16px; height:16px; background: url("../images/ui-icons_984e9a_
 .content .left{width:104px; overflow:hidden; float:left;}
 .content .right{width:859px;float:right;}
 .content .left_nav li{width:104px; overflow:hidden; padding:2px 0 12px; border-bottom:1px solid #984e9a;}
-.content .left_nav span a{color:#984e9a; font-size:14px; height:22px;text-align:left; display:block; padding-left:25px; width:79px;}
+.content .left_nav span a{color:#984e9a; font-size:14px; height:22px;text-align:left; display:block; padding-left:10px; width:79px;}
 .content .left_nav .inner a{width:85px; height:21px; line-height:21px; text-align:left; color:#595757; display:block; font-size:11px; padding-left:10px;}
 .content .left_nav .inner a:hover{ background:#dcdddd;}
 .content .left_nav .inner .current{width:85px; height:21px; line-height:21px;background:#dcdddd;}
@@ -145,7 +145,7 @@ b.img-desc{ width:16px; height:16px; background: url("../images/ui-icons_984e9a_
 .content .right .pic_show li{float:left; margin:0px 18px 18px 0;}
 .content .right .pic_show .no_margin{margin-right:0px;}
 .content .right h2 span{color:#984e9a; font-size:14px; font-weight:normal; width:240px; float:left; padding-bottom:5px;}
-.content .right h2 strong{float:right;font-weight:normal; font-size:12px; height:30px; line-height:30px;width:79px; padding-left:25px;}
+.content .right h2 strong{float:right;font-weight:normal; font-size:12px; height:30px; line-height:30px; padding-left:25px;}
 .content .right h2 strong a{width:70px; height:30px; display:block; float:left; text-align:center; color:#727171;}
 .content .right h2 strong .current{width:70px; height:30px; /*background:url(../images/arrows.jpg) no-repeat right center;*/ color:#984e9a; padding-right:8px;}
 /*全线产品——详情*/
