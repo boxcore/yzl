@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+    {insert_scripts files='index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="content">
+    <h1 class="detection_tittle">皮肤检测中心</h1>
+    <!--#用户信息 start-->
+
+    <form action="skin_detection.php" method="post">
+        <div class="detection_wrap">
+            <h2></h2>
+
+            <div class="inner">
+                <!-- {if $smarty.session.suvery.act eq 'default'} -->
+                <table width="670" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                    <tr>
+                        <td width="75">姓名：</td>
+                        <td width="232"><input type="text" class="text" name="name"></td>
+                        <td width="48">性别：</td>
+                        <td width="315" class="sex">男<input type="radio" value="female" name="sex" value="1">女<input
+                                    type="radio" value="male" name="sex" value="2"></td>
+                    </tr>
+                    <tr>
+                        <td>电子邮件：</td>
+                        <td><input type="text" class="text" name="email"></td>
+                        <td>生日：</td>
+                        <td><input type="text" class="text" name="birthday"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">您正在使用（或曾经使用）易张脸产品吗？</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><input type="radio" value="yes" name="is_use" value="1"><span
+                                    class="yes">是，经常使用  </span><input type="radio" value="no" name="is_use"
+                                                                      value="2"><span class="no">否，从来没用过</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <input type="hidden" name="act" value="sd_sens">
+                <!--{/if}-->
+
+                <!--{if $smarty.session.suvery.act eq 'sd_sens'}-->
+                <div class="inner">
+                    <p class="step"><span>你认为你的皮肤属于敏感性皮肤吗?( 会在一些外界刺激下出现烧灼、瘙痒、刺痛等皮肤反应)</span></p>
+
+                    <div class="judge">
+                        <input type="radio" name="id_sens" value="Y"><span class="step2_yes">是</span>
+                        <input type="radio" value="N" name="id_sens"><span class="step2_no">否</span>
+                    </div>
+                </div>
+                <input type="hidden" name="act" value="id_sens">
+                <!--{/if}-->
+
+                <!--{if $smarty.session.suvery.act eq 'id_sens'}-->
+                    <!--{if $smarty.session.suvery.step eq 1}-->
+                        <!--{if $smarty.session.suvery.qust eq 1}-->
+                            <div class="inner">
+                                <p class="step"><span>1、目前是否有湿疹，皮炎等皮肤问题？</span></p>
+
+                                <div class="judge">
+                                    <input type="radio" name="step_1[1]" value="Y"><span class="step2_yes">是</span>
+                                    <input type="radio" name="step_1[1]" value="N"><span class="step2_no">否</span>
+                                </div>
+                            </div>
+                            <input type="hidden" name="qust" value="{$qust_next}">
+                        <!--{/if}-->
+                        <!--{if $smarty.session.suvery.qust eq 2}-->
+                            <div class="inner">
+                                <p class="step"><span>2、皮肤是否曾经患有湿疹，皮炎等症状？</span></p>
+
+                                <div class="judge">
+                                    <input type="radio" name="step_1[2]" value="Y"><span class="step2_yes">是</span>
+                                    <input type="radio" name="step_1[2]" value="N"><span class="step2_no">否</span>
+                                </div>
+                            </div>
+                            <input type="hidden" name="qust" value="{$qust_next}">
+                        <!--{/if}-->
+                        <!--{if $smarty.session.suvery.qust eq 3}-->
+                            <div class="inner">
+                                <p class="step"><span>3、皮肤接触化妆品时，是否会有发痒，刺痛或灼伤感？</span></p>
+
+                                <div class="judge">
+                                    <input type="radio" name="step_1[3]" value="Y"><span class="step2_yes">是</span>
+                                    <input type="radio" name="step_1[3]" value="N"><span class="step2_no">否</span>
+                                </div>
+                            </div>
+                            <input type="hidden" name="qust" value="{$qust_next}">
+
+                        <!--{/if}-->
+                        <!--{if $smarty.session.suvery.qust eq 4}-->
+                            <div class="inner">
+                                <p class="step"><span>4、过去一、两年内曾因使用化妆品（或护肤品）导致皮肤出现过敏、炎症、出疹？</span></p>
+
+                                <div class="judge">
+                                    <input type="radio" name="step_1_4" value="Y"><span class="step2_yes">是</span>
+                                    <input type="radio" name="step_1_4" value="N"><span class="step2_no">否</span>
+                                </div>
+                            </div>
+                            <input type="hidden" name="qust" value="{$qust_next}">
+
+                        <!--{/if}-->
+                    <!--{/if}-->
+
+                    <!--{if $smarty.session.suvery.step eq 2}-->
+
+                    <!--{/if}-->
+                <!--{/if}-->
+            </div>
+        </div>
+        <div class="detection_btn">
+            <a href="skin_detection.php?act=redo"><button value="重新开始" class="btn"></button></a>
+            <input type="submit" value="开始测试" class="btn" name="">
+        </div>
+    </form>
+</div>
+
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

@@ -201,14 +201,17 @@ b.img-desc{ width:16px; height:16px; background: url("../images/ui-icons_984e9a_
 .content .detection_wrap .inner .no{width:100px; height:24px; background:url(../images/wrong.png) no-repeat left center; padding-left:30px; margin-left:10px;}
 .content .detection_btn .btn{width:136px; height:27px; background:url(../images/btn_bg.png) no-repeat; text-align:center; line-height:22px;font-size:18px; color:#fff; padding-bottom:5px; cursor:pointer;}
 .content .detection_btn{width:976px; height:27px; margin:33px 22px 0 0; text-align:right;}
-.content .detection_wrap .inner .step{width:670px; height:80px; line-height:80px; font-size:14px;  padding:70px 0 0 70px;}
+.content .detection_wrap .inner .step{width:670px;  font-size:14px;  padding:70px 0 0 70px;}
 .content .detection_wrap .inner .step span{width:670px; height:20px; line-height:20px; background:url(../images/heart.png) no-repeat left center;padding-left:15px;}
-.content .detection_wrap .judge{width:670px; height:30px; padding:0px 0px 0px 94px; color:#924a94;}
+.content .detection_wrap .judge{width:680px; height:30px; padding:15px 0px 0px 94px; color:#924a94;}
+.content .detection_wrap .judge .vote_opt{float: left; width: 240px;}
+.content .detection_wrap .judge .vote_opt2{float: left; width: 330px;}
+.content .detection_wrap .judge .vote_opt span{padding-left: 10px;}
 .content .detection_wrap .judge .step2_yes{margin:0px 210px 0 10px;}
 .content .detection_wrap .judge .step2_no{margin-left:10px;}
 .content .detect_step3{width:998px; overflow:hidden;}
 .content .detect_step3 .last_topic{width:996px; background:url(../images/detection3_bg.png) repeat-x; height:60px; border:1px solid #d0c0ec;}
-.content .detect_step3 .last_topic p{font-size:16px; color:#984e9a;  background:url(../images/heart.png) no-repeat left center; padding-left:25px; height:55px; line-height:55px; width:300px; float:left; margin-left:24px;}
+.content .detect_step3 .last_topic p{font-size:16px; color:#984e9a;  background:url(../images/heart.png) no-repeat left center; padding-left:25px; height:55px; line-height:55px; width:350px; float:left; margin-left:24px;}
 .content .detect_step3 .last_topic span{float:right; width:100px; height:55px; line-height:55px; font-size:14px; margin-right:30px;}
 .content .detect_step3 .last_topic span a{color:#984e9a; width:90px; height:55px; display:block; background:url(../images/last_topic.png) no-repeat right center;}
 .content .detect_step3 .feature{width:780px; overflow:hidden; margin-left:46px; padding-top:12px; margin-bottom:36px;}

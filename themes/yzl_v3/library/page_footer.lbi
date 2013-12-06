@@ -14,8 +14,9 @@
 </div>
 
 
+
+<!--{if $smarty.session.user_id eq 0}-->
 <div class="login_wrap" id="login_pop" style="display:none">
-	{insert_scripts files='jquery/jquery.validate.min.js'}
 	<div class="login_inner">
     	<h3>用户登陆</h3>
     <div class="loginface_box">
@@ -104,3 +105,4 @@
     var local_url = window.location.href;
     $("input[name='back_act']").val(local_url);
 </script>
+<!--{/if}-->

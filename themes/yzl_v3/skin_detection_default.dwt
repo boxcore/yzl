@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+    {insert_scripts files='index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="content">
+    <h1 class="detection_tittle">皮肤检测中心</h1>
+    <!--#用户信息 start-->
+
+    <form action="skin_detection.php?act=qust_0" method="post" id="suvery_default">
+        <div class="detection_wrap">
+            <h2></h2>
+
+            <div class="inner">
+                <table width="670" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                    <tr>
+                        <td width="75">姓名：</td>
+                        <td width="232"><input type="text" class="text" name="real_name" value="{$user_info.real_name}"></td>
+                        <td width="48">性别：</td>
+                        <td width="315" class="sex">男<input type="radio" name="sex" value="1" {if $user_info.sex eq 1}checked="checked"{/if}>女<input type="radio" name="sex" value="2" {if $user_info.sex eq 2}checked="checked"{/if}></td>
+                    </tr>
+                    <tr>
+                        <td>电子邮件：</td>
+                        <td><input type="text" class="text" name="email" value="{$user_info.email}"></td>
+                        <td>生日：</td>
+                        <td><input type="text" class="text" name="birthday" value="{$user_info.birthday}"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">您正在使用（或曾经使用）易张脸产品吗？</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <input type="radio" name="used_yzl" value="1"><span class="yes">是，经常使用  </span>
+                            <input type="radio" name="used_yzl" value="0"><span class="no">否，从来没用过</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="detection_btn">
+            <input type="submit" value="开始测试" class="btn" name="">
+        </div>
+    </form>
+</div>
+<script>
+    $().ready(function() {
+        $("#suvery_default").validate({
+            rules: {
+                real_name: {
+                    required:true,
+                    rangelength:[2,4]
+                },
+                sex: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                used_yzl: {
+                    required:true
+                }
+
+            },
+            messages: {
+                real_name: {
+                    required:"请输入姓名",
+                    rangelength:'名字不正确'
+                },
+                sex: {
+                    required: "请选择性别"
+                },
+                email: {
+                    required: "请输入邮箱",
+                    email: '请输入正确邮箱'
+                },
+                used_yzl: {
+                    required:'您还没有选择是否用过我们的产品'
+                }
+            },
+            /* 失去焦点时不验证 */
+            onfocusout: false,
+            onkeyup: false,
+            showErrors: function(errorMap, errorList) {
+                var msg = "";
+                $.each( errorList, function(i,v){
+                    msg += (v.message+"\r\n");
+                });
+                if(msg!="") alert(msg);
+            },
+            onsubmit: true
+
+        });
+    });
+</script>
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

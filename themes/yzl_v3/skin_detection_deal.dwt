@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+    {insert_scripts files='index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="content">
+    <h1 class="detection_tittle">皮肤检测中心</h1>
+    <!--{if $skin_type eq 'F'}-->
+    <div class="detect_step3">
+        <div class="last_topic">
+            <p>经诊断您的皮肤属于"{$skin_info.skin_name}"。</p>
+            <span><a href="#">返回上一题</a></span>
+        </div>
+        <div class="feature">
+            <p>{$skin_info.recommend_goods}</p>
+        </div>
+    </div>
+    <!--{else}-->
+    <div class="detect_step3">
+        <div class="last_topic">
+            <p>经诊断您的皮肤属于"{$skin_info.skin_name}"。</p>
+            <span><a href="#">返回上一题</a></span>
+        </div>
+        <div class="feature">
+            <h3>"{$skin_info.skin_name}"特征：</h3>
+            <p>{$skin_info.skin_feature}</p>
+        </div>
+        <div class="key_point">保养重点：{$skin_info.skin_maintain}</div>
+        <div class="brand_recommend">
+            <h2>推荐产品：</h2>
+            <ul>
+                <li>
+                    <a href="#"><img src="images/p_Pic1.jpg" width="189" height="203"></a><p><strong><a href="#">荷花清颜水肌睡眠面膜</a></strong><span><a href="#">净颜活肤 极致嫩白 活水保湿</a></span></p>
+                </li>
+                <li>
+                    <a href="#"><img src="images/p_Pic1.jpg" width="189" height="203"></a><p><strong><a href="#">荷花清颜水肌睡眠面膜</a></strong><span><a href="#">净颜活肤 极致嫩白 活水保湿</a></span></p>
+                </li>
+                <li>
+                    <a href="#"><img src="images/p_Pic1.jpg" width="189" height="203"></a><p><strong><a href="#">荷花清颜水肌睡眠面膜</a></strong><span><a href="#">净颜活肤 极致嫩白 活水保湿</a></span></p>
+                </li>
+                <li>
+                    <a href="#"><img src="images/p_Pic1.jpg" width="189" height="203"></a><p><strong><a href="#">荷花清颜水肌睡眠面膜</a></strong><span><a href="#">净颜活肤 极致嫩白 活水保湿</a></span></p>
+                </li>
+                <li class="no_border">
+                    <a href="#"><img src="images/p_Pic1.jpg" width="189" height="203"></a><p><strong><a href="#">荷花清颜水肌睡眠面膜</a></strong><span><a href="#">净颜活肤 极致嫩白 活水保湿</a></span></p>
+                </li>
+                <li>
+                    <a href="#"><img src="images/p_Pic1.jpg" width="189" height="203"></a><p><strong><a href="#">荷花清颜水肌睡眠面膜</a></strong><span><a href="#">净颜活肤 极致嫩白 活水保湿</a></span></p>
+                </li>
+                <li>
+                    <a href="#"><img src="images/p_Pic1.jpg" width="189" height="203"></a><p><strong><a href="#">荷花清颜水肌睡眠面膜</a></strong><span><a href="#">净颜活肤 极致嫩白 活水保湿</a></span></p>
+                </li>
+                <li>
+                    <a href="#"><img src="images/p_Pic1.jpg" width="189" height="203"></a><p><strong><a href="#">荷花清颜水肌睡眠面膜</a></strong><span><a href="#">净颜活肤 极致嫩白 活水保湿</a></span></p>
+                </li>
+                <li>
+                    <a href="#"><img src="images/p_Pic1.jpg" width="189" height="203"></a><p><strong><a href="#">荷花清颜水肌睡眠面膜</a></strong><span><a href="#">净颜活肤 极致嫩白 活水保湿</a></span></p>
+                </li>
+                <li class="no_border">
+                    <a href="#"><img src="images/p_Pic1.jpg" width="189" height="203"></a><p><strong><a href="#">荷花清颜水肌睡眠面膜</a></strong><span><a href="#">净颜活肤 极致嫩白 活水保湿</a></span></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--{/if}-->
+    <div class="detection_btn">
+        <a href="skin_detection.php?act=redo"><input name="" type="button" class="btn" value="重新测试"></a>
+    </div>
+</div>
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

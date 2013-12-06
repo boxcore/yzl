@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="{$keywords}" />
+    <meta name="description" content="{$description}" />
+    <title>{$page_title}</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link href="{$ecs_themes_path}/css/style.css" rel="stylesheet" type="text/css" />
+    {insert_scripts files='common.js'}
+    {insert_scripts files='jquery.js'}
+    <script type="text/javascript" src="{$ecs_themes_path}/js/base.js"></script>
+    <script type="text/javascript" src="{$ecs_themes_path}/js/thickbox.js"></script>
+    {insert_scripts files='utils.js'}
+    {*insert_scripts files='transport.js'*}
+    {*insert_scripts files='global.js'*}
+    {*insert_scripts files='compare.js'*}
+    <link href="{$ecs_themes_path}/js/thickbox.css" rel="stylesheet" type="text/css" />
+    {insert_scripts files='index.js'}
+    <link rel="stylesheet" type="text/css" href="/themes/bjcang/css/global.css">
+    <script type="text/javascript" src="/js/dialog/dialog.js"></script>
+
+</head>
+
+<style>
+.articlelist{ width:700px;}
+.question{ width:850px; border-bottom:1px dashed #cecece; padding:10px;}
+.question ul{}
+.question li{ height:25px; padding-left:20px;}
+.question_title{ font-size:12px; font-weight:bold; color:#666; margin-bottom:10px;}
+.question_top{background:url(/themes/bjcang/images/question-top.jpg) no-repeat left top; height:26px; text-align:left; padding-top:20px; font-size:14px; color:#FFF; font-weight:bold; }
+.answer_left{ margin-left:5px;}
+.naire_enter{ width:958px; overflow:hidden; margin-left:200px;padding-top:20px;}
+.naire_enter ul{}
+.articlemain1{padding-left:30px;}
+.naire_enter li{ float:left; background:url(/themes/bjcang/images/articlebutton.jpg) no-repeat left top; width:106px; height:34px; text-align:center; margin-right:50px; padding-top:18px;}
+.rightBox{ width:958px; margin:0 auto; }
+.articlelist_top{ background:url(/themes/bjcang/images/articlelist_top.jpg) no-repeat left top; width:958px; height:25px; margin-top:8px;}
+.articlelist{ border-left:1px solid #E1E1E1; border-right:1px solid #E1E1E1; border-bottom:1px solid #E1E1E1; width:936px; padding:0 10px 10px;}
+.articlemain_title{ border-bottom:1px dashed #E1E1E1; padding-bottom:10px; text-align:center;}
+
+#floatBoxBg{display:none;width:100%;height:100%;background:#000;position:absolute;top:0;left:0;}
+.floatBox{border:#666 5px solid;width:300px;position:absolute;top:50px;left:40%; z-index: 20;}
+.floatBox .title{height:40px;padding:7px 10px 0;background:#d01e3b;color:#fff;}
+.floatBox .title h4{float:left;padding:0;margin:0;font-size:14px;line-height:16px;}
+.floatBox .title span{float:right;cursor:pointer;}
+.floatBox .content{padding:0;background:#fff;width:100%;margin-top: 0px;height: 95%}
+</style>
+</head>
+<body>
+<!--头部文件-->
+{include file="/library/page_header.lbi"}
+<script type="text/javascript" src="/js/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="/js/dialog/dialog.js"></script>
+<script type="text/javascript" src="/js/dialog/smooth.pack.js"></script>
+<!--头部文件结束-->
+<div class="main">
+<div class="rightBox">
+<div class="articlelist_top"></div>
+<div class="articlelist">
+<div class="articlemain1">
+<div class="articlemain_title question_top" style="float:left;width:680px;">首页改版调查问卷</div>
+<div style="float:right;height:26px;padding-top:20px;">
+{if $submited eq 1}<a href="javascript:dialog('调查详情','iframe:vote_info.php?vote={$vote_id}&num={$sjs}','700px','550px','iframe');" style="float:right;background:red;color:#fff;font-size:13px;padding:2px;display:block;font-weight:normal;">查看结果</a>{else}<a href="javascript:alert('提交后才能查看结果！');" style="float:right;background:red;color:#fff;font-size:13px;padding:2px;display:block;font-weight:normal;">查看结果</a>{/if}
+</div>
+<div style="clear:both;"></div>
+<div style="margin:10px;font-size:14px;line-height:2;color:#666;">　　为改易张脸网站的服务质量和最佳的视觉引导，特进行有奖问卷调查，在您回答完问题后，请填写您的收货人姓名和地址。以便我们为您送出精美礼品。</div>
+<div class="questionnaire">
+<!--{foreach from=$vote_arr.opt item=v name=strindex}-->
+<div class="question">
+<p class="question_title">Q{$smarty.foreach.strindex.iteration}.{$v.title} {if $v.type eq 1}（单项选择）{elseif $v.type eq 2}（多项选择）{/if}</p>
+{if $v.type neq 3}
+<ul>
+{foreach from=$v.items item=vv}
+<li>{$vv}</li>
+{/foreach}
+</ul>
+{else}
+<textarea name="{$v.name}" id="{$v.name}" rows="10" cols="50"></textarea>
+{/if}
+</div>
+<!-- {/foreach} -->
+<div class="question">
+<p class="question_title">收货地址：<input type="text" value="" name="address" id="address" />&nbsp;&nbsp;&nbsp;&nbsp;联系方式：<input type="text" value="" name="mobil" id="mobil" /></p>
+</div>
+</div>
+
+<div class="naire_enter" style="margin-left: 390px;width:auto;">
+<ul>
+<li><a href="javascript:void(submit_vote())" class="red"><b>提交问卷</b></a></li>
+</ul>
+</div>
+<div style="margin:10px;font-size:14px;line-height:2;color:#666;width:850px;">　　感谢您对易张脸的支持，我们将更加努力改进我们的服务质量，为感谢您的支持，我们将从数据库中找出中肯的问答者，并为您寄出精美礼物。</div>
+</div>
+</div>
+</div>
+
+	<script type="text/javascript">
+	/**
+	 * 处理用户的投票
+	 */
+	 var ids=new Array();
+	 {$vote_arr.js_str2}
+	 function getRadioValue(id){var glag=false;$('input[name="q-'+id+'"]').each(function(){if(this.checked){glag=this.checked;return false;}});return glag;}
+	 function getCheckBoxValue(id){var glag=false;$('input[name="q-'+id+'"]').each(function(){if(this.checked){glag=this.checked;return false;}});return glag;}
+	 function getTextValue(id){if($('#q-'+id).val()==""||$('#p-'+id).val()=="undefined"){return false;}return true;}
+	 function submit_vote()
+	 {
+		for(var i=0;i<ids.length;i++){if(ids[i][1]==1){if(!getRadioValue(ids[i][0])){alert("第"+(i+1)+"题还没有作答哦！");return;}}else if(ids[i][1]==2){if(!getCheckBoxValue(ids[i][0])){alert("第"+(i+1)+"题还没有作答哦！");return;}}else if(ids[i][1]==3){if(!getTextValue(ids[i][0])){alert("第"+(i+1)+"题还没有作答哦！");return;}}}
+		var address = $('#address').val();
+		var mobil = $('#mobil').val();
+		if(address == '' || mobil == ''){
+			if(!confirm('您填写的收货地址及联系方式不完整，我们无法给您配送礼物，确认提交吗？')){
+				return false;
+			}
+		}
+		var vote_id = {$vote_id};
+		var option = '';
+		{$vote_arr.js_checked}
+		{$vote_arr.js_str};
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+		{// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp=new XMLHttpRequest();
+		}
+		else
+		{// code for IE6, IE5
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		if(option != '&i_4=&i_5=&i_6='){
+			
+			xmlhttp.onreadystatechange=function()
+			{
+				if (xmlhttp.readyState==4 && xmlhttp.status==200)
+				{
+					if(xmlhttp.responseText == '非常感谢您的投票！'){
+						alert(xmlhttp.responseText);
+						window.location.reload();
+					}else{
+						alert(xmlhttp.responseText);
+					}
+				}
+			}
+			xmlhttp.open("POST","vote.php",true);
+			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			xmlhttp.send('vote=' + vote_id + '&act=vote' + option + '&address=' + address + '&mobil=' + mobil);
+		 }
+	 }
+	</script>
+
+</div>
+
+<!--底部文件-->
+{include file="/library/page_footer.lbi"}
+<!--底部文件结束-->
+</body>
+</html>

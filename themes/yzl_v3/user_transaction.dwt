@@ -61,6 +61,10 @@
                   <td width="28%" align="right" bgcolor="#FFFFFF">{$lang.email}： </td>
                   <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" value="{$profile.email}" size="25" class="inputBg" /><span style="color:#FF0000"> *</span></td>
                 </tr>
+          <tr>
+              <td width="28%" align="right" bgcolor="#FFFFFF">真实姓名： </td>
+              <td width="72%" align="left" bgcolor="#FFFFFF"><input name="real_name" type="text" value="{$profile.real_name}" size="25" class="inputBg" /><span style="color:#FF0000"> *</span></td>
+          </tr>
 		{foreach from=$extend_info_list item=field}
 		<!-- {if $field.id eq 6} -->
 		<tr>

@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <!-- #BeginLibraryItem "/library/common/head.lbi" --><!-- #EndLibraryItem -->
+    {insert_scripts files='index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="content">
+    <h1 class="detection_tittle">皮肤检测中心</h1>
+    <!--#用户信息 start-->
+
+    <form action="skin_detection.php?act=qust_1" method="post" id="{$qust.vote_mark}">
+        <div class="detection_wrap">
+            <h2></h2>
+            <div class="inner">
+                <div class="inner">
+                    {$qust.html}
+                </div>
+            </div>
+        </div>
+        <div class="detection_btn">
+            <input name="qust_mark" type="hidden" value="{$qust.vote_mark}"/>
+            {if $action}<input name="act" type="hidden" value="{$action}"/>{/if}
+            <input type="submit" value="下一题" class="btn" name="">
+        </div>
+    </form>
+</div>
+<script>
+    $().ready(function() {
+        $("#{$qust.vote_mark}").validate({
+            rules: {
+                {$qust.vote_mark}: {
+                    required:true
+                }
+
+            },
+            messages: {
+                {$qust.vote_mark}: {
+                    required:'您还没有选择答案！'
+                }
+            },
+            /* 失去焦点时不验证 */
+            onfocusout: false,
+            onkeyup: false,
+            showErrors: function(errorMap, errorList) {
+                var msg = "";
+                $.each( errorList, function(i,v){
+                    msg += (v.message+"\r\n");
+                });
+                if(msg!="") alert(msg);
+            },
+            onsubmit: true
+
+        });
+    });
+</script>
+
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

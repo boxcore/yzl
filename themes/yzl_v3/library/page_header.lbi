@@ -1,3 +1,4 @@
+{insert_scripts files='jquery/jquery.validate.min.js'}
 <div id="header">
     <div class="logo"><a href="/" class="indiv"></a></div>
     <div class="header_r">
