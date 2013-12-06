@@ -20,6 +20,21 @@
       <input type='text' name='vote_name' value='{$vote_arr.vote_name}' size='40' />
     </td>
   </tr>
+
+    <tr>
+        <td class="label">题目标识</td>
+        <td>
+            <input type='text' name='vote_mark' value='{$vote_arr.vote_mark}' size='40' />
+        </td>
+    </tr>
+
+    <tr>
+        <td class="label">问题序列</td>
+        <td>
+            <input type='text' name='vote_sort' value='{$vote_arr.vote_sort}' size='10' />
+        </td>
+    </tr>
+
   <tr>
     <td class="label">{$lang.begin_date}</td>
     <td>
@@ -33,15 +48,31 @@
     </td>
   </tr>
   <tr>
-    <td class="label">{$lang.can_multi}</td>
+    <td class="label" title="{$lang.can_multi}">题目类型</td>
     <td>
-      <input type="radio" name="can_multi" value="0"{if $vote_arr.can_multi eq 0} checked="true" {/if}/>{$lang.is_multi}
+      <input title="{$lang.is_multi}" type="radio" name="can_multi" value="0"{if $vote_arr.can_multi eq 0} checked="true" {/if} />多选题
       &nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="radio" name="can_multi" value="1"{if $vote_arr.can_multi eq 1} checked="true" {/if}/>{$lang.no_multi}
+      <input title="{$lang.no_multi}" type="radio" name="can_multi" value="1"{if $vote_arr.can_multi eq 1} checked="true" {/if}/>单选题
       &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="can_multi" value="3"{if $vote_arr.can_multi eq 3} checked="true" {/if}/>判断题
+        &nbsp;&nbsp;&nbsp;&nbsp;
       <input type="radio" name="can_multi" value="2"{if $vote_arr.can_multi eq 2} checked="true" {/if}/>文本
     </td>
   </tr>
+
+    <!--tr>
+        <td class="label">问题类型(扩展选项)</td>
+        <td>
+            <input type="radio" name="can_type" value="0"{if $vote_arr.can_type eq 0} checked="true" {/if}/>判断题
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="can_type" value="1"{if $vote_arr.can_type eq 1} checked="true" {/if}/>单选题
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="can_type" value="2"{if $vote_arr.can_type eq 2} checked="true" {/if}/>多选题
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="can_type" value="3"{if $vote_arr.can_type eq 3} checked="true" {/if}/>文本
+        </td>
+    </tr-->
+
   <tr>
     <td class="label">&nbsp;</td>
     <td>

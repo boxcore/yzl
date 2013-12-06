@@ -592,6 +592,13 @@ elseif ($action == 'act_edit_profile')
         $db->query($sql);
     }
 
+    /* 写入用户真实姓名 */
+    if (!empty($_REQUEST[real_name]))
+    {
+        $sql = 'UPDATE ' . $ecs->table('users') . " SET `real_name`='$_REQUEST[real_name]'  WHERE `user_id`='" . $_SESSION['user_id'] . "'";
+        $db->query($sql);
+    }
+
     if (!empty($office_phone) && !preg_match( '/^[\d|\_|\-|\s]+$/', $office_phone ) )
     {
         show_message($_LANG['passport_js']['office_phone_invalid']);

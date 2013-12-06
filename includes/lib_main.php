@@ -18,6 +18,8 @@ if (!defined('IN_ECS'))
     die('Hacking attempt');
 }
 
+require_once('lib_funcs.php');
+
 /**
  * 更新用户SESSION,COOKIE及登录时间、登录次数。
  *
@@ -33,7 +35,7 @@ function update_user_info()
 
     /* 查询会员信息 */
     $time = date('Y-m-d');
-    $sql = 'SELECT u.user_money,u.email, u.pay_points, u.user_rank, u.rank_points, '.
+    $sql = 'SELECT u.real_name, u.user_money,u.email, u.pay_points, u.user_rank, u.rank_points, '.
             ' IFNULL(b.type_money, 0) AS user_bonus, u.last_login, u.last_ip'.
             ' FROM ' .$GLOBALS['ecs']->table('users'). ' AS u ' .
             ' LEFT JOIN ' .$GLOBALS['ecs']->table('user_bonus'). ' AS ub'.
@@ -45,6 +47,7 @@ function update_user_info()
     {
         /* 更新SESSION */
         $_SESSION['last_time']   = $row['last_login'];
+        $_SESSION['real_name']   = $row['real_name'];
         $_SESSION['last_ip']     = $row['last_ip'];
         $_SESSION['login_fail']  = 0;
         $_SESSION['email']       = $row['email'];
@@ -118,13 +121,16 @@ function get_user_info($id=0)
         $id = $_SESSION['user_id'];
     }
     $time = date('Y-m-d');
-    $sql  = 'SELECT u.user_id, u.email, u.user_name, u.user_money, u.pay_points'.
+    $sql  = 'SELECT u.user_id, u.email, u.user_name, u.real_name, u.user_money, u.pay_points, u.sex, u.birthday '.
             ' FROM ' .$GLOBALS['ecs']->table('users'). ' AS u ' .
             " WHERE u.user_id = '$id'";
     $user = $GLOBALS['db']->getRow($sql);
     $bonus = get_user_bonus($id);
 
     $user['username']    = $user['user_name'];
+    $user['real_name']    = $user['real_name'];
+    $user['sex']    = $user['sex'];
+    $user['birthday']    = $user['birthday'];
     $user['user_points'] = $user['pay_points'] . $GLOBALS['_CFG']['integral_name'];
     $user['user_money']  = price_format($user['user_money'], false);
     $user['user_bonus']  = price_format($bonus['bonus_value'], false);

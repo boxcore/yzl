@@ -108,8 +108,8 @@ elseif ($_REQUEST['act'] == 'insert')
     if ($db->getOne($sql) == 0)
     {
         /* 插入数据 */
-        $sql = "INSERT INTO ".$ecs->table('vote')." (vote_sheet_id, vote_name, start_time, end_time, can_multi, vote_count)
-        VALUES ('$_POST[vote_sheet_id]', '$_POST[vote_name]', '$start_time', '$end_time', '$_POST[can_multi]', '0')";
+        $sql = "INSERT INTO ".$ecs->table('vote')." (vote_sheet_id, vote_name, vote_mark, start_time, end_time, can_multi, vote_sort, vote_count)
+        VALUES ('$_POST[vote_sheet_id]', '$_POST[vote_name]', '$_POST[vote_mark]', '$start_time', '$end_time', '$_POST[can_multi]', '$_POST[vote_sort]', '0')";
         $db->query($sql);
 
         $new_id = $db->Insert_ID();
@@ -171,9 +171,11 @@ elseif ($_REQUEST['act'] == 'update')
     $sql = "UPDATE " .$ecs->table('vote'). " SET ".
     		"vote_sheet_id     = '$_POST[vote_sheet_id]', ".
             "vote_name     = '$_POST[vote_name]', ".
+            "vote_mark     = '$_POST[vote_mark]', ".
             "start_time    = '$start_time', ".
             "end_time      = '$end_time', ".
-            "can_multi     = '$_POST[can_multi]' ".
+            "can_multi     = '$_POST[can_multi]', ".
+            "vote_sort     = '$_POST[vote_sort]' ".
             "WHERE vote_id = '$_REQUEST[id]'";
     $db->query($sql);
 
@@ -286,6 +288,46 @@ elseif ($_REQUEST['act'] == 'edit_vote_name')
 }
 
 /*------------------------------------------------------ */
+//-- 编辑调查主题标记
+/*------------------------------------------------------ */
+elseif ($_REQUEST['act'] == 'edit_vote_mark')
+{
+    check_authz_json('vote_priv');
+
+    $id        = intval($_POST['id']);
+    $vote_mark = json_str_iconv(trim($_POST['val']));
+
+    /* 检查标识是否重复 */
+    if ($exc->num("vote_mark", $vote_mark, $id) != 0)
+    {
+        make_json_error(sprintf('标识重复', $vote_mark));
+    }
+
+    if ($exc->edit("vote_mark = '$vote_mark'", $id))
+    {
+        admin_log('调查调查主题标记', 'edit', 'vote');
+        make_json_result(stripslashes($vote_mark));
+    }
+}
+
+/*------------------------------------------------------ */
+//-- 编辑调查主题排序
+/*------------------------------------------------------ */
+elseif ($_REQUEST['act'] == 'edit_vote_sort')
+{
+    check_authz_json('vote_priv');
+
+    $id        = intval($_POST['id']);
+    $vote_sort = json_str_iconv(trim($_POST['val']));
+
+    if ($exc->edit("vote_sort = '$vote_sort'", $id))
+    {
+        admin_log('调查主题排序', 'edit', 'vote');
+        make_json_result(stripslashes($vote_sort));
+    }
+}
+
+/*------------------------------------------------------ */
 //-- 编辑调查选项
 /*------------------------------------------------------ */
 elseif ($_REQUEST['act'] == 'edit_option_name')
@@ -314,6 +356,24 @@ elseif ($_REQUEST['act'] == 'edit_option_name')
     }
 }
 
+
+/*------------------------------------------------------ */
+//-- 编辑调查选项标记
+/*------------------------------------------------------ */
+elseif ($_REQUEST['act'] == 'edit_option_mark')
+{
+    check_authz_json('vote_priv');
+
+    $id        = intval($_POST['id']);
+    $option_mark = json_str_iconv(trim($_POST['val']));
+
+    if ($exc_opn->edit("option_mark = '$option_mark'", $id))
+    {
+        admin_log('调查选项标记', 'edit', 'vote');
+        make_json_result(stripslashes($option_mark));
+    }
+
+}
 
 /*------------------------------------------------------ */
 //-- 编辑调查选项排序值
@@ -380,7 +440,7 @@ elseif ($_REQUEST['act'] == 'remove_option')
 }
 
 /* 获取在线调查数据列表 */
-function get_votelist($pid)
+function get_votelist($pid = 0)
 {
 	$where = '';
 	if ($pid != 0)
@@ -396,7 +456,7 @@ function get_votelist($pid)
     $filter = page_and_size($filter);
 
     /* 查询数据 */
-    $sql  = 'SELECT * FROM ' .$GLOBALS['ecs']->table('vote').$where. ' ORDER BY vote_id DESC';
+    $sql  = 'SELECT * FROM ' .$GLOBALS['ecs']->table('vote').$where. ' ORDER BY vote_id ASC ';
     $res  = $GLOBALS['db']->selectLimit($sql, $filter['page_size'], $filter['start']);
 
     $list = array();
@@ -414,7 +474,7 @@ function get_votelist($pid)
 function get_optionlist($id)
 {
     $list = array();
-    $sql  = 'SELECT option_id, vote_id, option_name, option_count, option_order'.
+    $sql  = 'SELECT option_id, vote_id, option_name, option_count, option_order, option_mark '.
             ' FROM ' .$GLOBALS['ecs']->table('vote_option').
             " WHERE vote_id = '$id' ORDER BY option_order ASC, option_id DESC";
     $res  = $GLOBALS['db']->query($sql);

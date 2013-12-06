@@ -23,7 +23,7 @@
         <div class="detection_btn">
             <input name="qust_mark" type="hidden" value="{$qust.vote_mark}"/>
             {if $action}<input name="act" type="hidden" value="{$action}"/>{/if}
-            <input type="submit" value="下一题" class="btn" name="">
+            <input type="submit" value="{if $action}提交{else}下一题{/if}" class="btn" name="">
         </div>
     </form>
 </div>
