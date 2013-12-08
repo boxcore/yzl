@@ -165,4 +165,8 @@ $modules['16_email_manage']['view_sendlist']        = 'view_sendlist.php?act=lis
 /*  专题管理 */
 $modules['17_topic_manage']['09_topic']                = 'topic.php?act=list';
 
+
+/* 地图管理 */
+$modules['18_maps_manage']['maps_list']                     = 'maps.php?act=list';
+
 ?>

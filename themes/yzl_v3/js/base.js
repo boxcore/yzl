@@ -29,6 +29,10 @@ jQuery(document).ready(function () {
         }
     );
 
+    $('#city_sec').change(function(){
+        $('#map_form').submit();
+    });
+
 });
 
 // jQuery(document).ready(function() {

@@ -69,6 +69,16 @@ $cat_info = $db->getRow("SELECT * FROM " . $ecs->table('article_cat') . " WHERE 
 /* 获得当前页码 */
 $page   = !empty($_REQUEST['page'])  && intval($_REQUEST['page'])  > 0 ? intval($_REQUEST['page'])  : 1;
 
+
+if($cat_id == 22){
+    $city = isset($_POST['city']) ? $_POST['city'] : 32;
+    $sql = 'select map_id, map_name, map_point, address, tel from '.$GLOBALS['ecs']->table('maps').' where city="'.$city.'"';
+    $map_list = $GLOBALS['db']->getAll($sql);
+    $smarty->assign('map_list', $map_list);
+    $smarty->assign('city_name', get_region_name($city));
+    print_r($map_list);echo '<hr>';
+}
+
 /*------------------------------------------------------ */
 //-- PROCESSOR
 /*------------------------------------------------------ */

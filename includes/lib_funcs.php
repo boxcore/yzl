@@ -57,3 +57,25 @@ function get_vote_mark_group($mark_group=''){
 //    $cur = array_pop($arr);
 //    print_r($arr);
 }
+
+/*
+ * 获取地区名
+ */
+function get_region_name($id){
+    if( (!$id) || (!$id) ) return '';
+    $sql  = 'SELECT region_name FROM ' .$GLOBALS['ecs']->table('region'). ' WHERE region_id = '.$id.' ';
+    $region_name = $GLOBALS['db']->getOne($sql);
+        return $region_name;
+}
+
+/**
+ * 获取地区
+ * @param int $type 0：国家||1：省份|| 2：城市 || 3：区
+ * @return string
+ */
+function get_region($type=0){
+    if( (!$type) || (!$type) ) return '';
+    $sql  = 'SELECT regin_id, region_name FROM ' .$GLOBALS['ecs']->table('region'). ' WHERE region_type = '.$type.' ';
+    $region = $GLOBALS['db']->getAll($sql);
+    return $region;
+}

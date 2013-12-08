@@ -145,6 +145,7 @@ $_LANG['14_sms'] = '短信管理';
 $_LANG['15_rec'] = '推荐管理';
 $_LANG['16_email_manage'] = '邮件群发管理';
 $_LANG['17_topic_manage'] = '专题管理';
+$_LANG['18_maps_manage'] = '地图管理';
 
 /* 商品管理 */
 $_LANG['01_goods_list'] = '商品列表';
@@ -345,4 +346,7 @@ $_LANG['brand_name_exist'] = '已存在相同的品牌名称!';
 
 $_LANG['alipay_login'] = '<a href="https://www.alipay.com/user/login.htm?goto=https%3A%2F%2Fwww.alipay.com%2Fhimalayas%2Fpracticality_profile_edit.htm%3Fmarket_type%3Dfrom_agent_contract%26customer_external_id%3D%2BC4335319945672464113" target="_blank">立即免费申请支付接口权限</a>';
 $_LANG['alipay_look'] = '<a href=\"https://www.alipay.com/himalayas/practicality.htm\" target=\"_blank\">请申请成功后登录支付宝账户查看</a>';
+
+/* 地图管理 */
+$_LANG['maps_list'] = '地图列表';
 ?>
