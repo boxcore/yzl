@@ -37,7 +37,10 @@
         </div>
 
         <div class="yzl_add">
-            <p><span>重庆市江北区观音桥重百店</span><span> 地址：重庆市江北区观音桥重百一楼1001</span><span>客服电话：023-66668888</span></p>
+
+            {foreach from=$map_list item=map name=foo}
+                <p><span>{$map.map_name}</span><span> 地址：{$map.address}</span><span>客服电话：{$map.tel}</span></p>
+                {/foreach}
         </div>
         <style>
             {noitreal}

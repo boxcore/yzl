@@ -76,7 +76,6 @@ if($cat_id == 22){
     $map_list = $GLOBALS['db']->getAll($sql);
     $smarty->assign('map_list', $map_list);
     $smarty->assign('city_name', get_region_name($city));
-    print_r($map_list);echo '<hr>';
 }
 
 /*------------------------------------------------------ */
