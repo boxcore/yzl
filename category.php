@@ -54,8 +54,6 @@ else
 if($cat_id  == 'all'){
     $cat_id=0;
 }
-
-
 /* 初始化分页信息 */
 $page = isset($_REQUEST['page'])   && intval($_REQUEST['page'])  > 0 ? intval($_REQUEST['page'])  : 1;
 $size = isset($_CFG['page_size'])  && intval($_CFG['page_size']) > 0 ? intval($_CFG['page_size']) : 10;

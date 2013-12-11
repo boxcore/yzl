@@ -8,6 +8,6 @@
 
 </head>
 <body>
-	
+	{$lang.my_demo}
 </body>
 </html>

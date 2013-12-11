@@ -42,7 +42,7 @@ function get_cat_articles($cat_id, $page = 1, $size = 20 ,$requirement='')
     //增加搜索条件，如果有搜索内容就进行搜索    
     if ($requirement != '')
     {
-        $sql = 'SELECT article_id, title, author, add_time, file_url, open_type, article_type, article_img, original_img, article_icon_1, article_icon_2' .
+        $sql = 'SELECT article_id, title, content, author, add_time, file_url, open_type, article_type, article_img, original_img, article_icon_1, article_icon_2' .
                ' FROM ' .$GLOBALS['ecs']->table('article') .
                ' WHERE is_open = 1 AND title like \'%' . $requirement . '%\' ' .
                ' ORDER BY article_type DESC, article_id DESC';
@@ -50,7 +50,7 @@ function get_cat_articles($cat_id, $page = 1, $size = 20 ,$requirement='')
     else 
     {
         
-        $sql = 'SELECT article_id, title, author, add_time, file_url, open_type, article_type, article_img, original_img, article_icon_1, article_icon_2' .
+        $sql = 'SELECT article_id, title, content, author, add_time, file_url, open_type, article_type, article_img, original_img, article_icon_1, article_icon_2' .
                ' FROM ' .$GLOBALS['ecs']->table('article') .
                ' WHERE is_open = 1 AND ' . $cat_str .
                ' ORDER BY article_type DESC, article_id DESC';
@@ -67,6 +67,7 @@ function get_cat_articles($cat_id, $page = 1, $size = 20 ,$requirement='')
 
             $arr[$article_id]['id']          = $article_id;
             $arr[$article_id]['title']       = $row['title'];
+            $arr[$article_id]['content']       = get_brief($row['content'],50);
             $arr[$article_id]['short_title'] = $GLOBALS['_CFG']['article_title_length'] > 0 ? sub_str($row['title'], $GLOBALS['_CFG']['article_title_length']) : $row['title'];
             $arr[$article_id]['author']      = empty($row['author']) || $row['author'] == '_SHOPHELP' ? $GLOBALS['_CFG']['shop_name'] : $row['author'];
             $arr[$article_id]['url']         = $row['open_type'] != 1 ? build_uri('article', array('aid'=>$article_id), $row['title']) : trim($row['file_url']);

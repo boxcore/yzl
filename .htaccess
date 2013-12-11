@@ -10,7 +10,6 @@ RewriteEngine On
 RewriteRule ^ohmylike/*$ ohmylike/index.php  [QSA,L]
 RewriteRule ^admin/*$ admin/index.php  [QSA,L]
 RewriteRule ^index\.html$    index\.php [L]
-RewriteRule ^category$      index\.php [L]
 
 # access any object by its numeric identifier
 RewriteRule ^feed-c([0-9]+)\.xml$       feed\.php\?cat=$1 [L]
@@ -18,14 +17,10 @@ RewriteRule ^feed-b([0-9]+)\.xml$       feed\.php\?brand=$1 [L]
 RewriteRule ^feed-type([^-]+)\.xml$       feed\.php\?type=$1 [L]
 RewriteRule ^feed\.xml$                 feed\.php [L]
 
-#最优级链接
-RewriteRule ^faq\.html*$ article\.php\?id=81   [QSA,L]
-RewriteRule ^contact_us\.html*$ article\.php\?id=82   [QSA,L]
-RewriteRule ^web_map\.html*$ article\.php\?id=83   [QSA,L]
-RewriteRule ^Privacy_Policy\.html*$ article\.php\?id=84   [QSA,L]
-
 # 商品链接
 RewriteRule ^category-([0-9]+)[\/]*$ category\.php\?defurl=$1  [QSA,L]
+
+RewriteRule ^category-([0-9]+)(?:-b([0-9]+))?-min([0-9]+)-max([0-9]+)-attr([^-]*)-([0-9]+)-(.+)-([a-zA-Z]+)[\/]*$  category\.php\?defurl=$1&brand=$2&price_min=$3&price_max=$4&filter_attr=$5&page=$6&sort=$7&order=$8 [QSA,L]
 
 RewriteRule ^([0-9a-zA-Z_]+)(?:-b([0-9]+))?-min([0-9]+)-max([0-9]+)-attr([^-]*)-([0-9]+)-(.+)-([a-zA-Z]+)[\/]*$  category\.php\?defurl=$1&brand=$2&price_min=$3&price_max=$4&filter_attr=$5&page=$6&sort=$7&order=$8 [QSA,L]
 RewriteRule ^([0-9a-zA-Z_]+)(?:-b([0-9]+))?-min([0-9]+)-max([0-9]+)-attr([^-]*)[\/]*$                            category\.php\?defurl=$1&brand=$2&price_min=$3&price_max=$4&filter_attr=$5 [QSA,L]
@@ -36,8 +31,6 @@ RewriteRule ^([0-9a-zA-Z_]+)-b([0-9]+)[\/]*$  category\.php\?defurl=$1&brand=$2 
 RewriteRule ^([0-9a-zA-Z_]+)[\/]*$ category\.php\?defurl=$1  [QSA,L]
 
 RewriteRule ^goods-([0-9]+)(.*)\.html$  goods\.php\?id=$1 [QSA,L]
-
-RewriteRule ^page\/12[\/]*$ article_cat\.php\?defurl=17   [QSA,L]
 
 RewriteRule ^page\/([0-9a-zA-Z_]+)-([0-9]+)-(.+)-([a-zA-Z]+)[\/]*$  article_cat\.php\?defurl=$1&page=$2&sort=$3&order=$4  [QSA,L]
 RewriteRule ^page\/([0-9a-zA-Z_]+)-([0-9]+)-(.+)[\/]*$              article_cat\.php\?defurl=$1&page=$2&keywords=$3 [QSA,L]

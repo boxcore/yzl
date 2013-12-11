@@ -22,11 +22,11 @@
         <div class="nav_box_inner"></div>
     </div>
     <ul class="nav_inner">
-        <li>
+        <li {if $nav_act eq 'index'}class="current"{/if}>
             <div class="one_menu menu_hover"><a href="index.html">首页</a></div>
             <div class="two_menu"></div>
         </li>
-        <li>
+        <li {if $cat_article_pid eq 2}class="current"{/if}>
 
             <?php $GLOBALS['smarty']->assign('nav-cat-3',    article_categories_tree1(31)); ?>
             <!--{foreach from=$nav-cat-3 item=nav}-->
@@ -38,7 +38,7 @@
             </div>
             <!-- {/foreach} -->
         </li>
-        <li>
+        <li {if $cat_article_pid eq 4}class="current"{/if}>
             <?php $GLOBALS['smarty']->assign('nav-cat-3',    article_categories_tree1(41)); ?>
             <!--{foreach from=$nav-cat-3 item=nav}-->
             <div class="one_menu"><a href="{$nav.url}">{$nav.name|escape:html}</a></div>
@@ -49,7 +49,7 @@
             </div>
             <!-- {/foreach} -->
         </li>
-        <li>
+        <li {if $cat_article_pid eq 12}class="current"{/if}>
             <?php $GLOBALS['smarty']->assign('nav-cat-3',    article_categories_tree1(17)); ?>
             <!--{foreach from=$nav-cat-3 item=nav}-->
             <div class="one_menu"><a href="{$nav.url}">{$nav.name|escape:html}</a></div>
@@ -60,7 +60,7 @@
             </div>
             <!-- {/foreach} -->
         </li>
-        <li>
+        <li {if $nav_act eq 'qxcp'}class="current"{/if}>
             <div class="one_menu"><a href="/search.php?category=0&sort=goods_id&order=DESC">全线产品</a></div>
             <div class="two_menu all_products">
                 <div class="one">

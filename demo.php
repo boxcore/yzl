@@ -11,6 +11,7 @@ require(dirname(__FILE__) . '/includes/init.php');
 require_once(ROOT_PATH . 'languages/' .$_CFG['lang']. '/demo.php');
 
 // 对页面进行赋值
+assign_template();  //初始公共模板信息（必须，否则导航帮助等信息不能调用）
 $position = assign_ur_here(0, 'demo页面');
 $smarty->assign('page_title', $position['title']); // 页面标题
 $smarty->assign('keywords', '自定义关键字'); // 页面标题

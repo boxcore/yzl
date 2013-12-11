@@ -151,4 +151,10 @@ $_LANG['sms_charge']      = '短信充值';
 $_LANG['send_history']    = '发送记录';
 $_LANG['charge_history']  = '充值记录 ';
 
+//地图管理
+$_LANG['maps_manage']         = '地图管理';
+$_LANG['map_manage']         = '地图添加/编辑';
+$_LANG['map_remove']         = '地图删除';
+
+
 ?>

@@ -129,6 +129,7 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
     $smarty->assign('auction_list',    index_get_auction());        // 拍卖活动
     $smarty->assign('playerdb',        get_flash_xml());            // FLASHJS广告
     $smarty->assign('shop_notice',     $_CFG['shop_notice']);       // 商店公告
+    $smarty->assign('nav_act',     'index');       //分配导航当前位
 
     /* 首页主广告设置 */
     $smarty->assign('index_ad',     $_CFG['index_ad']);

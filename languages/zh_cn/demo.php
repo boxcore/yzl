@@ -4,6 +4,8 @@
  * demo语言项
 */
 
+$_LANG['my_demo'] = '我的测试';
+
 $_LANG['require_login'] = '非法入口。<br />必须登录才能完成操作。';
 
 $_LANG['no_records'] = '没有记录';

@@ -79,3 +79,30 @@ function get_region($type=0){
     $region = $GLOBALS['db']->getAll($sql);
     return $region;
 }
+
+/**
+ * 获取文章简介
+ * @param string $str
+ * @param int $lenth
+ * @param string $addstr
+ * @return string
+ */
+function get_brief($str='', $lenth=60, $addstr='...'){
+    $str = strip_tags($str);
+    $count_length = mb_strlen($str,'utf-8');
+    if($count_length > $lenth){
+        $str = mb_substr($str,0,$lenth,'utf-8') . $addstr;
+    }
+    return $str;
+}
+
+/**
+ * 获取上一级文章分类id
+ * @param $id
+ * @return int
+ */
+function get_article_pid($id){
+    if( (!$id) || (!$id) ) return 0;
+    $sql  = 'SELECT parent_id FROM ' .$GLOBALS['ecs']->table('article_cat'). ' WHERE cat_id = '.$id.' ';
+    return $GLOBALS['db']->getOne($sql);
+}

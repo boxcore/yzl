@@ -69,12 +69,22 @@ $cat_info = $db->getRow("SELECT * FROM " . $ecs->table('article_cat') . " WHERE 
 /* 获得当前页码 */
 $page   = !empty($_REQUEST['page'])  && intval($_REQUEST['page'])  > 0 ? intval($_REQUEST['page'])  : 1;
 
-
+//地图分类处理
 if($cat_id == 22){
-    $city = isset($_POST['city']) ? $_POST['city'] : 32;
+    $city = isset($_GET['city']) ? $_GET['city'] : 32;
     $sql = 'select map_id, map_name, map_point, address, tel from '.$GLOBALS['ecs']->table('maps').' where city="'.$city.'"';
     $map_list = $GLOBALS['db']->getAll($sql);
     $smarty->assign('map_list', $map_list);
+
+    $city_list = $GLOBALS['db']->getAll('select  DISTINCT(city) as id from '.$GLOBALS['ecs']->table('maps'));
+    foreach($city_list as &$v){
+        if($v['city']==$city){
+            $v['select']=1;
+        }
+        $v['name']= get_region_name($v['id']);
+    }
+    $smarty->assign('city_list', $city_list);
+
     $smarty->assign('city_name', get_region_name($city));
 }
 
@@ -164,6 +174,8 @@ if (!$smarty->is_cached('article_cat.dwt', $cache_id))
     //print_r(get_cat_articles($cat_id, $page, $size ,$keywords));
     
     $smarty->assign('cat_id',    $cat_id);
+    $smarty->assign('cat_article_pid', get_article_pid($cat_id) );
+
     /* 分页 */
     assign_pager('article_cat', $cat_id, $count, $size, '', '', $page, $goon_keywords);
     assign_dynamic('article_cat');

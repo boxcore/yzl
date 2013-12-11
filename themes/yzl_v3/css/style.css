@@ -4,25 +4,19 @@ body{margin:0px; padding:0px;}
 p,ul,li,h1,h2,h3,h4,h5,dl,dt,dd,img,span,strong,a,input{margin:0px; padding:0px; list-style:none; border:none; font-family:"Microsoft Yahei";}
 a:link,a:visited{ text-decoration:none;}
 a:hover{ text-decoration:none;}
-
 .c1{color:#984e9a;}
 a.indiv{display: block; float: left; width:100%; height: 100%; overflow: hidden;}
-
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 .clearfix{*+height:1%;}
 .clear{overflow:auto;_height:1%}
-
 .c1{color:#9C4D9E;}
 .c2{}
-
 .pl5{padding-left: 5px;}
 .pl10{padding-left: 10px;}
 .ml15{margin-left: 15px;}
-
 #header{width:998px; margin:0 auto; overflow:hidden;}
-#header .logo{width:280px; height:41px; float:left; margin-top:28px;}
+#header .logo{width:300px; height:41px; float:left; margin-top:28px;}
 #header .logo a{background: url(../images/logo.gif) no-repeat left center;}
-
 #header .header_r{/*width:556px;*/ overflow:hidden; float:right;}
 #header .header_r_inner{/*width:305px;*/float:left; margin-top:48px; overflow:hidden;}
 #header .header_r_inner li{float:left; font-size:11px; width:76px; height:22px; background:url(../images/header_r_bg.jpg) no-repeat right center; line-height:22px; text-align:center;}
@@ -39,9 +33,12 @@ a.indiv{display: block; float: left; width:100%; height: 100%; overflow: hidden;
 .content_box .nav_inner{float: right; width:658px; display: block;}
 .content_box .nav_inner li{float:left; position:relative;}
 .content_box .nav_inner .one_menu{position: relative;width:104px; height:31px; line-height:28px; font-size:14px; text-align:center;}
+.content_box .nav_inner .current {width:104px; height:31px; background:#fff; margin-right:1px;}
+.content_box .nav_inner .current .one_menu a {color: #984e9a;}
 .content_box .nav_inner .one_menu_hover .one_menu{width:104px; height:31px; background:#fff; margin-right:1px;}
 .content_box .nav_inner .one_menu_hover .one_menu a{color:#984e9a;}
 .content_box .nav_inner .one_menu a{color:#fff;}
+.content_box .nav_inner .one_menu .current{ background: #fff;}
 .content_box .nav_inner .one_menu_hover .two_menu{width:104px; padding-bottom:2px; border-bottom:1px solid #984e9a; background:#fff; display:block; /*border-left:1px solid #984e9a;border-right:1px solid #984e9a;*/}
 .content_box .nav_inner .two_menu{ display:none;position: absolute; top:30px;left:0; visibility:visible;}
 .content_box .nav_inner .one_menu_hover .all_products{width:312px; left:-104px; top:31px;}
@@ -66,8 +63,7 @@ a.indiv{display: block; float: left; width:100%; height: 100%; overflow: hidden;
 .foot .left .foot_nav a{color:#5a5a5a; margin-right:26px;}
 .foot .right{float:right; width:80px; position: relative;}
 .foot .right img{margin-left:5px;}
-	#show_weixin{display: none;position: absolute;top:-120px;left:-30px;z-index:10;}
-
+#show_weixin{display: none;position: absolute;top:-120px;left:-30px;z-index:10;}
 #navmenu{position: relative; z-index: 10;}
 
 .nav_box{width:998px;height:31px;border-top:2px solid #954d97;position:absolute;top:-2px;left:0px;}
@@ -119,7 +115,7 @@ a.indiv{display: block; float: left; width:100%; height: 100%; overflow: hidden;
 #good_list ul li.good_pic {float: left; width: 238px; height: 238px; display: block; }
 #good_list ul li.good_text {float:left; width:120px; height: 160px; font-size:12px; padding:55px 5px 0 5px; margin-left: 40px; }
 #good_list ul li.good_text p.good_brand{ color:#7C7C7C;width:120px; /*word-wrap: break-word;word-break: normal;*/ overflow: hidden; }
-#good_list ul li.good_text h3 {font-weight:normal; }
+#good_list ul li.good_text h3 {font-weight:normal; font-size:12px;height: 38px; line-height: 19px; overflow: hidden; width: 120px; }
 #good_list ul li.good_text span.good_price{ font-weight: bold; }
 #good_list ul li.good_text a.buy-now{margin-top: 20px; display: block; width:57px; height:17px; background: url("../images/goods-buy-now.gif") no-repeat left center; }
 #good_list ul li.good_text span.detail{display: block; margin-top: 40px;}
@@ -134,7 +130,7 @@ b.img-desc{ width:16px; height:16px; background: url("../images/ui-icons_984e9a_
 .content{width:998px; overflow:hidden; margin:36px auto 30px;}
 .content .left{width:104px; overflow:hidden; float:left;}
 .content .right{width:859px;float:right;}
-.content .left_nav li{width:104px; overflow:hidden; padding:2px 0 12px; border-bottom:1px solid #984e9a;}
+.content .left_nav li{width:104px; overflow:hidden; padding:8px 0; border-bottom:1px solid #984e9a;}
 .content .left_nav span a{color:#984e9a; font-size:14px; height:22px;text-align:left; display:block; padding-left:10px; width:79px;}
 .content .left_nav .inner a{width:85px; height:21px; line-height:21px; text-align:left; color:#595757; display:block; font-size:11px; padding-left:10px;}
 .content .left_nav .inner a:hover{ background:#dcdddd;}
@@ -157,13 +153,13 @@ b.img-desc{ width:16px; height:16px; background: url("../images/ui-icons_984e9a_
 .product_detail .center .explain{margin-bottom:20px;}
 .product_detail .center p{line-height:18px; color:#999; margin-bottom:10px;}
 .product_detail .center p span{color:#984e9a; font-size:12px;}
-.product_detail .center .recommend{ font-size:14px;}
+.product_detail .center .recommend{ font-size:12px; width:350px;}
 .product_detail .center .skin_nutrients span{color:#984e9a;}
 .product_detail .center .skin_nutrients p{line-height:18px; margin-top:5px;}
 .product_detail .center .skin_nutrients .flower_cream{width:160px; overflow:hidden; margin-top:17px; position:relative; margin-bottom:10px;}
 .product_detail .center .skin_nutrients .flower_cream span{float:left;}
 .product_detail .center .skin_nutrients .flower_cream strong{float:left; border:1px solid #b7b7b7; margin-left:10px; border-radius:2px; width:54px; height:54px;}
-.product_detail .center .skin_nutrients .flower_cream p{ background:#cab493; width:54px; height:17px; position:absolute; top:34px; left:62px; color:#fff; filter:alpha(opacity=80); /*IE滤镜，透明度50%*/opacity:0.8; text-align:center;}
+.product_detail .center .skin_nutrients .flower_cream p{ background:#cab493; width:54px; height:17px; position:absolute; top:34px; left:61px; color:#fff; filter:alpha(opacity=80); /*IE滤镜，透明度50%*/opacity:0.8; text-align:center;}
 .product_detail .center .skin_nutrients .flower_cream s{clear:both; text-decoration:none; width:136px; height:38px; line-height:38px; float:left;}
 .product_detail .center .buybox{width:350px; overflow:hidden;}
 .product_detail .center .buybox p span{color:#984e9a; font-size:18px; font-weight:bold; margin:0px 30px 0px 4px;}

@@ -22,13 +22,14 @@
         {if $cat_detail1}{$cat_detail}{/if}
         <div class="webmap_top">
             <p>查询地图</p>
-            <form action="/page/22/" method="post" id="map_form">
+            <form action="/page/22/" method="get" id="map_form">
                 <ul class="map_con">
                     {*<li>省份<select name=""><option>重庆</option><option>北京</option></select></li>*}
                     <li>城市
                         <select name="city" id="city_sec">
-                            <option value="32" {if $smarty.post.city eq 32}selected{/if}>重庆</option>
-                            <option value="2" {if $smarty.post.city eq 2}selected{/if}>北京</option>
+                            {foreach from=$city_list item=city name=foo}
+                            <option value="{$city.id}" {if $city.select eq 1}selected{/if}>{$city.name}</option>
+                            {/foreach}
                         </select>
                     </li>
                     {*<li>分址<select name="" class="add"><option>重庆</option><option>北京</option></select></li>*}
@@ -36,14 +37,13 @@
             </form>
         </div>
 
-        <div class="yzl_add">
+        <!--div class="yzl_add">
 
             {foreach from=$map_list item=map name=foo}
                 <p><span>{$map.map_name}</span><span> 地址：{$map.address}</span><span>客服电话：{$map.tel}</span></p>
                 {/foreach}
-        </div>
+        </div-->
         <style>
-            {noitreal}
             #l-map{width:856px; height:410px; border:1px solid #ccc;}
         </style>
         <div class="map" id="l-map"></div>{*<img src="images/map.jpg" width="856" height="410">*}
@@ -60,6 +60,8 @@
     var map = new BMap.Map("l-map");
     //map.centerAndZoom(new BMap.Point(116.328749,40.026922), 13);//
     map.centerAndZoom("{$city_name}",12);
+    map.enableScrollWheelZoom(true);
+    map.addControl(new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_SMALL}));  //右上角，仅包含平移和缩放按钮
     var index = 0;
     var myGeo = new BMap.Geocoder();
     var adds = [
@@ -69,7 +71,7 @@
     ];
     var sContents = [
         {foreach from=$map_list item=map name=foo}
-        "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>{$map.map_name}</h4><p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>{$map.map_desc}<br>电话：{$map.tel}</p></div>",
+        "<h4 style='margin:0 0 5px 0;padding:0.2em 0;font-size:14px;color:red'>{$map.map_name}</h4><p style='margin:0;line-height:1.5;font-size:13px;'>地址：{$map.address}<br>电话：{$map.tel}</p></div>",
         {/foreach}
     ];
 

@@ -14,7 +14,8 @@
           <a href="javascript:listTable.sort('map_id'); ">{$lang.record_id}</a>{$sort_map_id} </th>
       <th><a href="javascript:listTable.sort('map_name'); ">{$lang.maps_name}</a>{$sort_map_name}</th>
         <th width="200"><a href="javascript:listTable.sort('map_point'); ">标注点</a>{$sort_map_point}</th>
-      <th>{$lang.maps_desc}</th>
+      <th>详细地址</th>
+        <th>电话</th>
       <th>{$lang.handler}</th>
     </tr>
     {foreach from=$map_list item=map}
@@ -26,7 +27,8 @@
         <td class="first-cell">
             <span onclick="javascript:listTable.edit(this, 'edit_map_point', {$map.map_id})">{$map.map_point|escape:html}</span>
         </td>
-      <td>{$map.map_desc|nl2br}</td>
+      <td><span onclick="javascript:listTable.edit(this, 'edit_address', {$map.map_id})">{$map.address|escape:html}      </span></td>
+        <td><span onclick="javascript:listTable.edit(this, 'edit_tel', {$map.map_id})">{$map.tel|escape:html}      </span></td>
       <td align="center">
         <a href="maps.php?act=edit&id={$map.map_id}" title="{$lang.edit}">{$lang.edit}</a> |
         <a href="javascript:;" onclick="listTable.remove({$map.map_id}, '{$lang.drop_confirm}')" title="{$lang.remove}">{$lang.remove}</a>      </td>

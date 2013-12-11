@@ -40,20 +40,57 @@
     <tr>
         <td class="label">地区：</td>
         <td colspan="3" align="left" bgcolor="#ffffff">
-            <select name="country" id="selCountries" onChange="region.changed(this, 1, 'selProvinces')">
-                {foreach from=$countries item=country name="fe_country"}
-                <option value="{$country.region_id}" {if $smarty.foreach.fe_country.first}selected{/if}>{$country.region_name|escape:html}</option>
+
+
+            {if $}
+            <select name="value[{$var.id}]" id="selCountries" onchange="region.changed(this, 1, 'selProvinces')">
+                <option value=''>{$lang.select_please}</option>
+                {foreach from=$countries item=region}
+                <option value="{$region.region_id}" {if $region.region_id eq $cfg.shop_country}selected{/if}>{$region.region_name}</option>
                 {/foreach}
             </select>
-            <select name="province" id="selProvinces" onchange="region.changed(this, 2, 'selCities')">
-                <option value="">{$lang.select_please}</option>
+            {elseif $var.code eq "shop_province"}
+            <select name="value[{$var.id}]" id="selProvinces" onchange="region.changed(this, 2, 'selCities')">
+                <option value=''>{$lang.select_please}</option>
+                {foreach from=$provinces item=region}
+                <option value="{$region.region_id}" {if $region.region_id eq $cfg.shop_province}selected{/if}>{$region.region_name}</option>
+                {/foreach}
             </select>
-            <select name="city" id="selCities" onChange="region.changed(this, 3, 'selDistricts')">
-                <option value="">{$lang.select_please}</option>
+            {elseif $var.code eq "shop_city"}
+            <select name="value[{$var.id}]" id="selCities">
+                <option value=''>{$lang.select_please}</option>
+                {foreach from=$cities item=region}
+                <option value="{$region.region_id}" {if $region.region_id eq $cfg.shop_city}selected{/if}>{$region.region_name}</option>
+                {/foreach}
             </select>
-            <select name="district" id="selDistricts">
-                <option value="">{$lang.select_please}</option>
+            {elseif $var.code eq "lang"}
+            <select name="value[{$var.id}]">
+                {html_options values=$lang_list output=$lang_list selected=$var.value}
             </select>
+            {elseif $var.code eq "invoice_type"}
+            <table>
+                <tr>
+                    <th scope="col">{$lang.invoice_type}</th>
+                    <th scope="col">{$lang.invoice_rate}</th>
+                </tr>
+                <tr>
+                    <td><input name="invoice_type[]" type="text" value="{$cfg.invoice_type.type[0]}" /></td>
+                    <td><input name="invoice_rate[]" type="text" value="{$cfg.invoice_type.rate[0]}" /></td>
+                </tr>
+                <tr>
+                    <td><input name="invoice_type[]" type="text" value="{$cfg.invoice_type.type[1]}" /></td>
+                    <td><input name="invoice_rate[]" type="text" value="{$cfg.invoice_type.rate[1]}" /></td>
+                </tr>
+                <tr>
+                    <td><input name="invoice_type[]" type="text" value="{$cfg.invoice_type.type[2]}" /></td>
+                    <td><input name="invoice_rate[]" type="text" value="{$cfg.invoice_type.rate[2]}" /></td>
+                </tr>
+            </table>
+            {/if}
+
+
+
+
             {$lang.require_field}
             <br/>
             <input type="text" name="address" maxlength="60" size="45" value="{$map.address}" />{$lang.require_field}

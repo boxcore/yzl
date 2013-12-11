@@ -8,7 +8,7 @@ require(dirname(__FILE__) . '/includes/init.php');
 $exc = new exchange($ecs->table('maps'), $db, 'map_id', 'map_name');
 
 /*------------------------------------------------------ */
-//-- 办事处列表
+//-- 地图列表
 /*------------------------------------------------------ */
 if ($_REQUEST['act'] == 'list')
 {
@@ -110,10 +110,57 @@ elseif ($_REQUEST['act'] == 'edit_map_point')
 }
 
 /*------------------------------------------------------ */
-//-- 删除办事处
+//-- 列表页编辑地址
+/*------------------------------------------------------ */
+elseif ($_REQUEST['act'] == 'edit_address')
+{
+    check_authz_json('maps_manage');
+
+    $id     = intval($_POST['id']);
+    $address   = json_str_iconv(trim($_POST['val']));
+
+    if ($exc->edit("address = '$address'", $id))
+    {
+        admin_log($address, 'edit', 'map');
+        clear_cache_files();
+        make_json_result(stripslashes($address));
+    }
+    else
+    {
+        make_json_result(sprintf($_LANG['maps_edit_fail'], $address));
+    }
+
+}
+
+/*------------------------------------------------------ */
+//-- 列表页编辑电话
+/*------------------------------------------------------ */
+elseif ($_REQUEST['act'] == 'edit_tel')
+{
+    check_authz_json('maps_manage');
+
+    $id     = intval($_POST['id']);
+    $tel   = json_str_iconv(trim($_POST['val']));
+
+    if ($exc->edit("tel = '$tel'", $id))
+    {
+        admin_log($tel, 'edit', 'map');
+        clear_cache_files();
+        make_json_result(stripslashes($tel));
+    }
+    else
+    {
+        make_json_result(sprintf($_LANG['maps_edit_fail'], $tel));
+    }
+
+}
+
+/*------------------------------------------------------ */
+//-- 删除地图
 /*------------------------------------------------------ */
 elseif ($_REQUEST['act'] == 'remove')
 {
+    admin_priv('map_remove');
     check_authz_json('maps_manage');
 
     $id = intval($_GET['id']);
@@ -145,7 +192,7 @@ elseif ($_REQUEST['act'] == 'batch')
     else
     {
         /* 检查权限 */
-        admin_priv('agency_manage');
+        admin_priv('map_remove');
 
         $ids = $_POST['checkboxes'];
 
@@ -168,18 +215,18 @@ elseif ($_REQUEST['act'] == 'batch')
 }
 
 /*------------------------------------------------------ */
-//-- 添加、编辑办事处
+//-- 添加、编辑地图
 /*------------------------------------------------------ */
 elseif ($_REQUEST['act'] == 'add' || $_REQUEST['act'] == 'edit')
 {
     /* 检查权限 */
-    admin_priv('maps_manage');
+    admin_priv('map_manage');
 
     /* 是否添加 */
     $is_add = $_REQUEST['act'] == 'add';
     $smarty->assign('form_action', $is_add ? 'insert' : 'update');
 
-    /* 初始化、取得办事处信息 */
+    /* 初始化、取得地图信息 */
     if ($is_add)
     {
         $map = array(
@@ -210,7 +257,7 @@ elseif ($_REQUEST['act'] == 'add' || $_REQUEST['act'] == 'edit')
 //        $map['region_list'] = $db->getAll($sql);
     }
 
-    /* 取得所有管理员，标注哪些是该办事处的('this')，哪些是空闲的('free')，哪些是别的办事处的('other') */
+    /* 取得所有管理员，标注哪些是该地图的('this')，哪些是空闲的('free')，哪些是别的地图的('other') */
 //    $sql = "SELECT user_id, user_name, CASE " .
 //            "WHEN agency_id = 0 THEN 'free' " .
 //            "WHEN agency_id = '$agency[agency_id]' THEN 'this' " .
@@ -225,6 +272,7 @@ elseif ($_REQUEST['act'] == 'add' || $_REQUEST['act'] == 'edit')
     /* 取得地区 */
     $country_list = get_regions();
     $smarty->assign('countries', $country_list);
+
 
 //    $consignee['country']  = isset($consignee['country'])  ? intval($consignee['country'])  : 0;
 //    $consignee['province'] = isset($consignee['province']) ? intval($consignee['province']) : 0;
@@ -257,12 +305,12 @@ elseif ($_REQUEST['act'] == 'add' || $_REQUEST['act'] == 'edit')
 }
 
 /*------------------------------------------------------ */
-//-- 提交添加、编辑办事处
+//-- 提交添加、编辑地图
 /*------------------------------------------------------ */
 elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
 {
     /* 检查权限 */
-    admin_priv('maps_manage');
+    admin_priv('map_manage');
 
     /* 是否添加 */
     $is_add = $_REQUEST['act'] == 'insert';
@@ -293,7 +341,7 @@ elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
         sys_msg($_LANG['no_regions']);
     }
 
-    /* 保存办事处信息 */
+    /* 保存地图信息 */
     if ($is_add)
     {
         $db->autoExecute($ecs->table('maps'), $map, 'INSERT');
@@ -348,7 +396,7 @@ elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
 }
 
 /**
- * 取得办事处列表
+ * 取得地图列表
  * @return  array
  */
 function get_maplist()

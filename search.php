@@ -235,6 +235,8 @@ else
         {
             $tag_where = 'OR g.goods_id ' . db_create_in($tag_where);
         }
+    }else{
+        $smarty->assign('nav_act',     'qxcp');       //分配导航当前位
     }
 
     $category   = !empty($_REQUEST['category']) ? intval($_REQUEST['category'])        : 0;
