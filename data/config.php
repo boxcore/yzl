@@ -24,12 +24,12 @@ $session = "1440";
 
 define('EC_CHARSET','utf-8');
 
-define('ADMIN_PATH','admin');
+define('ADMIN_PATH','ohmylike');
 
 define('AUTH_KEY', 'this is a key');
 
 define('OLD_AUTH_KEY', '');
 
-define('API_TIME', '2013-12-10 17:15:50');
+define('API_TIME', '2013-12-11 10:06:07');
 
 ?>
