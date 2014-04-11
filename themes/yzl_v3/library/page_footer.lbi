@@ -9,7 +9,7 @@
     <div class="right">
         <a target="_blank" rel="nofollow" href="http://yizhanglian.tmall.com/"><img src="images/icon_tmall_15.jpg" width="15" height="15"></a>
         <a target="_blank" rel="nofollow" href="http://weibo.com/p/1006063172166825"><img src="images/share_1.jpg" width="15" height="15"></a>
-        <a target="_blank" rel="nofollow" id="weixin_hover" href="#"><img src="images/share_3.jpg" width="15" height="15"><div id="show_weixin"><img src="images/yzl-td-code.jpg" alt="易张脸官方微信"/></div></a>
+        <a target="_blank" rel="nofollow" id="weixin_hover" href="#"><img src="images/share_3.jpg" width="15" height="15"><div id="show_weixin"><img src="images/yzl-td-code.jpg" alt="脸妆网官方微信"/></div></a>
     </div>
 </div>
 
@@ -40,7 +40,7 @@
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
-                    <td>还没有易张脸帐号？<a href="/user.php?act=register">立即注册</a></td>
+                    <td>还没有脸妆网帐号？<a href="/user.php?act=register">立即注册</a></td>
                     <td>&nbsp;</td>
                 </tr>
             </tbody></table>
